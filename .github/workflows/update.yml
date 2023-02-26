@@ -23,8 +23,8 @@ jobs:
       run: |
         ./update.sh
     - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      id: date 
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
     - name: Commit & Push changes
       uses: actions-js/push@master
       with:
