@@ -8,6 +8,9 @@
 CURL=curl # https://curl.se/
 JQ=jq	  # https://stedolan.github.io/jq/
 
+# Update timestamp
+date > timestamp.txt
+
 # Get the list of all services and actions in format SERVICE:ACTION
 # This is assuming every service has an API and IAM integration.
 $CURL --header 'Connection: keep-alive' \
@@ -34,6 +37,3 @@ cat all-services-n-actions.txt | grep '\:.*Tag' | sed 's/\:.*$//g' | sort | uniq
 # Create a list services that DONT supporting tagging
 # ie. lines that are not present in both all-services.txt and taggable-services.txt
 cat all-services.txt  taggable-services.txt | sort | uniq --unique > untaggable-services.txt
-
-TS=$(date)
-echo "Updated $TS" > timestamp.txt
