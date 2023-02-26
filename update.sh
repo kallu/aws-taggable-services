@@ -35,3 +35,5 @@ cat all-services-n-actions.txt | grep '\:.*Tag' | sed 's/\:.*$//g' | sort | uniq
 # ie. lines that are not present in both all-services.txt and taggable-services.txt
 cat all-services.txt  taggable-services.txt | sort | uniq --unique > untaggable-services.txt
 
+TS=$(date)
+echo "Updated $TS" > timestamp.txt
