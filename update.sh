@@ -29,7 +29,7 @@ cat all-services-n-actions.txt | sed 's/\:.*$//g' | sort | uniq > all-services.t
 
 # Create a list of services that support tagging
 # ie. services that have an action with string Tag in it
-cat all-services-n-actions.txt | grep Tag | sed 's/\:.*$//g' | sort | uniq > taggable-services.txt
+cat all-services-n-actions.txt | grep '\:.*Tag' | sed 's/\:.*$//g' | sort | uniq > taggable-services.txt
 
 # Create a list services that DONT supporting tagging
 # ie. lines that are not present in both all-services.txt and taggable-services.txt
