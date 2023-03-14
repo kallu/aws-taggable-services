@@ -236,6 +236,7 @@ waf
 waf-regional
 wafv2
 wellarchitected
+wickr
 wisdom
 worklink
 workmail

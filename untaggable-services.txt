@@ -25,6 +25,7 @@ codebuild
 codecatalyst
 codedeploy-commands-secure
 codeguru
+codeguru-security
 codewhisperer
 cognito-sync
 comprehendmedical
@@ -102,6 +103,5 @@ tiros
 trustedadvisor
 vpc-lattice-svcs
 wam
-wickr
 workdocs
 workmailmessageflow
