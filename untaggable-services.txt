@@ -4,7 +4,6 @@ activate
 amplifybackend
 amplifyuibuilder
 apigateway
-application-autoscaling
 application-cost-profiler
 appmesh-preview
 arc-zonal-shift
@@ -18,7 +17,6 @@ backup-storage
 billing
 budgets
 chatbot
-cleanrooms
 cloudshell
 cloudtrail-data
 codebuild
@@ -33,6 +31,7 @@ compute-optimizer
 consolidatedbilling
 controltower
 cur
+datazone
 dbqms
 deeplens
 devops-guru
@@ -82,7 +81,6 @@ redshift-data
 rhelkb
 route53-recovery-cluster
 sagemaker-groundtruth-synthetic
-scn
 sdb
 securitylake
 serverlessrepo

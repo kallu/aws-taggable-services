@@ -8,6 +8,7 @@ aoss
 app-integrations
 appconfig
 appflow
+application-autoscaling
 applicationinsights
 appmesh
 apprunner
@@ -28,6 +29,7 @@ cases
 cassandra
 ce
 chime
+cleanrooms
 cloud9
 clouddirectory
 cloudformation
@@ -55,6 +57,7 @@ databrew
 dataexchange
 datapipeline
 datasync
+datazonecontrol
 dax
 deepcomposer
 deepracer
@@ -199,6 +202,7 @@ sagemaker-geospatial
 savingsplans
 scheduler
 schemas
+scn
 secretsmanager
 securityhub
 servicecatalog
