@@ -5,7 +5,7 @@ name: Update artefacts
 on:
   # Run every Sunday at noon UTC
   schedule:
-    - cron: '0/10 * * * 0'
+    - cron: '0 12 * * 0'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
