@@ -20,7 +20,6 @@ chatbot
 cloudshell
 cloudtrail-data
 codebuild
-codecatalyst
 codedeploy-commands-secure
 codeguru
 codeguru-security
@@ -90,7 +89,6 @@ snowball
 ssm-guiconnect
 ssmmessages
 sso-directory
-sumerian
 support
 supportapp
 supportplans

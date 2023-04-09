@@ -2237,8 +2237,11 @@ codecatalyst:GetConnection
 codecatalyst:GetPendingConnection
 codecatalyst:ListConnections
 codecatalyst:ListIamRolesForConnection
+codecatalyst:ListTagsForResource
 codecatalyst:PutBillingAuthorization
 codecatalyst:RejectConnection
+codecatalyst:TagResource
+codecatalyst:UntagResource
 codecommit:AssociateApprovalRuleTemplateWithRepository
 codecommit:BatchAssociateApprovalRuleTemplateWithRepositories
 codecommit:BatchDescribeMergeConflicts
@@ -5586,16 +5589,25 @@ frauddetector:UpdateRuleMetadata
 frauddetector:UpdateRuleVersion
 frauddetector:UpdateVariable
 freertos:CreateSoftwareConfiguration
+freertos:CreateSubscription
 freertos:DeleteSoftwareConfiguration
 freertos:DescribeHardwarePlatform
 freertos:DescribeSoftwareConfiguration
+freertos:DescribeSubscription
+freertos:GetEmpPatchUrl
 freertos:GetSoftwareURL
 freertos:GetSoftwareURLForConfiguration
+freertos:GetSubscriptionBillingAmount
 freertos:ListFreeRTOSVersions
 freertos:ListHardwarePlatforms
 freertos:ListHardwareVendors
 freertos:ListSoftwareConfigurations
+freertos:ListSoftwarePatches
+freertos:ListSubscriptionEmails
+freertos:ListSubscriptions
+freertos:UpdateEmailRecipients
 freertos:UpdateSoftwareConfiguration
+freertos:VerifyEmail
 freetier:GetFreeTierAlertPreference
 freetier:GetFreeTierUsage
 freetier:PutFreeTierAlertPreference
@@ -7373,6 +7385,7 @@ iotwireless:DeleteWirelessDeviceImportTask
 iotwireless:DeleteWirelessGateway
 iotwireless:DeleteWirelessGatewayTask
 iotwireless:DeleteWirelessGatewayTaskDefinition
+iotwireless:DeregisterWirelessDevice
 iotwireless:DisassociateAwsAccountFromPartnerAccount
 iotwireless:DisassociateMulticastGroupFromFuotaTask
 iotwireless:DisassociateWirelessDeviceFromFuotaTask
@@ -9977,6 +9990,8 @@ proton:CreateEnvironmentTemplateMinorVersion
 proton:CreateEnvironmentTemplateVersion
 proton:CreateRepository
 proton:CreateService
+proton:CreateServiceInstance
+proton:CreateServiceSyncConfig
 proton:CreateServiceTemplate
 proton:CreateServiceTemplateMajorVersion
 proton:CreateServiceTemplateMinorVersion
@@ -9992,6 +10007,7 @@ proton:DeleteEnvironmentTemplateMinorVersion
 proton:DeleteEnvironmentTemplateVersion
 proton:DeleteRepository
 proton:DeleteService
+proton:DeleteServiceSyncConfig
 proton:DeleteServiceTemplate
 proton:DeleteServiceTemplateMajorVersion
 proton:DeleteServiceTemplateMinorVersion
@@ -10012,6 +10028,9 @@ proton:GetResourceTemplateVersionStatusCounts
 proton:GetResourcesSummary
 proton:GetService
 proton:GetServiceInstance
+proton:GetServiceInstanceSyncStatus
+proton:GetServiceSyncBlockerSummary
+proton:GetServiceSyncConfig
 proton:GetServiceTemplate
 proton:GetServiceTemplateMajorVersion
 proton:GetServiceTemplateMinorVersion
@@ -10058,6 +10077,8 @@ proton:UpdateEnvironmentTemplateVersion
 proton:UpdateService
 proton:UpdateServiceInstance
 proton:UpdateServicePipeline
+proton:UpdateServiceSyncBlocker
+proton:UpdateServiceSyncConfig
 proton:UpdateServiceTemplate
 proton:UpdateServiceTemplateMajorVersion
 proton:UpdateServiceTemplateMinorVersion
@@ -10126,6 +10147,7 @@ quicksight:CreateIAMPolicyAssignment
 quicksight:CreateIngestion
 quicksight:CreateNamespace
 quicksight:CreateReader
+quicksight:CreateRefreshSchedule
 quicksight:CreateTemplate
 quicksight:CreateTemplateAlias
 quicksight:CreateTheme
@@ -10138,6 +10160,7 @@ quicksight:DeleteAnalysis
 quicksight:DeleteCustomPermissions
 quicksight:DeleteDashboard
 quicksight:DeleteDataSet
+quicksight:DeleteDataSetRefreshProperties
 quicksight:DeleteDataSource
 quicksight:DeleteEmailCustomizationTemplate
 quicksight:DeleteFolder
@@ -10146,6 +10169,7 @@ quicksight:DeleteGroup
 quicksight:DeleteGroupMembership
 quicksight:DeleteIAMPolicyAssignment
 quicksight:DeleteNamespace
+quicksight:DeleteRefreshSchedule
 quicksight:DeleteTemplate
 quicksight:DeleteTemplateAlias
 quicksight:DeleteTheme
@@ -10163,6 +10187,7 @@ quicksight:DescribeDashboard
 quicksight:DescribeDashboardPermissions
 quicksight:DescribeDataSet
 quicksight:DescribeDataSetPermissions
+quicksight:DescribeDataSetRefreshProperties
 quicksight:DescribeDataSource
 quicksight:DescribeDataSourcePermissions
 quicksight:DescribeEmailCustomizationTemplate
@@ -10175,6 +10200,7 @@ quicksight:DescribeIAMPolicyAssignment
 quicksight:DescribeIngestion
 quicksight:DescribeIpRestriction
 quicksight:DescribeNamespace
+quicksight:DescribeRefreshSchedule
 quicksight:DescribeTemplate
 quicksight:DescribeTemplateAlias
 quicksight:DescribeTemplatePermissions
@@ -10203,6 +10229,7 @@ quicksight:ListIAMPolicyAssignments
 quicksight:ListIAMPolicyAssignmentsForUser
 quicksight:ListIngestions
 quicksight:ListNamespaces
+quicksight:ListRefreshSchedules
 quicksight:ListTagsForResource
 quicksight:ListTemplateAliases
 quicksight:ListTemplateVersions
@@ -10214,6 +10241,7 @@ quicksight:ListUserGroups
 quicksight:ListUsers
 quicksight:PassDataSet
 quicksight:PassDataSource
+quicksight:PutDataSetRefreshProperties
 quicksight:RegisterUser
 quicksight:RestoreAnalysis
 quicksight:ScopeDownPolicy
@@ -10248,6 +10276,7 @@ quicksight:UpdateGroup
 quicksight:UpdateIAMPolicyAssignment
 quicksight:UpdateIpRestriction
 quicksight:UpdatePublicSharingSettings
+quicksight:UpdateRefreshSchedule
 quicksight:UpdateResourcePermissions
 quicksight:UpdateTemplate
 quicksight:UpdateTemplateAlias
@@ -12000,6 +12029,9 @@ servicecatalog:ListServiceActionsForProvisioningArtifact
 servicecatalog:ListStackInstancesForProvisionedProduct
 servicecatalog:ListTagOptions
 servicecatalog:ListTagsForResource
+servicecatalog:NotifyProvisionProductEngineWorkflowResult
+servicecatalog:NotifyTerminateProvisionedProductEngineWorkflowResult
+servicecatalog:NotifyUpdateProvisionedProductEngineWorkflowResult
 servicecatalog:ProvisionProduct
 servicecatalog:PutConfiguration
 servicecatalog:RejectPortfolioShare
@@ -12755,6 +12787,7 @@ ssm:UpdateAssociationStatus
 ssm:UpdateDocument
 ssm:UpdateDocumentDefaultVersion
 ssm:UpdateDocumentMetadata
+ssm:UpdateInstanceAssociationStatus
 ssm:UpdateInstanceInformation
 ssm:UpdateMaintenanceWindow
 ssm:UpdateMaintenanceWindowTarget
@@ -13041,8 +13074,6 @@ sts:GetServiceBearerToken
 sts:GetSessionToken
 sts:SetSourceIdentity
 sts:TagSession
-sumerian:Login
-sumerian:ViewRelease
 support:AddAttachmentsToSet
 support:AddCommunicationToCase
 support:CreateCase
@@ -13378,6 +13409,9 @@ translate:TagResource
 translate:TranslateText
 translate:UntagResource
 translate:UpdateParallelData
+trustedadvisor:CreateEngagement
+trustedadvisor:CreateEngagementAttachment
+trustedadvisor:CreateEngagementCommunication
 trustedadvisor:DeleteNotificationConfigurationForDelegatedAdmin
 trustedadvisor:DescribeAccount
 trustedadvisor:DescribeAccountAccess
@@ -13398,13 +13432,20 @@ trustedadvisor:DescribeServiceMetadata
 trustedadvisor:DownloadRisk
 trustedadvisor:ExcludeCheckItems
 trustedadvisor:GenerateReport
+trustedadvisor:GetEngagement
+trustedadvisor:GetEngagementAttachment
+trustedadvisor:GetEngagementType
 trustedadvisor:IncludeCheckItems
 trustedadvisor:ListAccountsForParent
+trustedadvisor:ListEngagementCommunications
+trustedadvisor:ListEngagementTypes
+trustedadvisor:ListEngagements
 trustedadvisor:ListOrganizationalUnitsForParent
 trustedadvisor:ListRoots
 trustedadvisor:RefreshCheck
 trustedadvisor:SetAccountAccess
 trustedadvisor:SetOrganizationAccess
+trustedadvisor:UpdateEngagementStatus
 trustedadvisor:UpdateNotificationConfigurations
 trustedadvisor:UpdateNotificationPreferences
 trustedadvisor:UpdateRiskStatus
@@ -13856,6 +13897,7 @@ workdocs:RegisterDirectory
 workdocs:RemoveAllResourcePermissions
 workdocs:RemoveResourcePermission
 workdocs:RestoreDocumentVersions
+workdocs:SearchResources
 workdocs:UpdateDocument
 workdocs:UpdateDocumentVersion
 workdocs:UpdateFolder

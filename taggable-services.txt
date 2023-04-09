@@ -39,6 +39,7 @@ cloudsearch
 cloudtrail
 cloudwatch
 codeartifact
+codecatalyst
 codecommit
 codedeploy
 codeguru-profiler
