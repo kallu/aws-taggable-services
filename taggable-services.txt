@@ -48,6 +48,7 @@ codepipeline
 codestar
 codestar-connections
 codestar-notifications
+codewhisperer
 cognito-identity
 cognito-idp
 comprehend

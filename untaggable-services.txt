@@ -23,7 +23,6 @@ codebuild
 codedeploy-commands-secure
 codeguru
 codeguru-security
-codewhisperer
 cognito-sync
 comprehendmedical
 compute-optimizer
