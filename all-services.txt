@@ -83,6 +83,7 @@ compute-optimizer
 config
 connect
 connect-campaigns
+consoleapp
 consolidatedbilling
 controltower
 cur
@@ -233,6 +234,8 @@ neptune-db
 network-firewall
 networkmanager
 nimble
+notifications
+notifications-contacts
 oam
 omics
 opsworks

@@ -26,6 +26,7 @@ codeguru-security
 cognito-sync
 comprehendmedical
 compute-optimizer
+consoleapp
 consolidatedbilling
 controltower
 cur
