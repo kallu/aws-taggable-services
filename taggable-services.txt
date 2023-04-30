@@ -170,6 +170,7 @@ omics
 opsworks
 opsworks-cm
 organizations
+osis
 outposts
 panorama
 personalize
