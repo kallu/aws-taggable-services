@@ -1276,12 +1276,20 @@ cases:UpdateField
 cases:UpdateLayout
 cases:UpdateTemplate
 cassandra:Alter
+cassandra:AlterMultiRegionResource
 cassandra:Create
+cassandra:CreateMultiRegionResource
 cassandra:Drop
+cassandra:DropMultiRegionResource
 cassandra:Modify
+cassandra:ModifyMultiRegionResource
 cassandra:Restore
+cassandra:RestoreMultiRegionTable
 cassandra:Select
+cassandra:SelectMultiRegionResource
+cassandra:TagMultiRegionResource
 cassandra:TagResource
+cassandra:UnTagMultiRegionResource
 cassandra:UntagResource
 cassandra:UpdatePartitioner
 ce:CreateAnomalyMonitor
@@ -8811,6 +8819,7 @@ mediaconnect:UpdateFlowEntitlement
 mediaconnect:UpdateFlowMediaStream
 mediaconnect:UpdateFlowOutput
 mediaconnect:UpdateFlowSource
+mediaconnect:UpdateGatewayInstance
 mediaconvert:AssociateCertificate
 mediaconvert:CancelJob
 mediaconvert:CreateJob
@@ -10349,6 +10358,7 @@ quicksight:DescribeTheme
 quicksight:DescribeThemeAlias
 quicksight:DescribeThemePermissions
 quicksight:DescribeUser
+quicksight:DescribeVPCConnection
 quicksight:GenerateEmbedUrlForAnonymousUser
 quicksight:GenerateEmbedUrlForRegisteredUser
 quicksight:GetAnonymousUserEmbedUrl
@@ -10380,6 +10390,7 @@ quicksight:ListThemeVersions
 quicksight:ListThemes
 quicksight:ListUserGroups
 quicksight:ListUsers
+quicksight:ListVPCConnections
 quicksight:PassDataSet
 quicksight:PassDataSource
 quicksight:PutDataSetRefreshProperties
@@ -10426,6 +10437,7 @@ quicksight:UpdateTheme
 quicksight:UpdateThemeAlias
 quicksight:UpdateThemePermissions
 quicksight:UpdateUser
+quicksight:UpdateVPCConnection
 ram:AcceptResourceShareInvitation
 ram:AssociateResourceShare
 ram:AssociateResourceSharePermission
@@ -11987,6 +11999,7 @@ securityhub:AcceptAdministratorInvitation
 securityhub:AcceptInvitation
 securityhub:BatchDisableStandards
 securityhub:BatchEnableStandards
+securityhub:BatchGetControlEvaluations
 securityhub:BatchGetSecurityControls
 securityhub:BatchGetStandardsControlAssociations
 securityhub:BatchImportFindings
@@ -12022,6 +12035,7 @@ securityhub:GetAdministratorAccount
 securityhub:GetControlFindingSummary
 securityhub:GetEnabledStandards
 securityhub:GetFindingAggregator
+securityhub:GetFindingHistory
 securityhub:GetFindings
 securityhub:GetFreeTrialEndDate
 securityhub:GetFreeTrialUsage
@@ -13875,6 +13889,7 @@ waf:UpdateWebACL
 waf:UpdateXssMatchSet
 wafv2:AssociateWebACL
 wafv2:CheckCapacity
+wafv2:CreateAPIKey
 wafv2:CreateIPSet
 wafv2:CreateRegexPatternSet
 wafv2:CreateRuleGroup
@@ -13890,6 +13905,7 @@ wafv2:DescribeManagedRuleGroup
 wafv2:DisassociateFirewallManager
 wafv2:DisassociateWebACL
 wafv2:GenerateMobileSdkReleaseUrl
+wafv2:GetDecryptedAPIKey
 wafv2:GetIPSet
 wafv2:GetLoggingConfiguration
 wafv2:GetManagedRuleSet
@@ -13901,6 +13917,7 @@ wafv2:GetRuleGroup
 wafv2:GetSampledRequests
 wafv2:GetWebACL
 wafv2:GetWebACLForResource
+wafv2:ListAPIKeys
 wafv2:ListAvailableManagedRuleGroupVersions
 wafv2:ListAvailableManagedRuleGroups
 wafv2:ListIPSets
