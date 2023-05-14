@@ -2448,6 +2448,7 @@ codeguru-security:BatchGetFindings
 codeguru-security:CreateScan
 codeguru-security:CreateUploadUrl
 codeguru-security:DeleteScansByCategory
+codeguru-security:GetFindings
 codeguru-security:GetScan
 codeguru-security:ListFindings
 codeguru-security:ListScans
@@ -3141,7 +3142,6 @@ connect:UpdateUserIdentityInfo
 connect:UpdateUserPhoneConfig
 connect:UpdateUserRoutingProfile
 connect:UpdateUserSecurityProfiles
-connect:UpdatedescribeContent
 consoleapp:GetDeviceIdentity
 consoleapp:ListDeviceIdentities
 consolidatedbilling:GetAccountBillingRole
@@ -3197,6 +3197,10 @@ cur:ModifyReportDefinition
 cur:PutClassicReportPreferences
 cur:PutReportDefinition
 cur:ValidateReportDestination
+customer-verification:CreateCustomerVerificationDetails
+customer-verification:GetCustomerVerificationDetails
+customer-verification:GetCustomerVerificationEligibility
+customer-verification:UpdateCustomerVerificationDetails
 databrew:BatchDeleteRecipeVersion
 databrew:CreateDataset
 databrew:CreateProfileJob
@@ -5199,6 +5203,7 @@ emr-containers:DescribeJobRun
 emr-containers:DescribeJobTemplate
 emr-containers:DescribeManagedEndpoint
 emr-containers:DescribeVirtualCluster
+emr-containers:GetManagedEndpointSessionCredentials
 emr-containers:ListJobRuns
 emr-containers:ListJobTemplates
 emr-containers:ListManagedEndpoints
@@ -6794,6 +6799,7 @@ inspector2:ListFindings
 inspector2:ListMembers
 inspector2:ListTagsForResource
 inspector2:ListUsageTotals
+inspector2:SearchVulnerabilities
 inspector2:TagResource
 inspector2:UntagResource
 inspector2:UpdateConfiguration
@@ -9015,6 +9021,7 @@ mediatailor:UpdateProgram
 mediatailor:UpdateSourceLocation
 mediatailor:UpdateVodSource
 memorydb:BatchUpdateCluster
+memorydb:Connect
 memorydb:CopySnapshot
 memorydb:CreateAcl
 memorydb:CreateCluster
@@ -9389,6 +9396,7 @@ monitron:UntagResource
 monitron:UpdateProject
 mq:CreateBroker
 mq:CreateConfiguration
+mq:CreateReplicaBroker
 mq:CreateTags
 mq:CreateUser
 mq:DeleteBroker
@@ -10302,6 +10310,8 @@ quicksight:CreateTemplate
 quicksight:CreateTemplateAlias
 quicksight:CreateTheme
 quicksight:CreateThemeAlias
+quicksight:CreateTopic
+quicksight:CreateTopicRefreshSchedule
 quicksight:CreateUser
 quicksight:CreateVPCConnection
 quicksight:DeleteAccountCustomization
@@ -10324,6 +10334,8 @@ quicksight:DeleteTemplate
 quicksight:DeleteTemplateAlias
 quicksight:DeleteTheme
 quicksight:DeleteThemeAlias
+quicksight:DeleteTopic
+quicksight:DeleteTopicRefreshSchedule
 quicksight:DeleteUser
 quicksight:DeleteUserByPrincipalId
 quicksight:DeleteVPCConnection
@@ -10357,6 +10369,10 @@ quicksight:DescribeTemplatePermissions
 quicksight:DescribeTheme
 quicksight:DescribeThemeAlias
 quicksight:DescribeThemePermissions
+quicksight:DescribeTopic
+quicksight:DescribeTopicPermissions
+quicksight:DescribeTopicRefresh
+quicksight:DescribeTopicRefreshSchedule
 quicksight:DescribeUser
 quicksight:DescribeVPCConnection
 quicksight:GenerateEmbedUrlForAnonymousUser
@@ -10388,6 +10404,8 @@ quicksight:ListTemplates
 quicksight:ListThemeAliases
 quicksight:ListThemeVersions
 quicksight:ListThemes
+quicksight:ListTopicRefreshSchedules
+quicksight:ListTopics
 quicksight:ListUserGroups
 quicksight:ListUsers
 quicksight:ListVPCConnections
@@ -10436,6 +10454,9 @@ quicksight:UpdateTemplatePermissions
 quicksight:UpdateTheme
 quicksight:UpdateThemeAlias
 quicksight:UpdateThemePermissions
+quicksight:UpdateTopic
+quicksight:UpdateTopicPermissions
+quicksight:UpdateTopicRefreshSchedule
 quicksight:UpdateUser
 quicksight:UpdateVPCConnection
 ram:AcceptResourceShareInvitation
@@ -12469,6 +12490,7 @@ signer:RevokeSigningProfile
 signer:StartSigningJob
 signer:TagResource
 signer:UntagResource
+simspaceweaver:CreateSnapshot
 simspaceweaver:DeleteApp
 simspaceweaver:DeleteSimulation
 simspaceweaver:DescribeApp
@@ -13283,6 +13305,7 @@ supportapp:PutAccountAlias
 supportapp:RedeemSlackOauthCode
 supportapp:RegisterSlackWorkspaceForOrganization
 supportapp:UpdateSlackChannelConfiguration
+supportplans:CreateSupportPlanSchedule
 supportplans:GetSupportPlan
 supportplans:GetSupportPlanUpdateStatus
 supportplans:StartSupportPlanUpdate
@@ -13419,6 +13442,7 @@ timestream:SelectValues
 timestream:StartAwsBackupJob
 timestream:StartAwsRestoreJob
 timestream:TagResource
+timestream:Unload
 timestream:UntagResource
 timestream:UpdateDatabase
 timestream:UpdateScheduledQuery
@@ -13646,6 +13670,7 @@ vendor-insights:UntagResource
 vendor-insights:UpdateSecurityProfile
 vendor-insights:UpdateSecurityProfileSnapshotCreationConfiguration
 vendor-insights:UpdateSecurityProfileSnapshotReleaseConfiguration
+verified-access:AllowVerifiedAccess
 voiceid:AssociateFraudster
 voiceid:CreateDomain
 voiceid:CreateWatchlist

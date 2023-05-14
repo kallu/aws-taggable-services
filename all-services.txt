@@ -87,6 +87,7 @@ consoleapp
 consolidatedbilling
 controltower
 cur
+customer-verification
 databrew
 dataexchange
 datapipeline
@@ -338,6 +339,7 @@ transfer
 translate
 trustedadvisor
 vendor-insights
+verified-access
 voiceid
 vpc-lattice
 vpc-lattice-svcs

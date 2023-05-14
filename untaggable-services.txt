@@ -30,6 +30,7 @@ consoleapp
 consolidatedbilling
 controltower
 cur
+customer-verification
 datazone
 dbqms
 deeplens
@@ -97,6 +98,7 @@ tax
 textract
 tiros
 trustedadvisor
+verified-access
 vpc-lattice-svcs
 wam
 workdocs
