@@ -1724,6 +1724,7 @@ cloud9:DescribeSSHRemote
 cloud9:GetEnvironmentConfig
 cloud9:GetEnvironmentSettings
 cloud9:GetMembershipSettings
+cloud9:GetMigrationExperiences
 cloud9:GetUserPublicKey
 cloud9:GetUserSettings
 cloud9:ListEnvironments
@@ -2971,6 +2972,7 @@ connect:CreateHoursOfOperation
 connect:CreateInstance
 connect:CreateIntegrationAssociation
 connect:CreateParticipant
+connect:CreatePrompt
 connect:CreateQueue
 connect:CreateQuickConnect
 connect:CreateRoutingProfile
@@ -2990,6 +2992,7 @@ connect:DeleteEvaluationForm
 connect:DeleteHoursOfOperation
 connect:DeleteInstance
 connect:DeleteIntegrationAssociation
+connect:DeletePrompt
 connect:DeleteQuickConnect
 connect:DeleteRule
 connect:DeleteSecurityProfile
@@ -3011,6 +3014,7 @@ connect:DescribeInstance
 connect:DescribeInstanceAttribute
 connect:DescribeInstanceStorageConfig
 connect:DescribePhoneNumber
+connect:DescribePrompt
 connect:DescribeQueue
 connect:DescribeQuickConnect
 connect:DescribeRoutingProfile
@@ -3039,6 +3043,7 @@ connect:GetFederationToken
 connect:GetFederationTokens
 connect:GetMetricData
 connect:GetMetricDataV2
+connect:GetPromptFile
 connect:GetTaskTemplate
 connect:GetTrafficDistribution
 connect:ListAgentStatuses
@@ -3120,6 +3125,7 @@ connect:UpdateInstanceAttribute
 connect:UpdateInstanceStorageConfig
 connect:UpdateParticipantRoleConfig
 connect:UpdatePhoneNumber
+connect:UpdatePrompt
 connect:UpdateQueueHoursOfOperation
 connect:UpdateQueueMaxContacts
 connect:UpdateQueueName
@@ -4114,6 +4120,7 @@ ec2:AssociateTransitGatewayMulticastDomain
 ec2:AssociateTransitGatewayPolicyTable
 ec2:AssociateTransitGatewayRouteTable
 ec2:AssociateTrunkInterface
+ec2:AssociateVerifiedAccessInstanceWebAcl
 ec2:AssociateVpcCidrBlock
 ec2:AttachClassicLinkVpc
 ec2:AttachInternetGateway
@@ -4431,6 +4438,7 @@ ec2:DescribeTrunkInterfaceAssociations
 ec2:DescribeVerifiedAccessEndpoints
 ec2:DescribeVerifiedAccessGroups
 ec2:DescribeVerifiedAccessInstanceLoggingConfigurations
+ec2:DescribeVerifiedAccessInstanceWebAclAssociations
 ec2:DescribeVerifiedAccessInstances
 ec2:DescribeVerifiedAccessTrustProviders
 ec2:DescribeVolumeAttribute
@@ -4481,6 +4489,7 @@ ec2:DisassociateTransitGatewayMulticastDomain
 ec2:DisassociateTransitGatewayPolicyTable
 ec2:DisassociateTransitGatewayRouteTable
 ec2:DisassociateTrunkInterface
+ec2:DisassociateVerifiedAccessInstanceWebAcl
 ec2:DisassociateVpcCidrBlock
 ec2:EnableAddressTransfer
 ec2:EnableAwsNetworkPerformanceMetricSubscription
@@ -4541,8 +4550,11 @@ ec2:GetTransitGatewayRouteTableAssociations
 ec2:GetTransitGatewayRouteTablePropagations
 ec2:GetVerifiedAccessEndpointPolicy
 ec2:GetVerifiedAccessGroupPolicy
+ec2:GetVerifiedAccessInstanceWebAcl
 ec2:GetVpnConnectionDeviceSampleConfiguration
 ec2:GetVpnConnectionDeviceTypes
+ec2:GetVpnTunnelReplacementStatus
+ec2:ImportByoipCidrToIpam
 ec2:ImportClientVpnClientCertificateRevocationList
 ec2:ImportImage
 ec2:ImportInstance
@@ -4645,6 +4657,7 @@ ec2:ReplaceNetworkAclEntry
 ec2:ReplaceRoute
 ec2:ReplaceRouteTableAssociation
 ec2:ReplaceTransitGatewayRoute
+ec2:ReplaceVpnTunnel
 ec2:ReportInstanceStatus
 ec2:RequestSpotFleet
 ec2:RequestSpotInstances
@@ -9667,11 +9680,14 @@ oam:PutSinkPolicy
 oam:TagResource
 oam:UntagResource
 oam:UpdateLink
+omics:AbortMultipartReadSetUpload
 omics:BatchDeleteReadSet
 omics:CancelAnnotationImportJob
 omics:CancelRun
 omics:CancelVariantImportJob
+omics:CompleteMultipartReadSetUpload
 omics:CreateAnnotationStore
+omics:CreateMultipartReadSetUpload
 omics:CreateReferenceStore
 omics:CreateRunGroup
 omics:CreateSequenceStore
@@ -9705,9 +9721,11 @@ omics:GetVariantStore
 omics:GetWorkflow
 omics:ListAnnotationImportJobs
 omics:ListAnnotationStores
+omics:ListMultipartReadSetUploads
 omics:ListReadSetActivationJobs
 omics:ListReadSetExportJobs
 omics:ListReadSetImportJobs
+omics:ListReadSetUploadParts
 omics:ListReadSets
 omics:ListReferenceImportJobs
 omics:ListReferenceStores
@@ -9733,6 +9751,7 @@ omics:UpdateAnnotationStore
 omics:UpdateRunGroup
 omics:UpdateVariantStore
 omics:UpdateWorkflow
+omics:UploadReadSetPart
 opsworks-cm:AssociateNode
 opsworks-cm:CreateBackup
 opsworks-cm:CreateServer
