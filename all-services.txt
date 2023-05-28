@@ -219,6 +219,7 @@ mediaimport
 medialive
 mediapackage
 mediapackage-vod
+mediapackagev2
 mediastore
 mediatailor
 memorydb
