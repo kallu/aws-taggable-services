@@ -22,7 +22,6 @@ cloudtrail-data
 codebuild
 codedeploy-commands-secure
 codeguru
-codeguru-security
 cognito-sync
 comprehendmedical
 compute-optimizer

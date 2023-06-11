@@ -44,6 +44,7 @@ codecommit
 codedeploy
 codeguru-profiler
 codeguru-reviewer
+codeguru-security
 codepipeline
 codestar
 codestar-connections
