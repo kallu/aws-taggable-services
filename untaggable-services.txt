@@ -98,6 +98,7 @@ textract
 tiros
 trustedadvisor
 verified-access
+verifiedpermissions
 vpc-lattice-svcs
 wam
 workdocs

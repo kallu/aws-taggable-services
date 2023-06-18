@@ -175,6 +175,7 @@ organizations
 osis
 outposts
 panorama
+payment-cryptography
 personalize
 pipes
 private-networks

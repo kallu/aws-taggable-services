@@ -246,6 +246,7 @@ organizations
 osis
 outposts
 panorama
+payment-cryptography
 payments
 personalize
 pi
@@ -341,6 +342,7 @@ translate
 trustedadvisor
 vendor-insights
 verified-access
+verifiedpermissions
 voiceid
 vpc-lattice
 vpc-lattice-svcs
