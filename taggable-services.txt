@@ -7,6 +7,7 @@ amplify
 aoss
 app-integrations
 appconfig
+appfabric
 appflow
 application-autoscaling
 applicationinsights

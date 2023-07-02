@@ -13,6 +13,7 @@ aoss
 apigateway
 app-integrations
 appconfig
+appfabric
 appflow
 application-autoscaling
 application-cost-profiler
