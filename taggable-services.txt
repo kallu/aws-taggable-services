@@ -23,6 +23,7 @@ aws-marketplace
 backup
 backup-gateway
 batch
+bedrock
 billingconductor
 braket
 bugbust

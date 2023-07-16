@@ -39,6 +39,7 @@ backup
 backup-gateway
 backup-storage
 batch
+bedrock
 billing
 billingconductor
 braket
