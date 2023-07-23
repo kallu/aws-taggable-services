@@ -80,7 +80,6 @@ rhelkb
 route53-recovery-cluster
 sagemaker-groundtruth-synthetic
 sdb
-securitylake
 serverlessrepo
 serviceextract
 sms

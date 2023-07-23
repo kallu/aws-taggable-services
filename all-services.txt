@@ -224,6 +224,7 @@ mediapackage-vod
 mediapackagev2
 mediastore
 mediatailor
+medical-imaging
 memorydb
 mgh
 mgn

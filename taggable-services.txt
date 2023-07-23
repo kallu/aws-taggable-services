@@ -158,6 +158,7 @@ mediapackage-vod
 mediapackagev2
 mediastore
 mediatailor
+medical-imaging
 memorydb
 mgn
 migrationhub-orchestrator
@@ -216,6 +217,7 @@ schemas
 scn
 secretsmanager
 securityhub
+securitylake
 servicecatalog
 servicediscovery
 servicequotas
