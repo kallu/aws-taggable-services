@@ -61,6 +61,7 @@ kafkaconnect
 launchwizard
 license-manager-linux-subscriptions
 license-manager-user-subscriptions
+managedblockchain-query
 marketplacecommerceanalytics
 mechanicalturk
 mediaimport

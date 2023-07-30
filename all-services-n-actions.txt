@@ -1397,6 +1397,7 @@ ce:GetReservationCoverage
 ce:GetReservationPurchaseRecommendation
 ce:GetReservationUtilization
 ce:GetRightsizingRecommendation
+ce:GetSavingsPlanPurchaseRecommendationDetails
 ce:GetSavingsPlansCoverage
 ce:GetSavingsPlansPurchaseRecommendation
 ce:GetSavingsPlansUtilization
@@ -5393,6 +5394,22 @@ emr-serverless:StopApplication
 emr-serverless:TagResource
 emr-serverless:UntagResource
 emr-serverless:UpdateApplication
+entityresolution:CreateMatchingWorkflow
+entityresolution:CreateSchemaMapping
+entityresolution:DeleteMatchingWorkflow
+entityresolution:DeleteSchemaMapping
+entityresolution:GetMatchId
+entityresolution:GetMatchingJob
+entityresolution:GetMatchingWorkflow
+entityresolution:GetSchemaMapping
+entityresolution:ListMatchingJobs
+entityresolution:ListMatchingWorkflows
+entityresolution:ListSchemaMappings
+entityresolution:ListTagsForResource
+entityresolution:StartMatchingJob
+entityresolution:TagResource
+entityresolution:UntagResource
+entityresolution:UpdateMatchingWorkflow
 es:AcceptInboundConnection
 es:AcceptInboundCrossClusterSearchConnection
 es:AddTags
@@ -7819,6 +7836,7 @@ iq:WithdrawProposal
 iq:WriteReview
 ivs:BatchGetChannel
 ivs:BatchGetStreamKey
+ivs:BatchStartViewerSessionRevocation
 ivs:CreateChannel
 ivs:CreateParticipantToken
 ivs:CreateRecordingConfiguration
@@ -7852,6 +7870,7 @@ ivs:ListStreamSessions
 ivs:ListStreams
 ivs:ListTagsForResource
 ivs:PutMetadata
+ivs:StartViewerSessionRevocation
 ivs:StopStream
 ivs:TagResource
 ivs:UntagResource
@@ -7905,6 +7924,7 @@ kafka:DeleteConfiguration
 kafka:DeleteVpcConnection
 kafka:DescribeCluster
 kafka:DescribeClusterOperation
+kafka:DescribeClusterOperationV2
 kafka:DescribeClusterV2
 kafka:DescribeConfiguration
 kafka:DescribeConfigurationRevision
@@ -7914,6 +7934,7 @@ kafka:GetClusterPolicy
 kafka:GetCompatibleKafkaVersions
 kafka:ListClientVpcConnections
 kafka:ListClusterOperations
+kafka:ListClusterOperationsV2
 kafka:ListClusters
 kafka:ListClustersV2
 kafka:ListConfigurationRevisions
@@ -8405,8 +8426,13 @@ lex:ListBuiltInSlotTypes
 lex:ListCustomVocabularyItems
 lex:ListExports
 lex:ListImports
+lex:ListIntentMetrics
+lex:ListIntentPaths
+lex:ListIntentStageMetrics
 lex:ListIntents
 lex:ListRecommendedIntents
+lex:ListSessionAnalyticsData
+lex:ListSessionMetrics
 lex:ListSlotTypes
 lex:ListSlots
 lex:ListTagsForResource
@@ -8955,6 +8981,12 @@ macie2:UpdateResourceProfile
 macie2:UpdateResourceProfileDetections
 macie2:UpdateRevealConfiguration
 macie2:UpdateSensitivityInspectionTemplate
+managedblockchain-query:BatchGetTokenBalance
+managedblockchain-query:GetTokenBalance
+managedblockchain-query:GetTransaction
+managedblockchain-query:ListTokenBalances
+managedblockchain-query:ListTransactionEvents
+managedblockchain-query:ListTransactions
 managedblockchain:CreateAccessor
 managedblockchain:CreateMember
 managedblockchain:CreateNetwork
@@ -8970,6 +9002,8 @@ managedblockchain:GetNetwork
 managedblockchain:GetNode
 managedblockchain:GetProposal
 managedblockchain:Invoke
+managedblockchain:InvokeRpcBitcoinMainnet
+managedblockchain:InvokeRpcBitcoinTestnet
 managedblockchain:ListAccessors
 managedblockchain:ListInvitations
 managedblockchain:ListMembers
@@ -10376,6 +10410,7 @@ personalize:StopSolutionVersionCreation
 personalize:TagResource
 personalize:UntagResource
 personalize:UpdateCampaign
+personalize:UpdateDataset
 personalize:UpdateMetricAttribution
 personalize:UpdateRecommender
 pi:DescribeDimensionKeys
@@ -10459,6 +10494,7 @@ profile:GetIntegration
 profile:GetMatches
 profile:GetProfileObjectType
 profile:GetProfileObjectTypeTemplate
+profile:GetSimilarProfiles
 profile:GetWorkflow
 profile:GetWorkflowSteps
 profile:ListAccountIntegrations
@@ -10471,6 +10507,7 @@ profile:ListIntegrations
 profile:ListProfileObjectTypeTemplates
 profile:ListProfileObjectTypes
 profile:ListProfileObjects
+profile:ListRuleBasedMatches
 profile:ListTagsForResource
 profile:ListWorkflows
 profile:MergeProfiles
@@ -10506,6 +10543,7 @@ proton:CreateServiceTemplateVersion
 proton:CreateTemplateSyncConfig
 proton:DeleteAccountRoles
 proton:DeleteComponent
+proton:DeleteDeployment
 proton:DeleteEnvironment
 proton:DeleteEnvironmentAccountConnection
 proton:DeleteEnvironmentTemplate
@@ -10523,6 +10561,7 @@ proton:DeleteTemplateSyncConfig
 proton:GetAccountRoles
 proton:GetAccountSettings
 proton:GetComponent
+proton:GetDeployment
 proton:GetEnvironment
 proton:GetEnvironmentAccountConnection
 proton:GetEnvironmentTemplate
@@ -10547,6 +10586,7 @@ proton:GetTemplateSyncStatus
 proton:ListComponentOutputs
 proton:ListComponentProvisionedResources
 proton:ListComponents
+proton:ListDeployments
 proton:ListEnvironmentAccountConnections
 proton:ListEnvironmentOutputs
 proton:ListEnvironmentProvisionedResources
@@ -10703,6 +10743,8 @@ quicksight:DescribeAssetBundleImportJob
 quicksight:DescribeCustomPermissions
 quicksight:DescribeDashboard
 quicksight:DescribeDashboardPermissions
+quicksight:DescribeDashboardSnapshotJob
+quicksight:DescribeDashboardSnapshotJobResult
 quicksight:DescribeDataSet
 quicksight:DescribeDataSetPermissions
 quicksight:DescribeDataSetRefreshProperties
@@ -10784,9 +10826,11 @@ quicksight:SearchDataSources
 quicksight:SearchDirectoryGroups
 quicksight:SearchFolders
 quicksight:SearchGroups
+quicksight:SearchUsers
 quicksight:SetGroupMapping
 quicksight:StartAssetBundleExportJob
 quicksight:StartAssetBundleImportJob
+quicksight:StartDashboardSnapshotJob
 quicksight:Subscribe
 quicksight:TagResource
 quicksight:Unsubscribe
@@ -11660,12 +11704,14 @@ route53resolver:AssociateResolverRule
 route53resolver:CreateFirewallDomainList
 route53resolver:CreateFirewallRule
 route53resolver:CreateFirewallRuleGroup
+route53resolver:CreateOutpostResolver
 route53resolver:CreateResolverEndpoint
 route53resolver:CreateResolverQueryLogConfig
 route53resolver:CreateResolverRule
 route53resolver:DeleteFirewallDomainList
 route53resolver:DeleteFirewallRule
 route53resolver:DeleteFirewallRuleGroup
+route53resolver:DeleteOutpostResolver
 route53resolver:DeleteResolverEndpoint
 route53resolver:DeleteResolverQueryLogConfig
 route53resolver:DeleteResolverRule
@@ -11678,6 +11724,7 @@ route53resolver:GetFirewallDomainList
 route53resolver:GetFirewallRuleGroup
 route53resolver:GetFirewallRuleGroupAssociation
 route53resolver:GetFirewallRuleGroupPolicy
+route53resolver:GetOutpostResolver
 route53resolver:GetResolverConfig
 route53resolver:GetResolverDnssecConfig
 route53resolver:GetResolverEndpoint
@@ -11694,6 +11741,7 @@ route53resolver:ListFirewallDomains
 route53resolver:ListFirewallRuleGroupAssociations
 route53resolver:ListFirewallRuleGroups
 route53resolver:ListFirewallRules
+route53resolver:ListOutpostResolvers
 route53resolver:ListResolverConfigs
 route53resolver:ListResolverDnssecConfigs
 route53resolver:ListResolverEndpointIpAddresses
@@ -11712,6 +11760,7 @@ route53resolver:UpdateFirewallConfig
 route53resolver:UpdateFirewallDomains
 route53resolver:UpdateFirewallRule
 route53resolver:UpdateFirewallRuleGroupAssociation
+route53resolver:UpdateOutpostResolver
 route53resolver:UpdateResolverConfig
 route53resolver:UpdateResolverDnssecConfig
 route53resolver:UpdateResolverEndpoint
@@ -13233,6 +13282,7 @@ ssm-sap:ListTagsForResource
 ssm-sap:PutResourcePermission
 ssm-sap:RegisterApplication
 ssm-sap:RestoreDatabase
+ssm-sap:StartApplicationRefresh
 ssm-sap:TagResource
 ssm-sap:UntagResource
 ssm-sap:UpdateApplicationSettings
@@ -13980,6 +14030,7 @@ transfer:StartFileTransfer
 transfer:StartServer
 transfer:StopServer
 transfer:TagResource
+transfer:TestConnection
 transfer:TestIdentityProvider
 transfer:UntagResource
 transfer:UpdateAccess
@@ -14045,6 +14096,7 @@ trustedadvisor:ListRoots
 trustedadvisor:RefreshCheck
 trustedadvisor:SetAccountAccess
 trustedadvisor:SetOrganizationAccess
+trustedadvisor:UpdateEngagement
 trustedadvisor:UpdateEngagementStatus
 trustedadvisor:UpdateNotificationConfigurations
 trustedadvisor:UpdateNotificationPreferences

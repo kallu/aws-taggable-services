@@ -133,6 +133,7 @@ elemental-support-cases
 elemental-support-content
 emr-containers
 emr-serverless
+entityresolution
 es
 events
 evidently
@@ -213,6 +214,7 @@ m2
 machinelearning
 macie2
 managedblockchain
+managedblockchain-query
 marketplacecommerceanalytics
 mechanicalturk
 mediaconnect

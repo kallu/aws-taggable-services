@@ -91,6 +91,7 @@ elemental-activations
 elemental-appliances-software
 emr-containers
 emr-serverless
+entityresolution
 es
 events
 evidently
