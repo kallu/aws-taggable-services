@@ -467,6 +467,7 @@ application-cost-profiler:ImportApplicationUsage
 application-cost-profiler:ListReportDefinitions
 application-cost-profiler:PutReportDefinition
 application-cost-profiler:UpdateReportDefinition
+applicationinsights:AddWorkload
 applicationinsights:CreateApplication
 applicationinsights:CreateComponent
 applicationinsights:CreateLogPattern
@@ -481,6 +482,7 @@ applicationinsights:DescribeLogPattern
 applicationinsights:DescribeObservation
 applicationinsights:DescribeProblem
 applicationinsights:DescribeProblemObservations
+applicationinsights:DescribeWorkload
 applicationinsights:Link
 applicationinsights:ListApplications
 applicationinsights:ListComponents
@@ -489,12 +491,16 @@ applicationinsights:ListLogPatternSets
 applicationinsights:ListLogPatterns
 applicationinsights:ListProblems
 applicationinsights:ListTagsForResource
+applicationinsights:ListWorkloads
+applicationinsights:RemoveWorkload
 applicationinsights:TagResource
 applicationinsights:UntagResource
 applicationinsights:UpdateApplication
 applicationinsights:UpdateComponent
 applicationinsights:UpdateComponentConfiguration
 applicationinsights:UpdateLogPattern
+applicationinsights:UpdateProblem
+applicationinsights:UpdateWorkload
 appmesh-preview:CreateGatewayRoute
 appmesh-preview:CreateMesh
 appmesh-preview:CreateRoute
@@ -1751,19 +1757,24 @@ chime:UpdateVoiceProfile
 chime:UpdateVoiceProfileDomain
 chime:ValidateAccountResource
 chime:ValidateE911Address
+cleanrooms:BatchGetCollaborationAnalysisTemplate
 cleanrooms:BatchGetSchema
+cleanrooms:CreateAnalysisTemplate
 cleanrooms:CreateCollaboration
 cleanrooms:CreateConfiguredTable
 cleanrooms:CreateConfiguredTableAnalysisRule
 cleanrooms:CreateConfiguredTableAssociation
 cleanrooms:CreateMembership
+cleanrooms:DeleteAnalysisTemplate
 cleanrooms:DeleteCollaboration
 cleanrooms:DeleteConfiguredTable
 cleanrooms:DeleteConfiguredTableAnalysisRule
 cleanrooms:DeleteConfiguredTableAssociation
 cleanrooms:DeleteMember
 cleanrooms:DeleteMembership
+cleanrooms:GetAnalysisTemplate
 cleanrooms:GetCollaboration
+cleanrooms:GetCollaborationAnalysisTemplate
 cleanrooms:GetConfiguredTable
 cleanrooms:GetConfiguredTableAnalysisRule
 cleanrooms:GetConfiguredTableAssociation
@@ -1771,6 +1782,8 @@ cleanrooms:GetMembership
 cleanrooms:GetProtectedQuery
 cleanrooms:GetSchema
 cleanrooms:GetSchemaAnalysisRule
+cleanrooms:ListAnalysisTemplates
+cleanrooms:ListCollaborationAnalysisTemplates
 cleanrooms:ListCollaborations
 cleanrooms:ListConfiguredTableAssociations
 cleanrooms:ListConfiguredTables
@@ -1782,6 +1795,7 @@ cleanrooms:ListTagsForResource
 cleanrooms:StartProtectedQuery
 cleanrooms:TagResource
 cleanrooms:UntagResource
+cleanrooms:UpdateAnalysisTemplate
 cleanrooms:UpdateCollaboration
 cleanrooms:UpdateConfiguredTable
 cleanrooms:UpdateConfiguredTableAnalysisRule
@@ -3229,6 +3243,7 @@ connect:UpdateQueueOutboundCallerConfig
 connect:UpdateQueueStatus
 connect:UpdateQuickConnectConfig
 connect:UpdateQuickConnectName
+connect:UpdateRoutingProfileAgentAvailabilityTimer
 connect:UpdateRoutingProfileConcurrency
 connect:UpdateRoutingProfileDefaultOutboundQueue
 connect:UpdateRoutingProfileName
@@ -3402,6 +3417,7 @@ datapipeline:ValidatePipelineDefinition
 datasync:AddStorageSystem
 datasync:CancelTaskExecution
 datasync:CreateAgent
+datasync:CreateLocationAzureBlob
 datasync:CreateLocationEfs
 datasync:CreateLocationFsxLustre
 datasync:CreateLocationFsxOntap
@@ -3418,6 +3434,7 @@ datasync:DeleteLocation
 datasync:DeleteTask
 datasync:DescribeAgent
 datasync:DescribeDiscoveryJob
+datasync:DescribeLocationAzureBlob
 datasync:DescribeLocationEfs
 datasync:DescribeLocationFsxLustre
 datasync:DescribeLocationFsxOntap
@@ -3449,6 +3466,7 @@ datasync:TagResource
 datasync:UntagResource
 datasync:UpdateAgent
 datasync:UpdateDiscoveryJob
+datasync:UpdateLocationAzureBlob
 datasync:UpdateLocationHdfs
 datasync:UpdateLocationNfs
 datasync:UpdateLocationObjectStorage
@@ -6986,6 +7004,7 @@ importexport:UpdateJob
 inspector2:AssociateMember
 inspector2:BatchGetAccountStatus
 inspector2:BatchGetCodeSnippet
+inspector2:BatchGetFindingDetails
 inspector2:BatchGetFreeTrialInfo
 inspector2:BatchGetMemberEc2DeepInspectionStatus
 inspector2:BatchUpdateMemberEc2DeepInspectionStatus
@@ -7765,6 +7784,7 @@ iotwireless:UpdateWirelessDeviceImportTask
 iotwireless:UpdateWirelessGateway
 iq-permission:ApproveAccessGrant
 iq-permission:ApprovePermissionRequest
+iq-permission:AssumePermissionRole
 iq-permission:CreatePermissionRequest
 iq-permission:GetPermissionRequest
 iq-permission:ListPermissionRequests
@@ -8764,12 +8784,17 @@ lookoutequipment:DeleteInferenceScheduler
 lookoutequipment:DeleteLabel
 lookoutequipment:DeleteLabelGroup
 lookoutequipment:DeleteModel
+lookoutequipment:DeleteResourcePolicy
 lookoutequipment:DescribeDataIngestionJob
 lookoutequipment:DescribeDataset
 lookoutequipment:DescribeInferenceScheduler
 lookoutequipment:DescribeLabelGroup
 lookoutequipment:DescribeModel
+lookoutequipment:DescribeModelVersion
+lookoutequipment:DescribeResourcePolicy
 lookoutequipment:Describelabel
+lookoutequipment:ImportDataset
+lookoutequipment:ImportModelVersion
 lookoutequipment:ListDataIngestionJobs
 lookoutequipment:ListDatasets
 lookoutequipment:ListInferenceEvents
@@ -8777,14 +8802,17 @@ lookoutequipment:ListInferenceExecutions
 lookoutequipment:ListInferenceSchedulers
 lookoutequipment:ListLabelGroups
 lookoutequipment:ListLabels
+lookoutequipment:ListModelVersions
 lookoutequipment:ListModels
 lookoutequipment:ListSensorStatistics
 lookoutequipment:ListTagsForResource
+lookoutequipment:PutResourcePolicy
 lookoutequipment:StartDataIngestionJob
 lookoutequipment:StartInferenceScheduler
 lookoutequipment:StopInferenceScheduler
 lookoutequipment:TagResource
 lookoutequipment:UntagResource
+lookoutequipment:UpdateActiveModelVersion
 lookoutequipment:UpdateInferenceScheduler
 lookoutequipment:UpdateLabelGroup
 lookoutmetrics:ActivateAnomalyDetector
@@ -8857,6 +8885,7 @@ m2:GetDataSetDetails
 m2:GetDataSetImportTask
 m2:GetDeployment
 m2:GetEnvironment
+m2:GetSignedBluinsightsUrl
 m2:ListApplicationVersions
 m2:ListApplications
 m2:ListBatchJobDefinitions
@@ -9164,6 +9193,7 @@ medialive:DeleteMultiplexProgram
 medialive:DeleteReservation
 medialive:DeleteSchedule
 medialive:DeleteTags
+medialive:DescribeAccountConfiguration
 medialive:DescribeChannel
 medialive:DescribeInput
 medialive:DescribeInputDevice
@@ -9174,6 +9204,7 @@ medialive:DescribeMultiplexProgram
 medialive:DescribeOffering
 medialive:DescribeReservation
 medialive:DescribeSchedule
+medialive:DescribeThumbnails
 medialive:ListChannels
 medialive:ListInputDeviceTransfers
 medialive:ListInputDevices
@@ -9193,6 +9224,7 @@ medialive:StartMultiplex
 medialive:StopChannel
 medialive:StopMultiplex
 medialive:TransferInputDevice
+medialive:UpdateAccountConfiguration
 medialive:UpdateChannel
 medialive:UpdateChannelClass
 medialive:UpdateInput
@@ -10952,6 +10984,7 @@ rds:CrossRegionCommunication
 rds:DeleteBlueGreenDeployment
 rds:DeleteCustomDBEngineVersion
 rds:DeleteDBCluster
+rds:DeleteDBClusterAutomatedBackup
 rds:DeleteDBClusterEndpoint
 rds:DeleteDBClusterParameterGroup
 rds:DeleteDBClusterSnapshot
@@ -10970,6 +11003,7 @@ rds:DeregisterDBProxyTargets
 rds:DescribeAccountAttributes
 rds:DescribeBlueGreenDeployments
 rds:DescribeCertificates
+rds:DescribeDBClusterAutomatedBackups
 rds:DescribeDBClusterBacktracks
 rds:DescribeDBClusterEndpoints
 rds:DescribeDBClusterParameterGroups
@@ -11353,6 +11387,7 @@ rekognition:UntagResource
 rekognition:UpdateDatasetEntries
 rekognition:UpdateStreamProcessor
 resiliencehub:AddDraftAppVersionResourceMappings
+resiliencehub:BatchUpdateRecommendationStatus
 resiliencehub:CreateApp
 resiliencehub:CreateAppVersionAppComponent
 resiliencehub:CreateAppVersionResource
@@ -11376,6 +11411,7 @@ resiliencehub:DescribeDraftAppVersionResourcesImportStatus
 resiliencehub:DescribeResiliencyPolicy
 resiliencehub:ImportResourcesToDraftAppVersion
 resiliencehub:ListAlarmRecommendations
+resiliencehub:ListAppAssessmentComplianceDrifts
 resiliencehub:ListAppAssessments
 resiliencehub:ListAppComponentCompliances
 resiliencehub:ListAppComponentRecommendations
@@ -14598,6 +14634,7 @@ workdocs:UpdateDocumentVersion
 workdocs:UpdateFolder
 workdocs:UpdateInstanceAlias
 workdocs:UpdateUser
+workdocs:UpdateUserAdministrativeSettings
 worklink:AssociateDomain
 worklink:AssociateWebsiteAuthorizationProvider
 worklink:AssociateWebsiteCertificateAuthority
