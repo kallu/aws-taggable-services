@@ -215,6 +215,7 @@ machinelearning
 macie2
 managedblockchain
 managedblockchain-query
+mapcredits
 marketplacecommerceanalytics
 mechanicalturk
 mediaconnect
