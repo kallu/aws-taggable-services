@@ -62,7 +62,7 @@ databrew
 dataexchange
 datapipeline
 datasync
-datazonecontrol
+datazone
 dax
 deepcomposer
 deepracer

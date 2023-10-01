@@ -30,7 +30,6 @@ consolidatedbilling
 controltower
 cur
 customer-verification
-datazone
 dbqms
 deeplens
 devops-guru
