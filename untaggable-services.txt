@@ -91,7 +91,6 @@ supportapp
 supportplans
 sustainability
 tax
-textract
 tiros
 trustedadvisor
 verified-access

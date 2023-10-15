@@ -244,6 +244,7 @@ sts
 swf
 synthetics
 tag
+textract
 timestream
 tnb
 transcribe
