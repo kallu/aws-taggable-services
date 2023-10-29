@@ -5,6 +5,7 @@ amplifybackend
 amplifyuibuilder
 apigateway
 application-cost-profiler
+application-transformation
 appmesh-preview
 arc-zonal-shift
 arsenal

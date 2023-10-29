@@ -103,7 +103,6 @@ forecast
 frauddetector
 fsx
 gamelift
-gamesparks
 geo
 glacier
 globalaccelerator
@@ -198,7 +197,6 @@ redshift-serverless
 refactor-spaces
 rekognition
 resiliencehub
-resource-explorer
 resource-explorer-2
 resource-groups
 robomaker

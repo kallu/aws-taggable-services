@@ -17,6 +17,7 @@ appfabric
 appflow
 application-autoscaling
 application-cost-profiler
+application-transformation
 applicationinsights
 appmesh
 appmesh-preview
@@ -148,7 +149,6 @@ freertos
 freetier
 fsx
 gamelift
-gamesparks
 geo
 glacier
 globalaccelerator
@@ -275,7 +275,6 @@ redshift-serverless
 refactor-spaces
 rekognition
 resiliencehub
-resource-explorer
 resource-explorer-2
 resource-groups
 rhelkb
