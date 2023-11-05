@@ -2770,7 +2770,10 @@ cognito-identity:DescribeIdentity
 cognito-identity:DescribeIdentityPool
 cognito-identity:GetCredentialsForIdentity
 cognito-identity:GetId
+cognito-identity:GetIdentityPoolAnalytics
+cognito-identity:GetIdentityPoolDailyAnalytics
 cognito-identity:GetIdentityPoolRoles
+cognito-identity:GetIdentityProviderDailyAnalytics
 cognito-identity:GetOpenIdToken
 cognito-identity:GetOpenIdTokenForDeveloperIdentity
 cognito-identity:GetPrincipalTagAttributeMap
@@ -3512,6 +3515,7 @@ dataexchange:ListTagsForResource
 dataexchange:PublishDataSet
 dataexchange:RevokeRevision
 dataexchange:SendApiAsset
+dataexchange:SendDataSetNotification
 dataexchange:StartJob
 dataexchange:TagResource
 dataexchange:UntagResource
@@ -3833,6 +3837,7 @@ deepracer:GetTrack
 deepracer:GetTrainingJob
 deepracer:ImportModel
 deepracer:ListEvaluations
+deepracer:ListLeaderboardEvaluations
 deepracer:ListLeaderboardSubmissions
 deepracer:ListLeaderboards
 deepracer:ListModels
@@ -5623,6 +5628,7 @@ emr-containers:ListVirtualClusters
 emr-containers:StartJobRun
 emr-containers:TagResource
 emr-containers:UntagResource
+emr-serverless:AccessInteractiveEndpoints
 emr-serverless:CancelJobRun
 emr-serverless:CreateApplication
 emr-serverless:DeleteApplication
@@ -6385,12 +6391,14 @@ globalaccelerator:AddEndpoints
 globalaccelerator:AdvertiseByoipCidr
 globalaccelerator:AllowCustomRoutingTraffic
 globalaccelerator:CreateAccelerator
+globalaccelerator:CreateCrossAccountAttachment
 globalaccelerator:CreateCustomRoutingAccelerator
 globalaccelerator:CreateCustomRoutingEndpointGroup
 globalaccelerator:CreateCustomRoutingListener
 globalaccelerator:CreateEndpointGroup
 globalaccelerator:CreateListener
 globalaccelerator:DeleteAccelerator
+globalaccelerator:DeleteCrossAccountAttachment
 globalaccelerator:DeleteCustomRoutingAccelerator
 globalaccelerator:DeleteCustomRoutingEndpointGroup
 globalaccelerator:DeleteCustomRoutingListener
@@ -6400,6 +6408,7 @@ globalaccelerator:DenyCustomRoutingTraffic
 globalaccelerator:DeprovisionByoipCidr
 globalaccelerator:DescribeAccelerator
 globalaccelerator:DescribeAcceleratorAttributes
+globalaccelerator:DescribeCrossAccountAttachment
 globalaccelerator:DescribeCustomRoutingAccelerator
 globalaccelerator:DescribeCustomRoutingAcceleratorAttributes
 globalaccelerator:DescribeCustomRoutingEndpointGroup
@@ -6408,6 +6417,9 @@ globalaccelerator:DescribeEndpointGroup
 globalaccelerator:DescribeListener
 globalaccelerator:ListAccelerators
 globalaccelerator:ListByoipCidrs
+globalaccelerator:ListCrossAccountAttachments
+globalaccelerator:ListCrossAccountResourceAccounts
+globalaccelerator:ListCrossAccountResources
 globalaccelerator:ListCustomRoutingAccelerators
 globalaccelerator:ListCustomRoutingEndpointGroups
 globalaccelerator:ListCustomRoutingListeners
@@ -6423,6 +6435,7 @@ globalaccelerator:TagResource
 globalaccelerator:UntagResource
 globalaccelerator:UpdateAccelerator
 globalaccelerator:UpdateAcceleratorAttributes
+globalaccelerator:UpdateCrossAccountAttachment
 globalaccelerator:UpdateCustomRoutingAccelerator
 globalaccelerator:UpdateCustomRoutingAcceleratorAttributes
 globalaccelerator:UpdateCustomRoutingListener
@@ -9828,6 +9841,7 @@ migrationhub-strategy:GetPortfolioSummary
 migrationhub-strategy:GetRecommendationReportDetails
 migrationhub-strategy:GetServerDetails
 migrationhub-strategy:GetServerStrategies
+migrationhub-strategy:ListAnalyzableServers
 migrationhub-strategy:ListAntiPatterns
 migrationhub-strategy:ListApplicationComponents
 migrationhub-strategy:ListCollectors
@@ -11376,11 +11390,13 @@ redshift-data:ListSchemas
 redshift-data:ListStatements
 redshift-data:ListTables
 redshift-serverless:ConvertRecoveryPointToSnapshot
+redshift-serverless:CreateCustomDomainAssociation
 redshift-serverless:CreateEndpointAccess
 redshift-serverless:CreateNamespace
 redshift-serverless:CreateSnapshot
 redshift-serverless:CreateUsageLimit
 redshift-serverless:CreateWorkgroup
+redshift-serverless:DeleteCustomDomainAssociation
 redshift-serverless:DeleteEndpointAccess
 redshift-serverless:DeleteNamespace
 redshift-serverless:DeleteResourcePolicy
@@ -11389,6 +11405,7 @@ redshift-serverless:DeleteUsageLimit
 redshift-serverless:DeleteWorkgroup
 redshift-serverless:DescribeOneTimeCredit
 redshift-serverless:GetCredentials
+redshift-serverless:GetCustomDomainAssociation
 redshift-serverless:GetEndpointAccess
 redshift-serverless:GetNamespace
 redshift-serverless:GetRecoveryPoint
@@ -11397,6 +11414,7 @@ redshift-serverless:GetSnapshot
 redshift-serverless:GetTableRestoreStatus
 redshift-serverless:GetUsageLimit
 redshift-serverless:GetWorkgroup
+redshift-serverless:ListCustomDomainAssociations
 redshift-serverless:ListEndpointAccess
 redshift-serverless:ListNamespaces
 redshift-serverless:ListRecoveryPoints
@@ -11411,6 +11429,7 @@ redshift-serverless:RestoreFromSnapshot
 redshift-serverless:RestoreTableFromSnapshot
 redshift-serverless:TagResource
 redshift-serverless:UntagResource
+redshift-serverless:UpdateCustomDomainAssociation
 redshift-serverless:UpdateEndpointAccess
 redshift-serverless:UpdateNamespace
 redshift-serverless:UpdateSnapshot
@@ -11513,6 +11532,7 @@ redshift:DisassociateDataShareConsumer
 redshift:EnableLogging
 redshift:EnableSnapshotCopy
 redshift:ExecuteQuery
+redshift:FailoverPrimaryCompute
 redshift:FetchResults
 redshift:GetClusterCredentials
 redshift:GetClusterCredentialsWithIAM
@@ -13618,6 +13638,7 @@ ssm:DeleteAssociation
 ssm:DeleteDocument
 ssm:DeleteInventory
 ssm:DeleteMaintenanceWindow
+ssm:DeleteOpsItem
 ssm:DeleteOpsMetadata
 ssm:DeleteParameter
 ssm:DeleteParameters
