@@ -250,6 +250,7 @@ organizations
 osis
 outposts
 panorama
+partnercentral-account-management
 payment-cryptography
 payments
 pca-connector-ad
