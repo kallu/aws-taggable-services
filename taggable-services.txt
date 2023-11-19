@@ -58,6 +58,7 @@ comprehend
 config
 connect
 connect-campaigns
+controltower
 databrew
 dataexchange
 datapipeline

@@ -28,7 +28,6 @@ comprehendmedical
 compute-optimizer
 consoleapp
 consolidatedbilling
-controltower
 cur
 customer-verification
 dbqms
@@ -88,6 +87,7 @@ snowball
 ssm-guiconnect
 ssmmessages
 sso-directory
+sso-oauth
 support
 supportapp
 supportplans

@@ -326,6 +326,7 @@ ssm-sap
 ssmmessages
 sso
 sso-directory
+sso-oauth
 states
 storagegateway
 sts
