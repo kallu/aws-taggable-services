@@ -2079,6 +2079,12 @@ cloudformation:UpdateStackInstances
 cloudformation:UpdateStackSet
 cloudformation:UpdateTerminationProtection
 cloudformation:ValidateTemplate
+cloudfront-keyvaluestore:DeleteKey
+cloudfront-keyvaluestore:DescribeKeyValueStore
+cloudfront-keyvaluestore:GetKey
+cloudfront-keyvaluestore:ListKeys
+cloudfront-keyvaluestore:PutKey
+cloudfront-keyvaluestore:UpdateKeys
 cloudfront:AssociateAlias
 cloudfront:CopyDistribution
 cloudfront:CreateCachePolicy
@@ -4535,6 +4541,7 @@ ec2:AssociateDhcpOptions
 ec2:AssociateEnclaveCertificateIamRole
 ec2:AssociateIamInstanceProfile
 ec2:AssociateInstanceEventWindow
+ec2:AssociateIpamByoasn
 ec2:AssociateIpamResourceDiscovery
 ec2:AssociateNatGatewayAddress
 ec2:AssociateRouteTable
@@ -4731,6 +4738,7 @@ ec2:DeleteVpnConnection
 ec2:DeleteVpnConnectionRoute
 ec2:DeleteVpnGateway
 ec2:DeprovisionByoipCidr
+ec2:DeprovisionIpamByoasn
 ec2:DeprovisionIpamPoolCidr
 ec2:DeprovisionPublicIpv4PoolCidr
 ec2:DeregisterImage
@@ -4746,6 +4754,7 @@ ec2:DescribeAvailabilityZones
 ec2:DescribeAwsNetworkPerformanceMetricSubscriptions
 ec2:DescribeBundleTasks
 ec2:DescribeByoipCidrs
+ec2:DescribeCapacityBlockOfferings
 ec2:DescribeCapacityReservationFleets
 ec2:DescribeCapacityReservations
 ec2:DescribeCarrierGateways
@@ -4787,10 +4796,12 @@ ec2:DescribeInstanceCreditSpecifications
 ec2:DescribeInstanceEventNotificationAttributes
 ec2:DescribeInstanceEventWindows
 ec2:DescribeInstanceStatus
+ec2:DescribeInstanceTopology
 ec2:DescribeInstanceTypeOfferings
 ec2:DescribeInstanceTypes
 ec2:DescribeInstances
 ec2:DescribeInternetGateways
+ec2:DescribeIpamByoasn
 ec2:DescribeIpamPools
 ec2:DescribeIpamResourceDiscoveries
 ec2:DescribeIpamResourceDiscoveryAssociations
@@ -4807,6 +4818,7 @@ ec2:DescribeLocalGatewayRouteTables
 ec2:DescribeLocalGatewayVirtualInterfaceGroups
 ec2:DescribeLocalGatewayVirtualInterfaces
 ec2:DescribeLocalGateways
+ec2:DescribeLockedSnapshots
 ec2:DescribeManagedPrefixLists
 ec2:DescribeMovingAddresses
 ec2:DescribeNatGateways
@@ -4900,6 +4912,7 @@ ec2:DisableImageBlockPublicAccess
 ec2:DisableImageDeprecation
 ec2:DisableIpamOrganizationAdminAccount
 ec2:DisableSerialConsoleAccess
+ec2:DisableSnapshotBlockPublicAccess
 ec2:DisableTransitGatewayRouteTablePropagation
 ec2:DisableVgwRoutePropagation
 ec2:DisableVpcClassicLink
@@ -4909,6 +4922,7 @@ ec2:DisassociateClientVpnTargetNetwork
 ec2:DisassociateEnclaveCertificateIamRole
 ec2:DisassociateIamInstanceProfile
 ec2:DisassociateInstanceEventWindow
+ec2:DisassociateIpamByoasn
 ec2:DisassociateIpamResourceDiscovery
 ec2:DisassociateNatGatewayAddress
 ec2:DisassociateRouteTable
@@ -4930,6 +4944,7 @@ ec2:EnableImageDeprecation
 ec2:EnableIpamOrganizationAdminAccount
 ec2:EnableReachabilityAnalyzerOrganizationSharing
 ec2:EnableSerialConsoleAccess
+ec2:EnableSnapshotBlockPublicAccess
 ec2:EnableTransitGatewayRouteTablePropagation
 ec2:EnableVgwRoutePropagation
 ec2:EnableVolumeIO
@@ -4957,6 +4972,7 @@ ec2:GetInstanceTypesFromInstanceRequirements
 ec2:GetInstanceUefiData
 ec2:GetIpamAddressHistory
 ec2:GetIpamDiscoveredAccounts
+ec2:GetIpamDiscoveredPublicAddresses
 ec2:GetIpamDiscoveredResourceCidrs
 ec2:GetIpamPoolAllocations
 ec2:GetIpamPoolCidrs
@@ -4971,6 +4987,7 @@ ec2:GetReservedInstancesExchangeQuote
 ec2:GetResourcePolicy
 ec2:GetSecurityGroupsForVpc
 ec2:GetSerialConsoleAccessStatus
+ec2:GetSnapshotBlockPublicAccessState
 ec2:GetSpotPlacementScores
 ec2:GetSubnetCidrReservations
 ec2:GetTransitGatewayAttachmentPropagations
@@ -4996,6 +5013,7 @@ ec2:ImportVolume
 ec2:InjectApiError
 ec2:ListImagesInRecycleBin
 ec2:ListSnapshotsInRecycleBin
+ec2:LockSnapshot
 ec2:ModifyAddressAttribute
 ec2:ModifyAvailabilityZoneGroup
 ec2:ModifyCapacityReservation
@@ -5065,8 +5083,10 @@ ec2:MoveAddressToVpc
 ec2:MoveByoipCidrToIpam
 ec2:PauseVolumeIO
 ec2:ProvisionByoipCidr
+ec2:ProvisionIpamByoasn
 ec2:ProvisionIpamPoolCidr
 ec2:ProvisionPublicIpv4PoolCidr
+ec2:PurchaseCapacityBlock
 ec2:PurchaseHostReservation
 ec2:PurchaseReservedInstancesOffering
 ec2:PurchaseScheduledInstances
@@ -5126,6 +5146,7 @@ ec2:TerminateInstances
 ec2:UnassignIpv6Addresses
 ec2:UnassignPrivateIpAddresses
 ec2:UnassignPrivateNatGatewayAddress
+ec2:UnlockSnapshot
 ec2:UnmonitorInstances
 ec2:UpdateSecurityGroupRuleDescriptionsEgress
 ec2:UpdateSecurityGroupRuleDescriptionsIngress
@@ -7858,6 +7879,7 @@ iotsitewise:BatchPutAssetPropertyValue
 iotsitewise:CreateAccessPolicy
 iotsitewise:CreateAsset
 iotsitewise:CreateAssetModel
+iotsitewise:CreateAssetModelCompositeModel
 iotsitewise:CreateBulkImportJob
 iotsitewise:CreateDashboard
 iotsitewise:CreateGateway
@@ -7866,14 +7888,18 @@ iotsitewise:CreateProject
 iotsitewise:DeleteAccessPolicy
 iotsitewise:DeleteAsset
 iotsitewise:DeleteAssetModel
+iotsitewise:DeleteAssetModelCompositeModel
 iotsitewise:DeleteDashboard
 iotsitewise:DeleteGateway
 iotsitewise:DeletePortal
 iotsitewise:DeleteProject
 iotsitewise:DeleteTimeSeries
 iotsitewise:DescribeAccessPolicy
+iotsitewise:DescribeAction
 iotsitewise:DescribeAsset
+iotsitewise:DescribeAssetCompositeModel
 iotsitewise:DescribeAssetModel
+iotsitewise:DescribeAssetModelCompositeModel
 iotsitewise:DescribeAssetProperty
 iotsitewise:DescribeBulkImportJob
 iotsitewise:DescribeDashboard
@@ -7887,11 +7913,16 @@ iotsitewise:DescribeStorageConfiguration
 iotsitewise:DescribeTimeSeries
 iotsitewise:DisassociateAssets
 iotsitewise:DisassociateTimeSeriesFromAssetProperty
+iotsitewise:EnableSiteWiseIntegration
+iotsitewise:ExecuteAction
+iotsitewise:ExecuteQuery
 iotsitewise:GetAssetPropertyAggregates
 iotsitewise:GetAssetPropertyValue
 iotsitewise:GetAssetPropertyValueHistory
 iotsitewise:GetInterpolatedAssetPropertyValues
 iotsitewise:ListAccessPolicies
+iotsitewise:ListActions
+iotsitewise:ListAssetModelCompositeModels
 iotsitewise:ListAssetModelProperties
 iotsitewise:ListAssetModels
 iotsitewise:ListAssetProperties
@@ -7899,6 +7930,7 @@ iotsitewise:ListAssetRelationships
 iotsitewise:ListAssets
 iotsitewise:ListAssociatedAssets
 iotsitewise:ListBulkImportJobs
+iotsitewise:ListCompositionRelationships
 iotsitewise:ListDashboards
 iotsitewise:ListGateways
 iotsitewise:ListPortals
@@ -7914,6 +7946,7 @@ iotsitewise:UntagResource
 iotsitewise:UpdateAccessPolicy
 iotsitewise:UpdateAsset
 iotsitewise:UpdateAssetModel
+iotsitewise:UpdateAssetModelCompositeModel
 iotsitewise:UpdateAssetModelPropertyRouting
 iotsitewise:UpdateAssetProperty
 iotsitewise:UpdateDashboard
@@ -7922,8 +7955,10 @@ iotsitewise:UpdateGatewayCapabilityConfiguration
 iotsitewise:UpdatePortal
 iotsitewise:UpdateProject
 iottwinmaker:BatchPutPropertyValues
+iottwinmaker:CancelMetadataTransferJob
 iottwinmaker:CreateComponentType
 iottwinmaker:CreateEntity
+iottwinmaker:CreateMetadataTransferJob
 iottwinmaker:CreateScene
 iottwinmaker:CreateSyncJob
 iottwinmaker:CreateWorkspace
@@ -7935,6 +7970,7 @@ iottwinmaker:DeleteWorkspace
 iottwinmaker:ExecuteQuery
 iottwinmaker:GetComponentType
 iottwinmaker:GetEntity
+iottwinmaker:GetMetadataTransferJob
 iottwinmaker:GetPricingPlan
 iottwinmaker:GetPropertyValue
 iottwinmaker:GetPropertyValueHistory
@@ -7942,7 +7978,10 @@ iottwinmaker:GetScene
 iottwinmaker:GetSyncJob
 iottwinmaker:GetWorkspace
 iottwinmaker:ListComponentTypes
+iottwinmaker:ListComponents
 iottwinmaker:ListEntities
+iottwinmaker:ListMetadataTransferJobs
+iottwinmaker:ListProperties
 iottwinmaker:ListScenes
 iottwinmaker:ListSyncJobs
 iottwinmaker:ListSyncResources
@@ -8369,6 +8408,7 @@ kendra:UpdateThesaurus
 kinesis:AddTagsToStream
 kinesis:CreateStream
 kinesis:DecreaseStreamRetentionPeriod
+kinesis:DeleteResourcePolicy
 kinesis:DeleteStream
 kinesis:DeregisterStreamConsumer
 kinesis:DescribeLimits
@@ -8378,6 +8418,7 @@ kinesis:DescribeStreamSummary
 kinesis:DisableEnhancedMonitoring
 kinesis:EnableEnhancedMonitoring
 kinesis:GetRecords
+kinesis:GetResourcePolicy
 kinesis:GetShardIterator
 kinesis:IncreaseStreamRetentionPeriod
 kinesis:ListShards
@@ -8387,6 +8428,7 @@ kinesis:ListTagsForStream
 kinesis:MergeShards
 kinesis:PutRecord
 kinesis:PutRecords
+kinesis:PutResourcePolicy
 kinesis:RegisterStreamConsumer
 kinesis:RemoveTagsFromStream
 kinesis:SplitShard
@@ -11573,6 +11615,7 @@ redshift:CreateEndpointAccess
 redshift:CreateEventSubscription
 redshift:CreateHsmClientCertificate
 redshift:CreateHsmConfiguration
+redshift:CreateRedshiftIdcApplication
 redshift:CreateSavedQuery
 redshift:CreateScheduledAction
 redshift:CreateSnapshotCopyGrant
@@ -11592,6 +11635,7 @@ redshift:DeleteEventSubscription
 redshift:DeleteHsmClientCertificate
 redshift:DeleteHsmConfiguration
 redshift:DeletePartner
+redshift:DeleteRedshiftIdcApplication
 redshift:DeleteResourcePolicy
 redshift:DeleteSavedQueries
 redshift:DeleteScheduledAction
@@ -11628,6 +11672,7 @@ redshift:DescribeNodeConfigurationOptions
 redshift:DescribeOrderableClusterOptions
 redshift:DescribePartners
 redshift:DescribeQuery
+redshift:DescribeRedshiftIdcApplications
 redshift:DescribeReservedNodeExchangeStatus
 redshift:DescribeReservedNodeOfferings
 redshift:DescribeReservedNodes
@@ -11672,6 +11717,7 @@ redshift:ModifyClusterSubnetGroup
 redshift:ModifyCustomDomainAssociation
 redshift:ModifyEndpointAccess
 redshift:ModifyEventSubscription
+redshift:ModifyRedshiftIdcApplication
 redshift:ModifySavedQuery
 redshift:ModifyScheduledAction
 redshift:ModifySnapshotCopyRetentionPeriod
@@ -12303,13 +12349,21 @@ s3-outposts:ReplicateDelete
 s3-outposts:ReplicateObject
 s3-outposts:ReplicateTags
 s3:AbortMultipartUpload
+s3:AssociateAccessGrantsIdentityCenter
 s3:BypassGovernanceRetention
+s3:CreateAccessGrant
+s3:CreateAccessGrantsInstance
+s3:CreateAccessGrantsLocation
 s3:CreateAccessPoint
 s3:CreateAccessPointForObjectLambda
 s3:CreateBucket
 s3:CreateJob
 s3:CreateMultiRegionAccessPoint
 s3:CreateStorageLensGroup
+s3:DeleteAccessGrant
+s3:DeleteAccessGrantsInstance
+s3:DeleteAccessGrantsInstanceResourcePolicy
+s3:DeleteAccessGrantsLocation
 s3:DeleteAccessPoint
 s3:DeleteAccessPointForObjectLambda
 s3:DeleteAccessPointPolicy
@@ -12328,7 +12382,13 @@ s3:DeleteStorageLensConfigurationTagging
 s3:DeleteStorageLensGroup
 s3:DescribeJob
 s3:DescribeMultiRegionAccessPointOperation
+s3:DissociateAccessGrantsIdentityCenter
 s3:GetAccelerateConfiguration
+s3:GetAccessGrant
+s3:GetAccessGrantsInstance
+s3:GetAccessGrantsInstanceForPrefix
+s3:GetAccessGrantsInstanceResourcePolicy
+s3:GetAccessGrantsLocation
 s3:GetAccessPoint
 s3:GetAccessPointConfigurationForObjectLambda
 s3:GetAccessPointForObjectLambda
@@ -12352,6 +12412,7 @@ s3:GetBucketRequestPayment
 s3:GetBucketTagging
 s3:GetBucketVersioning
 s3:GetBucketWebsite
+s3:GetDataAccess
 s3:GetEncryptionConfiguration
 s3:GetIntelligentTieringConfiguration
 s3:GetInventoryConfiguration
@@ -12381,6 +12442,9 @@ s3:GetStorageLensConfigurationTagging
 s3:GetStorageLensDashboard
 s3:GetStorageLensGroup
 s3:InitiateReplication
+s3:ListAccessGrants
+s3:ListAccessGrantsInstances
+s3:ListAccessGrantsLocations
 s3:ListAccessPoints
 s3:ListAccessPointsForObjectLambda
 s3:ListAllMyBuckets
@@ -12395,6 +12459,7 @@ s3:ListStorageLensGroups
 s3:ListTagsForResource
 s3:ObjectOwnerOverrideToBucketOwner
 s3:PutAccelerateConfiguration
+s3:PutAccessGrantsInstanceResourcePolicy
 s3:PutAccessPointConfigurationForObjectLambda
 s3:PutAccessPointPolicy
 s3:PutAccessPointPolicyForObjectLambda
@@ -12437,6 +12502,7 @@ s3:RestoreObject
 s3:SubmitMultiRegionAccessPointRoutes
 s3:TagResource
 s3:UntagResource
+s3:UpdateAccessGrantsLocation
 s3:UpdateJobPriority
 s3:UpdateJobStatus
 s3:UpdateStorageLensGroup

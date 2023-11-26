@@ -18,6 +18,7 @@ backup-storage
 billing
 budgets
 chatbot
+cloudfront-keyvaluestore
 cloudshell
 cloudtrail-data
 codebuild
