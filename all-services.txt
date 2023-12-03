@@ -36,10 +36,12 @@ aws-marketplace
 aws-marketplace-management
 aws-portal
 awsconnector
+b2bi
 backup
 backup-gateway
 backup-storage
 batch
+bcm-data-exports
 bedrock
 billing
 billingconductor
@@ -52,6 +54,7 @@ ce
 chatbot
 chime
 cleanrooms
+cleanrooms-ml
 cloud9
 clouddirectory
 cloudformation
@@ -90,6 +93,7 @@ connect-campaigns
 consoleapp
 consolidatedbilling
 controltower
+cost-optimization-hub
 cur
 customer-verification
 databrew
@@ -121,6 +125,7 @@ ecr
 ecr-public
 ecs
 eks
+eks-auth
 elastic-inference
 elasticache
 elasticbeanstalk
@@ -169,6 +174,7 @@ identitystore-auth
 imagebuilder
 importexport
 inspector
+inspector-scan
 inspector2
 internetmonitor
 invoicing
@@ -238,13 +244,16 @@ mobiletargeting
 monitron
 mq
 neptune-db
+neptune-graph
 network-firewall
 networkmanager
+networkmanager-chat
 nimble
 notifications
 notifications-contacts
 oam
 omics
+one
 opsworks
 opsworks-cm
 organizations
@@ -264,6 +273,8 @@ private-networks
 profile
 proton
 purchase-orders
+q
+qbusiness
 qldb
 quicksight
 ram
@@ -276,6 +287,7 @@ redshift-data
 redshift-serverless
 refactor-spaces
 rekognition
+repostspace
 resiliencehub
 resource-explorer-2
 resource-groups
@@ -292,6 +304,7 @@ rum
 s3
 s3-object-lambda
 s3-outposts
+s3express
 sagemaker
 sagemaker-geospatial
 sagemaker-groundtruth-synthetic
@@ -340,6 +353,7 @@ synthetics
 tag
 tax
 textract
+thinclient
 timestream
 tiros
 tnb
@@ -347,6 +361,7 @@ transcribe
 transfer
 translate
 trustedadvisor
+ts
 vendor-insights
 verified-access
 verifiedpermissions

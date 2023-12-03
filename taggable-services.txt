@@ -20,9 +20,11 @@ athena
 auditmanager
 autoscaling
 aws-marketplace
+b2bi
 backup
 backup-gateway
 batch
+bcm-data-exports
 bedrock
 billingconductor
 braket
@@ -32,6 +34,7 @@ cassandra
 ce
 chime
 cleanrooms
+cleanrooms-ml
 cloud9
 clouddirectory
 cloudformation
@@ -166,6 +169,7 @@ migrationhub-orchestrator
 mobiletargeting
 monitron
 mq
+neptune-graph
 network-firewall
 networkmanager
 nimble
@@ -173,6 +177,7 @@ notifications
 notifications-contacts
 oam
 omics
+one
 opsworks
 opsworks-cm
 organizations
@@ -188,6 +193,7 @@ private-networks
 profile
 proton
 purchase-orders
+qbusiness
 qldb
 quicksight
 ram
@@ -197,6 +203,7 @@ redshift
 redshift-serverless
 refactor-spaces
 rekognition
+repostspace
 resiliencehub
 resource-explorer-2
 resource-groups
@@ -244,11 +251,13 @@ swf
 synthetics
 tag
 textract
+thinclient
 timestream
 tnb
 transcribe
 transfer
 translate
+ts
 vendor-insights
 voiceid
 vpc-lattice

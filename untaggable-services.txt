@@ -29,6 +29,7 @@ comprehendmedical
 compute-optimizer
 consoleapp
 consolidatedbilling
+cost-optimization-hub
 cur
 customer-verification
 dbqms
@@ -37,6 +38,7 @@ devops-guru
 ebs
 ec2-instance-connect
 ec2messages
+eks-auth
 elastictranscoder
 elemental-support-cases
 elemental-support-content
@@ -50,6 +52,7 @@ identity-sync
 identitystore
 identitystore-auth
 importexport
+inspector-scan
 invoicing
 iot-device-tester
 iotjobsdata
@@ -70,15 +73,18 @@ mgh
 migrationhub-strategy
 mobileanalytics
 neptune-db
+networkmanager-chat
 partnercentral-account-management
 payments
 polly
 pricing
+q
 rds-data
 rds-db
 redshift-data
 rhelkb
 route53-recovery-cluster
+s3express
 sagemaker-groundtruth-synthetic
 sdb
 serverlessrepo
