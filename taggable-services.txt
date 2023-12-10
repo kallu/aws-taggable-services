@@ -62,6 +62,7 @@ config
 connect
 connect-campaigns
 controltower
+cur
 databrew
 dataexchange
 datapipeline

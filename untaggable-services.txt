@@ -30,7 +30,6 @@ compute-optimizer
 consoleapp
 consolidatedbilling
 cost-optimization-hub
-cur
 customer-verification
 dbqms
 deeplens
