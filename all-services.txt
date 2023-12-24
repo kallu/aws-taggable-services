@@ -248,6 +248,7 @@ neptune-graph
 network-firewall
 networkmanager
 networkmanager-chat
+networkmonitor
 nimble
 notifications
 notifications-contacts

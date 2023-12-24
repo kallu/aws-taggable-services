@@ -173,6 +173,7 @@ mq
 neptune-graph
 network-firewall
 networkmanager
+networkmonitor
 nimble
 notifications
 notifications-contacts
