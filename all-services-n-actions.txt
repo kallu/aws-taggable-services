@@ -3939,6 +3939,7 @@ datazone:ListDataSourceRunActivities
 datazone:ListDataSourceRuns
 datazone:ListDataSources
 datazone:ListDomains
+datazone:ListEnvironmentBlueprintConfigurationSummaries
 datazone:ListEnvironmentBlueprintConfigurations
 datazone:ListEnvironmentBlueprints
 datazone:ListEnvironmentProfiles
@@ -8533,6 +8534,7 @@ ivs:BatchStartViewerSessionRevocation
 ivs:CreateChannel
 ivs:CreateEncoderConfiguration
 ivs:CreateParticipantToken
+ivs:CreatePlaybackRestrictionPolicy
 ivs:CreateRecordingConfiguration
 ivs:CreateStage
 ivs:CreateStorageConfiguration
@@ -8540,6 +8542,7 @@ ivs:CreateStreamKey
 ivs:DeleteChannel
 ivs:DeleteEncoderConfiguration
 ivs:DeletePlaybackKeyPair
+ivs:DeletePlaybackRestrictionPolicy
 ivs:DeleteRecordingConfiguration
 ivs:DeleteStage
 ivs:DeleteStorageConfiguration
@@ -8550,6 +8553,7 @@ ivs:GetComposition
 ivs:GetEncoderConfiguration
 ivs:GetParticipant
 ivs:GetPlaybackKeyPair
+ivs:GetPlaybackRestrictionPolicy
 ivs:GetRecordingConfiguration
 ivs:GetStage
 ivs:GetStageSession
@@ -8564,6 +8568,7 @@ ivs:ListEncoderConfigurations
 ivs:ListParticipantEvents
 ivs:ListParticipants
 ivs:ListPlaybackKeyPairs
+ivs:ListPlaybackRestrictionPolicies
 ivs:ListRecordingConfigurations
 ivs:ListStageSessions
 ivs:ListStages
@@ -8580,6 +8585,7 @@ ivs:StopStream
 ivs:TagResource
 ivs:UntagResource
 ivs:UpdateChannel
+ivs:UpdatePlaybackRestrictionPolicy
 ivs:UpdateStage
 ivschat:CreateChatToken
 ivschat:CreateLoggingConfiguration
@@ -9858,6 +9864,7 @@ mediaconnect:DeleteGateway
 mediaconnect:DeregisterGatewayInstance
 mediaconnect:DescribeBridge
 mediaconnect:DescribeFlow
+mediaconnect:DescribeFlowSourceMetadata
 mediaconnect:DescribeGateway
 mediaconnect:DescribeGatewayInstance
 mediaconnect:DescribeOffering
@@ -11928,6 +11935,7 @@ rds:CreateDBParameterGroup
 rds:CreateDBProxy
 rds:CreateDBProxyEndpoint
 rds:CreateDBSecurityGroup
+rds:CreateDBShardGroup
 rds:CreateDBSnapshot
 rds:CreateDBSubnetGroup
 rds:CreateEventSubscription
@@ -11949,6 +11957,7 @@ rds:DeleteDBParameterGroup
 rds:DeleteDBProxy
 rds:DeleteDBProxyEndpoint
 rds:DeleteDBSecurityGroup
+rds:DeleteDBShardGroup
 rds:DeleteDBSnapshot
 rds:DeleteDBSubnetGroup
 rds:DeleteEventSubscription
@@ -11980,6 +11989,7 @@ rds:DescribeDBProxyTargetGroups
 rds:DescribeDBProxyTargets
 rds:DescribeDBRecommendations
 rds:DescribeDBSecurityGroups
+rds:DescribeDBShardGroups
 rds:DescribeDBSnapshotAttributes
 rds:DescribeDBSnapshots
 rds:DescribeDBSubnetGroups
@@ -12024,6 +12034,7 @@ rds:ModifyDBProxy
 rds:ModifyDBProxyEndpoint
 rds:ModifyDBProxyTargetGroup
 rds:ModifyDBRecommendation
+rds:ModifyDBShardGroup
 rds:ModifyDBSnapshot
 rds:ModifyDBSnapshotAttribute
 rds:ModifyDBSubnetGroup
@@ -12037,6 +12048,7 @@ rds:PromoteReadReplicaDBCluster
 rds:PurchaseReservedDBInstancesOffering
 rds:RebootDBCluster
 rds:RebootDBInstance
+rds:RebootDBShardGroup
 rds:RegisterDBProxyTargets
 rds:RemoveFromGlobalCluster
 rds:RemoveRoleFromDBCluster
@@ -13184,6 +13196,7 @@ sagemaker:DeleteHub
 sagemaker:DeleteHubContent
 sagemaker:DeleteHumanLoop
 sagemaker:DeleteHumanTaskUi
+sagemaker:DeleteHyperParameterTuningJob
 sagemaker:DeleteImage
 sagemaker:DeleteImageVersion
 sagemaker:DeleteInferenceComponent
