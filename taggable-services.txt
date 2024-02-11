@@ -207,6 +207,7 @@ refactor-spaces
 rekognition
 repostspace
 resiliencehub
+resource-explorer
 resource-explorer-2
 resource-groups
 robomaker

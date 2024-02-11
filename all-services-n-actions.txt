@@ -763,6 +763,7 @@ appsync:GetDataSourceIntrospection
 appsync:GetDomainName
 appsync:GetFunction
 appsync:GetGraphqlApi
+appsync:GetGraphqlApiEnvironmentVariables
 appsync:GetIntrospectionSchema
 appsync:GetResolver
 appsync:GetResourcePolicy
@@ -781,6 +782,7 @@ appsync:ListSourceApiAssociations
 appsync:ListTagsForResource
 appsync:ListTypes
 appsync:ListTypesByAssociation
+appsync:PutGraphqlApiEnvironmentVariables
 appsync:PutResourcePolicy
 appsync:SetWebACL
 appsync:SourceGraphQL
@@ -2150,6 +2152,7 @@ cloudformation:CancelResourceRequest
 cloudformation:CancelUpdateStack
 cloudformation:ContinueUpdateRollback
 cloudformation:CreateChangeSet
+cloudformation:CreateGeneratedTemplate
 cloudformation:CreateResource
 cloudformation:CreateStack
 cloudformation:CreateStackInstances
@@ -2158,6 +2161,7 @@ cloudformation:CreateUploadBucket
 cloudformation:DeactivateOrganizationsAccess
 cloudformation:DeactivateType
 cloudformation:DeleteChangeSet
+cloudformation:DeleteGeneratedTemplate
 cloudformation:DeleteResource
 cloudformation:DeleteStack
 cloudformation:DeleteStackInstances
@@ -2166,8 +2170,10 @@ cloudformation:DeregisterType
 cloudformation:DescribeAccountLimits
 cloudformation:DescribeChangeSet
 cloudformation:DescribeChangeSetHooks
+cloudformation:DescribeGeneratedTemplate
 cloudformation:DescribeOrganizationsAccess
 cloudformation:DescribePublisher
+cloudformation:DescribeResourceScan
 cloudformation:DescribeStackDriftDetectionStatus
 cloudformation:DescribeStackEvents
 cloudformation:DescribeStackInstance
@@ -2184,6 +2190,7 @@ cloudformation:DetectStackResourceDrift
 cloudformation:DetectStackSetDrift
 cloudformation:EstimateTemplateCost
 cloudformation:ExecuteChangeSet
+cloudformation:GetGeneratedTemplate
 cloudformation:GetResource
 cloudformation:GetResourceRequestStatus
 cloudformation:GetStackPolicy
@@ -2192,8 +2199,12 @@ cloudformation:GetTemplateSummary
 cloudformation:ImportStacksToStackSet
 cloudformation:ListChangeSets
 cloudformation:ListExports
+cloudformation:ListGeneratedTemplates
 cloudformation:ListImports
 cloudformation:ListResourceRequests
+cloudformation:ListResourceScanRelatedResources
+cloudformation:ListResourceScanResources
+cloudformation:ListResourceScans
 cloudformation:ListResources
 cloudformation:ListStackInstanceResourceDrifts
 cloudformation:ListStackInstances
@@ -2214,10 +2225,12 @@ cloudformation:SetStackPolicy
 cloudformation:SetTypeConfiguration
 cloudformation:SetTypeDefaultVersion
 cloudformation:SignalResource
+cloudformation:StartResourceScan
 cloudformation:StopStackSetOperation
 cloudformation:TagResource
 cloudformation:TestType
 cloudformation:UntagResource
+cloudformation:UpdateGeneratedTemplate
 cloudformation:UpdateResource
 cloudformation:UpdateStack
 cloudformation:UpdateStackInstances
@@ -4389,6 +4402,10 @@ dms:CreateReplicationConfig
 dms:CreateReplicationInstance
 dms:CreateReplicationSubnetGroup
 dms:CreateReplicationTask
+dms:CreateTest
+dms:CreateTestEnvironments
+dms:CreateTestPlan
+dms:CreateTestRun
 dms:DeleteCertificate
 dms:DeleteConnection
 dms:DeleteDataMigration
@@ -4404,6 +4421,8 @@ dms:DeleteReplicationInstance
 dms:DeleteReplicationSubnetGroup
 dms:DeleteReplicationTask
 dms:DeleteReplicationTaskAssessmentRun
+dms:DeleteTest
+dms:DeleteTestPlan
 dms:DescribeAccountAttributes
 dms:DescribeApplicableIndividualAssessments
 dms:DescribeCertificates
@@ -4448,6 +4467,12 @@ dms:DescribeReplicationTasks
 dms:DescribeReplications
 dms:DescribeSchemas
 dms:DescribeTableStatistics
+dms:DescribeTestEnvironments
+dms:DescribeTestGenerationStatus
+dms:DescribeTestPlans
+dms:DescribeTestRunResultsSummaries
+dms:DescribeTestRuns
+dms:DescribeTests
 dms:DisassociateExtensionPack
 dms:ExportMetadataModelAssessment
 dms:GetMetadataModel
@@ -4474,6 +4499,8 @@ dms:ModifyReplicationConfig
 dms:ModifyReplicationInstance
 dms:ModifyReplicationSubnetGroup
 dms:ModifyReplicationTask
+dms:ModifyTest
+dms:ModifyTestPlan
 dms:MoveReplicationTask
 dms:RebootReplicationInstance
 dms:RefreshSchemas
@@ -4483,6 +4510,7 @@ dms:RemoveTagsFromResource
 dms:RunFleetAdvisorLsaAnalysis
 dms:StartDataMigration
 dms:StartExtensionPackAssociation
+dms:StartGenerateTests
 dms:StartMetadataModelAssessment
 dms:StartMetadataModelConversion
 dms:StartMetadataModelExportAsScript
@@ -4495,8 +4523,10 @@ dms:StartReplicationTask
 dms:StartReplicationTaskAssessment
 dms:StartReplicationTaskAssessmentRun
 dms:StopDataMigration
+dms:StopGenerateTests
 dms:StopReplication
 dms:StopReplicationTask
+dms:StopTestRun
 dms:TestConnection
 dms:UpdateConversionConfiguration
 dms:UpdateDataProvider
@@ -4504,6 +4534,7 @@ dms:UpdateInstanceProfile
 dms:UpdateMigrationProject
 dms:UpdateSubscriptionsToEventBridge
 dms:UploadFileMetadataList
+dms:ViewTestRunResults
 docdb-elastic:CreateCluster
 docdb-elastic:CreateClusterSnapshot
 docdb-elastic:DeleteCluster
@@ -12253,6 +12284,7 @@ redshift:GetReservedNodeExchangeOfferings
 redshift:GetResourcePolicy
 redshift:JoinGroup
 redshift:ListDatabases
+redshift:ListRecommendations
 redshift:ListSavedQueries
 redshift:ListSchemas
 redshift:ListTables
@@ -12478,6 +12510,9 @@ resource-explorer-2:TagResource
 resource-explorer-2:UntagResource
 resource-explorer-2:UpdateIndexType
 resource-explorer-2:UpdateView
+resource-explorer:ListResourceTypes
+resource-explorer:ListResources
+resource-explorer:ListTags
 resource-groups:AssociateResource
 resource-groups:CreateGroup
 resource-groups:DeleteGroup
@@ -15043,6 +15078,7 @@ tag:UntagResources
 tax:BatchPutTaxRegistration
 tax:DeleteTaxRegistration
 tax:GetExemptions
+tax:GetTaxInfoReportingDocument
 tax:GetTaxInheritance
 tax:GetTaxInterview
 tax:GetTaxRegistration
