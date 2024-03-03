@@ -2,7 +2,6 @@ a2c
 account
 activate
 amplifybackend
-amplifyuibuilder
 apigateway
 application-cost-profiler
 application-transformation

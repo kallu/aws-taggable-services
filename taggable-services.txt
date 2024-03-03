@@ -4,6 +4,7 @@ acm
 acm-pca
 airflow
 amplify
+amplifyuibuilder
 aoss
 app-integrations
 appconfig
