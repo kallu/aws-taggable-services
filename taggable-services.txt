@@ -137,6 +137,7 @@ iotwireless
 ivs
 ivschat
 kafka
+kafkaconnect
 kendra
 kendra-ranking
 kinesis

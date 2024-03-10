@@ -58,7 +58,6 @@ iotroborunner
 iq
 iq-permission
 kafka-cluster
-kafkaconnect
 launchwizard
 license-manager-linux-subscriptions
 license-manager-user-subscriptions

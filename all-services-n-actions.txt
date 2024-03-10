@@ -3895,6 +3895,7 @@ datasync:UpdateTask
 datasync:UpdateTaskExecution
 datazone:AcceptPredictions
 datazone:AcceptSubscriptionRequest
+datazone:CancelMetadataGenerationRun
 datazone:CancelSubscription
 datazone:CreateAsset
 datazone:CreateAssetRevision
@@ -5913,6 +5914,7 @@ elasticmapreduce:RemoveTags
 elasticmapreduce:RunJobFlow
 elasticmapreduce:SetKeepJobFlowAliveWhenNoSteps
 elasticmapreduce:SetTerminationProtection
+elasticmapreduce:SetUnhealthyNodeReplacement
 elasticmapreduce:SetVisibleToAllUsers
 elasticmapreduce:StartEditor
 elasticmapreduce:StartNotebookExecution
@@ -7545,6 +7547,7 @@ iam:UploadCloudFrontPublicKey
 iam:UploadSSHPublicKey
 iam:UploadServerCertificate
 iam:UploadSigningCertificate
+identity-sync:AllowVendedLogDeliveryForResource
 identity-sync:CreateSyncFilter
 identity-sync:CreateSyncProfile
 identity-sync:CreateSyncTarget
@@ -8706,12 +8709,16 @@ kafkaconnect:CreateCustomPlugin
 kafkaconnect:CreateWorkerConfiguration
 kafkaconnect:DeleteConnector
 kafkaconnect:DeleteCustomPlugin
+kafkaconnect:DeleteWorkerConfiguration
 kafkaconnect:DescribeConnector
 kafkaconnect:DescribeCustomPlugin
 kafkaconnect:DescribeWorkerConfiguration
 kafkaconnect:ListConnectors
 kafkaconnect:ListCustomPlugins
+kafkaconnect:ListTagsForResource
 kafkaconnect:ListWorkerConfigurations
+kafkaconnect:TagResource
+kafkaconnect:UntagResource
 kafkaconnect:UpdateConnector
 kendra-ranking:CreateRescoreExecutionPlan
 kendra-ranking:DeleteRescoreExecutionPlan
@@ -9108,6 +9115,7 @@ lex:CreateBot
 lex:CreateBotAlias
 lex:CreateBotChannel
 lex:CreateBotLocale
+lex:CreateBotReplica
 lex:CreateBotVersion
 lex:CreateCustomVocabulary
 lex:CreateExport
@@ -9125,6 +9133,7 @@ lex:DeleteBotAlias
 lex:DeleteBotChannel
 lex:DeleteBotChannelAssociation
 lex:DeleteBotLocale
+lex:DeleteBotReplica
 lex:DeleteBotVersion
 lex:DeleteCustomVocabulary
 lex:DeleteExport
@@ -9143,6 +9152,7 @@ lex:DescribeBotAlias
 lex:DescribeBotChannel
 lex:DescribeBotLocale
 lex:DescribeBotRecommendation
+lex:DescribeBotReplica
 lex:DescribeBotResourceGeneration
 lex:DescribeBotVersion
 lex:DescribeCustomVocabulary
@@ -9182,11 +9192,14 @@ lex:GetSlotTypes
 lex:GetTestExecutionArtifactsUrl
 lex:GetUtterancesView
 lex:ListAggregatedUtterances
+lex:ListBotAliasReplicas
 lex:ListBotAliases
 lex:ListBotChannels
 lex:ListBotLocales
 lex:ListBotRecommendations
+lex:ListBotReplicas
 lex:ListBotResourceGenerations
+lex:ListBotVersionReplicas
 lex:ListBotVersions
 lex:ListBots
 lex:ListBuiltInIntents
@@ -11589,6 +11602,7 @@ purchase-orders:UpdatePurchaseOrderStatus
 purchase-orders:ViewPurchaseOrders
 q:GetConversation
 q:GetTroubleshootingResults
+q:ListConversations
 q:SendMessage
 q:StartConversation
 q:StartTroubleshootingAnalysis
@@ -12194,6 +12208,7 @@ redshift:CreateEndpointAccess
 redshift:CreateEventSubscription
 redshift:CreateHsmClientCertificate
 redshift:CreateHsmConfiguration
+redshift:CreateQev2IdcApplication
 redshift:CreateRedshiftIdcApplication
 redshift:CreateSavedQuery
 redshift:CreateScheduledAction
@@ -12214,6 +12229,7 @@ redshift:DeleteEventSubscription
 redshift:DeleteHsmClientCertificate
 redshift:DeleteHsmConfiguration
 redshift:DeletePartner
+redshift:DeleteQev2IdcApplication
 redshift:DeleteRedshiftIdcApplication
 redshift:DeleteResourcePolicy
 redshift:DeleteSavedQueries
@@ -12250,6 +12266,7 @@ redshift:DescribeLoggingStatus
 redshift:DescribeNodeConfigurationOptions
 redshift:DescribeOrderableClusterOptions
 redshift:DescribePartners
+redshift:DescribeQev2IdcApplications
 redshift:DescribeQuery
 redshift:DescribeRedshiftIdcApplications
 redshift:DescribeReservedNodeExchangeStatus
@@ -12297,6 +12314,7 @@ redshift:ModifyClusterSubnetGroup
 redshift:ModifyCustomDomainAssociation
 redshift:ModifyEndpointAccess
 redshift:ModifyEventSubscription
+redshift:ModifyQev2IdcApplication
 redshift:ModifyRedshiftIdcApplication
 redshift:ModifySavedQuery
 redshift:ModifyScheduledAction
