@@ -47,6 +47,7 @@ cloudwatch
 codeartifact
 codecatalyst
 codecommit
+codeconnections
 codedeploy
 codeguru-profiler
 codeguru-reviewer
