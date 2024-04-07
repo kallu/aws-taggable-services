@@ -104,6 +104,7 @@ datasync
 datazone
 dax
 dbqms
+deadline
 deepcomposer
 deeplens
 deepracer

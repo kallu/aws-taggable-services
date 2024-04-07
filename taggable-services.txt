@@ -71,6 +71,7 @@ datapipeline
 datasync
 datazone
 dax
+deadline
 deepcomposer
 deepracer
 detective
