@@ -28,6 +28,7 @@ comprehendmedical
 compute-optimizer
 consoleapp
 consolidatedbilling
+controlcatalog
 cost-optimization-hub
 customer-verification
 dbqms
