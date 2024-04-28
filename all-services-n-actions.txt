@@ -549,6 +549,7 @@ appmesh-preview:CreateVirtualRouter
 appmesh-preview:CreateVirtualService
 appmesh-preview:DeleteGatewayRoute
 appmesh-preview:DeleteMesh
+appmesh-preview:DeleteMeshPolicy
 appmesh-preview:DeleteRoute
 appmesh-preview:DeleteVirtualGateway
 appmesh-preview:DeleteVirtualNode
@@ -561,6 +562,7 @@ appmesh-preview:DescribeVirtualGateway
 appmesh-preview:DescribeVirtualNode
 appmesh-preview:DescribeVirtualRouter
 appmesh-preview:DescribeVirtualService
+appmesh-preview:GetMeshPolicy
 appmesh-preview:ListGatewayRoutes
 appmesh-preview:ListMeshes
 appmesh-preview:ListRoutes
@@ -568,6 +570,7 @@ appmesh-preview:ListVirtualGateways
 appmesh-preview:ListVirtualNodes
 appmesh-preview:ListVirtualRouters
 appmesh-preview:ListVirtualServices
+appmesh-preview:PutMeshPolicy
 appmesh-preview:StreamAggregatedResources
 appmesh-preview:UpdateGatewayRoute
 appmesh-preview:UpdateMesh
@@ -1362,12 +1365,14 @@ bcm-data-exports:ListTagsForResource
 bcm-data-exports:TagResource
 bcm-data-exports:UntagResource
 bcm-data-exports:UpdateExport
+bedrock:ApplyGuardrail
 bedrock:AssociateAgentKnowledgeBase
 bedrock:AssociateThirdPartyKnowledgeBase
 bedrock:CreateAgent
 bedrock:CreateAgentActionGroup
 bedrock:CreateAgentAlias
 bedrock:CreateDataSource
+bedrock:CreateEvaluationJob
 bedrock:CreateFoundationModelAgreement
 bedrock:CreateGuardrail
 bedrock:CreateGuardrailVersion
@@ -1396,6 +1401,7 @@ bedrock:GetAgentKnowledgeBase
 bedrock:GetAgentVersion
 bedrock:GetCustomModel
 bedrock:GetDataSource
+bedrock:GetEvaluationJob
 bedrock:GetFoundationModel
 bedrock:GetFoundationModelAvailability
 bedrock:GetGuardrail
@@ -1417,6 +1423,7 @@ bedrock:ListAgentVersions
 bedrock:ListAgents
 bedrock:ListCustomModels
 bedrock:ListDataSources
+bedrock:ListEvaluationJobs
 bedrock:ListFoundationModelAgreementOffers
 bedrock:ListFoundationModels
 bedrock:ListGuardrails
@@ -1434,6 +1441,7 @@ bedrock:PutUseCaseForModelAccess
 bedrock:Retrieve
 bedrock:RetrieveAndGenerate
 bedrock:StartIngestionJob
+bedrock:StopEvaluationJob
 bedrock:StopModelCustomizationJob
 bedrock:StopModelInvocationJob
 bedrock:TagResource
@@ -1544,6 +1552,9 @@ cases:CreateLayout
 cases:CreateRelatedItem
 cases:CreateTemplate
 cases:DeleteDomain
+cases:DeleteField
+cases:DeleteLayout
+cases:DeleteTemplate
 cases:GetCase
 cases:GetCaseAuditEvents
 cases:GetCaseEventConfiguration
@@ -2961,6 +2972,7 @@ codepipeline:PutThirdPartyJobSuccessResult
 codepipeline:PutWebhook
 codepipeline:RegisterWebhookWithThirdParty
 codepipeline:RetryStageExecution
+codepipeline:RollbackStage
 codepipeline:StartPipelineExecution
 codepipeline:StopPipelineExecution
 codepipeline:TagResource
@@ -6793,6 +6805,7 @@ gamelift:AcceptMatch
 gamelift:ClaimGameServer
 gamelift:CreateAlias
 gamelift:CreateBuild
+gamelift:CreateContainerGroupDefinition
 gamelift:CreateFleet
 gamelift:CreateFleetLocations
 gamelift:CreateGameServerGroup
@@ -6808,6 +6821,7 @@ gamelift:CreateVpcPeeringAuthorization
 gamelift:CreateVpcPeeringConnection
 gamelift:DeleteAlias
 gamelift:DeleteBuild
+gamelift:DeleteContainerGroupDefinition
 gamelift:DeleteFleet
 gamelift:DeleteFleetLocations
 gamelift:DeleteGameServerGroup
@@ -6824,6 +6838,7 @@ gamelift:DeregisterGameServer
 gamelift:DescribeAlias
 gamelift:DescribeBuild
 gamelift:DescribeCompute
+gamelift:DescribeContainerGroupDefinition
 gamelift:DescribeEC2InstanceLimits
 gamelift:DescribeFleetAttributes
 gamelift:DescribeFleetCapacity
@@ -6857,6 +6872,7 @@ gamelift:GetInstanceAccess
 gamelift:ListAliases
 gamelift:ListBuilds
 gamelift:ListCompute
+gamelift:ListContainerGroupDefinitions
 gamelift:ListFleets
 gamelift:ListGameServerGroups
 gamelift:ListGameServers
@@ -7559,6 +7575,7 @@ healthlake:ListFHIRExportJobs
 healthlake:ListFHIRImportJobs
 healthlake:ListTagsForResource
 healthlake:ReadResource
+healthlake:SearchEverything
 healthlake:SearchWithGet
 healthlake:SearchWithPost
 healthlake:StartFHIRExportJob
@@ -12161,6 +12178,7 @@ quicksight:UpdatePublicSharingSettings
 quicksight:UpdateRefreshSchedule
 quicksight:UpdateResourcePermissions
 quicksight:UpdateRoleCustomPermission
+quicksight:UpdateSPICECapacityConfiguration
 quicksight:UpdateTemplate
 quicksight:UpdateTemplateAlias
 quicksight:UpdateTemplatePermissions
@@ -12886,6 +12904,7 @@ robomaker:UpdateSimulationApplication
 robomaker:UpdateWorldTemplate
 rolesanywhere:CreateProfile
 rolesanywhere:CreateTrustAnchor
+rolesanywhere:DeleteAttributeMapping
 rolesanywhere:DeleteCrl
 rolesanywhere:DeleteProfile
 rolesanywhere:DeleteTrustAnchor
@@ -12905,6 +12924,7 @@ rolesanywhere:ListProfiles
 rolesanywhere:ListSubjects
 rolesanywhere:ListTagsForResource
 rolesanywhere:ListTrustAnchors
+rolesanywhere:PutAttributeMapping
 rolesanywhere:PutNotificationSettings
 rolesanywhere:ResetNotificationSettings
 rolesanywhere:TagResource
@@ -13077,6 +13097,22 @@ route53domains:UpdateDomainContactPrivacy
 route53domains:UpdateDomainNameservers
 route53domains:UpdateTagsForDomain
 route53domains:ViewBilling
+route53profiles:AssociateProfile
+route53profiles:AssociateResourceToProfile
+route53profiles:CreateProfile
+route53profiles:DeleteProfile
+route53profiles:DisassociateProfile
+route53profiles:DisassociateResourceFromProfile
+route53profiles:GetProfile
+route53profiles:GetProfileAssociation
+route53profiles:GetProfileResourceAssociation
+route53profiles:ListProfileAssociations
+route53profiles:ListProfileResourceAssociations
+route53profiles:ListProfiles
+route53profiles:ListTagsForResource
+route53profiles:TagResource
+route53profiles:UntagResource
+route53profiles:UpdateProfileResourceAssociation
 route53resolver:AssociateFirewallRuleGroup
 route53resolver:AssociateResolverEndpointIpAddress
 route53resolver:AssociateResolverQueryLogConfig
@@ -14384,6 +14420,8 @@ signer:SignPayload
 signer:StartSigningJob
 signer:TagResource
 signer:UntagResource
+signin:CreateTrustedIdentityPropagationApplicationForConsole
+signin:ListTrustedIdentityPropagationApplicationsForConsole
 simspaceweaver:CreateSnapshot
 simspaceweaver:DeleteApp
 simspaceweaver:DeleteSimulation
@@ -15147,6 +15185,7 @@ states:UntagResource
 states:UpdateMapRun
 states:UpdateStateMachine
 states:UpdateStateMachineAlias
+states:ValidateStateMachineDefinition
 storagegateway:ActivateGateway
 storagegateway:AddCache
 storagegateway:AddTagsToResource
@@ -16199,6 +16238,7 @@ workdocs:DescribeComments
 workdocs:DescribeDocumentVersions
 workdocs:DescribeFolderContents
 workdocs:DescribeGroups
+workdocs:DescribeInstanceExports
 workdocs:DescribeInstances
 workdocs:DescribeNotificationPermissions
 workdocs:DescribeNotificationSubscriptions
@@ -16220,6 +16260,7 @@ workdocs:RemoveAllResourcePermissions
 workdocs:RemoveResourcePermission
 workdocs:RestoreDocumentVersions
 workdocs:SearchResources
+workdocs:StartInstanceExport
 workdocs:UpdateDocument
 workdocs:UpdateDocumentVersion
 workdocs:UpdateFolder
@@ -16260,7 +16301,6 @@ worklink:UpdateDevicePolicyConfiguration
 worklink:UpdateDomainMetadata
 worklink:UpdateFleetMetadata
 worklink:UpdateIdentityProviderConfiguration
-workmail:AddMembersToGroup
 workmail:AllowVendedLogDeliveryForResource
 workmail:AssociateDelegateToResource
 workmail:AssociateMemberToGroup
@@ -16298,19 +16338,14 @@ workmail:DeleteSmtpGateway
 workmail:DeleteUser
 workmail:DeregisterFromWorkMail
 workmail:DeregisterMailDomain
-workmail:DescribeDirectories
 workmail:DescribeEmailMonitoringConfiguration
 workmail:DescribeEntity
 workmail:DescribeGroup
 workmail:DescribeInboundDmarcSettings
 workmail:DescribeInboundMailFlowRule
-workmail:DescribeKmsKeys
 workmail:DescribeMailDomains
-workmail:DescribeMailGroups
-workmail:DescribeMailUsers
 workmail:DescribeMailboxExportJob
 workmail:DescribeOrganization
-workmail:DescribeOrganizations
 workmail:DescribeOutboundMailFlowRule
 workmail:DescribeResource
 workmail:DescribeSmtpGateway
@@ -16325,7 +16360,6 @@ workmail:GetImpersonationRoleEffect
 workmail:GetJournalingRules
 workmail:GetMailDomain
 workmail:GetMailDomainDetails
-workmail:GetMailGroupDetails
 workmail:GetMailboxDetails
 workmail:GetMobileDeviceAccessEffect
 workmail:GetMobileDeviceAccessOverride
@@ -16343,7 +16377,6 @@ workmail:ListInboundMailFlowRules
 workmail:ListMailDomains
 workmail:ListMailboxExportJobs
 workmail:ListMailboxPermissions
-workmail:ListMembersInMailGroup
 workmail:ListMobileDeviceAccessOverrides
 workmail:ListMobileDeviceAccessRules
 workmail:ListOrganizations
@@ -16361,11 +16394,8 @@ workmail:PutMobileDeviceAccessOverride
 workmail:PutRetentionPolicy
 workmail:RegisterMailDomain
 workmail:RegisterToWorkMail
-workmail:RemoveMembersFromGroup
 workmail:ResetPassword
-workmail:ResetUserPassword
 workmail:SearchMembers
-workmail:SetAdmin
 workmail:SetDefaultMailDomain
 workmail:SetJournalingRules
 workmail:SetMobilePolicyDetails

@@ -87,6 +87,7 @@ sagemaker-groundtruth-synthetic
 sdb
 serverlessrepo
 serviceextract
+signin
 sms
 snowball
 ssm-guiconnect
