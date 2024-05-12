@@ -29,6 +29,7 @@ bcm-data-exports
 bedrock
 billingconductor
 braket
+budgets
 bugbust
 cases
 cassandra

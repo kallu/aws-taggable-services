@@ -15,7 +15,6 @@ aws-portal
 awsconnector
 backup-storage
 billing
-budgets
 chatbot
 cloudfront-keyvaluestore
 cloudshell
