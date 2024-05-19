@@ -1557,6 +1557,7 @@ cases:CreateTemplate
 cases:DeleteDomain
 cases:DeleteField
 cases:DeleteLayout
+cases:DeleteRelatedItem
 cases:DeleteTemplate
 cases:GetCase
 cases:GetCaseAuditEvents
@@ -3489,9 +3490,11 @@ connect:AssociateTrafficDistributionGroupUser
 connect:AssociateUserProficiencies
 connect:BatchAssociateAnalyticsDataSet
 connect:BatchDisassociateAnalyticsDataSet
+connect:BatchGetAttachedFileMetadata
 connect:BatchGetFlowAssociation
 connect:BatchPutContact
 connect:ClaimPhoneNumber
+connect:CompleteAttachedFileUpload
 connect:CreateAgentStatus
 connect:CreateContactFlow
 connect:CreateContactFlowModule
@@ -3517,6 +3520,7 @@ connect:CreateView
 connect:CreateViewVersion
 connect:CreateVocabulary
 connect:DeactivateEvaluationForm
+connect:DeleteAttachedFile
 connect:DeleteContactEvaluation
 connect:DeleteContactFlow
 connect:DeleteContactFlowModule
@@ -3578,6 +3582,7 @@ connect:DisassociateSecurityKey
 connect:DisassociateTrafficDistributionGroupUser
 connect:DisassociateUserProficiencies
 connect:DismissUserContact
+connect:GetAttachedFile
 connect:GetContactAttributes
 connect:GetCurrentMetricData
 connect:GetCurrentUserData
@@ -3653,6 +3658,7 @@ connect:SearchSecurityProfiles
 connect:SearchUsers
 connect:SearchVocabularies
 connect:SendChatIntegrationEvent
+connect:StartAttachedFileUpload
 connect:StartChatContact
 connect:StartContactEvaluation
 connect:StartContactRecording
@@ -6402,6 +6408,7 @@ events:UpdateApiDestination
 events:UpdateArchive
 events:UpdateConnection
 events:UpdateEndpoint
+events:UpdateEventBus
 evidently:BatchEvaluateFeature
 evidently:CreateExperiment
 evidently:CreateFeature
@@ -7304,8 +7311,12 @@ glue:UseMLTransforms
 grafana:AssociateLicense
 grafana:CreateWorkspace
 grafana:CreateWorkspaceApiKey
+grafana:CreateWorkspaceServiceAccount
+grafana:CreateWorkspaceServiceAccountToken
 grafana:DeleteWorkspace
 grafana:DeleteWorkspaceApiKey
+grafana:DeleteWorkspaceServiceAccount
+grafana:DeleteWorkspaceServiceAccountToken
 grafana:DescribeWorkspace
 grafana:DescribeWorkspaceAuthentication
 grafana:DescribeWorkspaceConfiguration
@@ -7313,6 +7324,8 @@ grafana:DisassociateLicense
 grafana:ListPermissions
 grafana:ListTagsForResource
 grafana:ListVersions
+grafana:ListWorkspaceServiceAccountTokens
+grafana:ListWorkspaceServiceAccounts
 grafana:ListWorkspaces
 grafana:TagResource
 grafana:UntagResource
@@ -10453,6 +10466,7 @@ medical-imaging:CreateDatastore
 medical-imaging:DeleteDatastore
 medical-imaging:DeleteImageSet
 medical-imaging:GetDICOMImportJob
+medical-imaging:GetDICOMInstance
 medical-imaging:GetDatastore
 medical-imaging:GetImageFrame
 medical-imaging:GetImageSet
@@ -12109,6 +12123,7 @@ quicksight:DescribeGroupMembership
 quicksight:DescribeIAMPolicyAssignment
 quicksight:DescribeIngestion
 quicksight:DescribeIpRestriction
+quicksight:DescribeKeyRegistration
 quicksight:DescribeNamespace
 quicksight:DescribeRefreshSchedule
 quicksight:DescribeRoleCustomPermission
@@ -12208,6 +12223,7 @@ quicksight:UpdateGroup
 quicksight:UpdateIAMPolicyAssignment
 quicksight:UpdateIdentityPropagationConfig
 quicksight:UpdateIpRestriction
+quicksight:UpdateKeyRegistration
 quicksight:UpdatePublicSharingSettings
 quicksight:UpdateRefreshSchedule
 quicksight:UpdateResourcePermissions
@@ -15791,6 +15807,12 @@ ts:ListTools
 ts:StartExecution
 ts:TagResource
 ts:UntagResource
+user-subscriptions:CreateClaim
+user-subscriptions:DeleteClaim
+user-subscriptions:ListApplicationClaims
+user-subscriptions:ListClaims
+user-subscriptions:ListUserSubscriptions
+user-subscriptions:UpdateClaim
 vendor-insights:ActivateSecurityProfile
 vendor-insights:AssociateDataSource
 vendor-insights:CreateDataSource
@@ -16222,18 +16244,21 @@ wickr:UpdateNetworkDetails
 wisdom:CreateAssistant
 wisdom:CreateAssistantAssociation
 wisdom:CreateContent
+wisdom:CreateContentAssociation
 wisdom:CreateKnowledgeBase
 wisdom:CreateQuickResponse
 wisdom:CreateSession
 wisdom:DeleteAssistant
 wisdom:DeleteAssistantAssociation
 wisdom:DeleteContent
+wisdom:DeleteContentAssociation
 wisdom:DeleteImportJob
 wisdom:DeleteKnowledgeBase
 wisdom:DeleteQuickResponse
 wisdom:GetAssistant
 wisdom:GetAssistantAssociation
 wisdom:GetContent
+wisdom:GetContentAssociation
 wisdom:GetContentSummary
 wisdom:GetImportJob
 wisdom:GetKnowledgeBase
@@ -16242,6 +16267,7 @@ wisdom:GetRecommendations
 wisdom:GetSession
 wisdom:ListAssistantAssociations
 wisdom:ListAssistants
+wisdom:ListContentAssociations
 wisdom:ListContents
 wisdom:ListImportJobs
 wisdom:ListKnowledgeBases

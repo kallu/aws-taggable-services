@@ -101,6 +101,7 @@ sustainability
 tax
 tiros
 trustedadvisor
+user-subscriptions
 verified-access
 verifiedpermissions
 vpc-lattice-svcs
