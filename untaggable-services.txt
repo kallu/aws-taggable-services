@@ -15,7 +15,6 @@ aws-portal
 awsconnector
 backup-storage
 billing
-chatbot
 cloudfront-keyvaluestore
 cloudshell
 cloudtrail-data
@@ -72,7 +71,6 @@ mobileanalytics
 neptune-db
 networkmanager-chat
 partnercentral-account-management
-payments
 polly
 pricing
 q
@@ -97,6 +95,7 @@ sso-oauth
 support
 supportapp
 supportplans
+supportrecommendations
 sustainability
 tax
 tiros

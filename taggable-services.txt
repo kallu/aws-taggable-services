@@ -34,6 +34,7 @@ bugbust
 cases
 cassandra
 ce
+chatbot
 chime
 cleanrooms
 cleanrooms-ml
@@ -192,6 +193,7 @@ osis
 outposts
 panorama
 payment-cryptography
+payments
 pca-connector-ad
 personalize
 pi
