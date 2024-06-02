@@ -492,6 +492,21 @@ application-cost-profiler:ImportApplicationUsage
 application-cost-profiler:ListReportDefinitions
 application-cost-profiler:PutReportDefinition
 application-cost-profiler:UpdateReportDefinition
+application-signals:BatchGetServiceLevelObjectiveBudgetReport
+application-signals:CreateServiceLevelObjective
+application-signals:DeleteServiceLevelObjective
+application-signals:GetService
+application-signals:GetServiceLevelObjective
+application-signals:ListServiceDependencies
+application-signals:ListServiceDependents
+application-signals:ListServiceLevelObjectives
+application-signals:ListServiceOperations
+application-signals:ListServices
+application-signals:ListTagsForResource
+application-signals:StartDiscovery
+application-signals:TagResource
+application-signals:UntagResource
+application-signals:UpdateServiceLevelObjective
 application-transformation:GetContainerization
 application-transformation:GetDeployment
 application-transformation:GetGroupingAssessment
@@ -6216,6 +6231,7 @@ emr-serverless:GetApplication
 emr-serverless:GetDashboardForJobRun
 emr-serverless:GetJobRun
 emr-serverless:ListApplications
+emr-serverless:ListJobRunAttempts
 emr-serverless:ListJobRuns
 emr-serverless:ListTagsForResource
 emr-serverless:StartApplication
@@ -7089,6 +7105,7 @@ glue:BatchGetStageFiles
 glue:BatchGetTableOptimizer
 glue:BatchGetTriggers
 glue:BatchGetWorkflows
+glue:BatchPutDataQualityStatisticAnnotation
 glue:BatchStopJobRun
 glue:BatchUpdatePartition
 glue:CancelDataQualityRuleRecommendationRun
@@ -7145,6 +7162,8 @@ glue:DeleteTrigger
 glue:DeleteUserDefinedFunction
 glue:DeleteWorkflow
 glue:DeregisterDataPreview
+glue:DescribeConnectionType
+glue:DescribeEntity
 glue:GetBlueprint
 glue:GetBlueprintRun
 glue:GetBlueprintRuns
@@ -7164,6 +7183,8 @@ glue:GetCrawlers
 glue:GetCustomEntityType
 glue:GetDataCatalogEncryptionSettings
 glue:GetDataPreviewStatement
+glue:GetDataQualityModel
+glue:GetDataQualityModelResult
 glue:GetDataQualityResult
 glue:GetDataQualityRuleRecommendationRun
 glue:GetDataQualityRuleset
@@ -7232,6 +7253,7 @@ glue:GlueNotebookRefreshCredentials
 glue:ImportCatalogToGlue
 glue:ListBlueprints
 glue:ListColumnStatisticsTaskRuns
+glue:ListConnectionTypes
 glue:ListCrawlers
 glue:ListCrawls
 glue:ListCustomEntityTypes
@@ -7239,7 +7261,10 @@ glue:ListDataQualityResults
 glue:ListDataQualityRuleRecommendationRuns
 glue:ListDataQualityRulesetEvaluationRuns
 glue:ListDataQualityRulesets
+glue:ListDataQualityStatisticAnnotations
+glue:ListDataQualityStatistics
 glue:ListDevEndpoints
+glue:ListEntities
 glue:ListJobs
 glue:ListMLTransforms
 glue:ListRegistries
@@ -7254,10 +7279,12 @@ glue:NotifyEvent
 glue:PassConnection
 glue:PublishDataQuality
 glue:PutDataCatalogEncryptionSettings
+glue:PutDataQualityProfileAnnotation
 glue:PutResourcePolicy
 glue:PutSchemaVersionMetadata
 glue:PutWorkflowRunProperties
 glue:QuerySchemaVersionMetadata
+glue:RefreshOAuth2Tokens
 glue:RegisterSchemaVersion
 glue:RemoveSchemaVersionMetadata
 glue:RequestLogParsing
@@ -15466,6 +15493,8 @@ swf:CountClosedWorkflowExecutions
 swf:CountOpenWorkflowExecutions
 swf:CountPendingActivityTasks
 swf:CountPendingDecisionTasks
+swf:DeleteActivityType
+swf:DeleteWorkflowType
 swf:DeprecateActivityType
 swf:DeprecateDomain
 swf:DeprecateWorkflowType

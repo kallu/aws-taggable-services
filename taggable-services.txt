@@ -11,6 +11,7 @@ appconfig
 appfabric
 appflow
 application-autoscaling
+application-signals
 applicationinsights
 appmesh
 apprunner
