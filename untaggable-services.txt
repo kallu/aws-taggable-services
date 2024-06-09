@@ -57,7 +57,6 @@ iotroborunner
 iq
 iq-permission
 kafka-cluster
-launchwizard
 license-manager-linux-subscriptions
 license-manager-user-subscriptions
 managedblockchain-query

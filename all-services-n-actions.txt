@@ -129,6 +129,7 @@ access-analyzer:UntagResource
 access-analyzer:UpdateArchiveRule
 access-analyzer:UpdateFindings
 access-analyzer:ValidatePolicy
+account:AcceptPrimaryEmailUpdate
 account:CloseAccount
 account:DeleteAlternateContact
 account:DisableRegion
@@ -137,11 +138,13 @@ account:GetAccountInformation
 account:GetAlternateContact
 account:GetChallengeQuestions
 account:GetContactInformation
+account:GetPrimaryEmail
 account:GetRegionOptStatus
 account:ListRegions
 account:PutAlternateContact
 account:PutChallengeQuestions
 account:PutContactInformation
+account:StartPrimaryEmailUpdate
 acm-pca:CreateCertificateAuthority
 acm-pca:CreateCertificateAuthorityAuditReport
 acm-pca:CreatePermission
@@ -1357,6 +1360,7 @@ batch:DescribeJobDefinitions
 batch:DescribeJobQueues
 batch:DescribeJobs
 batch:DescribeSchedulingPolicies
+batch:GetJobQueueSnapshot
 batch:ListJobs
 batch:ListSchedulingPolicies
 batch:ListTagsForResource
@@ -6971,6 +6975,7 @@ geo:DescribePlaceIndex
 geo:DescribeRouteCalculator
 geo:DescribeTracker
 geo:DisassociateTrackerConsumer
+geo:ForecastGeofenceEvents
 geo:GetDevicePosition
 geo:GetDevicePositionHistory
 geo:GetGeofence
@@ -7001,6 +7006,7 @@ geo:UpdateMap
 geo:UpdatePlaceIndex
 geo:UpdateRouteCalculator
 geo:UpdateTracker
+geo:VerifyDevicePosition
 glacier:AbortMultipartUpload
 glacier:AbortVaultLock
 glacier:AddTagsToVault
@@ -9271,6 +9277,7 @@ lakeformation:DescribeTransaction
 lakeformation:ExtendTransaction
 lakeformation:GetDataAccess
 lakeformation:GetDataCellsFilter
+lakeformation:GetDataLakePrincipal
 lakeformation:GetDataLakeSettings
 lakeformation:GetEffectivePermissionsForPath
 lakeformation:GetLFTag
@@ -9390,6 +9397,7 @@ launchwizard:GetSettingsSet
 launchwizard:GetWorkload
 launchwizard:GetWorkloadAsset
 launchwizard:GetWorkloadAssets
+launchwizard:GetWorkloadDeploymentPattern
 launchwizard:ListAdditionalNodes
 launchwizard:ListAllowedResources
 launchwizard:ListDeploymentEvents
@@ -9397,11 +9405,14 @@ launchwizard:ListDeployments
 launchwizard:ListProvisionedApps
 launchwizard:ListResourceCostEstimates
 launchwizard:ListSettingsSets
+launchwizard:ListTagsForResource
 launchwizard:ListWorkloadDeploymentOptions
 launchwizard:ListWorkloadDeploymentPatterns
 launchwizard:ListWorkloads
 launchwizard:PutSettingsSet
 launchwizard:StartProvisioning
+launchwizard:TagResource
+launchwizard:UntagResource
 launchwizard:UpdateSettingsSet
 lex:BatchCreateCustomVocabularyItem
 lex:BatchDeleteCustomVocabularyItem
@@ -13473,6 +13484,7 @@ s3:ListStorageLensConfigurations
 s3:ListStorageLensGroups
 s3:ListTagsForResource
 s3:ObjectOwnerOverrideToBucketOwner
+s3:PauseReplication
 s3:PutAccelerateConfiguration
 s3:PutAccessGrantsInstanceResourcePolicy
 s3:PutAccessPointConfigurationForObjectLambda
