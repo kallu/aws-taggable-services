@@ -17,6 +17,7 @@ appmesh
 apprunner
 appstream
 appsync
+apptest
 aps
 athena
 auditmanager
@@ -197,6 +198,7 @@ panorama
 payment-cryptography
 payments
 pca-connector-ad
+pca-connector-scep
 personalize
 pi
 pipes

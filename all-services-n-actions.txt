@@ -102,16 +102,19 @@ access-analyzer:ApplyArchiveRule
 access-analyzer:CancelPolicyGeneration
 access-analyzer:CheckAccessNotGranted
 access-analyzer:CheckNoNewAccess
+access-analyzer:CheckNoPublicAccess
 access-analyzer:CreateAccessPreview
 access-analyzer:CreateAnalyzer
 access-analyzer:CreateArchiveRule
 access-analyzer:DeleteAnalyzer
 access-analyzer:DeleteArchiveRule
+access-analyzer:GenerateFindingRecommendation
 access-analyzer:GetAccessPreview
 access-analyzer:GetAnalyzedResource
 access-analyzer:GetAnalyzer
 access-analyzer:GetArchiveRule
 access-analyzer:GetFinding
+access-analyzer:GetFindingRecommendation
 access-analyzer:GetFindingsStatistics
 access-analyzer:GetGeneratedPolicy
 access-analyzer:ListAccessPreviewFindings
@@ -827,6 +830,30 @@ appsync:UpdateGraphqlApi
 appsync:UpdateResolver
 appsync:UpdateSourceApiAssociation
 appsync:UpdateType
+apptest:CreateTestCase
+apptest:CreateTestConfiguration
+apptest:CreateTestSuite
+apptest:DeleteTestCase
+apptest:DeleteTestConfiguration
+apptest:DeleteTestRun
+apptest:DeleteTestSuite
+apptest:GetTestCase
+apptest:GetTestConfiguration
+apptest:GetTestRunStep
+apptest:GetTestSuite
+apptest:ListTagsForResource
+apptest:ListTestCases
+apptest:ListTestConfigurations
+apptest:ListTestRunSteps
+apptest:ListTestRunTestCases
+apptest:ListTestRuns
+apptest:ListTestSuites
+apptest:StartTestRun
+apptest:TagResource
+apptest:UntagResource
+apptest:UpdateTestCase
+apptest:UpdateTestConfiguration
+apptest:UpdateTestSuite
 aps:CreateAlertManagerAlerts
 aps:CreateAlertManagerDefinition
 aps:CreateLoggingConfiguration
@@ -2500,6 +2527,7 @@ cloudtrail:DescribeQuery
 cloudtrail:DescribeTrails
 cloudtrail:DisableFederation
 cloudtrail:EnableFederation
+cloudtrail:GenerateQuery
 cloudtrail:GetChannel
 cloudtrail:GetEventDataStore
 cloudtrail:GetEventDataStoreData
@@ -3668,6 +3696,8 @@ connect:ReplicateInstance
 connect:ResumeContact
 connect:ResumeContactRecording
 connect:SearchAvailablePhoneNumbers
+connect:SearchContactFlowModules
+connect:SearchContactFlows
 connect:SearchContacts
 connect:SearchHoursOfOperations
 connect:SearchPredefinedAttributes
@@ -3999,6 +4029,7 @@ datasync:UpdateTaskExecution
 datazone:AcceptPredictions
 datazone:AcceptSubscriptionRequest
 datazone:AddPolicyGrant
+datazone:AssociateEnvironmentRole
 datazone:CancelMetadataGenerationRun
 datazone:CancelSubscription
 datazone:CreateAsset
@@ -4007,6 +4038,7 @@ datazone:CreateAssetType
 datazone:CreateDataSource
 datazone:CreateDomain
 datazone:CreateEnvironment
+datazone:CreateEnvironmentAction
 datazone:CreateEnvironmentBlueprint
 datazone:CreateEnvironmentProfile
 datazone:CreateFormType
@@ -4026,6 +4058,7 @@ datazone:DeleteDataSource
 datazone:DeleteDomain
 datazone:DeleteDomainSharingPolicy
 datazone:DeleteEnvironment
+datazone:DeleteEnvironmentAction
 datazone:DeleteEnvironmentBlueprint
 datazone:DeleteEnvironmentBlueprintConfiguration
 datazone:DeleteEnvironmentProfile
@@ -4039,6 +4072,7 @@ datazone:DeleteSubscriptionGrant
 datazone:DeleteSubscriptionRequest
 datazone:DeleteSubscriptionTarget
 datazone:DeleteTimeSeriesDataPoints
+datazone:DisassociateEnvironmentRole
 datazone:GetAsset
 datazone:GetAssetType
 datazone:GetDataSource
@@ -4046,6 +4080,7 @@ datazone:GetDataSourceRun
 datazone:GetDomain
 datazone:GetDomainSharingPolicy
 datazone:GetEnvironment
+datazone:GetEnvironmentAction
 datazone:GetEnvironmentActionLink
 datazone:GetEnvironmentBlueprint
 datazone:GetEnvironmentBlueprintConfiguration
@@ -4072,6 +4107,7 @@ datazone:ListDataSourceRunActivities
 datazone:ListDataSourceRuns
 datazone:ListDataSources
 datazone:ListDomains
+datazone:ListEnvironmentActions
 datazone:ListEnvironmentBlueprintConfigurationSummaries
 datazone:ListEnvironmentBlueprintConfigurations
 datazone:ListEnvironmentBlueprints
@@ -4115,6 +4151,7 @@ datazone:UpdateDataSource
 datazone:UpdateDataSourceRunActivities
 datazone:UpdateDomain
 datazone:UpdateEnvironment
+datazone:UpdateEnvironmentAction
 datazone:UpdateEnvironmentBlueprint
 datazone:UpdateEnvironmentConfiguration
 datazone:UpdateEnvironmentDeploymentStatus
@@ -6245,6 +6282,7 @@ emr-serverless:TagResource
 emr-serverless:UntagResource
 emr-serverless:UpdateApplication
 entityresolution:AddPolicyStatement
+entityresolution:BatchDeleteUniqueId
 entityresolution:CreateIdMappingWorkflow
 entityresolution:CreateIdNamespace
 entityresolution:CreateMatchingWorkflow
@@ -7541,6 +7579,7 @@ guardduty:ArchiveFindings
 guardduty:CreateDetector
 guardduty:CreateFilter
 guardduty:CreateIPSet
+guardduty:CreateMalwareProtectionPlan
 guardduty:CreateMembers
 guardduty:CreatePublishingDestination
 guardduty:CreateSampleFindings
@@ -7550,6 +7589,7 @@ guardduty:DeleteDetector
 guardduty:DeleteFilter
 guardduty:DeleteIPSet
 guardduty:DeleteInvitations
+guardduty:DeleteMalwareProtectionPlan
 guardduty:DeleteMembers
 guardduty:DeletePublishingDestination
 guardduty:DeleteThreatIntelSet
@@ -7569,6 +7609,7 @@ guardduty:GetFindings
 guardduty:GetFindingsStatistics
 guardduty:GetIPSet
 guardduty:GetInvitationsCount
+guardduty:GetMalwareProtectionPlan
 guardduty:GetMalwareScanSettings
 guardduty:GetMasterAccount
 guardduty:GetMemberDetectors
@@ -7584,6 +7625,7 @@ guardduty:ListFilters
 guardduty:ListFindings
 guardduty:ListIPSets
 guardduty:ListInvitations
+guardduty:ListMalwareProtectionPlans
 guardduty:ListMembers
 guardduty:ListOrganizationAdminAccounts
 guardduty:ListPublishingDestinations
@@ -7600,6 +7642,7 @@ guardduty:UpdateDetector
 guardduty:UpdateFilter
 guardduty:UpdateFindingsFeedback
 guardduty:UpdateIPSet
+guardduty:UpdateMalwareProtectionPlan
 guardduty:UpdateMalwareScanSettings
 guardduty:UpdateMemberDetectors
 guardduty:UpdateOrganizationConfiguration
@@ -9212,6 +9255,7 @@ kms:Decrypt
 kms:DeleteAlias
 kms:DeleteCustomKeyStore
 kms:DeleteImportedKeyMaterial
+kms:DeriveSharedSecret
 kms:DescribeCustomKeyStores
 kms:DescribeKey
 kms:DisableKey
@@ -11636,6 +11680,18 @@ pca-connector-ad:TagResource
 pca-connector-ad:UntagResource
 pca-connector-ad:UpdateTemplate
 pca-connector-ad:UpdateTemplateGroupAccessControlEntry
+pca-connector-scep:CreateChallenge
+pca-connector-scep:CreateConnector
+pca-connector-scep:DeleteChallenge
+pca-connector-scep:DeleteConnector
+pca-connector-scep:GetChallengeMetadata
+pca-connector-scep:GetChallengePassword
+pca-connector-scep:GetConnector
+pca-connector-scep:ListChallengeMetadata
+pca-connector-scep:ListConnectors
+pca-connector-scep:ListTagsForResource
+pca-connector-scep:TagResource
+pca-connector-scep:UntagResource
 personalize:CreateBatchInferenceJob
 personalize:CreateBatchSegmentJob
 personalize:CreateCampaign
@@ -15577,6 +15633,7 @@ tag:GetTagValues
 tag:StartReportCreation
 tag:TagResources
 tag:UntagResources
+tax:BatchDeleteTaxRegistration
 tax:BatchPutTaxRegistration
 tax:DeleteTaxRegistration
 tax:GetExemptions

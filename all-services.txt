@@ -25,6 +25,7 @@ appmesh-preview
 apprunner
 appstream
 appsync
+apptest
 aps
 arc-zonal-shift
 arsenal
@@ -269,6 +270,7 @@ partnercentral-account-management
 payment-cryptography
 payments
 pca-connector-ad
+pca-connector-scep
 personalize
 pi
 pipes
