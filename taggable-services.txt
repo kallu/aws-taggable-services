@@ -235,6 +235,7 @@ s3-object-lambda
 s3-outposts
 sagemaker
 sagemaker-geospatial
+sagemaker-mlflow
 savingsplans
 scheduler
 schemas
