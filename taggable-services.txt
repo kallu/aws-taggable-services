@@ -206,6 +206,7 @@ private-networks
 profile
 proton
 purchase-orders
+qapps
 qbusiness
 qldb
 quicksight

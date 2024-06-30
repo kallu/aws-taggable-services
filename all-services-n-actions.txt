@@ -2448,12 +2448,14 @@ cloudhsm:DeleteCluster
 cloudhsm:DeleteHapg
 cloudhsm:DeleteHsm
 cloudhsm:DeleteLunaClient
+cloudhsm:DeleteResourcePolicy
 cloudhsm:DescribeBackups
 cloudhsm:DescribeClusters
 cloudhsm:DescribeHapg
 cloudhsm:DescribeHsm
 cloudhsm:DescribeLunaClient
 cloudhsm:GetConfig
+cloudhsm:GetResourcePolicy
 cloudhsm:InitializeCluster
 cloudhsm:ListAvailableZones
 cloudhsm:ListHapgs
@@ -2466,6 +2468,7 @@ cloudhsm:ModifyCluster
 cloudhsm:ModifyHapg
 cloudhsm:ModifyHsm
 cloudhsm:ModifyLunaClient
+cloudhsm:PutResourcePolicy
 cloudhsm:RemoveTagsFromResource
 cloudhsm:RestoreBackup
 cloudhsm:TagResource
@@ -3837,6 +3840,7 @@ controltower:ListExternalConfigRuleCompliance
 controltower:ListGuardrailViolations
 controltower:ListGuardrails
 controltower:ListGuardrailsForTarget
+controltower:ListLandingZoneOperations
 controltower:ListLandingZones
 controltower:ListManagedAccounts
 controltower:ListManagedAccountsForGuardrail
@@ -4042,6 +4046,7 @@ datazone:AssociateEnvironmentRole
 datazone:CancelMetadataGenerationRun
 datazone:CancelSubscription
 datazone:CreateAsset
+datazone:CreateAssetFilter
 datazone:CreateAssetRevision
 datazone:CreateAssetType
 datazone:CreateDataSource
@@ -4062,6 +4067,7 @@ datazone:CreateSubscriptionRequest
 datazone:CreateSubscriptionTarget
 datazone:CreateUserProfile
 datazone:DeleteAsset
+datazone:DeleteAssetFilter
 datazone:DeleteAssetType
 datazone:DeleteDataSource
 datazone:DeleteDomain
@@ -4083,6 +4089,7 @@ datazone:DeleteSubscriptionTarget
 datazone:DeleteTimeSeriesDataPoints
 datazone:DisassociateEnvironmentRole
 datazone:GetAsset
+datazone:GetAssetFilter
 datazone:GetAssetType
 datazone:GetDataSource
 datazone:GetDataSourceRun
@@ -4100,6 +4107,7 @@ datazone:GetGlossary
 datazone:GetGlossaryTerm
 datazone:GetGroupProfile
 datazone:GetIamPortalLoginUrl
+datazone:GetLineageNode
 datazone:GetListing
 datazone:GetMetadataGenerationRun
 datazone:GetProject
@@ -4111,6 +4119,7 @@ datazone:GetSubscriptionTarget
 datazone:GetTimeSeriesDataPoint
 datazone:GetUserProfile
 datazone:ListAccountEnvironments
+datazone:ListAssetFilters
 datazone:ListAssetRevisions
 datazone:ListDataSourceRunActivities
 datazone:ListDataSourceRuns
@@ -4123,6 +4132,7 @@ datazone:ListEnvironmentBlueprints
 datazone:ListEnvironmentProfiles
 datazone:ListEnvironments
 datazone:ListGroupsForUser
+datazone:ListLineageNodeHistory
 datazone:ListMetadataGenerationRuns
 datazone:ListNotifications
 datazone:ListPolicyGrants
@@ -4135,6 +4145,7 @@ datazone:ListSubscriptions
 datazone:ListTagsForResource
 datazone:ListTimeSeriesDataPoints
 datazone:ListWarehouseMetadata
+datazone:PostLineageEvent
 datazone:PostTimeSeriesDataPoints
 datazone:ProvisionDomain
 datazone:PutDomainSharingPolicy
@@ -4156,6 +4167,7 @@ datazone:StartMetadataGenerationRun
 datazone:StopMetadataGenerationRun
 datazone:TagResource
 datazone:UntagResource
+datazone:UpdateAssetFilter
 datazone:UpdateDataSource
 datazone:UpdateDataSourceRunActivities
 datazone:UpdateDomain
@@ -5392,6 +5404,7 @@ ec2:DescribeStaleSecurityGroups
 ec2:DescribeStoreImageTasks
 ec2:DescribeSubnets
 ec2:DescribeTags
+ec2:DescribeTrafficMirrorFilterRules
 ec2:DescribeTrafficMirrorFilters
 ec2:DescribeTrafficMirrorSessions
 ec2:DescribeTrafficMirrorTargets
@@ -7186,6 +7199,7 @@ glue:CreateSession
 glue:CreateTable
 glue:CreateTableOptimizer
 glue:CreateTrigger
+glue:CreateUsageProfile
 glue:CreateUserDefinedFunction
 glue:CreateWorkflow
 glue:DeleteBlueprint
@@ -7212,6 +7226,7 @@ glue:DeleteTable
 glue:DeleteTableOptimizer
 glue:DeleteTableVersion
 glue:DeleteTrigger
+glue:DeleteUsageProfile
 glue:DeleteUserDefinedFunction
 glue:DeleteWorkflow
 glue:DeregisterDataPreview
@@ -7295,6 +7310,7 @@ glue:GetTables
 glue:GetTags
 glue:GetTrigger
 glue:GetTriggers
+glue:GetUsageProfile
 glue:GetUserDefinedFunction
 glue:GetUserDefinedFunctions
 glue:GetWorkflow
@@ -7327,6 +7343,7 @@ glue:ListSessions
 glue:ListStatements
 glue:ListTableOptimizerRuns
 glue:ListTriggers
+glue:ListUsageProfiles
 glue:ListWorkflows
 glue:NotifyEvent
 glue:PassConnection
@@ -7392,6 +7409,7 @@ glue:UpdateSourceControlFromJob
 glue:UpdateTable
 glue:UpdateTableOptimizer
 glue:UpdateTrigger
+glue:UpdateUsageProfile
 glue:UpdateUserDefinedFunction
 glue:UpdateWorkflow
 glue:UseGlueStudio
@@ -11854,6 +11872,7 @@ profile:CreateDomain
 profile:CreateEventStream
 profile:CreateIntegrationWorkflow
 profile:CreateProfile
+profile:CreateSnapshot
 profile:DeleteCalculatedAttributeDefinition
 profile:DeleteDomain
 profile:DeleteEventStream
@@ -11875,6 +11894,7 @@ profile:GetMatches
 profile:GetProfileObjectType
 profile:GetProfileObjectTypeTemplate
 profile:GetSimilarProfiles
+profile:GetSnapshot
 profile:GetWorkflow
 profile:GetWorkflowSteps
 profile:ListAccountIntegrations
@@ -12037,6 +12057,7 @@ q:StartConversation
 q:StartTroubleshootingAnalysis
 q:StartTroubleshootingResolutionExplanation
 q:UpdateTroubleshootingCommandResult
+qapps:AssociateLibraryItemReview
 qapps:AssociateQAppWithUser
 qapps:CopyQApp
 qapps:CreateLibraryItem
@@ -12045,19 +12066,27 @@ qapps:CreateQApp
 qapps:CreateSubscriptionToken
 qapps:DeleteLibraryItem
 qapps:DeleteQApp
+qapps:DisassociateLibraryItemReview
 qapps:DisassociateQAppFromUser
 qapps:GetLibraryItem
 qapps:GetQApp
+qapps:GetQAppSession
+qapps:GetQAppSessionMetadata
+qapps:ImportDocument
 qapps:ImportDocumentToQApp
 qapps:ImportDocumentToQAppSession
 qapps:ListLibraryItems
 qapps:ListQApps
 qapps:PredictProblemStatementFromConversation
+qapps:PredictQApp
 qapps:PredictQAppFromProblemStatement
 qapps:StartQAppSession
 qapps:StopQAppSession
+qapps:TagResource
 qapps:UpdateLibraryItem
 qapps:UpdateQApp
+qapps:UpdateQAppSession
+qapps:UpdateQAppSessionMetadata
 qbusiness:AddUserLicenses
 qbusiness:BatchDeleteDocument
 qbusiness:BatchPutDocument
@@ -16797,6 +16826,7 @@ workspaces:CreateUpdatedWorkspaceImage
 workspaces:CreateWorkspaceBundle
 workspaces:CreateWorkspaceImage
 workspaces:CreateWorkspaces
+workspaces:CreateWorkspacesPool
 workspaces:DeleteAccountLinkInvitation
 workspaces:DeleteClientBranding
 workspaces:DeleteConnectClientAddIn
@@ -16828,6 +16858,8 @@ workspaces:DescribeWorkspaceImages
 workspaces:DescribeWorkspaceSnapshots
 workspaces:DescribeWorkspaces
 workspaces:DescribeWorkspacesConnectionStatus
+workspaces:DescribeWorkspacesPoolSessions
+workspaces:DescribeWorkspacesPools
 workspaces:DisassociateConnectionAlias
 workspaces:DisassociateIpGroups
 workspaces:DisassociateWorkspaceApplication
@@ -16842,6 +16874,7 @@ workspaces:ModifyCertificateBasedAuthProperties
 workspaces:ModifyClientProperties
 workspaces:ModifySamlProperties
 workspaces:ModifySelfservicePermissions
+workspaces:ModifyStreamingProperties
 workspaces:ModifyWorkspaceAccessProperties
 workspaces:ModifyWorkspaceCreationProperties
 workspaces:ModifyWorkspaceProperties
@@ -16853,14 +16886,19 @@ workspaces:RejectAccountLinkInvitation
 workspaces:RestoreWorkspace
 workspaces:RevokeIpRules
 workspaces:StartWorkspaces
+workspaces:StartWorkspacesPool
 workspaces:StopWorkspaces
+workspaces:StopWorkspacesPool
 workspaces:Stream
 workspaces:TerminateWorkspaces
+workspaces:TerminateWorkspacesPool
+workspaces:TerminateWorkspacesPoolSession
 workspaces:UpdateConnectClientAddIn
 workspaces:UpdateConnectionAliasPermission
 workspaces:UpdateRulesOfIpGroup
 workspaces:UpdateWorkspaceBundle
 workspaces:UpdateWorkspaceImagePermission
+workspaces:UpdateWorkspacesPool
 xray:BatchGetTraceSummaryById
 xray:BatchGetTraces
 xray:CreateGroup

@@ -73,7 +73,6 @@ partnercentral-account-management
 polly
 pricing
 q
-qapps
 rds-data
 rds-db
 redshift-data
