@@ -6,6 +6,7 @@ apigateway
 application-cost-profiler
 application-transformation
 appmesh-preview
+appstudio
 arc-zonal-shift
 arsenal
 artifact
@@ -57,7 +58,6 @@ iotroborunner
 iq
 iq-permission
 kafka-cluster
-license-manager-linux-subscriptions
 license-manager-user-subscriptions
 managedblockchain-query
 mapcredits

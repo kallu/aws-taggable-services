@@ -155,6 +155,7 @@ lambda
 launchwizard
 lex
 license-manager
+license-manager-linux-subscriptions
 lightsail
 logs
 lookoutequipment
