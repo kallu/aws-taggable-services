@@ -2101,6 +2101,9 @@ cleanrooms:CreateConfiguredAudienceModelAssociation
 cleanrooms:CreateConfiguredTable
 cleanrooms:CreateConfiguredTableAnalysisRule
 cleanrooms:CreateConfiguredTableAssociation
+cleanrooms:CreateConfiguredTableAssociationAnalysisRule
+cleanrooms:CreateIdMappingTable
+cleanrooms:CreateIdNamespaceAssociation
 cleanrooms:CreateMembership
 cleanrooms:CreatePrivacyBudgetTemplate
 cleanrooms:DeleteAnalysisTemplate
@@ -2109,6 +2112,9 @@ cleanrooms:DeleteConfiguredAudienceModelAssociation
 cleanrooms:DeleteConfiguredTable
 cleanrooms:DeleteConfiguredTableAnalysisRule
 cleanrooms:DeleteConfiguredTableAssociation
+cleanrooms:DeleteConfiguredTableAssociationAnalysisRule
+cleanrooms:DeleteIdMappingTable
+cleanrooms:DeleteIdNamespaceAssociation
 cleanrooms:DeleteMember
 cleanrooms:DeleteMembership
 cleanrooms:DeletePrivacyBudgetTemplate
@@ -2116,11 +2122,15 @@ cleanrooms:GetAnalysisTemplate
 cleanrooms:GetCollaboration
 cleanrooms:GetCollaborationAnalysisTemplate
 cleanrooms:GetCollaborationConfiguredAudienceModelAssociation
+cleanrooms:GetCollaborationIdNamespaceAssociation
 cleanrooms:GetCollaborationPrivacyBudgetTemplate
 cleanrooms:GetConfiguredAudienceModelAssociation
 cleanrooms:GetConfiguredTable
 cleanrooms:GetConfiguredTableAnalysisRule
 cleanrooms:GetConfiguredTableAssociation
+cleanrooms:GetConfiguredTableAssociationAnalysisRule
+cleanrooms:GetIdMappingTable
+cleanrooms:GetIdNamespaceAssociation
 cleanrooms:GetMembership
 cleanrooms:GetPrivacyBudgetTemplate
 cleanrooms:GetProtectedQuery
@@ -2129,12 +2139,15 @@ cleanrooms:GetSchemaAnalysisRule
 cleanrooms:ListAnalysisTemplates
 cleanrooms:ListCollaborationAnalysisTemplates
 cleanrooms:ListCollaborationConfiguredAudienceModelAssociations
+cleanrooms:ListCollaborationIdNamespaceAssociations
 cleanrooms:ListCollaborationPrivacyBudgetTemplates
 cleanrooms:ListCollaborationPrivacyBudgets
 cleanrooms:ListCollaborations
 cleanrooms:ListConfiguredAudienceModelAssociations
 cleanrooms:ListConfiguredTableAssociations
 cleanrooms:ListConfiguredTables
+cleanrooms:ListIdMappingTables
+cleanrooms:ListIdNamespaceAssociations
 cleanrooms:ListMembers
 cleanrooms:ListMemberships
 cleanrooms:ListPrivacyBudgetTemplates
@@ -2142,6 +2155,7 @@ cleanrooms:ListPrivacyBudgets
 cleanrooms:ListProtectedQueries
 cleanrooms:ListSchemas
 cleanrooms:ListTagsForResource
+cleanrooms:PopulateIdMappingTable
 cleanrooms:PreviewPrivacyImpact
 cleanrooms:StartProtectedQuery
 cleanrooms:TagResource
@@ -2152,6 +2166,9 @@ cleanrooms:UpdateConfiguredAudienceModelAssociation
 cleanrooms:UpdateConfiguredTable
 cleanrooms:UpdateConfiguredTableAnalysisRule
 cleanrooms:UpdateConfiguredTableAssociation
+cleanrooms:UpdateConfiguredTableAssociationAnalysisRule
+cleanrooms:UpdateIdMappingTable
+cleanrooms:UpdateIdNamespaceAssociation
 cleanrooms:UpdateMembership
 cleanrooms:UpdatePrivacyBudgetTemplate
 cleanrooms:UpdateProtectedQuery
@@ -3911,6 +3928,7 @@ cur:TagResource
 cur:UntagResource
 cur:ValidateReportDestination
 customer-verification:CreateCustomerVerificationDetails
+customer-verification:CreateUploadUrls
 customer-verification:GetCustomerVerificationDetails
 customer-verification:GetCustomerVerificationEligibility
 customer-verification:UpdateCustomerVerificationDetails
@@ -5784,7 +5802,7 @@ ecr:DescribeImages
 ecr:DescribePullThroughCacheRules
 ecr:DescribeRegistry
 ecr:DescribeRepositories
-ecr:DescribeRepositoryCreationTemplate
+ecr:DescribeRepositoryCreationTemplates
 ecr:GetAuthorizationToken
 ecr:GetDownloadUrlForLayer
 ecr:GetLifecyclePolicy
@@ -5809,6 +5827,7 @@ ecr:StartLifecyclePolicyPreview
 ecr:TagResource
 ecr:UntagResource
 ecr:UpdatePullThroughCacheRule
+ecr:UpdateRepositoryCreationTemplate
 ecr:UploadLayerPart
 ecr:ValidatePullThroughCacheRule
 ecs:CreateCapacityProvider
@@ -6117,6 +6136,7 @@ elasticloadbalancing:DeleteLoadBalancer
 elasticloadbalancing:DeleteLoadBalancerListeners
 elasticloadbalancing:DeleteLoadBalancerPolicy
 elasticloadbalancing:DeleteRule
+elasticloadbalancing:DeleteSharedTrustStoreAssociation
 elasticloadbalancing:DeleteTargetGroup
 elasticloadbalancing:DeleteTrustStore
 elasticloadbalancing:DeregisterInstancesFromLoadBalancer
@@ -6141,6 +6161,7 @@ elasticloadbalancing:DescribeTrustStores
 elasticloadbalancing:DetachLoadBalancerFromSubnets
 elasticloadbalancing:DisableAvailabilityZonesForLoadBalancer
 elasticloadbalancing:EnableAvailabilityZonesForLoadBalancer
+elasticloadbalancing:GetResourcePolicy
 elasticloadbalancing:GetTrustStoreCaCertificatesBundle
 elasticloadbalancing:GetTrustStoreRevocationContent
 elasticloadbalancing:ModifyListener
@@ -6373,6 +6394,7 @@ entityresolution:UpdateIdNamespace
 entityresolution:UpdateMatchingWorkflow
 entityresolution:UpdateSchemaMapping
 entityresolution:UseIdNamespace
+entityresolution:UseWorkflow
 es:AcceptInboundConnection
 es:AcceptInboundCrossClusterSearchConnection
 es:AddDataSource
@@ -12236,6 +12258,8 @@ qldb:UntagResource
 qldb:UpdateLedger
 qldb:UpdateLedgerPermissionsMode
 quicksight:AccountConfigurations
+quicksight:BatchCreateTopicReviewedAnswer
+quicksight:BatchDeleteTopicReviewedAnswer
 quicksight:CancelIngestion
 quicksight:CreateAccountCustomization
 quicksight:CreateAccountSubscription
@@ -12370,6 +12394,7 @@ quicksight:ListThemeAliases
 quicksight:ListThemeVersions
 quicksight:ListThemes
 quicksight:ListTopicRefreshSchedules
+quicksight:ListTopicReviewedAnswers
 quicksight:ListTopics
 quicksight:ListUserGroups
 quicksight:ListUsers
@@ -13045,17 +13070,20 @@ resource-explorer-2:BatchGetView
 resource-explorer-2:CreateIndex
 resource-explorer-2:CreateView
 resource-explorer-2:DeleteIndex
+resource-explorer-2:DeleteResourcePolicy
 resource-explorer-2:DeleteView
 resource-explorer-2:DisassociateDefaultView
 resource-explorer-2:GetAccountLevelServiceConfiguration
 resource-explorer-2:GetDefaultView
 resource-explorer-2:GetIndex
+resource-explorer-2:GetResourcePolicy
 resource-explorer-2:GetView
 resource-explorer-2:ListIndexes
 resource-explorer-2:ListIndexesForMembers
 resource-explorer-2:ListSupportedResourceTypes
 resource-explorer-2:ListTagsForResource
 resource-explorer-2:ListViews
+resource-explorer-2:PutResourcePolicy
 resource-explorer-2:Search
 resource-explorer-2:TagResource
 resource-explorer-2:UntagResource
@@ -13872,7 +13900,7 @@ sagemaker:DeleteModelQualityJobDefinition
 sagemaker:DeleteMonitoringSchedule
 sagemaker:DeleteNotebookInstance
 sagemaker:DeleteNotebookInstanceLifecycleConfig
-sagemaker:DeleteOptimization
+sagemaker:DeleteOptimizationJob
 sagemaker:DeletePipeline
 sagemaker:DeleteProject
 sagemaker:DeleteRecord
@@ -16736,6 +16764,7 @@ workmail:DeleteResource
 workmail:DeleteRetentionPolicy
 workmail:DeleteSmtpGateway
 workmail:DeleteUser
+workmail:DeliverToMailbox
 workmail:DeregisterFromWorkMail
 workmail:DeregisterMailDomain
 workmail:DescribeEmailMonitoringConfiguration
