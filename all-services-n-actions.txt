@@ -703,6 +703,7 @@ appstream:CreateImageBuilder
 appstream:CreateImageBuilderStreamingURL
 appstream:CreateStack
 appstream:CreateStreamingURL
+appstream:CreateThemeForStack
 appstream:CreateUpdatedImage
 appstream:CreateUsageReportSubscription
 appstream:CreateUser
@@ -716,6 +717,7 @@ appstream:DeleteImage
 appstream:DeleteImageBuilder
 appstream:DeleteImagePermissions
 appstream:DeleteStack
+appstream:DeleteThemeForStack
 appstream:DeleteUsageReportSubscription
 appstream:DeleteUser
 appstream:DescribeAppBlockBuilderAppBlockAssociations
@@ -731,6 +733,7 @@ appstream:DescribeImagePermissions
 appstream:DescribeImages
 appstream:DescribeSessions
 appstream:DescribeStacks
+appstream:DescribeThemeForStack
 appstream:DescribeUsageReportSubscriptions
 appstream:DescribeUserStackAssociations
 appstream:DescribeUsers
@@ -761,6 +764,7 @@ appstream:UpdateEntitlement
 appstream:UpdateFleet
 appstream:UpdateImagePermissions
 appstream:UpdateStack
+appstream:UpdateThemeForStack
 appstudio:GetAccountStatus
 appstudio:GetEnablementJobStatus
 appstudio:StartEnablementJob
@@ -1459,6 +1463,7 @@ bedrock:DeleteKnowledgeBase
 bedrock:DeleteModelInvocationLoggingConfiguration
 bedrock:DeletePrompt
 bedrock:DeleteProvisionedModelThroughput
+bedrock:DeleteResourcePolicy
 bedrock:DetectGeneratedContent
 bedrock:DisassociateAgentKnowledgeBase
 bedrock:GetAgent
@@ -1485,6 +1490,7 @@ bedrock:GetModelInvocationJob
 bedrock:GetModelInvocationLoggingConfiguration
 bedrock:GetPrompt
 bedrock:GetProvisionedModelThroughput
+bedrock:GetResourcePolicy
 bedrock:GetUseCaseForModelAccess
 bedrock:InvokeAgent
 bedrock:InvokeFlow
@@ -1517,6 +1523,7 @@ bedrock:PrepareAgent
 bedrock:PrepareFlow
 bedrock:PutFoundationModelEntitlement
 bedrock:PutModelInvocationLoggingConfiguration
+bedrock:PutResourcePolicy
 bedrock:PutUseCaseForModelAccess
 bedrock:Retrieve
 bedrock:RetrieveAndGenerate
@@ -2898,6 +2905,7 @@ codeconnections:DeleteHost
 codeconnections:DeleteRepositoryLink
 codeconnections:DeleteSyncConfiguration
 codeconnections:GetConnection
+codeconnections:GetConnectionToken
 codeconnections:GetHost
 codeconnections:GetIndividualAccessToken
 codeconnections:GetInstallationUrl
@@ -3086,6 +3094,7 @@ codestar-connections:DeleteHost
 codestar-connections:DeleteRepositoryLink
 codestar-connections:DeleteSyncConfiguration
 codestar-connections:GetConnection
+codestar-connections:GetConnectionToken
 codestar-connections:GetHost
 codestar-connections:GetIndividualAccessToken
 codestar-connections:GetInstallationUrl
@@ -4110,6 +4119,7 @@ datazone:CreateGroupProfile
 datazone:CreateListingChangeSet
 datazone:CreateProject
 datazone:CreateProjectMembership
+datazone:CreateProjectProfile
 datazone:CreateSubscriptionGrant
 datazone:CreateSubscriptionRequest
 datazone:CreateSubscriptionTarget
@@ -4133,6 +4143,7 @@ datazone:DeleteGlossaryTerm
 datazone:DeleteListing
 datazone:DeleteProject
 datazone:DeleteProjectMembership
+datazone:DeleteProjectProfile
 datazone:DeleteSubscriptionGrant
 datazone:DeleteSubscriptionRequest
 datazone:DeleteSubscriptionTarget
@@ -4163,6 +4174,7 @@ datazone:GetLineageNode
 datazone:GetListing
 datazone:GetMetadataGenerationRun
 datazone:GetProject
+datazone:GetProjectProfile
 datazone:GetSubscription
 datazone:GetSubscriptionEligibility
 datazone:GetSubscriptionGrant
@@ -4192,6 +4204,7 @@ datazone:ListMetadataGenerationRuns
 datazone:ListNotifications
 datazone:ListPolicyGrants
 datazone:ListProjectMemberships
+datazone:ListProjectProfiles
 datazone:ListProjects
 datazone:ListSubscriptionGrants
 datazone:ListSubscriptionRequests
@@ -4238,6 +4251,7 @@ datazone:UpdateGlossary
 datazone:UpdateGlossaryTerm
 datazone:UpdateGroupProfile
 datazone:UpdateProject
+datazone:UpdateProjectProfile
 datazone:UpdateSubscriptionGrantStatus
 datazone:UpdateSubscriptionRequest
 datazone:UpdateSubscriptionTarget
@@ -5199,6 +5213,7 @@ ec2:CreateInstanceEventWindow
 ec2:CreateInstanceExportTask
 ec2:CreateInternetGateway
 ec2:CreateIpam
+ec2:CreateIpamExternalResourceVerificationToken
 ec2:CreateIpamPool
 ec2:CreateIpamResourceDiscovery
 ec2:CreateIpamScope
@@ -5277,6 +5292,7 @@ ec2:DeleteInstanceConnectEndpoint
 ec2:DeleteInstanceEventWindow
 ec2:DeleteInternetGateway
 ec2:DeleteIpam
+ec2:DeleteIpamExternalResourceVerificationToken
 ec2:DeleteIpamPool
 ec2:DeleteIpamResourceDiscovery
 ec2:DeleteIpamScope
@@ -5403,6 +5419,7 @@ ec2:DescribeInstanceTypes
 ec2:DescribeInstances
 ec2:DescribeInternetGateways
 ec2:DescribeIpamByoasn
+ec2:DescribeIpamExternalResourceVerificationTokens
 ec2:DescribeIpamPools
 ec2:DescribeIpamResourceDiscoveries
 ec2:DescribeIpamResourceDiscoveryAssociations
@@ -7351,6 +7368,7 @@ glue:GetPartitions
 glue:GetPlan
 glue:GetQueries
 glue:GetQuery
+glue:GetRecipeAction
 glue:GetRegistry
 glue:GetResourcePolicies
 glue:GetResourcePolicy
@@ -7431,6 +7449,7 @@ glue:RunDataPreviewStatement
 glue:RunStatement
 glue:SearchTables
 glue:SendFeedback
+glue:SendRecipeAction
 glue:StartBlueprintRun
 glue:StartColumnStatisticsTaskRun
 glue:StartCompletion
@@ -7756,12 +7775,14 @@ health:DescribeEventsForOrganization
 health:DescribeHealthServiceStatusForOrganization
 health:DisableHealthServiceAccessForOrganization
 health:EnableHealthServiceAccessForOrganization
+healthlake:CancelFHIRExportJobWithDelete
 healthlake:CreateFHIRDatastore
 healthlake:CreateResource
 healthlake:DeleteFHIRDatastore
 healthlake:DeleteResource
 healthlake:DescribeFHIRDatastore
 healthlake:DescribeFHIRExportJob
+healthlake:DescribeFHIRExportJobWithGet
 healthlake:DescribeFHIRImportJob
 healthlake:GetCapabilities
 healthlake:ListFHIRDatastores
@@ -7773,6 +7794,7 @@ healthlake:SearchEverything
 healthlake:SearchWithGet
 healthlake:SearchWithPost
 healthlake:StartFHIRExportJob
+healthlake:StartFHIRExportJobWithPost
 healthlake:StartFHIRImportJob
 healthlake:TagResource
 healthlake:UntagResource
@@ -9285,10 +9307,12 @@ kinesisanalytics:DeleteApplicationReferenceDataSource
 kinesisanalytics:DeleteApplicationSnapshot
 kinesisanalytics:DeleteApplicationVpcConfiguration
 kinesisanalytics:DescribeApplication
+kinesisanalytics:DescribeApplicationOperation
 kinesisanalytics:DescribeApplicationSnapshot
 kinesisanalytics:DescribeApplicationVersion
 kinesisanalytics:DiscoverInputSchema
 kinesisanalytics:GetApplicationState
+kinesisanalytics:ListApplicationOperations
 kinesisanalytics:ListApplicationSnapshots
 kinesisanalytics:ListApplicationVersions
 kinesisanalytics:ListApplications
@@ -9480,6 +9504,7 @@ lambda:GetFunctionCodeSigningConfig
 lambda:GetFunctionConcurrency
 lambda:GetFunctionConfiguration
 lambda:GetFunctionEventInvokeConfig
+lambda:GetFunctionRecursionConfig
 lambda:GetFunctionUrlConfig
 lambda:GetLayerVersion
 lambda:GetLayerVersionPolicy
@@ -9506,6 +9531,7 @@ lambda:PublishVersion
 lambda:PutFunctionCodeSigningConfig
 lambda:PutFunctionConcurrency
 lambda:PutFunctionEventInvokeConfig
+lambda:PutFunctionRecursionConfig
 lambda:PutProvisionedConcurrencyConfig
 lambda:PutRuntimeManagementConfig
 lambda:RemoveLayerVersionPermission
@@ -13398,11 +13424,13 @@ route53profiles:DisassociateProfile
 route53profiles:DisassociateResourceFromProfile
 route53profiles:GetProfile
 route53profiles:GetProfileAssociation
+route53profiles:GetProfilePolicy
 route53profiles:GetProfileResourceAssociation
 route53profiles:ListProfileAssociations
 route53profiles:ListProfileResourceAssociations
 route53profiles:ListProfiles
 route53profiles:ListTagsForResource
+route53profiles:PutProfilePolicy
 route53profiles:TagResource
 route53profiles:UntagResource
 route53profiles:UpdateProfileResourceAssociation
