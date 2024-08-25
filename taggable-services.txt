@@ -99,8 +99,6 @@ elasticbeanstalk
 elasticfilesystem
 elasticloadbalancing
 elasticmapreduce
-elemental-activations
-elemental-appliances-software
 emr-containers
 emr-serverless
 entityresolution

@@ -38,6 +38,8 @@ ec2-instance-connect
 ec2messages
 eks-auth
 elastictranscoder
+elemental-activations
+elemental-appliances-software
 elemental-support-cases
 elemental-support-content
 execute-api
