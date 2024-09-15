@@ -56,7 +56,6 @@ inspector-scan
 invoicing
 iot-device-tester
 iotjobsdata
-iotroborunner
 iq
 iq-permission
 kafka-cluster

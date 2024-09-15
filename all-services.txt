@@ -193,7 +193,6 @@ iotevents
 iotfleethub
 iotfleetwise
 iotjobsdata
-iotroborunner
 iotsitewise
 iottwinmaker
 iotwireless
