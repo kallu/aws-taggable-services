@@ -33,6 +33,7 @@ customer-verification
 dbqms
 deeplens
 devops-guru
+ds-data
 ebs
 ec2-instance-connect
 ec2messages

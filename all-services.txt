@@ -122,6 +122,7 @@ dms
 docdb-elastic
 drs
 ds
+ds-data
 dynamodb
 ebs
 ec2
