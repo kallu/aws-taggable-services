@@ -10487,6 +10487,7 @@ mediaconvert:ListJobs
 mediaconvert:ListPresets
 mediaconvert:ListQueues
 mediaconvert:ListTagsForResource
+mediaconvert:ListVersions
 mediaconvert:PutPolicy
 mediaconvert:SearchJobs
 mediaconvert:TagResource
@@ -12267,6 +12268,7 @@ qapps:DeleteLibraryItem
 qapps:DeleteQApp
 qapps:DisassociateLibraryItemReview
 qapps:DisassociateQAppFromUser
+qapps:ExportQAppSessionData
 qapps:GetLibraryItem
 qapps:GetQApp
 qapps:GetQAppSession
@@ -12275,6 +12277,7 @@ qapps:ImportDocument
 qapps:ImportDocumentToQApp
 qapps:ImportDocumentToQAppSession
 qapps:ListLibraryItems
+qapps:ListQAppSessionData
 qapps:ListQApps
 qapps:ListTagsForResource
 qapps:PredictProblemStatementFromConversation
@@ -13232,6 +13235,7 @@ resource-explorer:ListResourceTypes
 resource-explorer:ListResources
 resource-explorer:ListTags
 resource-groups:AssociateResource
+resource-groups:CancelTagSyncTask
 resource-groups:CreateGroup
 resource-groups:DeleteGroup
 resource-groups:DeleteGroupPolicy
@@ -13241,14 +13245,18 @@ resource-groups:GetGroup
 resource-groups:GetGroupConfiguration
 resource-groups:GetGroupPolicy
 resource-groups:GetGroupQuery
+resource-groups:GetTagSyncTask
 resource-groups:GetTags
 resource-groups:GroupResources
 resource-groups:ListGroupResources
+resource-groups:ListGroupingStatuses
 resource-groups:ListGroups
 resource-groups:ListResourceTypes
+resource-groups:ListTagSyncTasks
 resource-groups:PutGroupConfiguration
 resource-groups:PutGroupPolicy
 resource-groups:SearchResources
+resource-groups:StartTagSyncTask
 resource-groups:Tag
 resource-groups:UngroupResources
 resource-groups:Untag
@@ -14564,6 +14572,7 @@ servicecatalog:DeletePortfolioShare
 servicecatalog:DeleteProduct
 servicecatalog:DeleteProvisionedProductPlan
 servicecatalog:DeleteProvisioningArtifact
+servicecatalog:DeleteResourcePolicy
 servicecatalog:DeleteServiceAction
 servicecatalog:DeleteTagOption
 servicecatalog:DescribeConstraint
@@ -14599,6 +14608,7 @@ servicecatalog:GetAssociatedResource
 servicecatalog:GetAttributeGroup
 servicecatalog:GetConfiguration
 servicecatalog:GetProvisionedProductOutputs
+servicecatalog:GetResourcePolicy
 servicecatalog:ImportAsProvisionedProduct
 servicecatalog:ListAcceptedPortfolioShares
 servicecatalog:ListApplications
@@ -14629,6 +14639,7 @@ servicecatalog:NotifyTerminateProvisionedProductEngineWorkflowResult
 servicecatalog:NotifyUpdateProvisionedProductEngineWorkflowResult
 servicecatalog:ProvisionProduct
 servicecatalog:PutConfiguration
+servicecatalog:PutResourcePolicy
 servicecatalog:RejectPortfolioShare
 servicecatalog:ScanProvisionedProducts
 servicecatalog:SearchProducts
@@ -14990,6 +15001,7 @@ sms-voice:DeleteProtectConfiguration
 sms-voice:DeleteRegistration
 sms-voice:DeleteRegistrationAttachment
 sms-voice:DeleteRegistrationFieldValue
+sms-voice:DeleteResourcePolicy
 sms-voice:DeleteTextMessageSpendLimitOverride
 sms-voice:DeleteVerifiedDestinationNumber
 sms-voice:DeleteVoiceMessageSpendLimitOverride
@@ -15017,6 +15029,7 @@ sms-voice:DisassociateProtectConfiguration
 sms-voice:DiscardRegistrationVersion
 sms-voice:GetConfigurationSetEventDestinations
 sms-voice:GetProtectConfigurationCountryRuleSet
+sms-voice:GetResourcePolicy
 sms-voice:ListConfigurationSets
 sms-voice:ListPoolOriginationIdentities
 sms-voice:ListRegistrationAssociations
@@ -15024,6 +15037,7 @@ sms-voice:ListTagsForResource
 sms-voice:PutKeyword
 sms-voice:PutOptedOutNumber
 sms-voice:PutRegistrationFieldValue
+sms-voice:PutResourcePolicy
 sms-voice:ReleasePhoneNumber
 sms-voice:ReleaseSenderId
 sms-voice:RequestPhoneNumber
@@ -15552,17 +15566,21 @@ sso-directory:DisableUser
 sso-directory:EnableExternalIdPConfigurationForDirectory
 sso-directory:EnableUser
 sso-directory:GetAWSSPConfigurationForDirectory
+sso-directory:GetGroupId
+sso-directory:GetUserId
 sso-directory:GetUserPoolInfo
 sso-directory:ImportExternalIdPCertificate
 sso-directory:IsMemberInGroup
 sso-directory:ListBearerTokens
 sso-directory:ListExternalIdPCertificates
 sso-directory:ListExternalIdPConfigurationsForDirectory
+sso-directory:ListGroups
 sso-directory:ListGroupsForMember
 sso-directory:ListGroupsForUser
 sso-directory:ListMembersInGroup
 sso-directory:ListMfaDevicesForUser
 sso-directory:ListProvisioningTenants
+sso-directory:ListUsers
 sso-directory:RemoveMemberFromGroup
 sso-directory:SearchGroups
 sso-directory:SearchUsers
