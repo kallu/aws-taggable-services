@@ -1226,6 +1226,7 @@ awsconnector:ValidateConnectorId
 b2bi:CreateCapability
 b2bi:CreatePartnership
 b2bi:CreateProfile
+b2bi:CreateStarterMappingTemplate
 b2bi:CreateTransformer
 b2bi:DeleteCapability
 b2bi:DeletePartnership
@@ -1243,6 +1244,7 @@ b2bi:ListTagsForResource
 b2bi:ListTransformers
 b2bi:StartTransformerJob
 b2bi:TagResource
+b2bi:TestConversion
 b2bi:TestMapping
 b2bi:TestParsing
 b2bi:UntagResource
@@ -1500,6 +1502,7 @@ bedrock:GetProvisionedModelThroughput
 bedrock:GetResourcePolicy
 bedrock:GetUseCaseForModelAccess
 bedrock:InvokeAgent
+bedrock:InvokeBuilder
 bedrock:InvokeFlow
 bedrock:InvokeModel
 bedrock:InvokeModelWithResponseStream
@@ -1539,6 +1542,7 @@ bedrock:Retrieve
 bedrock:RetrieveAndGenerate
 bedrock:StartIngestionJob
 bedrock:StopEvaluationJob
+bedrock:StopIngestionJob
 bedrock:StopModelCustomizationJob
 bedrock:StopModelInvocationJob
 bedrock:TagResource
@@ -12479,6 +12483,7 @@ quicksight:DescribeIngestion
 quicksight:DescribeIpRestriction
 quicksight:DescribeKeyRegistration
 quicksight:DescribeNamespace
+quicksight:DescribeQPersonalizationConfiguration
 quicksight:DescribeRefreshSchedule
 quicksight:DescribeRoleCustomPermission
 quicksight:DescribeTemplate
@@ -12581,6 +12586,7 @@ quicksight:UpdateIdentityPropagationConfig
 quicksight:UpdateIpRestriction
 quicksight:UpdateKeyRegistration
 quicksight:UpdatePublicSharingSettings
+quicksight:UpdateQPersonalizationConfiguration
 quicksight:UpdateRefreshSchedule
 quicksight:UpdateResourcePermissions
 quicksight:UpdateRoleCustomPermission
@@ -14361,19 +14367,30 @@ schemas:UpdateRegistry
 schemas:UpdateSchema
 scn:AssignAdminPermissionsToUser
 scn:CreateBillOfMaterialsImportJob
+scn:CreateDataIntegrationFlow
+scn:CreateDataLakeDataset
 scn:CreateInstance
 scn:CreateSSOApplication
+scn:DeleteDataIntegrationFlow
+scn:DeleteDataLakeDataset
 scn:DeleteInstance
 scn:DeleteSSOApplication
 scn:DescribeInstance
 scn:GetBillOfMaterialsImportJob
+scn:GetDataIntegrationFlow
+scn:GetDataLakeDataset
+scn:GetInstance
 scn:ListAdminUsers
+scn:ListDataIntegrationFlows
+scn:ListDataLakeDatasets
 scn:ListInstances
 scn:ListTagsForResource
 scn:RemoveAdminPermissionsForUser
 scn:SendDataIntegrationEvent
 scn:TagResource
 scn:UntagResource
+scn:UpdateDataIntegrationFlow
+scn:UpdateDataLakeDataset
 scn:UpdateInstance
 sdb:BatchDeleteAttributes
 sdb:BatchPutAttributes
@@ -15317,6 +15334,7 @@ ssm-contacts:UpdateContactChannel
 ssm-contacts:UpdateRotation
 ssm-guiconnect:CancelConnection
 ssm-guiconnect:GetConnection
+ssm-guiconnect:ListConnections
 ssm-guiconnect:StartConnection
 ssm-incidents:BatchGetIncidentFindings
 ssm-incidents:CreateReplicationSet
