@@ -1180,6 +1180,7 @@ aws-marketplace:DisassociateProductsFromPrivateMarketplace
 aws-marketplace:GetAgreementApprovalRequest
 aws-marketplace:GetAgreementRequest
 aws-marketplace:GetAgreementTerms
+aws-marketplace:GetBuyerDashboard
 aws-marketplace:GetEntitlements
 aws-marketplace:GetResourcePolicy
 aws-marketplace:GetSellerDashboard
@@ -4364,6 +4365,7 @@ deadline:GetBudget
 deadline:GetFarm
 deadline:GetFleet
 deadline:GetJob
+deadline:GetJobTemplate
 deadline:GetLicenseEndpoint
 deadline:GetMonitor
 deadline:GetQueue
@@ -4384,6 +4386,7 @@ deadline:ListFarms
 deadline:ListFleetMembers
 deadline:ListFleets
 deadline:ListJobMembers
+deadline:ListJobParameterDefinitions
 deadline:ListJobs
 deadline:ListLicenseEndpoints
 deadline:ListMeteredProducts
@@ -9524,7 +9527,6 @@ lambda:DeleteFunctionEventInvokeConfig
 lambda:DeleteFunctionUrlConfig
 lambda:DeleteLayerVersion
 lambda:DeleteProvisionedConcurrencyConfig
-lambda:DeleteResourcePolicy
 lambda:DisableReplication
 lambda:EnableReplication
 lambda:GetAccountSettings
@@ -9542,8 +9544,6 @@ lambda:GetLayerVersion
 lambda:GetLayerVersionPolicy
 lambda:GetPolicy
 lambda:GetProvisionedConcurrencyConfig
-lambda:GetPublicAccessBlockConfig
-lambda:GetResourcePolicy
 lambda:GetRuntimeManagementConfig
 lambda:InvokeAsync
 lambda:InvokeFunction
@@ -9567,8 +9567,6 @@ lambda:PutFunctionConcurrency
 lambda:PutFunctionEventInvokeConfig
 lambda:PutFunctionRecursionConfig
 lambda:PutProvisionedConcurrencyConfig
-lambda:PutPublicAccessBlockConfig
-lambda:PutResourcePolicy
 lambda:PutRuntimeManagementConfig
 lambda:RemoveLayerVersionPermission
 lambda:RemovePermission
@@ -12321,6 +12319,7 @@ qbusiness:DeletePlugin
 qbusiness:DeleteRetriever
 qbusiness:DeleteUser
 qbusiness:DeleteWebExperience
+qbusiness:DisableAclOnDataSource
 qbusiness:GetApplication
 qbusiness:GetChatControlsConfiguration
 qbusiness:GetDataSource
@@ -15198,6 +15197,19 @@ sns:TagResource
 sns:Unsubscribe
 sns:UntagResource
 sns:VerifySMSSandboxPhoneNumber
+social-messaging:AssociateWhatsAppBusinessAccount
+social-messaging:DeleteWhatsAppMessageMedia
+social-messaging:DisassociateWhatsAppBusinessAccount
+social-messaging:GetLinkedWhatsAppBusinessAccount
+social-messaging:GetLinkedWhatsAppBusinessAccountPhoneNumber
+social-messaging:GetWhatsAppMessageMedia
+social-messaging:ListLinkedWhatsAppBusinessAccounts
+social-messaging:ListTagsForResource
+social-messaging:PostWhatsAppMessageMedia
+social-messaging:PutWhatsAppBusinessAccountEventDestinations
+social-messaging:SendWhatsAppMessage
+social-messaging:TagResource
+social-messaging:UntagResource
 sqlworkbench:AssociateConnectionWithChart
 sqlworkbench:AssociateConnectionWithTab
 sqlworkbench:AssociateNotebookWithTab
@@ -16774,6 +16786,10 @@ wickr:TagResource
 wickr:UntagResource
 wickr:UpdateNetworkDetails
 wisdom:ActivateMessageTemplate
+wisdom:CreateAIAgent
+wisdom:CreateAIAgentVersion
+wisdom:CreateAIPrompt
+wisdom:CreateAIPromptVersion
 wisdom:CreateAssistant
 wisdom:CreateAssistantAssociation
 wisdom:CreateContent
@@ -16785,6 +16801,10 @@ wisdom:CreateMessageTemplateVersion
 wisdom:CreateQuickResponse
 wisdom:CreateSession
 wisdom:DeactivateMessageTemplate
+wisdom:DeleteAIAgent
+wisdom:DeleteAIAgentVersion
+wisdom:DeleteAIPrompt
+wisdom:DeleteAIPromptVersion
 wisdom:DeleteAssistant
 wisdom:DeleteAssistantAssociation
 wisdom:DeleteContent
@@ -16794,6 +16814,8 @@ wisdom:DeleteKnowledgeBase
 wisdom:DeleteMessageTemplate
 wisdom:DeleteMessageTemplateAttachment
 wisdom:DeleteQuickResponse
+wisdom:GetAIAgent
+wisdom:GetAIPrompt
 wisdom:GetAssistant
 wisdom:GetAssistantAssociation
 wisdom:GetContent
@@ -16805,6 +16827,10 @@ wisdom:GetMessageTemplate
 wisdom:GetQuickResponse
 wisdom:GetRecommendations
 wisdom:GetSession
+wisdom:ListAIAgentVersions
+wisdom:ListAIAgents
+wisdom:ListAIPromptVersions
+wisdom:ListAIPrompts
 wisdom:ListAssistantAssociations
 wisdom:ListAssistants
 wisdom:ListContentAssociations
@@ -16818,6 +16844,7 @@ wisdom:ListTagsForResource
 wisdom:NotifyRecommendationsReceived
 wisdom:PutFeedback
 wisdom:QueryAssistant
+wisdom:RemoveAssistantAIAgent
 wisdom:RemoveKnowledgeBaseTemplateUri
 wisdom:RenderMessageTemplate
 wisdom:SearchContent
@@ -16828,12 +16855,16 @@ wisdom:StartContentUpload
 wisdom:StartImportJob
 wisdom:TagResource
 wisdom:UntagResource
+wisdom:UpdateAIAgent
+wisdom:UpdateAIPrompt
+wisdom:UpdateAssistantAIAgent
 wisdom:UpdateContent
 wisdom:UpdateKnowledgeBaseTemplateUri
 wisdom:UpdateMessageTemplate
 wisdom:UpdateMessageTemplateMetadata
 wisdom:UpdateQuickResponse
 wisdom:UpdateSession
+wisdom:UpdateSessionData
 workdocs:AbortDocumentVersionUpload
 workdocs:ActivateUser
 workdocs:AddNotificationPermissions

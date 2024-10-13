@@ -254,6 +254,7 @@ simspaceweaver
 sms-voice
 snow-device-management
 sns
+social-messaging
 sqlworkbench
 sqs
 ssm
