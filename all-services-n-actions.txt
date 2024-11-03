@@ -507,6 +507,7 @@ application-signals:CreateServiceLevelObjective
 application-signals:DeleteServiceLevelObjective
 application-signals:GetService
 application-signals:GetServiceLevelObjective
+application-signals:ListObservedEntities
 application-signals:ListServiceDependencies
 application-signals:ListServiceDependents
 application-signals:ListServiceLevelObjectives
@@ -1445,6 +1446,7 @@ bedrock:CreateFlowVersion
 bedrock:CreateFoundationModelAgreement
 bedrock:CreateGuardrail
 bedrock:CreateGuardrailVersion
+bedrock:CreateInferenceProfile
 bedrock:CreateKnowledgeBase
 bedrock:CreateModelCopyJob
 bedrock:CreateModelCustomizationJob
@@ -1467,6 +1469,7 @@ bedrock:DeleteFlowVersion
 bedrock:DeleteFoundationModelAgreement
 bedrock:DeleteGuardrail
 bedrock:DeleteImportedModel
+bedrock:DeleteInferenceProfile
 bedrock:DeleteKnowledgeBase
 bedrock:DeleteModelInvocationLoggingConfiguration
 bedrock:DeletePrompt
@@ -5929,6 +5932,8 @@ ecs:DeregisterTaskDefinition
 ecs:DescribeCapacityProviders
 ecs:DescribeClusters
 ecs:DescribeContainerInstances
+ecs:DescribeServiceDeployments
+ecs:DescribeServiceRevisions
 ecs:DescribeServices
 ecs:DescribeTaskDefinition
 ecs:DescribeTaskSets
@@ -5940,6 +5945,7 @@ ecs:ListAccountSettings
 ecs:ListAttributes
 ecs:ListClusters
 ecs:ListContainerInstances
+ecs:ListServiceDeployments
 ecs:ListServices
 ecs:ListServicesByNamespace
 ecs:ListTagsForResource
@@ -6489,6 +6495,7 @@ es:AuthorizeVpcEndpointAccess
 es:CancelDomainConfigChange
 es:CancelElasticsearchServiceSoftwareUpdate
 es:CancelServiceSoftwareUpdate
+es:CreateApplication
 es:CreateDomain
 es:CreateElasticsearchDomain
 es:CreateElasticsearchServiceRole
@@ -6497,6 +6504,7 @@ es:CreateOutboundCrossClusterSearchConnection
 es:CreatePackage
 es:CreateServiceRole
 es:CreateVpcEndpoint
+es:DeleteApplication
 es:DeleteDataSource
 es:DeleteDomain
 es:DeleteElasticsearchDomain
@@ -6538,6 +6546,7 @@ es:ESHttpHead
 es:ESHttpPatch
 es:ESHttpPost
 es:ESHttpPut
+es:GetApplication
 es:GetCompatibleElasticsearchVersions
 es:GetCompatibleVersions
 es:GetDataSource
@@ -6545,6 +6554,7 @@ es:GetDomainMaintenanceStatus
 es:GetPackageVersionHistory
 es:GetUpgradeHistory
 es:GetUpgradeStatus
+es:ListApplications
 es:ListDataSources
 es:ListDomainMaintenances
 es:ListDomainNames
@@ -6569,6 +6579,7 @@ es:RevokeVpcEndpointAccess
 es:StartDomainMaintenance
 es:StartElasticsearchServiceSoftwareUpdate
 es:StartServiceSoftwareUpdate
+es:UpdateApplication
 es:UpdateDataSource
 es:UpdateDomainConfig
 es:UpdateElasticsearchDomainConfig
@@ -10057,8 +10068,10 @@ logs:GetLogRecord
 logs:GetQueryResults
 logs:Link
 logs:ListAnomalies
+logs:ListEntitiesForLogGroup
 logs:ListLogAnomalyDetectors
 logs:ListLogDeliveries
+logs:ListLogGroupsForEntity
 logs:ListTagsForResource
 logs:ListTagsLogGroup
 logs:PutAccountPolicy
@@ -11829,6 +11842,7 @@ payment-cryptography:EncryptData
 payment-cryptography:ExportKey
 payment-cryptography:GenerateCardValidationData
 payment-cryptography:GenerateMac
+payment-cryptography:GenerateMacEmvPinChange
 payment-cryptography:GeneratePinData
 payment-cryptography:GetAlias
 payment-cryptography:GetKey
@@ -12272,6 +12286,9 @@ q:StartTroubleshootingResolutionExplanation
 q:UpdateTroubleshootingCommandResult
 qapps:AssociateLibraryItemReview
 qapps:AssociateQAppWithUser
+qapps:BatchCreateCategory
+qapps:BatchDeleteCategory
+qapps:BatchUpdateCategory
 qapps:CopyQApp
 qapps:CreateLibraryItem
 qapps:CreateLibraryItemReview
@@ -12289,6 +12306,7 @@ qapps:GetQAppSessionMetadata
 qapps:ImportDocument
 qapps:ImportDocumentToQApp
 qapps:ImportDocumentToQAppSession
+qapps:ListCategories
 qapps:ListLibraryItems
 qapps:ListQAppSessionData
 qapps:ListQApps
@@ -13967,6 +13985,7 @@ sagemaker-mlflow:UpdateRun
 sagemaker:AddAssociation
 sagemaker:AddTags
 sagemaker:AssociateTrialComponent
+sagemaker:BatchDeleteClusterNodes
 sagemaker:BatchDescribeModelPackage
 sagemaker:BatchGetMetrics
 sagemaker:BatchGetRecord
@@ -16989,6 +17008,7 @@ workmail:CancelMailboxExportJob
 workmail:CreateAlias
 workmail:CreateAvailabilityConfiguration
 workmail:CreateGroup
+workmail:CreateIdentityCenterApplication
 workmail:CreateImpersonationRole
 workmail:CreateInboundMailFlowRule
 workmail:CreateMailDomain
@@ -17003,6 +17023,8 @@ workmail:DeleteAlias
 workmail:DeleteAvailabilityConfiguration
 workmail:DeleteEmailMonitoringConfiguration
 workmail:DeleteGroup
+workmail:DeleteIdentityCenterApplication
+workmail:DeleteIdentityProviderConfiguration
 workmail:DeleteImpersonationRole
 workmail:DeleteInboundMailFlowRule
 workmail:DeleteMailDomain
@@ -17012,6 +17034,7 @@ workmail:DeleteMobileDeviceAccessOverride
 workmail:DeleteMobileDeviceAccessRule
 workmail:DeleteOrganization
 workmail:DeleteOutboundMailFlowRule
+workmail:DeletePersonalAccessToken
 workmail:DeleteResource
 workmail:DeleteRetentionPolicy
 workmail:DeleteSmtpGateway
@@ -17022,6 +17045,7 @@ workmail:DeregisterMailDomain
 workmail:DescribeEmailMonitoringConfiguration
 workmail:DescribeEntity
 workmail:DescribeGroup
+workmail:DescribeIdentityProviderConfiguration
 workmail:DescribeInboundDmarcSettings
 workmail:DescribeInboundMailFlowRule
 workmail:DescribeMailDomains
@@ -17047,6 +17071,7 @@ workmail:GetMobileDeviceAccessOverride
 workmail:GetMobileDeviceDetails
 workmail:GetMobileDevicesForUser
 workmail:GetMobilePolicyDetails
+workmail:GetPersonalAccessTokenMetadata
 workmail:ListAccessControlRules
 workmail:ListAliases
 workmail:ListAvailabilityConfigurations
@@ -17062,6 +17087,7 @@ workmail:ListMobileDeviceAccessOverrides
 workmail:ListMobileDeviceAccessRules
 workmail:ListOrganizations
 workmail:ListOutboundMailFlowRules
+workmail:ListPersonalAccessTokens
 workmail:ListResourceDelegates
 workmail:ListResources
 workmail:ListSmtpGateways
@@ -17069,6 +17095,7 @@ workmail:ListTagsForResource
 workmail:ListUsers
 workmail:PutAccessControlRule
 workmail:PutEmailMonitoringConfiguration
+workmail:PutIdentityProviderConfiguration
 workmail:PutInboundDmarcSettings
 workmail:PutMailboxPermissions
 workmail:PutMobileDeviceAccessOverride
