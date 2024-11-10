@@ -777,16 +777,20 @@ appstudio:StartTeamDeployment
 appsync:AssociateApi
 appsync:AssociateMergedGraphqlApi
 appsync:AssociateSourceGraphqlApi
+appsync:CreateApi
 appsync:CreateApiCache
 appsync:CreateApiKey
+appsync:CreateChannelNamespace
 appsync:CreateDataSource
 appsync:CreateDomainName
 appsync:CreateFunction
 appsync:CreateGraphqlApi
 appsync:CreateResolver
 appsync:CreateType
+appsync:DeleteApi
 appsync:DeleteApiCache
 appsync:DeleteApiKey
+appsync:DeleteChannelNamespace
 appsync:DeleteDataSource
 appsync:DeleteDomainName
 appsync:DeleteFunction
@@ -799,9 +803,14 @@ appsync:DisassociateMergedGraphqlApi
 appsync:DisassociateSourceGraphqlApi
 appsync:EvaluateCode
 appsync:EvaluateMappingTemplate
+appsync:EventConnect
+appsync:EventPublish
+appsync:EventSubscribe
 appsync:FlushApiCache
+appsync:GetApi
 appsync:GetApiAssociation
 appsync:GetApiCache
+appsync:GetChannelNamespace
 appsync:GetDataSource
 appsync:GetDataSourceIntrospection
 appsync:GetDomainName
@@ -816,6 +825,8 @@ appsync:GetSourceApiAssociation
 appsync:GetType
 appsync:GraphQL
 appsync:ListApiKeys
+appsync:ListApis
+appsync:ListChannelNamespaces
 appsync:ListDataSources
 appsync:ListDomainNames
 appsync:ListFunctions
@@ -835,8 +846,10 @@ appsync:StartSchemaCreation
 appsync:StartSchemaMerge
 appsync:TagResource
 appsync:UntagResource
+appsync:UpdateApi
 appsync:UpdateApiCache
 appsync:UpdateApiKey
+appsync:UpdateChannelNamespace
 appsync:UpdateDataSource
 appsync:UpdateDomainName
 appsync:UpdateFunction
@@ -909,6 +922,7 @@ aps:RemoteWrite
 aps:TagResource
 aps:UntagResource
 aps:UpdateLoggingConfiguration
+aps:UpdateScraper
 aps:UpdateWorkspaceAlias
 arc-zonal-shift:CancelZonalShift
 arc-zonal-shift:CreatePracticeRunConfiguration
@@ -1543,6 +1557,7 @@ bedrock:PutFoundationModelEntitlement
 bedrock:PutModelInvocationLoggingConfiguration
 bedrock:PutResourcePolicy
 bedrock:PutUseCaseForModelAccess
+bedrock:RenderPrompt
 bedrock:Retrieve
 bedrock:RetrieveAndGenerate
 bedrock:StartIngestionJob
@@ -1563,6 +1578,7 @@ bedrock:UpdateGuardrail
 bedrock:UpdateKnowledgeBase
 bedrock:UpdatePrompt
 bedrock:UpdateProvisionedModelThroughput
+bedrock:ValidateFlowDefinition
 billing:GetBillingData
 billing:GetBillingDetails
 billing:GetBillingNotifications
@@ -2666,6 +2682,7 @@ cloudwatch:GetTopologyDiscoveryStatus
 cloudwatch:GetTopologyMap
 cloudwatch:Link
 cloudwatch:ListDashboards
+cloudwatch:ListEntitiesForMetric
 cloudwatch:ListManagedInsightRules
 cloudwatch:ListMetricStreams
 cloudwatch:ListMetrics
@@ -3599,6 +3616,7 @@ connect-campaigns:UpdateCampaignName
 connect-campaigns:UpdateCampaignOutboundCallConfig
 connect:ActivateEvaluationForm
 connect:AdminGetEmergencyAccessToken
+connect:AssociateAnalyticsDataSet
 connect:AssociateApprovedOrigin
 connect:AssociateBot
 connect:AssociateCustomerProfilesDomain
@@ -3698,6 +3716,7 @@ connect:DescribeUserHierarchyGroup
 connect:DescribeUserHierarchyStructure
 connect:DescribeView
 connect:DescribeVocabulary
+connect:DisassociateAnalyticsDataSet
 connect:DisassociateApprovedOrigin
 connect:DisassociateBot
 connect:DisassociateCustomerProfilesDomain
@@ -3726,6 +3745,7 @@ connect:GetTaskTemplate
 connect:GetTrafficDistribution
 connect:ImportPhoneNumber
 connect:ListAgentStatuses
+connect:ListAnalyticsDataAssociations
 connect:ListApprovedOrigins
 connect:ListAuthenticationProfiles
 connect:ListBots
@@ -3803,7 +3823,9 @@ connect:StartContactEvaluation
 connect:StartContactRecording
 connect:StartContactStreaming
 connect:StartForecastingPlanningSchedulingIntegration
+connect:StartOutboundChatContact
 connect:StartOutboundVoiceContact
+connect:StartScreenSharing
 connect:StartTaskContact
 connect:StartWebRTCContact
 connect:StopContact
@@ -4911,6 +4933,7 @@ dms:UpdateInstanceProfile
 dms:UpdateMigrationProject
 dms:UpdateSubscriptionsToEventBridge
 dms:UploadFileMetadataList
+docdb-elastic:ApplyPendingMaintenanceAction
 docdb-elastic:CopyClusterSnapshot
 docdb-elastic:CreateCluster
 docdb-elastic:CreateClusterSnapshot
@@ -4918,8 +4941,10 @@ docdb-elastic:DeleteCluster
 docdb-elastic:DeleteClusterSnapshot
 docdb-elastic:GetCluster
 docdb-elastic:GetClusterSnapshot
+docdb-elastic:GetPendingMaintenanceAction
 docdb-elastic:ListClusterSnapshots
 docdb-elastic:ListClusters
+docdb-elastic:ListPendingMaintenanceActions
 docdb-elastic:ListTagsForResource
 docdb-elastic:RestoreClusterFromSnapshot
 docdb-elastic:StartCluster
@@ -5194,6 +5219,7 @@ ec2-instance-connect:OpenTunnel
 ec2-instance-connect:SendSSHPublicKey
 ec2-instance-connect:SendSerialConsoleSSHPublicKey
 ec2:AcceptAddressTransfer
+ec2:AcceptCapacityReservationBillingOwnership
 ec2:AcceptReservedInstancesExchangeQuote
 ec2:AcceptTransitGatewayMulticastDomainAssociations
 ec2:AcceptTransitGatewayPeeringAttachment
@@ -5209,6 +5235,7 @@ ec2:AssignIpv6Addresses
 ec2:AssignPrivateIpAddresses
 ec2:AssignPrivateNatGatewayAddress
 ec2:AssociateAddress
+ec2:AssociateCapacityReservationBillingOwner
 ec2:AssociateClientVpnTargetNetwork
 ec2:AssociateDhcpOptions
 ec2:AssociateEnclaveCertificateIamRole
@@ -5218,6 +5245,7 @@ ec2:AssociateIpamByoasn
 ec2:AssociateIpamResourceDiscovery
 ec2:AssociateNatGatewayAddress
 ec2:AssociateRouteTable
+ec2:AssociateSecurityGroupVpc
 ec2:AssociateSubnetCidrBlock
 ec2:AssociateTransitGatewayMulticastDomain
 ec2:AssociateTransitGatewayPolicyTable
@@ -5431,6 +5459,7 @@ ec2:DescribeAwsNetworkPerformanceMetricSubscriptions
 ec2:DescribeBundleTasks
 ec2:DescribeByoipCidrs
 ec2:DescribeCapacityBlockOfferings
+ec2:DescribeCapacityReservationBillingRequests
 ec2:DescribeCapacityReservationFleets
 ec2:DescribeCapacityReservations
 ec2:DescribeCarrierGateways
@@ -5471,6 +5500,7 @@ ec2:DescribeInstanceConnectEndpoints
 ec2:DescribeInstanceCreditSpecifications
 ec2:DescribeInstanceEventNotificationAttributes
 ec2:DescribeInstanceEventWindows
+ec2:DescribeInstanceImageMetadata
 ec2:DescribeInstanceStatus
 ec2:DescribeInstanceTopology
 ec2:DescribeInstanceTypeOfferings
@@ -5523,6 +5553,7 @@ ec2:DescribeScheduledInstanceAvailability
 ec2:DescribeScheduledInstances
 ec2:DescribeSecurityGroupReferences
 ec2:DescribeSecurityGroupRules
+ec2:DescribeSecurityGroupVpcAssociations
 ec2:DescribeSecurityGroups
 ec2:DescribeSnapshotAttribute
 ec2:DescribeSnapshotTierStatus
@@ -5598,6 +5629,7 @@ ec2:DisableVgwRoutePropagation
 ec2:DisableVpcClassicLink
 ec2:DisableVpcClassicLinkDnsSupport
 ec2:DisassociateAddress
+ec2:DisassociateCapacityReservationBillingOwner
 ec2:DisassociateClientVpnTargetNetwork
 ec2:DisassociateEnclaveCertificateIamRole
 ec2:DisassociateIamInstanceProfile
@@ -5606,6 +5638,7 @@ ec2:DisassociateIpamByoasn
 ec2:DisassociateIpamResourceDiscovery
 ec2:DisassociateNatGatewayAddress
 ec2:DisassociateRouteTable
+ec2:DisassociateSecurityGroupVpc
 ec2:DisassociateSubnetCidrBlock
 ec2:DisassociateTransitGatewayMulticastDomain
 ec2:DisassociateTransitGatewayPolicyTable
@@ -5712,6 +5745,7 @@ ec2:ModifyIdentityIdFormat
 ec2:ModifyImageAttribute
 ec2:ModifyInstanceAttribute
 ec2:ModifyInstanceCapacityReservationAttributes
+ec2:ModifyInstanceCpuOptions
 ec2:ModifyInstanceCreditSpecification
 ec2:ModifyInstanceEventStartTime
 ec2:ModifyInstanceEventWindow
@@ -5781,6 +5815,7 @@ ec2:RegisterImage
 ec2:RegisterInstanceEventNotificationAttributes
 ec2:RegisterTransitGatewayMulticastGroupMembers
 ec2:RegisterTransitGatewayMulticastGroupSources
+ec2:RejectCapacityReservationBillingOwnership
 ec2:RejectTransitGatewayMulticastDomainAssociations
 ec2:RejectTransitGatewayPeeringAttachment
 ec2:RejectTransitGatewayVpcAttachment
@@ -6200,6 +6235,8 @@ elasticfilesystem:PutAccountPreferences
 elasticfilesystem:PutBackupPolicy
 elasticfilesystem:PutFileSystemPolicy
 elasticfilesystem:PutLifecycleConfiguration
+elasticfilesystem:ReplicationRead
+elasticfilesystem:ReplicationWrite
 elasticfilesystem:Restore
 elasticfilesystem:TagResource
 elasticfilesystem:UntagResource
@@ -7159,6 +7196,20 @@ gamelift:UpdateMatchmakingConfiguration
 gamelift:UpdateRuntimeConfiguration
 gamelift:UpdateScript
 gamelift:ValidateMatchmakingRuleSet
+geo-maps:GetStaticMap
+geo-maps:GetTile
+geo-places:Autocomplete
+geo-places:Geocode
+geo-places:GetPlace
+geo-places:ReverseGeocode
+geo-places:SearchNearby
+geo-places:SearchText
+geo-places:Suggest
+geo-routes:CalculateIsolines
+geo-routes:CalculateRouteMatrix
+geo-routes:CalculateRoutes
+geo-routes:OptimizeWaypoints
+geo-routes:SnapToRoads
 geo:AssociateTrackerConsumer
 geo:BatchDeleteDevicePositionHistory
 geo:BatchDeleteGeofence
@@ -10673,8 +10724,10 @@ mediapackage:TagResource
 mediapackage:UntagResource
 mediapackage:UpdateChannel
 mediapackage:UpdateOriginEndpoint
+mediapackagev2:CancelHarvestJob
 mediapackagev2:CreateChannel
 mediapackagev2:CreateChannelGroup
+mediapackagev2:CreateHarvestJob
 mediapackagev2:CreateOriginEndpoint
 mediapackagev2:DeleteChannel
 mediapackagev2:DeleteChannelGroup
@@ -10684,12 +10737,15 @@ mediapackagev2:DeleteOriginEndpointPolicy
 mediapackagev2:GetChannel
 mediapackagev2:GetChannelGroup
 mediapackagev2:GetChannelPolicy
+mediapackagev2:GetHarvestJob
 mediapackagev2:GetHeadObject
 mediapackagev2:GetObject
 mediapackagev2:GetOriginEndpoint
 mediapackagev2:GetOriginEndpointPolicy
+mediapackagev2:HarvestObject
 mediapackagev2:ListChannelGroups
 mediapackagev2:ListChannels
+mediapackagev2:ListHarvestJobs
 mediapackagev2:ListOriginEndpoints
 mediapackagev2:ListTagsForResource
 mediapackagev2:PutChannelPolicy
@@ -11598,6 +11654,7 @@ one:UpdateDeviceConfigurationTemplate
 one:UpdateDeviceInstance
 one:UpdateSite
 one:UpdateSiteAddress
+opensearch:ApplicationAccessAll
 opsworks-cm:AssociateNode
 opsworks-cm:CreateBackup
 opsworks-cm:CreateServer
@@ -12361,6 +12418,7 @@ qbusiness:GetRetriever
 qbusiness:GetUser
 qbusiness:GetWebExperience
 qbusiness:ListApplications
+qbusiness:ListAttachments
 qbusiness:ListConversations
 qbusiness:ListDataSourceSyncJobs
 qbusiness:ListDataSources
@@ -13252,6 +13310,7 @@ resiliencehub:UpdateResiliencyPolicy
 resource-explorer-2:AssociateDefaultView
 resource-explorer-2:BatchGetView
 resource-explorer-2:CreateIndex
+resource-explorer-2:CreateManagedView
 resource-explorer-2:CreateView
 resource-explorer-2:DeleteIndex
 resource-explorer-2:DeleteResourcePolicy
@@ -13260,10 +13319,12 @@ resource-explorer-2:DisassociateDefaultView
 resource-explorer-2:GetAccountLevelServiceConfiguration
 resource-explorer-2:GetDefaultView
 resource-explorer-2:GetIndex
+resource-explorer-2:GetManagedView
 resource-explorer-2:GetResourcePolicy
 resource-explorer-2:GetView
 resource-explorer-2:ListIndexes
 resource-explorer-2:ListIndexesForMembers
+resource-explorer-2:ListManagedViews
 resource-explorer-2:ListSupportedResourceTypes
 resource-explorer-2:ListTagsForResource
 resource-explorer-2:ListViews
@@ -13950,6 +14011,9 @@ sagemaker-mlflow:DeleteRegisteredModelAlias
 sagemaker-mlflow:DeleteRegisteredModelTag
 sagemaker-mlflow:DeleteRun
 sagemaker-mlflow:DeleteTag
+sagemaker-mlflow:DeleteTraceTag
+sagemaker-mlflow:DeleteTraces
+sagemaker-mlflow:EndTrace
 sagemaker-mlflow:GetDownloadURIForModelVersionArtifacts
 sagemaker-mlflow:GetExperiment
 sagemaker-mlflow:GetExperimentByName
@@ -13959,6 +14023,7 @@ sagemaker-mlflow:GetModelVersion
 sagemaker-mlflow:GetModelVersionByAlias
 sagemaker-mlflow:GetRegisteredModel
 sagemaker-mlflow:GetRun
+sagemaker-mlflow:GetTraceInfo
 sagemaker-mlflow:ListArtifacts
 sagemaker-mlflow:LogBatch
 sagemaker-mlflow:LogInputs
@@ -13972,11 +14037,14 @@ sagemaker-mlflow:SearchExperiments
 sagemaker-mlflow:SearchModelVersions
 sagemaker-mlflow:SearchRegisteredModels
 sagemaker-mlflow:SearchRuns
+sagemaker-mlflow:SearchTraces
 sagemaker-mlflow:SetExperimentTag
 sagemaker-mlflow:SetModelVersionTag
 sagemaker-mlflow:SetRegisteredModelAlias
 sagemaker-mlflow:SetRegisteredModelTag
 sagemaker-mlflow:SetTag
+sagemaker-mlflow:SetTraceTag
+sagemaker-mlflow:StartTrace
 sagemaker-mlflow:TransitionModelVersionStage
 sagemaker-mlflow:UpdateExperiment
 sagemaker-mlflow:UpdateModelVersion
@@ -16059,6 +16127,7 @@ tag:TagResources
 tag:UntagResources
 tax:BatchDeleteTaxRegistration
 tax:BatchPutTaxRegistration
+tax:DeleteSupplementalTaxRegistration
 tax:DeleteTaxRegistration
 tax:GetExemptions
 tax:GetTaxInfoReportingDocument
@@ -16066,7 +16135,9 @@ tax:GetTaxInheritance
 tax:GetTaxInterview
 tax:GetTaxRegistration
 tax:GetTaxRegistrationDocument
+tax:ListSupplementalTaxRegistrations
 tax:ListTaxRegistrations
+tax:PutSupplementalTaxRegistration
 tax:PutTaxInheritance
 tax:PutTaxInterview
 tax:PutTaxRegistration
@@ -16101,6 +16172,7 @@ thinclient:DeleteDevice
 thinclient:DeleteEnvironment
 thinclient:DeregisterDevice
 thinclient:GetDevice
+thinclient:GetDeviceDetails
 thinclient:GetEnvironment
 thinclient:GetSoftwareSet
 thinclient:ListDeviceSessions

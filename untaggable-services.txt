@@ -47,6 +47,9 @@ execute-api
 finspace-api
 freertos
 freetier
+geo-maps
+geo-places
+geo-routes
 groundtruthlabeling
 health
 identity-sync
@@ -71,6 +74,7 @@ migrationhub-strategy
 mobileanalytics
 neptune-db
 networkmanager-chat
+opensearch
 partnercentral-account-management
 polly
 pricing

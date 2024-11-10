@@ -163,6 +163,9 @@ freetier
 fsx
 gamelift
 geo
+geo-maps
+geo-places
+geo-routes
 glacier
 globalaccelerator
 glue
@@ -261,6 +264,7 @@ notifications-contacts
 oam
 omics
 one
+opensearch
 opsworks
 opsworks-cm
 organizations
