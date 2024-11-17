@@ -154,6 +154,7 @@ launchwizard
 lex
 license-manager
 license-manager-linux-subscriptions
+license-manager-user-subscriptions
 lightsail
 logs
 lookoutequipment
@@ -206,6 +207,7 @@ private-networks
 profile
 proton
 purchase-orders
+q
 qapps
 qbusiness
 qldb

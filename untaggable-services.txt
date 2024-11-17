@@ -63,7 +63,6 @@ iotjobsdata
 iq
 iq-permission
 kafka-cluster
-license-manager-user-subscriptions
 managedblockchain-query
 mapcredits
 marketplacecommerceanalytics
@@ -75,10 +74,10 @@ mobileanalytics
 neptune-db
 networkmanager-chat
 opensearch
+partnercentral
 partnercentral-account-management
 polly
 pricing
-q
 rds-data
 rds-db
 redshift-data
