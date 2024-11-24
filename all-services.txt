@@ -45,6 +45,7 @@ backup-gateway
 backup-storage
 batch
 bcm-data-exports
+bcm-pricing-calculator
 bedrock
 billing
 billingconductor
