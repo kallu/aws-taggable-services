@@ -73,6 +73,7 @@ migrationhub-strategy
 mobileanalytics
 neptune-db
 networkmanager-chat
+observabilityadmin
 opensearch
 partnercentral
 partnercentral-account-management
@@ -107,6 +108,7 @@ user-subscriptions
 verified-access
 verifiedpermissions
 vpc-lattice-svcs
+vpce
 wam
 workdocs
 workmailmessageflow

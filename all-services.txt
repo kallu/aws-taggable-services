@@ -263,6 +263,7 @@ nimble
 notifications
 notifications-contacts
 oam
+observabilityadmin
 omics
 one
 opensearch
@@ -393,6 +394,7 @@ verifiedpermissions
 voiceid
 vpc-lattice
 vpc-lattice-svcs
+vpce
 waf
 waf-regional
 wafv2

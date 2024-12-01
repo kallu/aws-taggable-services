@@ -3615,6 +3615,7 @@ compute-optimizer:GetRecommendationPreferences
 compute-optimizer:GetRecommendationSummaries
 compute-optimizer:PutRecommendationPreferences
 compute-optimizer:UpdateEnrollmentStatus
+config:AssociateResourceTypes
 config:BatchGetAggregateResourceConfig
 config:BatchGetResourceConfig
 config:DeleteAggregationAuthorization
@@ -3631,6 +3632,7 @@ config:DeleteRemediationConfiguration
 config:DeleteRemediationExceptions
 config:DeleteResourceConfig
 config:DeleteRetentionConfiguration
+config:DeleteServiceLinkedConfigurationRecorder
 config:DeleteStoredQuery
 config:DeliverConfigSnapshot
 config:DescribeAggregateComplianceByConfigRules
@@ -3658,6 +3660,7 @@ config:DescribeRemediationConfigurations
 config:DescribeRemediationExceptions
 config:DescribeRemediationExecutionStatus
 config:DescribeRetentionConfigurations
+config:DisassociateResourceTypes
 config:GetAggregateComplianceDetailsByConfigRule
 config:GetAggregateConfigRuleComplianceSummary
 config:GetAggregateConformancePackComplianceSummary
@@ -3678,6 +3681,7 @@ config:GetResourceConfigHistory
 config:GetResourceEvaluationSummary
 config:GetStoredQuery
 config:ListAggregateDiscoveredResources
+config:ListConfigurationRecorders
 config:ListConformancePackComplianceScores
 config:ListDiscoveredResources
 config:ListResourceEvaluations
@@ -3697,6 +3701,7 @@ config:PutRemediationConfigurations
 config:PutRemediationExceptions
 config:PutResourceConfig
 config:PutRetentionConfiguration
+config:PutServiceLinkedConfigurationRecorder
 config:PutStoredQuery
 config:SelectAggregateResourceConfig
 config:SelectResourceConfig
@@ -3727,6 +3732,7 @@ connect-campaigns:PauseCampaign
 connect-campaigns:PutConnectInstanceIntegration
 connect-campaigns:PutDialRequestBatch
 connect-campaigns:PutOutboundRequestBatch
+connect-campaigns:PutProfileOutboundRequestBatch
 connect-campaigns:ResumeCampaign
 connect-campaigns:StartCampaign
 connect-campaigns:StartInstanceOnboardingJob
@@ -6682,6 +6688,7 @@ entityresolution:UseWorkflow
 es:AcceptInboundConnection
 es:AcceptInboundCrossClusterSearchConnection
 es:AddDataSource
+es:AddDirectQueryDataSource
 es:AddTags
 es:AssociatePackage
 es:AssociatePackages
@@ -6700,6 +6707,7 @@ es:CreateServiceRole
 es:CreateVpcEndpoint
 es:DeleteApplication
 es:DeleteDataSource
+es:DeleteDirectQueryDataSource
 es:DeleteDomain
 es:DeleteElasticsearchDomain
 es:DeleteElasticsearchServiceRole
@@ -6745,12 +6753,14 @@ es:GetApplication
 es:GetCompatibleElasticsearchVersions
 es:GetCompatibleVersions
 es:GetDataSource
+es:GetDirectQueryDataSource
 es:GetDomainMaintenanceStatus
 es:GetPackageVersionHistory
 es:GetUpgradeHistory
 es:GetUpgradeStatus
 es:ListApplications
 es:ListDataSources
+es:ListDirectQueryDataSources
 es:ListDomainMaintenances
 es:ListDomainNames
 es:ListDomainsForPackage
@@ -6776,6 +6786,7 @@ es:StartElasticsearchServiceSoftwareUpdate
 es:StartServiceSoftwareUpdate
 es:UpdateApplication
 es:UpdateDataSource
+es:UpdateDirectQueryDataSource
 es:UpdateDomainConfig
 es:UpdateElasticsearchDomainConfig
 es:UpdatePackage
@@ -7660,6 +7671,7 @@ glue:GetJob
 glue:GetJobBookmark
 glue:GetJobRun
 glue:GetJobRuns
+glue:GetJobUpgradeAnalysis
 glue:GetJobs
 glue:GetLogParsingStatus
 glue:GetMLTaskRun
@@ -7724,6 +7736,7 @@ glue:ListDataQualityRulesetEvaluationRuns
 glue:ListDataQualityRulesets
 glue:ListDevEndpoints
 glue:ListEntities
+glue:ListJobUpgradeAnalyses
 glue:ListJobs
 glue:ListMLTransforms
 glue:ListRegistries
@@ -7768,6 +7781,7 @@ glue:StartDataQualityRulesetEvaluationRun
 glue:StartExportLabelsTaskRun
 glue:StartImportLabelsTaskRun
 glue:StartJobRun
+glue:StartJobUpgradeAnalysis
 glue:StartMLEvaluationTaskRun
 glue:StartMLLabelingSetGenerationTaskRun
 glue:StartNotebook
@@ -7777,6 +7791,7 @@ glue:StopColumnStatisticsTaskRun
 glue:StopColumnStatisticsTaskRunSchedule
 glue:StopCrawler
 glue:StopCrawlerSchedule
+glue:StopJobUpgradeAnalysis
 glue:StopSession
 glue:StopTrigger
 glue:StopWorkflowRun
@@ -7811,6 +7826,7 @@ glue:UpdateTrigger
 glue:UpdateUsageProfile
 glue:UpdateUserDefinedFunction
 glue:UpdateWorkflow
+glue:UpgradeJob
 glue:UseGlueStudio
 glue:UseMLTransforms
 grafana:AssociateLicense
@@ -10311,6 +10327,7 @@ logs:DeleteDeliveryDestinationPolicy
 logs:DeleteDeliverySource
 logs:DeleteDestination
 logs:DeleteIndexPolicy
+logs:DeleteIntegration
 logs:DeleteLogAnomalyDetector
 logs:DeleteLogDelivery
 logs:DeleteLogGroup
@@ -10344,6 +10361,7 @@ logs:GetDelivery
 logs:GetDeliveryDestination
 logs:GetDeliveryDestinationPolicy
 logs:GetDeliverySource
+logs:GetIntegration
 logs:GetLogAnomalyDetector
 logs:GetLogDelivery
 logs:GetLogEvents
@@ -10354,6 +10372,7 @@ logs:GetTransformer
 logs:Link
 logs:ListAnomalies
 logs:ListEntitiesForLogGroup
+logs:ListIntegrations
 logs:ListLogAnomalyDetectors
 logs:ListLogDeliveries
 logs:ListLogGroupsForEntity
@@ -10368,6 +10387,7 @@ logs:PutDeliverySource
 logs:PutDestination
 logs:PutDestinationPolicy
 logs:PutIndexPolicy
+logs:PutIntegration
 logs:PutLogEvents
 logs:PutMetricFilter
 logs:PutQueryDefinition
@@ -11600,6 +11620,7 @@ networkmanager:CreateConnectPeer
 networkmanager:CreateConnection
 networkmanager:CreateCoreNetwork
 networkmanager:CreateDevice
+networkmanager:CreateDirectConnectGatewayAttachment
 networkmanager:CreateGlobalNetwork
 networkmanager:CreateLink
 networkmanager:CreateSite
@@ -11635,6 +11656,7 @@ networkmanager:GetCoreNetworkChangeSet
 networkmanager:GetCoreNetworkPolicy
 networkmanager:GetCustomerGatewayAssociations
 networkmanager:GetDevices
+networkmanager:GetDirectConnectGatewayAttachment
 networkmanager:GetLinkAssociations
 networkmanager:GetLinks
 networkmanager:GetNetworkResourceCounts
@@ -11670,6 +11692,7 @@ networkmanager:UntagResource
 networkmanager:UpdateConnection
 networkmanager:UpdateCoreNetwork
 networkmanager:UpdateDevice
+networkmanager:UpdateDirectConnectGatewayAttachment
 networkmanager:UpdateGlobalNetwork
 networkmanager:UpdateLink
 networkmanager:UpdateNetworkResourceMetadata
@@ -11783,6 +11806,14 @@ oam:PutSinkPolicy
 oam:TagResource
 oam:UntagResource
 oam:UpdateLink
+observabilityadmin:GetTelemetryEvaluationStatus
+observabilityadmin:GetTelemetryEvaluationStatusForOrganization
+observabilityadmin:ListResourceTelemetry
+observabilityadmin:ListResourceTelemetryForOrganization
+observabilityadmin:StartTelemetryEvaluation
+observabilityadmin:StartTelemetryEvaluationForOrganization
+observabilityadmin:StopTelemetryEvaluation
+observabilityadmin:StopTelemetryEvaluationForOrganization
 omics:AbortMultipartReadSetUpload
 omics:AcceptShare
 omics:BatchDeleteReadSet
@@ -11902,6 +11933,10 @@ one:UpdateDeviceInstance
 one:UpdateSite
 one:UpdateSiteAddress
 opensearch:ApplicationAccessAll
+opensearch:CancelDirectQuery
+opensearch:GetDirectQuery
+opensearch:GetDirectQueryResult
+opensearch:StartDirectQuery
 opsworks-cm:AssociateNode
 opsworks-cm:CreateBackup
 opsworks-cm:CreateServer
@@ -13224,6 +13259,7 @@ redshift-data:CancelStatement
 redshift-data:DescribeStatement
 redshift-data:DescribeTable
 redshift-data:ExecuteStatement
+redshift-data:GetStagingBucketLocation
 redshift-data:GetStatementResult
 redshift-data:ListDatabases
 redshift-data:ListSchemas
@@ -13251,6 +13287,7 @@ redshift-serverless:DescribeOneTimeCredit
 redshift-serverless:GetCredentials
 redshift-serverless:GetCustomDomainAssociation
 redshift-serverless:GetEndpointAccess
+redshift-serverless:GetManagedWorkgroup
 redshift-serverless:GetNamespace
 redshift-serverless:GetRecoveryPoint
 redshift-serverless:GetResourcePolicy
@@ -16941,6 +16978,7 @@ vpc-lattice:UpdateService
 vpc-lattice:UpdateServiceNetwork
 vpc-lattice:UpdateServiceNetworkVpcAssociation
 vpc-lattice:UpdateTargetGroup
+vpce:AllowMultiRegion
 waf-regional:AssociateWebACL
 waf-regional:CreateByteMatchSet
 waf-regional:CreateGeoMatchSet
