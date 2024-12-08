@@ -2,6 +2,7 @@ a4b
 access-analyzer
 acm
 acm-pca
+aiops
 airflow
 amplify
 amplifyuibuilder
@@ -88,6 +89,7 @@ dms
 docdb-elastic
 drs
 ds
+dsql
 dynamodb
 ec2
 ecr
@@ -129,6 +131,7 @@ imagebuilder
 inspector
 inspector2
 internetmonitor
+invoicing
 iot
 iot1click
 iotanalytics
@@ -182,6 +185,7 @@ monitron
 mq
 neptune-graph
 network-firewall
+networkflowmonitor
 networkmanager
 networkmonitor
 nimble
@@ -245,6 +249,7 @@ scheduler
 schemas
 scn
 secretsmanager
+security-ir
 securityhub
 securitylake
 servicecatalog

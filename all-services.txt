@@ -5,6 +5,7 @@ account
 acm
 acm-pca
 activate
+aiops
 airflow
 amplify
 amplifybackend
@@ -124,6 +125,7 @@ docdb-elastic
 drs
 ds
 ds-data
+dsql
 dynamodb
 ebs
 ec2
@@ -256,6 +258,7 @@ mq
 neptune-db
 neptune-graph
 network-firewall
+networkflowmonitor
 networkmanager
 networkmanager-chat
 networkmonitor
@@ -324,7 +327,9 @@ s3
 s3-object-lambda
 s3-outposts
 s3express
+s3tables
 sagemaker
+sagemaker-data-science-assistant
 sagemaker-geospatial
 sagemaker-groundtruth-synthetic
 sagemaker-mlflow
@@ -334,6 +339,7 @@ schemas
 scn
 sdb
 secretsmanager
+security-ir
 securityhub
 securitylake
 serverlessrepo
