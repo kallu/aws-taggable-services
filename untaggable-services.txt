@@ -67,7 +67,6 @@ mapcredits
 marketplacecommerceanalytics
 mechanicalturk
 mediaimport
-mgh
 migrationhub-strategy
 mobileanalytics
 neptune-db
