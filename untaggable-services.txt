@@ -15,7 +15,6 @@ aws-marketplace-management
 aws-portal
 awsconnector
 backup-storage
-billing
 cloudfront-keyvaluestore
 cloudshell
 cloudtrail-data
@@ -41,7 +40,6 @@ eks-auth
 elastictranscoder
 elemental-activations
 elemental-appliances-software
-elemental-support-cases
 elemental-support-content
 execute-api
 finspace-api

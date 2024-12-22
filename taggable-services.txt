@@ -27,10 +27,12 @@ aws-marketplace
 b2bi
 backup
 backup-gateway
+backup-search
 batch
 bcm-data-exports
 bcm-pricing-calculator
 bedrock
+billing
 billingconductor
 braket
 budgets
@@ -102,6 +104,7 @@ elasticbeanstalk
 elasticfilesystem
 elasticloadbalancing
 elasticmapreduce
+elemental-support-cases
 emr-containers
 emr-serverless
 entityresolution
