@@ -366,13 +366,17 @@ aoss:UpdateSecurityConfig
 aoss:UpdateSecurityPolicy
 aoss:UpdateVpcEndpoint
 apigateway:AddCertificateToDomain
+apigateway:CreateAccessAssociation
 apigateway:DELETE
 apigateway:GET
 apigateway:PATCH
 apigateway:POST
 apigateway:PUT
+apigateway:RejectAccessAssociation
 apigateway:RemoveCertificateFromDomain
 apigateway:SetWebACL
+apigateway:UpdateDomainNameManagementPolicy
+apigateway:UpdateDomainNamePolicy
 apigateway:UpdateRestApiPolicy
 app-integrations:CreateApplication
 app-integrations:CreateApplicationAssociation
@@ -4386,9 +4390,15 @@ datasync:UntagResource
 datasync:UpdateAgent
 datasync:UpdateDiscoveryJob
 datasync:UpdateLocationAzureBlob
+datasync:UpdateLocationEfs
+datasync:UpdateLocationFsxLustre
+datasync:UpdateLocationFsxOntap
+datasync:UpdateLocationFsxOpenZfs
+datasync:UpdateLocationFsxWindows
 datasync:UpdateLocationHdfs
 datasync:UpdateLocationNfs
 datasync:UpdateLocationObjectStorage
+datasync:UpdateLocationS3
 datasync:UpdateLocationSmb
 datasync:UpdateStorageSystem
 datasync:UpdateTask
@@ -8560,6 +8570,7 @@ imagebuilder:GetWorkflow
 imagebuilder:GetWorkflowExecution
 imagebuilder:GetWorkflowStepExecution
 imagebuilder:ImportComponent
+imagebuilder:ImportDiskImage
 imagebuilder:ImportVmImage
 imagebuilder:ListComponentBuildVersions
 imagebuilder:ListComponents
@@ -11080,6 +11091,7 @@ medialive:ListOfferings
 medialive:ListReservations
 medialive:ListSignalMaps
 medialive:ListTagsForResource
+medialive:ListVersions
 medialive:PollAnywhere
 medialive:PurchaseOffering
 medialive:RebootInputDevice
@@ -18002,12 +18014,14 @@ workmail:WipeMobileDevice
 workmailmessageflow:GetRawMessageContent
 workmailmessageflow:PutRawMessageContent
 workspaces-web:AssociateBrowserSettings
+workspaces-web:AssociateDataProtectionSettings
 workspaces-web:AssociateIpAccessSettings
 workspaces-web:AssociateNetworkSettings
 workspaces-web:AssociateTrustStore
 workspaces-web:AssociateUserAccessLoggingSettings
 workspaces-web:AssociateUserSettings
 workspaces-web:CreateBrowserSettings
+workspaces-web:CreateDataProtectionSettings
 workspaces-web:CreateIdentityProvider
 workspaces-web:CreateIpAccessSettings
 workspaces-web:CreateNetworkSettings
@@ -18016,6 +18030,7 @@ workspaces-web:CreateTrustStore
 workspaces-web:CreateUserAccessLoggingSettings
 workspaces-web:CreateUserSettings
 workspaces-web:DeleteBrowserSettings
+workspaces-web:DeleteDataProtectionSettings
 workspaces-web:DeleteIdentityProvider
 workspaces-web:DeleteIpAccessSettings
 workspaces-web:DeleteNetworkSettings
@@ -18024,6 +18039,7 @@ workspaces-web:DeleteTrustStore
 workspaces-web:DeleteUserAccessLoggingSettings
 workspaces-web:DeleteUserSettings
 workspaces-web:DisassociateBrowserSettings
+workspaces-web:DisassociateDataProtectionSettings
 workspaces-web:DisassociateIpAccessSettings
 workspaces-web:DisassociateNetworkSettings
 workspaces-web:DisassociateTrustStore
@@ -18031,6 +18047,7 @@ workspaces-web:DisassociateUserAccessLoggingSettings
 workspaces-web:DisassociateUserSettings
 workspaces-web:ExpireSession
 workspaces-web:GetBrowserSettings
+workspaces-web:GetDataProtectionSettings
 workspaces-web:GetIdentityProvider
 workspaces-web:GetIpAccessSettings
 workspaces-web:GetNetworkSettings
@@ -18042,6 +18059,7 @@ workspaces-web:GetTrustStoreCertificate
 workspaces-web:GetUserAccessLoggingSettings
 workspaces-web:GetUserSettings
 workspaces-web:ListBrowserSettings
+workspaces-web:ListDataProtectionSettings
 workspaces-web:ListIdentityProviders
 workspaces-web:ListIpAccessSettings
 workspaces-web:ListNetworkSettings
@@ -18055,6 +18073,7 @@ workspaces-web:ListUserSettings
 workspaces-web:TagResource
 workspaces-web:UntagResource
 workspaces-web:UpdateBrowserSettings
+workspaces-web:UpdateDataProtectionSettings
 workspaces-web:UpdateIdentityProvider
 workspaces-web:UpdateIpAccessSettings
 workspaces-web:UpdateNetworkSettings
