@@ -71,7 +71,6 @@ neptune-db
 networkmanager-chat
 observabilityadmin
 opensearch
-partnercentral
 partnercentral-account-management
 polly
 pricing
