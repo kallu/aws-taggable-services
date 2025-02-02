@@ -98,7 +98,6 @@ ecr
 ecr-public
 ecs
 eks
-elastic-inference
 elasticache
 elasticbeanstalk
 elasticfilesystem
