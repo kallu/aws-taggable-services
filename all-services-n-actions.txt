@@ -1816,14 +1816,17 @@ bugbust:UntagResource
 bugbust:UpdateEvent
 bugbust:UpdateWorkItem
 bugbust:UpdateWorkItemAdmin
+cases:BatchGetCaseRule
 cases:BatchGetField
 cases:BatchPutFieldOptions
 cases:CreateCase
+cases:CreateCaseRule
 cases:CreateDomain
 cases:CreateField
 cases:CreateLayout
 cases:CreateRelatedItem
 cases:CreateTemplate
+cases:DeleteCaseRule
 cases:DeleteDomain
 cases:DeleteField
 cases:DeleteLayout
@@ -1835,6 +1838,7 @@ cases:GetCaseEventConfiguration
 cases:GetDomain
 cases:GetLayout
 cases:GetTemplate
+cases:ListCaseRules
 cases:ListCasesForContact
 cases:ListDomains
 cases:ListFieldOptions
@@ -1848,6 +1852,7 @@ cases:SearchRelatedItems
 cases:TagResource
 cases:UntagResource
 cases:UpdateCase
+cases:UpdateCaseRule
 cases:UpdateField
 cases:UpdateLayout
 cases:UpdateTemplate
@@ -3890,6 +3895,7 @@ connect:ClaimPhoneNumber
 connect:CompleteAttachedFileUpload
 connect:CreateAgentStatus
 connect:CreateAuthenticationProfile
+connect:CreateContact
 connect:CreateContactFlow
 connect:CreateContactFlowModule
 connect:CreateContactFlowVersion
@@ -6791,6 +6797,7 @@ elemental-support-cases:UpdateCaseStatus
 elemental-support-cases:UpdateMultipartUpload
 elemental-support-content:Query
 emr-containers:CancelJobRun
+emr-containers:CreateCertificate
 emr-containers:CreateJobTemplate
 emr-containers:CreateManagedEndpoint
 emr-containers:CreateSecurityConfiguration
@@ -8301,6 +8308,7 @@ healthlake:DescribeFHIRExportJobWithGet
 healthlake:DescribeFHIRImportJob
 healthlake:GetCapabilities
 healthlake:GetExportedFile
+healthlake:GetHistoryByResourceId
 healthlake:ListFHIRDatastores
 healthlake:ListFHIRExportJobs
 healthlake:ListFHIRImportJobs
@@ -8316,6 +8324,7 @@ healthlake:StartFHIRImportJob
 healthlake:TagResource
 healthlake:UntagResource
 healthlake:UpdateResource
+healthlake:VersionReadResource
 honeycode:ApproveTeamAssociation
 honeycode:BatchCreateTableRows
 honeycode:BatchDeleteTableRows
