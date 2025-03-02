@@ -539,6 +539,7 @@ application-signals:CreateServiceLevelObjective
 application-signals:DeleteServiceLevelObjective
 application-signals:GetService
 application-signals:GetServiceLevelObjective
+application-signals:Link
 application-signals:ListObservedEntities
 application-signals:ListServiceDependencies
 application-signals:ListServiceDependents
@@ -1559,6 +1560,7 @@ bedrock:CreateFoundationModelAgreement
 bedrock:CreateGuardrail
 bedrock:CreateGuardrailVersion
 bedrock:CreateInferenceProfile
+bedrock:CreateInvocation
 bedrock:CreateKnowledgeBase
 bedrock:CreateMarketplaceModelEndpoint
 bedrock:CreateModelCopyJob
@@ -1569,6 +1571,7 @@ bedrock:CreateModelInvocationJob
 bedrock:CreatePrompt
 bedrock:CreatePromptVersion
 bedrock:CreateProvisionedModelThroughput
+bedrock:CreateSession
 bedrock:DeleteAgent
 bedrock:DeleteAgentActionGroup
 bedrock:DeleteAgentAlias
@@ -1593,10 +1596,12 @@ bedrock:DeleteModelInvocationLoggingConfiguration
 bedrock:DeletePrompt
 bedrock:DeleteProvisionedModelThroughput
 bedrock:DeleteResourcePolicy
+bedrock:DeleteSession
 bedrock:DeregisterMarketplaceModelEndpoint
 bedrock:DetectGeneratedContent
 bedrock:DisassociateAgentCollaborator
 bedrock:DisassociateAgentKnowledgeBase
+bedrock:EndSession
 bedrock:GenerateQuery
 bedrock:GetAgent
 bedrock:GetAgentActionGroup
@@ -1622,6 +1627,7 @@ bedrock:GetGuardrail
 bedrock:GetImportedModel
 bedrock:GetInferenceProfile
 bedrock:GetIngestionJob
+bedrock:GetInvocationStep
 bedrock:GetKnowledgeBase
 bedrock:GetKnowledgeBaseDocuments
 bedrock:GetMarketplaceModelEndpoint
@@ -1635,6 +1641,7 @@ bedrock:GetPrompt
 bedrock:GetPromptRouter
 bedrock:GetProvisionedModelThroughput
 bedrock:GetResourcePolicy
+bedrock:GetSession
 bedrock:GetUseCaseForModelAccess
 bedrock:IngestKnowledgeBaseDocuments
 bedrock:InvokeAgent
@@ -1666,6 +1673,8 @@ bedrock:ListGuardrails
 bedrock:ListImportedModels
 bedrock:ListInferenceProfiles
 bedrock:ListIngestionJobs
+bedrock:ListInvocationSteps
+bedrock:ListInvocations
 bedrock:ListKnowledgeBaseDocuments
 bedrock:ListKnowledgeBases
 bedrock:ListMarketplaceModelEndpoints
@@ -1677,11 +1686,13 @@ bedrock:ListModelInvocationJobs
 bedrock:ListPromptRouters
 bedrock:ListPrompts
 bedrock:ListProvisionedModelThroughputs
+bedrock:ListSessions
 bedrock:ListTagsForResource
 bedrock:OptimizePrompt
 bedrock:PrepareAgent
 bedrock:PrepareFlow
 bedrock:PutFoundationModelEntitlement
+bedrock:PutInvocationStep
 bedrock:PutModelInvocationLoggingConfiguration
 bedrock:PutResourcePolicy
 bedrock:PutUseCaseForModelAccess
@@ -1712,6 +1723,7 @@ bedrock:UpdateKnowledgeBase
 bedrock:UpdateMarketplaceModelEndpoint
 bedrock:UpdatePrompt
 bedrock:UpdateProvisionedModelThroughput
+bedrock:UpdateSession
 bedrock:ValidateFlowDefinition
 billing:CreateBillingView
 billing:DeleteBillingView
@@ -2804,6 +2816,7 @@ cloudsearch:UpdateServiceAccessPolicies
 cloudsearch:document
 cloudsearch:search
 cloudsearch:suggest
+cloudshell:ApproveCommand
 cloudshell:CreateEnvironment
 cloudshell:CreateSession
 cloudshell:DeleteEnvironment
@@ -13152,6 +13165,13 @@ qbusiness:UpdateRetriever
 qbusiness:UpdateSubscription
 qbusiness:UpdateUser
 qbusiness:UpdateWebExperience
+qdeveloper:ExportArtifact
+qdeveloper:ImportArtifact
+qdeveloper:ListTagsForResource
+qdeveloper:StartAgentSession
+qdeveloper:TagResource
+qdeveloper:TransformCode
+qdeveloper:UntagResource
 qldb:CancelJournalKinesisStream
 qldb:CreateLedger
 qldb:DeleteLedger
@@ -13676,6 +13696,7 @@ redshift-serverless:GetResourcePolicy
 redshift-serverless:GetScheduledAction
 redshift-serverless:GetSnapshot
 redshift-serverless:GetTableRestoreStatus
+redshift-serverless:GetTrack
 redshift-serverless:GetUsageLimit
 redshift-serverless:GetWorkgroup
 redshift-serverless:ListCustomDomainAssociations
@@ -13688,6 +13709,7 @@ redshift-serverless:ListSnapshotCopyConfigurations
 redshift-serverless:ListSnapshots
 redshift-serverless:ListTableRestoreStatus
 redshift-serverless:ListTagsForResource
+redshift-serverless:ListTracks
 redshift-serverless:ListUsageLimits
 redshift-serverless:ListWorkgroups
 redshift-serverless:PutResourcePolicy
@@ -15168,6 +15190,7 @@ sagemaker:StopPipelineExecution
 sagemaker:StopProcessingJob
 sagemaker:StopTrainingJob
 sagemaker:StopTransformJob
+sagemaker:TrainHubModel
 sagemaker:UpdateAction
 sagemaker:UpdateAppImageConfig
 sagemaker:UpdateArtifact
@@ -15186,6 +15209,8 @@ sagemaker:UpdateExperiment
 sagemaker:UpdateFeatureGroup
 sagemaker:UpdateFeatureMetadata
 sagemaker:UpdateHub
+sagemaker:UpdateHubContent
+sagemaker:UpdateHubContentReference
 sagemaker:UpdateImage
 sagemaker:UpdateImageVersion
 sagemaker:UpdateInferenceComponent
@@ -15794,6 +15819,7 @@ ses:PutAccountDetails
 ses:PutAccountSendingAttributes
 ses:PutAccountSuppressionAttributes
 ses:PutAccountVdmAttributes
+ses:PutConfigurationSetArchivingOptions
 ses:PutConfigurationSetDeliveryOptions
 ses:PutConfigurationSetReputationOptions
 ses:PutConfigurationSetSendingOptions
