@@ -57,6 +57,7 @@ importexport
 inspector-scan
 iot-device-tester
 iotjobsdata
+iotmanagedintegrations
 iq
 iq-permission
 kafka-cluster
