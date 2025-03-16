@@ -140,13 +140,11 @@ account:DisableRegion
 account:EnableRegion
 account:GetAccountInformation
 account:GetAlternateContact
-account:GetChallengeQuestions
 account:GetContactInformation
 account:GetPrimaryEmail
 account:GetRegionOptStatus
 account:ListRegions
 account:PutAlternateContact
-account:PutChallengeQuestions
 account:PutContactInformation
 account:StartPrimaryEmailUpdate
 acm-pca:CreateCertificateAuthority
@@ -535,6 +533,7 @@ application-cost-profiler:ListReportDefinitions
 application-cost-profiler:PutReportDefinition
 application-cost-profiler:UpdateReportDefinition
 application-signals:BatchGetServiceLevelObjectiveBudgetReport
+application-signals:BatchUpdateExclusionWindows
 application-signals:CreateServiceLevelObjective
 application-signals:DeleteServiceLevelObjective
 application-signals:GetService
@@ -543,6 +542,7 @@ application-signals:Link
 application-signals:ListObservedEntities
 application-signals:ListServiceDependencies
 application-signals:ListServiceDependents
+application-signals:ListServiceLevelObjectiveExclusionWindows
 application-signals:ListServiceLevelObjectives
 application-signals:ListServiceOperations
 application-signals:ListServices
@@ -1468,19 +1468,24 @@ backup:UpdateRestoreTestingPlan
 backup:UpdateRestoreTestingSelection
 batch:CancelJob
 batch:CreateComputeEnvironment
+batch:CreateConsumableResource
 batch:CreateJobQueue
 batch:CreateSchedulingPolicy
 batch:DeleteComputeEnvironment
+batch:DeleteConsumableResource
 batch:DeleteJobQueue
 batch:DeleteSchedulingPolicy
 batch:DeregisterJobDefinition
 batch:DescribeComputeEnvironments
+batch:DescribeConsumableResource
 batch:DescribeJobDefinitions
 batch:DescribeJobQueues
 batch:DescribeJobs
 batch:DescribeSchedulingPolicies
 batch:GetJobQueueSnapshot
+batch:ListConsumableResources
 batch:ListJobs
+batch:ListJobsByConsumableResource
 batch:ListSchedulingPolicies
 batch:ListTagsForResource
 batch:RegisterJobDefinition
@@ -1489,6 +1494,7 @@ batch:TagResource
 batch:TerminateJob
 batch:UntagResource
 batch:UpdateComputeEnvironment
+batch:UpdateConsumableResource
 batch:UpdateJobQueue
 batch:UpdateSchedulingPolicy
 bcm-data-exports:CreateExport
@@ -1569,6 +1575,7 @@ bedrock:CreateModelEvaluationJob
 bedrock:CreateModelImportJob
 bedrock:CreateModelInvocationJob
 bedrock:CreatePrompt
+bedrock:CreatePromptRouter
 bedrock:CreatePromptVersion
 bedrock:CreateProvisionedModelThroughput
 bedrock:CreateSession
@@ -1594,6 +1601,7 @@ bedrock:DeleteMarketplaceModelAgreement
 bedrock:DeleteMarketplaceModelEndpoint
 bedrock:DeleteModelInvocationLoggingConfiguration
 bedrock:DeletePrompt
+bedrock:DeletePromptRouter
 bedrock:DeleteProvisionedModelThroughput
 bedrock:DeleteResourcePolicy
 bedrock:DeleteSession
@@ -16991,6 +16999,7 @@ support:DescribeTrustedAdvisorCheckRefreshStatuses
 support:DescribeTrustedAdvisorCheckResult
 support:DescribeTrustedAdvisorCheckSummaries
 support:DescribeTrustedAdvisorChecks
+support:GetInteraction
 support:InitiateCallForCase
 support:InitiateChatForCase
 support:PutCaseAttributes
@@ -16998,6 +17007,7 @@ support:RateCaseCommunication
 support:RefreshTrustedAdvisorCheck
 support:ResolveCase
 support:SearchForCases
+support:StartInteraction
 supportapp:CreateSlackChannelConfiguration
 supportapp:DeleteAccountAlias
 supportapp:DeleteSlackChannelConfiguration
