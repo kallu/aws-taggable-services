@@ -30,7 +30,6 @@ controlcatalog
 cost-optimization-hub
 customer-verification
 dbqms
-deeplens
 devops-guru
 ds-data
 ebs

@@ -2403,6 +2403,7 @@ cleanrooms:GetIdMappingTable
 cleanrooms:GetIdNamespaceAssociation
 cleanrooms:GetMembership
 cleanrooms:GetPrivacyBudgetTemplate
+cleanrooms:GetProtectedJob
 cleanrooms:GetProtectedQuery
 cleanrooms:GetSchema
 cleanrooms:GetSchemaAnalysisRule
@@ -2422,6 +2423,7 @@ cleanrooms:ListMembers
 cleanrooms:ListMemberships
 cleanrooms:ListPrivacyBudgetTemplates
 cleanrooms:ListPrivacyBudgets
+cleanrooms:ListProtectedJobs
 cleanrooms:ListProtectedQueries
 cleanrooms:ListSchemas
 cleanrooms:ListTagsForResource
@@ -2429,6 +2431,7 @@ cleanrooms:PassCollaboration
 cleanrooms:PassMembership
 cleanrooms:PopulateIdMappingTable
 cleanrooms:PreviewPrivacyImpact
+cleanrooms:StartProtectedJob
 cleanrooms:StartProtectedQuery
 cleanrooms:TagResource
 cleanrooms:UntagResource
@@ -2443,6 +2446,7 @@ cleanrooms:UpdateIdMappingTable
 cleanrooms:UpdateIdNamespaceAssociation
 cleanrooms:UpdateMembership
 cleanrooms:UpdatePrivacyBudgetTemplate
+cleanrooms:UpdateProtectedJob
 cleanrooms:UpdateProtectedQuery
 cloud9:ActivateEC2Remote
 cloud9:CreateEnvironmentEC2
@@ -4030,6 +4034,7 @@ connect:GetTrafficDistribution
 connect:ImportPhoneNumber
 connect:ListAgentStatuses
 connect:ListAnalyticsDataAssociations
+connect:ListAnalyticsDataLakeDataSets
 connect:ListApprovedOrigins
 connect:ListAssociatedContacts
 connect:ListAuthenticationProfiles
@@ -4809,30 +4814,6 @@ deepcomposer:TagResource
 deepcomposer:UntagResource
 deepcomposer:UpdateComposition
 deepcomposer:UpdateModel
-deeplens:AssociateServiceRoleToAccount
-deeplens:BatchGetDevice
-deeplens:BatchGetModel
-deeplens:BatchGetProject
-deeplens:CreateDeviceCertificates
-deeplens:CreateModel
-deeplens:CreateProject
-deeplens:DeleteModel
-deeplens:DeleteProject
-deeplens:DeployProject
-deeplens:DeregisterDevice
-deeplens:GetAssociatedResources
-deeplens:GetDeploymentStatus
-deeplens:GetDevice
-deeplens:GetModel
-deeplens:GetProject
-deeplens:ImportProjectFromTemplate
-deeplens:ListDeployments
-deeplens:ListDevices
-deeplens:ListModels
-deeplens:ListProjects
-deeplens:RegisterDevice
-deeplens:RemoveProject
-deeplens:UpdateProject
 deepracer:AddLeaderboardAccessPermission
 deepracer:AdminDescribeAccountKey
 deepracer:AdminGetAccountConfig
@@ -10127,6 +10108,7 @@ lakeformation:ListTableStorageOptimizers
 lakeformation:ListTransactions
 lakeformation:PutDataLakeSettings
 lakeformation:RegisterResource
+lakeformation:RegisterResourceWithPrivilegedAccess
 lakeformation:RemoveLFTagsFromResource
 lakeformation:RevokePermissions
 lakeformation:SearchDatabasesByLFTags
@@ -11142,6 +11124,7 @@ mediaconvert:ListPresets
 mediaconvert:ListQueues
 mediaconvert:ListTagsForResource
 mediaconvert:ListVersions
+mediaconvert:Probe
 mediaconvert:PutPolicy
 mediaconvert:SearchJobs
 mediaconvert:TagResource
@@ -12341,7 +12324,7 @@ one:DeleteAssociatedDevice
 one:DeleteDeviceConfigurationTemplate
 one:DeleteDeviceInstance
 one:DeleteSite
-one:DeleteUser
+one:DeleteUserV1
 one:GetDeviceConfigurationTemplate
 one:GetDeviceInstance
 one:GetDeviceInstanceConfiguration
@@ -12351,7 +12334,7 @@ one:ListDeviceConfigurationTemplates
 one:ListDeviceInstances
 one:ListSites
 one:ListTagsForResource
-one:ListUsers
+one:ListUsersV1
 one:RebootDevice
 one:TagResource
 one:UntagResource
@@ -14332,6 +14315,7 @@ route53-recovery-control-config:ListSafetyRules
 route53-recovery-control-config:ListTagsForResource
 route53-recovery-control-config:TagResource
 route53-recovery-control-config:UntagResource
+route53-recovery-control-config:UpdateCluster
 route53-recovery-control-config:UpdateControlPanel
 route53-recovery-control-config:UpdateRoutingControl
 route53-recovery-control-config:UpdateSafetyRule
