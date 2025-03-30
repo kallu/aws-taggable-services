@@ -973,8 +973,6 @@ arc-zonal-shift:UpdateZonalShift
 arsenal:RegisterOnPremisesAgent
 artifact:AcceptAgreement
 artifact:AcceptNdaForAgreement
-artifact:DownloadAgreement
-artifact:Get
 artifact:GetAccountSettings
 artifact:GetAgreement
 artifact:GetCustomerAgreement
@@ -4554,6 +4552,7 @@ datazone:GetSubscriptionGrant
 datazone:GetSubscriptionRequestDetails
 datazone:GetSubscriptionTarget
 datazone:GetTimeSeriesDataPoint
+datazone:GetUpdateEligibility
 datazone:GetUserProfile
 datazone:ListAccountEnvironments
 datazone:ListAssetFilters
@@ -8341,6 +8340,7 @@ healthlake:ListFHIRDatastores
 healthlake:ListFHIRExportJobs
 healthlake:ListFHIRImportJobs
 healthlake:ListTagsForResource
+healthlake:ProcessBundle
 healthlake:ReadResource
 healthlake:SearchEverything
 healthlake:SearchWithGet
@@ -9027,6 +9027,7 @@ iot:ListPolicyPrincipals
 iot:ListPolicyVersions
 iot:ListPrincipalPolicies
 iot:ListPrincipalThings
+iot:ListPrincipalThingsV2
 iot:ListProvisioningTemplateVersions
 iot:ListProvisioningTemplates
 iot:ListRelatedResourcesForAuditFinding
@@ -9043,6 +9044,7 @@ iot:ListTargetsForSecurityProfile
 iot:ListThingGroups
 iot:ListThingGroupsForThing
 iot:ListThingPrincipals
+iot:ListThingPrincipalsV2
 iot:ListThingRegistrationTaskReports
 iot:ListThingRegistrationTasks
 iot:ListThingTypes
@@ -11313,6 +11315,8 @@ mediapackagev2:ListTagsForResource
 mediapackagev2:PutChannelPolicy
 mediapackagev2:PutObject
 mediapackagev2:PutOriginEndpointPolicy
+mediapackagev2:ResetChannelState
+mediapackagev2:ResetOriginEndpointState
 mediapackagev2:TagResource
 mediapackagev2:UntagResource
 mediapackagev2:UpdateChannel
@@ -11944,6 +11948,7 @@ network-firewall:DeleteRuleGroup
 network-firewall:DeleteTLSInspectionConfiguration
 network-firewall:DescribeFirewall
 network-firewall:DescribeFirewallPolicy
+network-firewall:DescribeFlowOperation
 network-firewall:DescribeLoggingConfiguration
 network-firewall:DescribeResourcePolicy
 network-firewall:DescribeRuleGroup
@@ -11954,11 +11959,15 @@ network-firewall:GetAnalysisReportResults
 network-firewall:ListAnalysisReports
 network-firewall:ListFirewallPolicies
 network-firewall:ListFirewalls
+network-firewall:ListFlowOperationResults
+network-firewall:ListFlowOperations
 network-firewall:ListRuleGroups
 network-firewall:ListTLSInspectionConfigurations
 network-firewall:ListTagsForResource
 network-firewall:PutResourcePolicy
 network-firewall:StartAnalysisReport
+network-firewall:StartFlowCapture
+network-firewall:StartFlowFlush
 network-firewall:TagResource
 network-firewall:UntagResource
 network-firewall:UpdateFirewallAnalysisSettings
@@ -14299,6 +14308,7 @@ route53-recovery-control-config:CreateRoutingControl
 route53-recovery-control-config:CreateSafetyRule
 route53-recovery-control-config:DeleteCluster
 route53-recovery-control-config:DeleteControlPanel
+route53-recovery-control-config:DeleteResourcePolicy
 route53-recovery-control-config:DeleteRoutingControl
 route53-recovery-control-config:DeleteSafetyRule
 route53-recovery-control-config:DescribeCluster
@@ -14313,6 +14323,7 @@ route53-recovery-control-config:ListControlPanels
 route53-recovery-control-config:ListRoutingControls
 route53-recovery-control-config:ListSafetyRules
 route53-recovery-control-config:ListTagsForResource
+route53-recovery-control-config:PutResourcePolicy
 route53-recovery-control-config:TagResource
 route53-recovery-control-config:UntagResource
 route53-recovery-control-config:UpdateCluster
