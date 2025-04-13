@@ -1231,6 +1231,7 @@ aws-marketplace:DescribeProcurementSystemConfiguration
 aws-marketplace:DescribeTask
 aws-marketplace:DisassociateProductsFromPrivateMarketplace
 aws-marketplace:GetAgreementApprovalRequest
+aws-marketplace:GetAgreementEntitlements
 aws-marketplace:GetAgreementRequest
 aws-marketplace:GetAgreementTerms
 aws-marketplace:GetBuyerDashboard
@@ -3009,10 +3010,12 @@ codeartifact:UpdateRepository
 codebuild:BatchDeleteBuilds
 codebuild:BatchGetBuildBatches
 codebuild:BatchGetBuilds
+codebuild:BatchGetCommandExecutions
 codebuild:BatchGetFleets
 codebuild:BatchGetProjects
 codebuild:BatchGetReportGroups
 codebuild:BatchGetReports
+codebuild:BatchGetSandboxes
 codebuild:BatchPutCodeCoverages
 codebuild:BatchPutTestCases
 codebuild:CreateFleet
@@ -3039,6 +3042,7 @@ codebuild:ListBuildBatches
 codebuild:ListBuildBatchesForProject
 codebuild:ListBuilds
 codebuild:ListBuildsForProject
+codebuild:ListCommandExecutionsForSandbox
 codebuild:ListConnectedOAuthAccounts
 codebuild:ListCuratedEnvironmentImages
 codebuild:ListFleets
@@ -3047,6 +3051,8 @@ codebuild:ListReportGroups
 codebuild:ListReports
 codebuild:ListReportsForReportGroup
 codebuild:ListRepositories
+codebuild:ListSandboxes
+codebuild:ListSandboxesForProject
 codebuild:ListSharedProjects
 codebuild:ListSharedReportGroups
 codebuild:ListSourceCredentials
@@ -3056,8 +3062,12 @@ codebuild:RetryBuild
 codebuild:RetryBuildBatch
 codebuild:StartBuild
 codebuild:StartBuildBatch
+codebuild:StartCommandExecution
+codebuild:StartSandbox
+codebuild:StartSandboxConnection
 codebuild:StopBuild
 codebuild:StopBuildBatch
+codebuild:StopSandbox
 codebuild:UpdateFleet
 codebuild:UpdateProject
 codebuild:UpdateProjectVisibility
@@ -13092,8 +13102,10 @@ q:CreateAuthGrant
 q:CreateOAuthAppConnection
 q:CreatePlugin
 q:DeleteAssignment
+q:DeleteOAuthAppConnection
 q:DeletePlugin
 q:GenerateCodeFromCommands
+q:GenerateCodeRecommendations
 q:GetConnector
 q:GetConversation
 q:GetIdentityMetadata
@@ -13117,6 +13129,7 @@ q:UpdateAuthGrant
 q:UpdateOAuthAppConnection
 q:UpdateTroubleshootingCommandResult
 q:UsePlugin
+q:VerifyOAuthAppConnection
 qapps:AssociateLibraryItemReview
 qapps:AssociateQAppWithUser
 qapps:BatchCreateCategory
