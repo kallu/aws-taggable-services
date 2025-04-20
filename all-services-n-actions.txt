@@ -931,6 +931,7 @@ aps:DescribeLoggingConfiguration
 aps:DescribeRuleGroupsNamespace
 aps:DescribeScraper
 aps:DescribeWorkspace
+aps:DescribeWorkspaceConfiguration
 aps:GetAlertManagerSilence
 aps:GetAlertManagerStatus
 aps:GetDefaultScraperConfiguration
@@ -957,6 +958,7 @@ aps:UntagResource
 aps:UpdateLoggingConfiguration
 aps:UpdateScraper
 aps:UpdateWorkspaceAlias
+aps:UpdateWorkspaceConfiguration
 arc-zonal-shift:CancelZonalShift
 arc-zonal-shift:CreatePracticeRunConfiguration
 arc-zonal-shift:DeletePracticeRunConfiguration
@@ -10830,6 +10832,7 @@ lookoutvision:UntagResource
 lookoutvision:UpdateDatasetEntries
 m2:CancelBatchJobExecution
 m2:CreateApplication
+m2:CreateDataSetExportTask
 m2:CreateDataSetImportTask
 m2:CreateDeployment
 m2:CreateEnvironment
@@ -10840,6 +10843,7 @@ m2:GetApplication
 m2:GetApplicationVersion
 m2:GetBatchJobExecution
 m2:GetDataSetDetails
+m2:GetDataSetExportTask
 m2:GetDataSetImportTask
 m2:GetDeployment
 m2:GetEnvironment
@@ -10849,6 +10853,7 @@ m2:ListApplications
 m2:ListBatchJobDefinitions
 m2:ListBatchJobExecutions
 m2:ListBatchJobRestartPoints
+m2:ListDataSetExportHistory
 m2:ListDataSetImportHistory
 m2:ListDataSets
 m2:ListDeployments
@@ -11167,6 +11172,7 @@ medialive:CreateNetwork
 medialive:CreateNode
 medialive:CreateNodeRegistrationScript
 medialive:CreatePartnerInput
+medialive:CreateSdiSource
 medialive:CreateSignalMap
 medialive:CreateTags
 medialive:DeleteChannel
@@ -11184,6 +11190,7 @@ medialive:DeleteNetwork
 medialive:DeleteNode
 medialive:DeleteReservation
 medialive:DeleteSchedule
+medialive:DeleteSdiSource
 medialive:DeleteSignalMap
 medialive:DeleteTags
 medialive:DescribeAccountConfiguration
@@ -11201,6 +11208,7 @@ medialive:DescribeNode
 medialive:DescribeOffering
 medialive:DescribeReservation
 medialive:DescribeSchedule
+medialive:DescribeSdiSource
 medialive:DescribeThumbnails
 medialive:GetCloudWatchAlarmTemplate
 medialive:GetCloudWatchAlarmTemplateGroup
@@ -11224,6 +11232,7 @@ medialive:ListNetworks
 medialive:ListNodes
 medialive:ListOfferings
 medialive:ListReservations
+medialive:ListSdiSource
 medialive:ListSignalMaps
 medialive:ListTagsForResource
 medialive:ListVersions
@@ -11262,6 +11271,7 @@ medialive:UpdateNetwork
 medialive:UpdateNode
 medialive:UpdateNodeState
 medialive:UpdateReservation
+medialive:UpdateSdiSource
 mediapackage-vod:ConfigureLogs
 mediapackage-vod:CreateAsset
 mediapackage-vod:CreatePackagingConfiguration
@@ -12260,6 +12270,7 @@ omics:CreateSequenceStore
 omics:CreateShare
 omics:CreateVariantStore
 omics:CreateWorkflow
+omics:CreateWorkflowVersion
 omics:DeleteAnnotationStore
 omics:DeleteAnnotationStoreVersions
 omics:DeleteReference
@@ -12272,6 +12283,7 @@ omics:DeleteSequenceStore
 omics:DeleteShare
 omics:DeleteVariantStore
 omics:DeleteWorkflow
+omics:DeleteWorkflowVersion
 omics:GetAnnotationImportJob
 omics:GetAnnotationStore
 omics:GetAnnotationStoreVersion
@@ -12294,6 +12306,7 @@ omics:GetShare
 omics:GetVariantImportJob
 omics:GetVariantStore
 omics:GetWorkflow
+omics:GetWorkflowVersion
 omics:ListAnnotationImportJobs
 omics:ListAnnotationStoreVersions
 omics:ListAnnotationStores
@@ -12315,6 +12328,7 @@ omics:ListShares
 omics:ListTagsForResource
 omics:ListVariantImportJobs
 omics:ListVariantStores
+omics:ListWorkflowVersions
 omics:ListWorkflows
 omics:PutS3AccessPolicy
 omics:StartAnnotationImportJob
@@ -12333,6 +12347,7 @@ omics:UpdateRunGroup
 omics:UpdateSequenceStore
 omics:UpdateVariantStore
 omics:UpdateWorkflow
+omics:UpdateWorkflowVersion
 omics:UploadReadSetPart
 one:CreateDeviceActivationQrCode
 one:CreateDeviceConfigurationTemplate
@@ -14849,14 +14864,17 @@ s3tables:CreateTableBucket
 s3tables:DeleteNamespace
 s3tables:DeleteTable
 s3tables:DeleteTableBucket
+s3tables:DeleteTableBucketEncryption
 s3tables:DeleteTableBucketPolicy
 s3tables:DeleteTablePolicy
 s3tables:GetNamespace
 s3tables:GetTable
 s3tables:GetTableBucket
+s3tables:GetTableBucketEncryption
 s3tables:GetTableBucketMaintenanceConfiguration
 s3tables:GetTableBucketPolicy
 s3tables:GetTableData
+s3tables:GetTableEncryption
 s3tables:GetTableMaintenanceConfiguration
 s3tables:GetTableMaintenanceJobStatus
 s3tables:GetTableMetadataLocation
@@ -14864,9 +14882,11 @@ s3tables:GetTablePolicy
 s3tables:ListNamespaces
 s3tables:ListTableBuckets
 s3tables:ListTables
+s3tables:PutTableBucketEncryption
 s3tables:PutTableBucketMaintenanceConfiguration
 s3tables:PutTableBucketPolicy
 s3tables:PutTableData
+s3tables:PutTableEncryption
 s3tables:PutTableMaintenanceConfiguration
 s3tables:PutTablePolicy
 s3tables:RenameTable
@@ -17383,6 +17403,8 @@ transfer:ListWorkflows
 transfer:SendWorkflowStepState
 transfer:StartDirectoryListing
 transfer:StartFileTransfer
+transfer:StartRemoteDelete
+transfer:StartRemoteMove
 transfer:StartServer
 transfer:StopServer
 transfer:TagResource
