@@ -144,6 +144,7 @@ account:GetContactInformation
 account:GetPrimaryEmail
 account:GetRegionOptStatus
 account:ListRegions
+account:PutAccountName
 account:PutAlternateContact
 account:PutContactInformation
 account:StartPrimaryEmailUpdate
@@ -6356,6 +6357,7 @@ ecs:RegisterTaskDefinition
 ecs:RunTask
 ecs:StartTask
 ecs:StartTelemetrySession
+ecs:StopServiceDeployment
 ecs:StopTask
 ecs:SubmitAttachmentStateChanges
 ecs:SubmitContainerStateChange
@@ -11868,6 +11870,7 @@ mq:CreateReplicaBroker
 mq:CreateTags
 mq:CreateUser
 mq:DeleteBroker
+mq:DeleteConfiguration
 mq:DeleteTags
 mq:DeleteUser
 mq:DescribeBroker
@@ -13142,6 +13145,7 @@ q:TagResource
 q:UntagResource
 q:UpdateAuthGrant
 q:UpdateOAuthAppConnection
+q:UpdatePlugin
 q:UpdateTroubleshootingCommandResult
 q:UsePlugin
 q:VerifyOAuthAppConnection
@@ -13195,6 +13199,7 @@ qbusiness:BatchPutDocument
 qbusiness:CancelSubscription
 qbusiness:Chat
 qbusiness:ChatSync
+qbusiness:CheckDocumentAccess
 qbusiness:CreateApplication
 qbusiness:CreateDataAccessor
 qbusiness:CreateDataSource
@@ -13782,6 +13787,7 @@ redshift-serverless:ConvertRecoveryPointToSnapshot
 redshift-serverless:CreateCustomDomainAssociation
 redshift-serverless:CreateEndpointAccess
 redshift-serverless:CreateNamespace
+redshift-serverless:CreateReservation
 redshift-serverless:CreateScheduledAction
 redshift-serverless:CreateSnapshot
 redshift-serverless:CreateSnapshotCopyConfiguration
@@ -13803,6 +13809,8 @@ redshift-serverless:GetEndpointAccess
 redshift-serverless:GetManagedWorkgroup
 redshift-serverless:GetNamespace
 redshift-serverless:GetRecoveryPoint
+redshift-serverless:GetReservation
+redshift-serverless:GetReservationOffering
 redshift-serverless:GetResourcePolicy
 redshift-serverless:GetScheduledAction
 redshift-serverless:GetSnapshot
@@ -13815,6 +13823,8 @@ redshift-serverless:ListEndpointAccess
 redshift-serverless:ListManagedWorkgroups
 redshift-serverless:ListNamespaces
 redshift-serverless:ListRecoveryPoints
+redshift-serverless:ListReservationOfferings
+redshift-serverless:ListReservations
 redshift-serverless:ListScheduledActions
 redshift-serverless:ListSnapshotCopyConfigurations
 redshift-serverless:ListSnapshots
