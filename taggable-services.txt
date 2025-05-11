@@ -293,6 +293,7 @@ transfer
 translate
 ts
 vendor-insights
+verifiedpermissions
 voiceid
 vpc-lattice
 waf
