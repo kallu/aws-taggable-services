@@ -3386,6 +3386,7 @@ codepipeline:GetPipelineState
 codepipeline:GetThirdPartyJobDetails
 codepipeline:ListActionExecutions
 codepipeline:ListActionTypes
+codepipeline:ListDeployActionExecutionTargets
 codepipeline:ListPipelineExecutions
 codepipeline:ListPipelines
 codepipeline:ListRuleExecutions
@@ -5470,6 +5471,7 @@ ds:UpdateRadius
 ds:UpdateSettings
 ds:UpdateTrust
 ds:VerifyTrust
+dsql:AddPeerCluster
 dsql:CreateCluster
 dsql:CreateMultiRegionClusters
 dsql:DbConnect
@@ -5480,6 +5482,9 @@ dsql:GetCluster
 dsql:GetVpcEndpointServiceName
 dsql:ListClusters
 dsql:ListTagsForResource
+dsql:PutMultiRegionProperties
+dsql:PutWitnessRegion
+dsql:RemovePeerCluster
 dsql:TagResource
 dsql:UntagResource
 dsql:UpdateCluster
@@ -5659,6 +5664,8 @@ ec2:CreateLocalGatewayRouteTable
 ec2:CreateLocalGatewayRouteTablePermission
 ec2:CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation
 ec2:CreateLocalGatewayRouteTableVpcAssociation
+ec2:CreateLocalGatewayVirtualInterface
+ec2:CreateLocalGatewayVirtualInterfaceGroup
 ec2:CreateManagedPrefixList
 ec2:CreateNatGateway
 ec2:CreateNetworkAcl
@@ -5742,6 +5749,8 @@ ec2:DeleteLocalGatewayRouteTable
 ec2:DeleteLocalGatewayRouteTablePermission
 ec2:DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation
 ec2:DeleteLocalGatewayRouteTableVpcAssociation
+ec2:DeleteLocalGatewayVirtualInterface
+ec2:DeleteLocalGatewayVirtualInterfaceGroup
 ec2:DeleteManagedPrefixList
 ec2:DeleteNatGateway
 ec2:DeleteNetworkAcl
@@ -5896,6 +5905,7 @@ ec2:DescribeNetworkInsightsPaths
 ec2:DescribeNetworkInterfaceAttribute
 ec2:DescribeNetworkInterfacePermissions
 ec2:DescribeNetworkInterfaces
+ec2:DescribeOutpostLags
 ec2:DescribePlacementGroups
 ec2:DescribePrefixLists
 ec2:DescribePrincipalIdFormat
@@ -5916,6 +5926,7 @@ ec2:DescribeSecurityGroupReferences
 ec2:DescribeSecurityGroupRules
 ec2:DescribeSecurityGroupVpcAssociations
 ec2:DescribeSecurityGroups
+ec2:DescribeServiceLinkVirtualInterfaces
 ec2:DescribeSnapshotAttribute
 ec2:DescribeSnapshotTierStatus
 ec2:DescribeSnapshots
@@ -11261,7 +11272,7 @@ medialive:ListNetworks
 medialive:ListNodes
 medialive:ListOfferings
 medialive:ListReservations
-medialive:ListSdiSource
+medialive:ListSdiSources
 medialive:ListSignalMaps
 medialive:ListTagsForResource
 medialive:ListVersions
@@ -11457,6 +11468,9 @@ medical-imaging:ListDICOMImportJobs
 medical-imaging:ListDatastores
 medical-imaging:ListImageSetVersions
 medical-imaging:ListTagsForResource
+medical-imaging:SearchDICOMInstances
+medical-imaging:SearchDICOMSeries
+medical-imaging:SearchDICOMStudies
 medical-imaging:SearchImageSets
 medical-imaging:StartDICOMImportJob
 medical-imaging:TagResource
@@ -12949,6 +12963,7 @@ profile:BatchGetCalculatedAttributeForProfile
 profile:BatchGetProfile
 profile:CreateCalculatedAttributeDefinition
 profile:CreateDomain
+profile:CreateDomainLayout
 profile:CreateEventStream
 profile:CreateEventTrigger
 profile:CreateIntegrationWorkflow
@@ -12959,6 +12974,7 @@ profile:CreateSegmentSnapshot
 profile:CreateSnapshot
 profile:DeleteCalculatedAttributeDefinition
 profile:DeleteDomain
+profile:DeleteDomainLayout
 profile:DeleteEventStream
 profile:DeleteEventTrigger
 profile:DeleteIntegration
@@ -12973,6 +12989,7 @@ profile:GetAutoMergingPreview
 profile:GetCalculatedAttributeDefinition
 profile:GetCalculatedAttributeForProfile
 profile:GetDomain
+profile:GetDomainLayout
 profile:GetEventStream
 profile:GetEventTrigger
 profile:GetIdentityResolutionJob
@@ -12991,6 +13008,7 @@ profile:GetWorkflowSteps
 profile:ListAccountIntegrations
 profile:ListCalculatedAttributeDefinitions
 profile:ListCalculatedAttributesForProfile
+profile:ListDomainLayouts
 profile:ListDomains
 profile:ListEventStreams
 profile:ListEventTriggers
@@ -13014,6 +13032,7 @@ profile:TagResource
 profile:UntagResource
 profile:UpdateCalculatedAttributeDefinition
 profile:UpdateDomain
+profile:UpdateDomainLayout
 profile:UpdateEventTrigger
 profile:UpdateProfile
 proton:AcceptEnvironmentAccountConnection
@@ -13147,6 +13166,7 @@ q:CreateAuthGrant
 q:CreateOAuthAppConnection
 q:CreatePlugin
 q:DeleteAssignment
+q:DeleteConversation
 q:DeleteOAuthAppConnection
 q:DeletePlugin
 q:GenerateCodeFromCommands
@@ -13171,6 +13191,7 @@ q:StartTroubleshootingResolutionExplanation
 q:TagResource
 q:UntagResource
 q:UpdateAuthGrant
+q:UpdateConversation
 q:UpdateOAuthAppConnection
 q:UpdatePlugin
 q:UpdateTroubleshootingCommandResult
@@ -15462,20 +15483,28 @@ scn:AssignAdminPermissionsToUser
 scn:CreateBillOfMaterialsImportJob
 scn:CreateDataIntegrationFlow
 scn:CreateDataLakeDataset
+scn:CreateDataLakeNamespace
 scn:CreateInstance
 scn:CreateSSOApplication
 scn:DeleteDataIntegrationFlow
 scn:DeleteDataLakeDataset
+scn:DeleteDataLakeNamespace
 scn:DeleteInstance
 scn:DeleteSSOApplication
 scn:DescribeInstance
 scn:GetBillOfMaterialsImportJob
+scn:GetDataIntegrationEvent
 scn:GetDataIntegrationFlow
+scn:GetDataIntegrationFlowExecution
 scn:GetDataLakeDataset
+scn:GetDataLakeNamespace
 scn:GetInstance
 scn:ListAdminUsers
+scn:ListDataIntegrationEvents
+scn:ListDataIntegrationFlowExecutions
 scn:ListDataIntegrationFlows
 scn:ListDataLakeDatasets
+scn:ListDataLakeNamespaces
 scn:ListInstances
 scn:ListTagsForResource
 scn:RemoveAdminPermissionsForUser
@@ -15484,6 +15513,7 @@ scn:TagResource
 scn:UntagResource
 scn:UpdateDataIntegrationFlow
 scn:UpdateDataLakeDataset
+scn:UpdateDataLakeNamespace
 scn:UpdateInstance
 sdb:BatchDeleteAttributes
 sdb:BatchPutAttributes
@@ -17067,6 +17097,7 @@ support:AddCommunicationToCase
 support:CreateCase
 support:DescribeAttachment
 support:DescribeCaseAttributes
+support:DescribeCaseOptions
 support:DescribeCases
 support:DescribeCommunication
 support:DescribeCommunications
@@ -17089,6 +17120,7 @@ support:RefreshTrustedAdvisorCheck
 support:ResolveCase
 support:SearchForCases
 support:StartInteraction
+support:UpdateCaseSeverity
 supportapp:CreateSlackChannelConfiguration
 supportapp:DeleteAccountAlias
 supportapp:DeleteSlackChannelConfiguration
@@ -17178,6 +17210,7 @@ synthetics:ListGroupResources
 synthetics:ListGroups
 synthetics:ListTagsForResource
 synthetics:StartCanary
+synthetics:StartCanaryDryRun
 synthetics:StopCanary
 synthetics:TagResource
 synthetics:UntagResource
@@ -17464,6 +17497,13 @@ transfer:UpdateServer
 transfer:UpdateUser
 transfer:UpdateWebApp
 transfer:UpdateWebAppCustomization
+transform:AssociateConnectorResource
+transform:CreateProfile
+transform:DeleteProfile
+transform:GetConnector
+transform:ListProfiles
+transform:RejectConnector
+transform:UpdateProfile
 translate:CreateParallelData
 translate:DeleteParallelData
 translate:DeleteTerminology
