@@ -82,7 +82,6 @@ route53-recovery-cluster
 s3express
 s3tables
 sagemaker-data-science-assistant
-sagemaker-groundtruth-synthetic
 sdb
 serverlessrepo
 serviceextract

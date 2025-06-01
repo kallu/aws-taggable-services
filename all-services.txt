@@ -333,7 +333,6 @@ s3tables
 sagemaker
 sagemaker-data-science-assistant
 sagemaker-geospatial
-sagemaker-groundtruth-synthetic
 sagemaker-mlflow
 savingsplans
 scheduler

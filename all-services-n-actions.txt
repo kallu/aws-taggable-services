@@ -1224,7 +1224,6 @@ aws-marketplace:BatchMeterUsage
 aws-marketplace:CancelAgreement
 aws-marketplace:CancelAgreementRequest
 aws-marketplace:CancelChangeSet
-aws-marketplace:CompleteTask
 aws-marketplace:CreateAgreementRequest
 aws-marketplace:CreatePrivateMarketplaceRequests
 aws-marketplace:DeleteResourcePolicy
@@ -1235,7 +1234,6 @@ aws-marketplace:DescribeChangeSet
 aws-marketplace:DescribeEntity
 aws-marketplace:DescribePrivateMarketplaceRequests
 aws-marketplace:DescribeProcurementSystemConfiguration
-aws-marketplace:DescribeTask
 aws-marketplace:DisassociateProductsFromPrivateMarketplace
 aws-marketplace:GetAgreementApprovalRequest
 aws-marketplace:GetAgreementEntitlements
@@ -1256,7 +1254,6 @@ aws-marketplace:ListEntitlementDetails
 aws-marketplace:ListPrivateListings
 aws-marketplace:ListPrivateMarketplaceRequests
 aws-marketplace:ListTagsForResource
-aws-marketplace:ListTasks
 aws-marketplace:MeterUsage
 aws-marketplace:PutDeploymentParameter
 aws-marketplace:PutProcurementSystemConfiguration
@@ -1273,7 +1270,6 @@ aws-marketplace:Unsubscribe
 aws-marketplace:UntagResource
 aws-marketplace:UpdateAgreementApprovalRequest
 aws-marketplace:UpdatePurchaseOrders
-aws-marketplace:UpdateTask
 aws-marketplace:ViewSubscriptions
 aws-portal:GetConsoleActionSetEnforced
 aws-portal:ModifyAccount
@@ -1925,8 +1921,10 @@ ce:GetApproximateUsageRecords
 ce:GetCommitmentPurchaseAnalysis
 ce:GetConsoleActionSetEnforced
 ce:GetCostAndUsage
+ce:GetCostAndUsageComparisons
 ce:GetCostAndUsageWithResources
 ce:GetCostCategories
+ce:GetCostComparisonDrivers
 ce:GetCostForecast
 ce:GetDimensionValues
 ce:GetPreferences
@@ -2899,6 +2897,7 @@ cloudtrail:GenerateQuery
 cloudtrail:GenerateQueryResultsSummary
 cloudtrail:GetChannel
 cloudtrail:GetDashboard
+cloudtrail:GetEventConfiguration
 cloudtrail:GetEventDataStore
 cloudtrail:GetEventDataStoreData
 cloudtrail:GetEventSelectors
@@ -2920,6 +2919,7 @@ cloudtrail:ListServiceLinkedChannels
 cloudtrail:ListTags
 cloudtrail:ListTrails
 cloudtrail:LookupEvents
+cloudtrail:PutEventConfiguration
 cloudtrail:PutEventSelectors
 cloudtrail:PutInsightSelectors
 cloudtrail:PutResourcePolicy
@@ -10747,6 +10747,7 @@ logs:ListEntitiesForLogGroup
 logs:ListIntegrations
 logs:ListLogAnomalyDetectors
 logs:ListLogDeliveries
+logs:ListLogGroups
 logs:ListLogGroupsForEntity
 logs:ListLogGroupsForQuery
 logs:ListTagsForResource
@@ -12022,12 +12023,15 @@ network-firewall:CreateFirewall
 network-firewall:CreateFirewallPolicy
 network-firewall:CreateRuleGroup
 network-firewall:CreateTLSInspectionConfiguration
+network-firewall:CreateVpcEndpointAssociation
 network-firewall:DeleteFirewall
 network-firewall:DeleteFirewallPolicy
 network-firewall:DeleteResourcePolicy
 network-firewall:DeleteRuleGroup
 network-firewall:DeleteTLSInspectionConfiguration
+network-firewall:DeleteVpcEndpointAssociation
 network-firewall:DescribeFirewall
+network-firewall:DescribeFirewallMetadata
 network-firewall:DescribeFirewallPolicy
 network-firewall:DescribeFlowOperation
 network-firewall:DescribeLoggingConfiguration
@@ -12035,6 +12039,7 @@ network-firewall:DescribeResourcePolicy
 network-firewall:DescribeRuleGroup
 network-firewall:DescribeRuleGroupMetadata
 network-firewall:DescribeTLSInspectionConfiguration
+network-firewall:DescribeVpcEndpointAssociation
 network-firewall:DisassociateSubnets
 network-firewall:GetAnalysisReportResults
 network-firewall:ListAnalysisReports
@@ -12045,6 +12050,7 @@ network-firewall:ListFlowOperations
 network-firewall:ListRuleGroups
 network-firewall:ListTLSInspectionConfigurations
 network-firewall:ListTagsForResource
+network-firewall:ListVpcEndpointAssociations
 network-firewall:PutResourcePolicy
 network-firewall:StartAnalysisReport
 network-firewall:StartFlowCapture
@@ -14984,18 +14990,6 @@ sagemaker-geospatial:StopEarthObservationJob
 sagemaker-geospatial:StopVectorEnrichmentJob
 sagemaker-geospatial:TagResource
 sagemaker-geospatial:UntagResource
-sagemaker-groundtruth-synthetic:CreateProject
-sagemaker-groundtruth-synthetic:DeleteProject
-sagemaker-groundtruth-synthetic:GetAccountDetails
-sagemaker-groundtruth-synthetic:GetBatch
-sagemaker-groundtruth-synthetic:GetProject
-sagemaker-groundtruth-synthetic:ListBatchDataTransfers
-sagemaker-groundtruth-synthetic:ListBatchSummaries
-sagemaker-groundtruth-synthetic:ListProjectDataTransfers
-sagemaker-groundtruth-synthetic:ListProjectSummaries
-sagemaker-groundtruth-synthetic:StartBatchDataTransfer
-sagemaker-groundtruth-synthetic:StartProjectDataTransfer
-sagemaker-groundtruth-synthetic:UpdateBatch
 sagemaker-mlflow:AccessUI
 sagemaker-mlflow:CreateExperiment
 sagemaker-mlflow:CreateModelVersion
