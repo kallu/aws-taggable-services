@@ -102,7 +102,6 @@ tiros
 transform
 trustedadvisor
 user-subscriptions
-uxc
 verified-access
 vpc-lattice-svcs
 vpce
