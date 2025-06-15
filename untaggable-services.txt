@@ -93,6 +93,7 @@ ssmmessages
 sso-directory
 sso-oauth
 support
+support-console
 supportapp
 supportplans
 supportrecommendations

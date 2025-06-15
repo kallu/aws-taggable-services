@@ -110,6 +110,7 @@ entityresolution
 es
 events
 evidently
+evs
 finspace
 firehose
 fis
@@ -305,5 +306,6 @@ wisdom
 worklink
 workmail
 workspaces
+workspaces-instances
 workspaces-web
 xray
