@@ -185,6 +185,7 @@ acm:RemoveTagsFromCertificate
 acm:RenewCertificate
 acm:RequestCertificate
 acm:ResendValidationEmail
+acm:RevokeCertificate
 acm:UpdateCertificateOptions
 activate:CreateForm
 activate:GetAccountContact
@@ -1367,6 +1368,7 @@ backup-storage:PutChunk
 backup-storage:PutObject
 backup-storage:StartObject
 backup-storage:UpdateObjectComplete
+backup:AssociateBackupVaultMpaApprovalTeam
 backup:CancelLegalHold
 backup:CopyFromBackupVault
 backup:CopyIntoBackupVault
@@ -1377,6 +1379,7 @@ backup:CreateFramework
 backup:CreateLegalHold
 backup:CreateLogicallyAirGappedBackupVault
 backup:CreateReportPlan
+backup:CreateRestoreAccessBackupVault
 backup:CreateRestoreTestingPlan
 backup:CreateRestoreTestingSelection
 backup:DeleteBackupPlan
@@ -1402,6 +1405,7 @@ backup:DescribeRegionSettings
 backup:DescribeReportJob
 backup:DescribeReportPlan
 backup:DescribeRestoreJob
+backup:DisassociateBackupVaultMpaApprovalTeam
 backup:DisassociateRecoveryPoint
 backup:DisassociateRecoveryPointFromParent
 backup:ExportBackupPlanTemplate
@@ -1440,6 +1444,7 @@ backup:ListRecoveryPointsByLegalHold
 backup:ListRecoveryPointsByResource
 backup:ListReportJobs
 backup:ListReportPlans
+backup:ListRestoreAccessBackupVaults
 backup:ListRestoreJobSummaries
 backup:ListRestoreJobs
 backup:ListRestoreJobsByProtectedResource
@@ -1451,6 +1456,7 @@ backup:PutBackupVaultLockConfiguration
 backup:PutBackupVaultNotifications
 backup:PutBackupVaultSharingPolicy
 backup:PutRestoreValidationResult
+backup:RevokeRestoreAccessBackupVault
 backup:SearchRecoveryPoint
 backup:StartBackupJob
 backup:StartCopyJob
@@ -1553,11 +1559,13 @@ bedrock:AssociateAgentCollaborator
 bedrock:AssociateAgentKnowledgeBase
 bedrock:AssociateThirdPartyKnowledgeBase
 bedrock:BatchDeleteEvaluationJob
+bedrock:CallWithBearerToken
 bedrock:CreateAgent
 bedrock:CreateAgentActionGroup
 bedrock:CreateAgentAlias
 bedrock:CreateBlueprint
 bedrock:CreateBlueprintVersion
+bedrock:CreateCustomModel
 bedrock:CreateDataAutomationProject
 bedrock:CreateDataSource
 bedrock:CreateEvaluationJob
@@ -1798,7 +1806,6 @@ billingconductor:UpdateCustomLineItem
 billingconductor:UpdatePricingPlan
 billingconductor:UpdatePricingRule
 braket:AcceptUserAgreement
-braket:AccessBraketFeature
 braket:CancelJob
 braket:CancelQuantumTask
 braket:CreateJob
@@ -3919,6 +3926,7 @@ connect-campaigns:DescribeCampaign
 connect-campaigns:GetCampaignState
 connect-campaigns:GetCampaignStateBatch
 connect-campaigns:GetConnectInstanceConfig
+connect-campaigns:GetInstanceCommunicationLimits
 connect-campaigns:GetInstanceOnboardingJobStatus
 connect-campaigns:ListCampaigns
 connect-campaigns:ListConnectInstanceIntegrations
@@ -3926,6 +3934,7 @@ connect-campaigns:ListTagsForResource
 connect-campaigns:PauseCampaign
 connect-campaigns:PutConnectInstanceIntegration
 connect-campaigns:PutDialRequestBatch
+connect-campaigns:PutInstanceCommunicationLimits
 connect-campaigns:PutOutboundRequestBatch
 connect-campaigns:PutProfileOutboundRequestBatch
 connect-campaigns:ResumeCampaign
@@ -10336,6 +10345,7 @@ lex:CreateExport
 lex:CreateIntent
 lex:CreateIntentVersion
 lex:CreateResourcePolicy
+lex:CreateResourcePolicyStatement
 lex:CreateSlot
 lex:CreateSlotType
 lex:CreateSlotTypeVersion
@@ -10355,6 +10365,7 @@ lex:DeleteImport
 lex:DeleteIntent
 lex:DeleteIntentVersion
 lex:DeleteResourcePolicy
+lex:DeleteResourcePolicyStatement
 lex:DeleteSession
 lex:DeleteSlot
 lex:DeleteSlotType
@@ -11945,6 +11956,30 @@ monitron:ListUserAccessRoleAssociations
 monitron:TagResource
 monitron:UntagResource
 monitron:UpdateProject
+mpa:CancelSession
+mpa:CreateApprovalTeam
+mpa:CreateIdentitySource
+mpa:DeleteIdentitySource
+mpa:DeleteInactiveApprovalTeamVersion
+mpa:DeleteResourcePolicy
+mpa:GetApprovalTeam
+mpa:GetIdentitySource
+mpa:GetPolicyVersion
+mpa:GetResourcePolicy
+mpa:GetSession
+mpa:ListApprovalTeams
+mpa:ListIdentitySources
+mpa:ListPolicies
+mpa:ListPolicyVersions
+mpa:ListResourcePolicies
+mpa:ListSessions
+mpa:ListTagsForResource
+mpa:PutResourcePolicy
+mpa:StartActiveApprovalTeamDeletion
+mpa:StartSession
+mpa:TagResource
+mpa:UntagResource
+mpa:UpdateApprovalTeam
 mq:CreateBroker
 mq:CreateConfiguration
 mq:CreateReplicaBroker
@@ -12039,6 +12074,8 @@ neptune-graph:TagResource
 neptune-graph:UntagResource
 neptune-graph:UpdateGraph
 neptune-graph:WriteDataViaQuery
+network-firewall:AcceptNetworkFirewallTransitGatewayAttachment
+network-firewall:AssociateAvailabilityZones
 network-firewall:AssociateFirewallPolicy
 network-firewall:AssociateSubnets
 network-firewall:CreateFirewall
@@ -12048,6 +12085,7 @@ network-firewall:CreateTLSInspectionConfiguration
 network-firewall:CreateVpcEndpointAssociation
 network-firewall:DeleteFirewall
 network-firewall:DeleteFirewallPolicy
+network-firewall:DeleteNetworkFirewallTransitGatewayAttachment
 network-firewall:DeleteResourcePolicy
 network-firewall:DeleteRuleGroup
 network-firewall:DeleteTLSInspectionConfiguration
@@ -12062,6 +12100,7 @@ network-firewall:DescribeRuleGroup
 network-firewall:DescribeRuleGroupMetadata
 network-firewall:DescribeTLSInspectionConfiguration
 network-firewall:DescribeVpcEndpointAssociation
+network-firewall:DisassociateAvailabilityZones
 network-firewall:DisassociateSubnets
 network-firewall:GetAnalysisReportResults
 network-firewall:ListAnalysisReports
@@ -12074,11 +12113,13 @@ network-firewall:ListTLSInspectionConfigurations
 network-firewall:ListTagsForResource
 network-firewall:ListVpcEndpointAssociations
 network-firewall:PutResourcePolicy
+network-firewall:RejectNetworkFirewallTransitGatewayAttachment
 network-firewall:StartAnalysisReport
 network-firewall:StartFlowCapture
 network-firewall:StartFlowFlush
 network-firewall:TagResource
 network-firewall:UntagResource
+network-firewall:UpdateAvailabilityZoneChangeProtection
 network-firewall:UpdateFirewallAnalysisSettings
 network-firewall:UpdateFirewallDeleteProtection
 network-firewall:UpdateFirewallDescription
@@ -13017,6 +13058,7 @@ profile:CreateSegmentDefinition
 profile:CreateSegmentEstimate
 profile:CreateSegmentSnapshot
 profile:CreateSnapshot
+profile:CreateUploadJob
 profile:DeleteCalculatedAttributeDefinition
 profile:DeleteDomain
 profile:DeleteDomainLayout
@@ -13048,6 +13090,8 @@ profile:GetSegmentMembership
 profile:GetSegmentSnapshot
 profile:GetSimilarProfiles
 profile:GetSnapshot
+profile:GetUploadJob
+profile:GetUploadJobPath
 profile:GetWorkflow
 profile:GetWorkflowSteps
 profile:ListAccountIntegrations
@@ -13067,12 +13111,15 @@ profile:ListProfileObjects
 profile:ListRuleBasedMatches
 profile:ListSegmentDefinitions
 profile:ListTagsForResource
+profile:ListUploadJobs
 profile:ListWorkflows
 profile:MergeProfiles
 profile:PutIntegration
 profile:PutProfileObject
 profile:PutProfileObjectType
 profile:SearchProfiles
+profile:StartUploadJob
+profile:StopUploadJob
 profile:TagResource
 profile:UntagResource
 profile:UpdateCalculatedAttributeDefinition
@@ -15675,12 +15722,12 @@ securityhub:GetInsights
 securityhub:GetInvitationsCount
 securityhub:GetMasterAccount
 securityhub:GetMembers
-securityhub:GetResourceStatisticsV2
+securityhub:GetResourcesStatisticsV2
 securityhub:GetResourcesV2
 securityhub:GetSecurityControlDefinition
 securityhub:GetUsage
 securityhub:InviteMembers
-securityhub:ListAggregatorV2s
+securityhub:ListAggregatorsV2
 securityhub:ListAutomationRules
 securityhub:ListAutomationRulesV2
 securityhub:ListConfigurationPolicies
@@ -17187,6 +17234,7 @@ support:ResolveCase
 support:SearchForCases
 support:StartInteraction
 support:UpdateCaseSeverity
+support:UpdateInteraction
 supportapp:CreateSlackChannelConfiguration
 supportapp:DeleteAccountAlias
 supportapp:DeleteSlackChannelConfiguration
