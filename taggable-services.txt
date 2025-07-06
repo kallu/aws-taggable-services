@@ -251,6 +251,7 @@ rum
 s3
 s3-object-lambda
 s3-outposts
+s3express
 sagemaker
 sagemaker-geospatial
 sagemaker-mlflow

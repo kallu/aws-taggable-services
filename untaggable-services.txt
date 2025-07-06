@@ -78,7 +78,6 @@ rds-db
 redshift-data
 rhelkb
 route53-recovery-cluster
-s3express
 s3tables
 sagemaker-data-science-assistant
 sdb
