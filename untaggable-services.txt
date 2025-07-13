@@ -67,6 +67,7 @@ mediaimport
 migrationhub-strategy
 mobileanalytics
 neptune-db
+network-security-director
 networkmanager-chat
 observabilityadmin
 opensearch
