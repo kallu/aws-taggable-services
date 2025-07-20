@@ -15,6 +15,7 @@ aws-marketplace-management
 aws-portal
 awsconnector
 backup-storage
+bedrock-agentcore
 cloudfront-keyvaluestore
 cloudshell
 cloudtrail-data
@@ -80,6 +81,7 @@ redshift-data
 rhelkb
 route53-recovery-cluster
 s3tables
+s3vectors
 sagemaker-data-science-assistant
 sdb
 serverlessrepo
@@ -95,7 +97,6 @@ support
 support-console
 supportapp
 supportplans
-supportrecommendations
 sustainability
 tax
 tiros

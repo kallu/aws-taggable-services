@@ -49,6 +49,7 @@ batch
 bcm-data-exports
 bcm-pricing-calculator
 bedrock
+bedrock-agentcore
 billing
 billingconductor
 braket
@@ -334,6 +335,7 @@ s3-object-lambda
 s3-outposts
 s3express
 s3tables
+s3vectors
 sagemaker
 sagemaker-data-science-assistant
 sagemaker-geospatial
@@ -382,7 +384,6 @@ support
 support-console
 supportapp
 supportplans
-supportrecommendations
 sustainability
 swf
 synthetics
