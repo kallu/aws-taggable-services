@@ -70,7 +70,6 @@ mobileanalytics
 neptune-db
 network-security-director
 networkmanager-chat
-observabilityadmin
 opensearch
 partnercentral-account-management
 polly

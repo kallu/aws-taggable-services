@@ -29,6 +29,7 @@ appstudio
 appsync
 apptest
 aps
+arc-region-switch
 arc-zonal-shift
 arsenal
 artifact

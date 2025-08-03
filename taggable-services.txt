@@ -20,6 +20,7 @@ appstream
 appsync
 apptest
 aps
+arc-region-switch
 athena
 auditmanager
 autoscaling
@@ -199,6 +200,7 @@ nimble
 notifications
 notifications-contacts
 oam
+observabilityadmin
 odb
 omics
 one
