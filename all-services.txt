@@ -49,6 +49,7 @@ backup-storage
 batch
 bcm-data-exports
 bcm-pricing-calculator
+bcm-recommended-actions
 bedrock
 bedrock-agentcore
 billing
@@ -403,6 +404,7 @@ translate
 trustedadvisor
 ts
 user-subscriptions
+uxc
 vendor-insights
 verified-access
 verifiedpermissions

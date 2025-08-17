@@ -944,12 +944,14 @@ aps:DeleteAlertManagerDefinition
 aps:DeleteAlertManagerSilence
 aps:DeleteLoggingConfiguration
 aps:DeleteQueryLoggingConfiguration
+aps:DeleteResourcePolicy
 aps:DeleteRuleGroupsNamespace
 aps:DeleteScraper
 aps:DeleteWorkspace
 aps:DescribeAlertManagerDefinition
 aps:DescribeLoggingConfiguration
 aps:DescribeQueryLoggingConfiguration
+aps:DescribeResourcePolicy
 aps:DescribeRuleGroupsNamespace
 aps:DescribeScraper
 aps:DescribeWorkspace
@@ -972,6 +974,7 @@ aps:ListTagsForResource
 aps:ListWorkspaces
 aps:PutAlertManagerDefinition
 aps:PutAlertManagerSilences
+aps:PutResourcePolicy
 aps:PutRuleGroupsNamespace
 aps:QueryMetrics
 aps:RemoteWrite
@@ -1005,6 +1008,7 @@ arc-region-switch:UntagResource
 arc-region-switch:UpdatePlan
 arc-region-switch:UpdatePlanExecution
 arc-region-switch:UpdatePlanExecutionStep
+arc-zonal-shift:CancelPracticeRun
 arc-zonal-shift:CancelZonalShift
 arc-zonal-shift:CreatePracticeRunConfiguration
 arc-zonal-shift:DeletePracticeRunConfiguration
@@ -1013,6 +1017,7 @@ arc-zonal-shift:GetManagedResource
 arc-zonal-shift:ListAutoshifts
 arc-zonal-shift:ListManagedResources
 arc-zonal-shift:ListZonalShifts
+arc-zonal-shift:StartPracticeRun
 arc-zonal-shift:StartZonalShift
 arc-zonal-shift:UpdateAutoshiftObserverNotificationStatus
 arc-zonal-shift:UpdatePracticeRunConfiguration
@@ -1601,6 +1606,7 @@ bcm-pricing-calculator:UpdateBillScenarioUsageModification
 bcm-pricing-calculator:UpdatePreferences
 bcm-pricing-calculator:UpdateWorkloadEstimate
 bcm-pricing-calculator:UpdateWorkloadEstimateUsage
+bcm-recommended-actions:ListRecommendedActions
 bedrock-agentcore:AllowVendedLogDeliveryForResource
 bedrock-agentcore:ConnectBrowserAutomationStream
 bedrock-agentcore:ConnectBrowserLiveViewStream
@@ -4245,6 +4251,7 @@ connect:DisassociateUserProficiencies
 connect:DismissUserContact
 connect:GetAttachedFile
 connect:GetContactAttributes
+connect:GetContactMetrics
 connect:GetCurrentMetricData
 connect:GetCurrentUserData
 connect:GetEffectiveHoursOfOperations
@@ -8533,7 +8540,9 @@ guardduty:CreateMalwareProtectionPlan
 guardduty:CreateMembers
 guardduty:CreatePublishingDestination
 guardduty:CreateSampleFindings
+guardduty:CreateThreatEntitySet
 guardduty:CreateThreatIntelSet
+guardduty:CreateTrustedEntitySet
 guardduty:DeclineInvitations
 guardduty:DeleteDetector
 guardduty:DeleteFilter
@@ -8542,7 +8551,9 @@ guardduty:DeleteInvitations
 guardduty:DeleteMalwareProtectionPlan
 guardduty:DeleteMembers
 guardduty:DeletePublishingDestination
+guardduty:DeleteThreatEntitySet
 guardduty:DeleteThreatIntelSet
+guardduty:DeleteTrustedEntitySet
 guardduty:DescribeMalwareScans
 guardduty:DescribeOrganizationConfiguration
 guardduty:DescribePublishingDestination
@@ -8566,7 +8577,9 @@ guardduty:GetMemberDetectors
 guardduty:GetMembers
 guardduty:GetOrganizationStatistics
 guardduty:GetRemainingFreeTrialDays
+guardduty:GetThreatEntitySet
 guardduty:GetThreatIntelSet
+guardduty:GetTrustedEntitySet
 guardduty:GetUsageStatistics
 guardduty:InviteMembers
 guardduty:ListCoverage
@@ -8580,7 +8593,9 @@ guardduty:ListMembers
 guardduty:ListOrganizationAdminAccounts
 guardduty:ListPublishingDestinations
 guardduty:ListTagsForResource
+guardduty:ListThreatEntitySets
 guardduty:ListThreatIntelSets
+guardduty:ListTrustedEntitySets
 guardduty:SendSecurityTelemetry
 guardduty:StartMalwareScan
 guardduty:StartMonitoringMembers
@@ -8597,7 +8612,9 @@ guardduty:UpdateMalwareScanSettings
 guardduty:UpdateMemberDetectors
 guardduty:UpdateOrganizationConfiguration
 guardduty:UpdatePublishingDestination
+guardduty:UpdateThreatEntitySet
 guardduty:UpdateThreatIntelSet
+guardduty:UpdateTrustedEntitySet
 health:DescribeAffectedAccountsForOrganization
 health:DescribeAffectedEntities
 health:DescribeAffectedEntitiesForOrganization
@@ -13009,6 +13026,7 @@ outposts:GetCatalogItem
 outposts:GetConnection
 outposts:GetOrder
 outposts:GetOutpost
+outposts:GetOutpostBillingInformation
 outposts:GetOutpostInstanceTypes
 outposts:GetOutpostSupportedInstanceTypes
 outposts:GetPrivateConnectivityConfig
@@ -16300,6 +16318,7 @@ servicediscovery:CreatePrivateDnsNamespace
 servicediscovery:CreatePublicDnsNamespace
 servicediscovery:CreateService
 servicediscovery:DeleteNamespace
+servicediscovery:DeleteResourcePolicy
 servicediscovery:DeleteService
 servicediscovery:DeleteServiceAttributes
 servicediscovery:DeregisterInstance
@@ -16309,6 +16328,7 @@ servicediscovery:GetInstance
 servicediscovery:GetInstancesHealthStatus
 servicediscovery:GetNamespace
 servicediscovery:GetOperation
+servicediscovery:GetResourcePolicy
 servicediscovery:GetService
 servicediscovery:GetServiceAttributes
 servicediscovery:ListInstances
@@ -16316,6 +16336,7 @@ servicediscovery:ListNamespaces
 servicediscovery:ListOperations
 servicediscovery:ListServices
 servicediscovery:ListTagsForResource
+servicediscovery:PutResourcePolicy
 servicediscovery:RegisterInstance
 servicediscovery:TagResource
 servicediscovery:UntagResource
@@ -17362,6 +17383,7 @@ sso:GetApplicationAssignmentConfiguration
 sso:GetApplicationAuthenticationMethod
 sso:GetApplicationGrant
 sso:GetApplicationInstance
+sso:GetApplicationSessionConfiguration
 sso:GetApplicationTemplate
 sso:GetInlinePolicyForPermissionSet
 sso:GetManagedApplicationInstance
@@ -17406,6 +17428,7 @@ sso:PutApplicationAccessScope
 sso:PutApplicationAssignmentConfiguration
 sso:PutApplicationAuthenticationMethod
 sso:PutApplicationGrant
+sso:PutApplicationSessionConfiguration
 sso:PutInlinePolicyToPermissionSet
 sso:PutMfaDeviceManagementForDirectory
 sso:PutPermissionsBoundaryToPermissionSet
@@ -18089,6 +18112,9 @@ user-subscriptions:ListApplicationClaims
 user-subscriptions:ListClaims
 user-subscriptions:ListUserSubscriptions
 user-subscriptions:UpdateClaim
+uxc:DeleteAccountColor
+uxc:GetAccountColor
+uxc:PutAccountColor
 vendor-insights:ActivateSecurityProfile
 vendor-insights:AssociateDataSource
 vendor-insights:CreateDataSource
@@ -18984,6 +19010,8 @@ workspaces:DescribeClientProperties
 workspaces:DescribeConnectClientAddIns
 workspaces:DescribeConnectionAliasPermissions
 workspaces:DescribeConnectionAliases
+workspaces:DescribeConsent
+workspaces:DescribeCustomWorkspaceImageImport
 workspaces:DescribeImageAssociations
 workspaces:DescribeIpGroups
 workspaces:DescribeRootClientCertificates
@@ -19004,6 +19032,7 @@ workspaces:DisassociateIpGroups
 workspaces:DisassociateWorkspaceApplication
 workspaces:GetAccountLink
 workspaces:ImportClientBranding
+workspaces:ImportCustomWorkspaceImage
 workspaces:ImportWorkspaceImage
 workspaces:ListAccountLinks
 workspaces:ListAvailableManagementCidrRanges
@@ -19035,6 +19064,7 @@ workspaces:TerminateWorkspacesPool
 workspaces:TerminateWorkspacesPoolSession
 workspaces:UpdateConnectClientAddIn
 workspaces:UpdateConnectionAliasPermission
+workspaces:UpdateConsent
 workspaces:UpdateRootClientCertificate
 workspaces:UpdateRulesOfIpGroup
 workspaces:UpdateWorkspaceBundle
