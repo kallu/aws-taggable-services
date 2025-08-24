@@ -30,6 +30,7 @@ backup
 backup-gateway
 backup-search
 batch
+bcm-dashboards
 bcm-data-exports
 bcm-pricing-calculator
 bedrock

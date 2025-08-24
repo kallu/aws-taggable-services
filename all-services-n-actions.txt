@@ -1558,6 +1558,15 @@ batch:UpdateConsumableResource
 batch:UpdateJobQueue
 batch:UpdateSchedulingPolicy
 batch:UpdateServiceEnvironment
+bcm-dashboards:CreateDashboard
+bcm-dashboards:DeleteDashboard
+bcm-dashboards:GetDashboard
+bcm-dashboards:GetResourcePolicy
+bcm-dashboards:ListDashboards
+bcm-dashboards:ListTagsForResource
+bcm-dashboards:TagResource
+bcm-dashboards:UntagResource
+bcm-dashboards:UpdateDashboard
 bcm-data-exports:CreateExport
 bcm-data-exports:DeleteExport
 bcm-data-exports:GetExecution
@@ -4691,6 +4700,7 @@ datazone:AcceptSubscriptionRequest
 datazone:AddEntityOwner
 datazone:AddPolicyGrant
 datazone:AssociateEnvironmentRole
+datazone:AssociateGovernedTerms
 datazone:BatchDeleteLinkedTypes
 datazone:BatchPutLinkedTypes
 datazone:CancelMetadataGenerationRun
@@ -4751,6 +4761,7 @@ datazone:DeleteSubscriptionRequest
 datazone:DeleteSubscriptionTarget
 datazone:DeleteTimeSeriesDataPoints
 datazone:DisassociateEnvironmentRole
+datazone:DisassociateGovernedTerms
 datazone:GetAccountPool
 datazone:GetAsset
 datazone:GetAssetFilter
@@ -5689,6 +5700,7 @@ dsql:GetBackupJob
 dsql:GetCluster
 dsql:GetRestoreJob
 dsql:GetVpcEndpointServiceName
+dsql:InjectError
 dsql:ListClusters
 dsql:ListTagsForResource
 dsql:PutMultiRegionProperties
@@ -8086,6 +8098,7 @@ glue:CreateCustomEntityType
 glue:CreateDataQualityRuleset
 glue:CreateDatabase
 glue:CreateDevEndpoint
+glue:CreateGlueIdentityCenterConfiguration
 glue:CreateInboundIntegration
 glue:CreateIntegration
 glue:CreateIntegrationResourceProperty
@@ -8117,6 +8130,7 @@ glue:DeleteCustomEntityType
 glue:DeleteDataQualityRuleset
 glue:DeleteDatabase
 glue:DeleteDevEndpoint
+glue:DeleteGlueIdentityCenterConfiguration
 glue:DeleteIntegration
 glue:DeleteIntegrationTableProperties
 glue:DeleteJob
@@ -8180,6 +8194,7 @@ glue:GetEnvironment
 glue:GetExecutors
 glue:GetExecutorsThreads
 glue:GetGeneratedCode
+glue:GetGlueIdentityCenterConfiguration
 glue:GetIntegrationResourceProperty
 glue:GetIntegrationTableProperties
 glue:GetJob
@@ -8326,6 +8341,7 @@ glue:UpdateCrawlerSchedule
 glue:UpdateDataQualityRuleset
 glue:UpdateDatabase
 glue:UpdateDevEndpoint
+glue:UpdateGlueIdentityCenterConfiguration
 glue:UpdateIntegrationResourceProperty
 glue:UpdateIntegrationTableProperties
 glue:UpdateJob
@@ -9259,6 +9275,7 @@ iot:DescribeDefaultAuthorizer
 iot:DescribeDetectMitigationActionsTask
 iot:DescribeDimension
 iot:DescribeDomainConfiguration
+iot:DescribeEncryptionConfiguration
 iot:DescribeEndpoint
 iot:DescribeEventConfigurations
 iot:DescribeFleetMetric
@@ -9422,6 +9439,7 @@ iot:UpdateCustomMetric
 iot:UpdateDimension
 iot:UpdateDomainConfiguration
 iot:UpdateDynamicThingGroup
+iot:UpdateEncryptionConfiguration
 iot:UpdateEventConfigurations
 iot:UpdateFleetMetric
 iot:UpdateIndexingConfiguration
@@ -13668,6 +13686,7 @@ qapps:UpdateQApp
 qapps:UpdateQAppPermissions
 qapps:UpdateQAppSession
 qapps:UpdateQAppSessionMetadata
+qbusiness:AllowVendedLogDeliveryForResource
 qbusiness:AssociatePermission
 qbusiness:BatchDeleteDocument
 qbusiness:BatchPutDocument
@@ -16882,18 +16901,26 @@ sns:Unsubscribe
 sns:UntagResource
 sns:VerifySMSSandboxPhoneNumber
 social-messaging:AssociateWhatsAppBusinessAccount
+social-messaging:CreateWhatsAppMessageTemplate
+social-messaging:CreateWhatsAppMessageTemplateFromLibrary
+social-messaging:CreateWhatsAppMessageTemplateMedia
 social-messaging:DeleteWhatsAppMessageMedia
+social-messaging:DeleteWhatsAppMessageTemplate
 social-messaging:DisassociateWhatsAppBusinessAccount
 social-messaging:GetLinkedWhatsAppBusinessAccount
 social-messaging:GetLinkedWhatsAppBusinessAccountPhoneNumber
 social-messaging:GetWhatsAppMessageMedia
+social-messaging:GetWhatsAppMessageTemplate
 social-messaging:ListLinkedWhatsAppBusinessAccounts
 social-messaging:ListTagsForResource
+social-messaging:ListWhatsAppMessageTemplates
+social-messaging:ListWhatsAppTemplateLibrary
 social-messaging:PostWhatsAppMessageMedia
 social-messaging:PutWhatsAppBusinessAccountEventDestinations
 social-messaging:SendWhatsAppMessage
 social-messaging:TagResource
 social-messaging:UntagResource
+social-messaging:UpdateWhatsAppMessageTemplate
 sqlworkbench:AssociateConnectionWithChart
 sqlworkbench:AssociateConnectionWithTab
 sqlworkbench:AssociateNotebookWithTab
@@ -17357,7 +17384,6 @@ sso:DeleteInstanceAccessControlAttributeConfiguration
 sso:DeleteManagedApplicationInstance
 sso:DeletePermissionSet
 sso:DeletePermissionsBoundaryFromPermissionSet
-sso:DeletePermissionsPolicy
 sso:DeleteProfile
 sso:DeleteTrustedTokenIssuer
 sso:DescribeAccountAssignmentCreationStatus
@@ -17365,15 +17391,12 @@ sso:DescribeAccountAssignmentDeletionStatus
 sso:DescribeApplication
 sso:DescribeApplicationAssignment
 sso:DescribeApplicationProvider
-sso:DescribeDirectories
 sso:DescribeInstance
 sso:DescribeInstanceAccessControlAttributeConfiguration
 sso:DescribePermissionSet
 sso:DescribePermissionSetProvisioningStatus
-sso:DescribePermissionsPolicies
 sso:DescribeRegisteredRegions
 sso:DescribeTrustedTokenIssuer
-sso:DescribeTrusts
 sso:DetachCustomerManagedPolicyReferenceFromPermissionSet
 sso:DetachManagedPolicyFromPermissionSet
 sso:DisassociateDirectory
@@ -17390,7 +17413,6 @@ sso:GetManagedApplicationInstance
 sso:GetMfaDeviceManagementForDirectory
 sso:GetPermissionSet
 sso:GetPermissionsBoundaryForPermissionSet
-sso:GetPermissionsPolicy
 sso:GetProfile
 sso:GetSSOStatus
 sso:GetSharedSsoConfiguration
@@ -17446,7 +17468,6 @@ sso:UpdateApplicationInstanceResponseSchemaConfiguration
 sso:UpdateApplicationInstanceSecurityConfiguration
 sso:UpdateApplicationInstanceServiceProviderConfiguration
 sso:UpdateApplicationInstanceStatus
-sso:UpdateDirectoryAssociation
 sso:UpdateInstance
 sso:UpdateInstanceAccessControlAttributeConfiguration
 sso:UpdateManagedApplicationInstanceStatus
