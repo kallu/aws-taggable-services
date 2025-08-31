@@ -202,6 +202,7 @@ aiops:CreateInvestigationResource
 aiops:DeleteInvestigation
 aiops:DeleteInvestigationGroup
 aiops:DeleteInvestigationGroupPolicy
+aiops:GetEphemeralInvestigationResults
 aiops:GetInvestigation
 aiops:GetInvestigationEvent
 aiops:GetInvestigationGroup
@@ -5631,6 +5632,7 @@ ds:DeleteTrust
 ds:DeregisterCertificate
 ds:DeregisterEventTopic
 ds:DescribeADAssessment
+ds:DescribeCAEnrollmentPolicy
 ds:DescribeCertificate
 ds:DescribeClientAuthenticationSettings
 ds:DescribeConditionalForwarders
@@ -5646,12 +5648,14 @@ ds:DescribeSharedDirectories
 ds:DescribeSnapshots
 ds:DescribeTrusts
 ds:DescribeUpdateDirectory
+ds:DisableCAEnrollmentPolicy
 ds:DisableClientAuthentication
 ds:DisableDirectoryDataAccess
 ds:DisableLDAPS
 ds:DisableRadius
 ds:DisableRoleAccess
 ds:DisableSso
+ds:EnableCAEnrollmentPolicy
 ds:EnableClientAuthentication
 ds:EnableDirectoryDataAccess
 ds:EnableLDAPS
@@ -5875,6 +5879,7 @@ ec2:CreateFleet
 ec2:CreateFlowLogs
 ec2:CreateFpgaImage
 ec2:CreateImage
+ec2:CreateImageUsageReport
 ec2:CreateInstanceConnectEndpoint
 ec2:CreateInstanceEventWindow
 ec2:CreateInstanceExportTask
@@ -5962,6 +5967,7 @@ ec2:DeleteEgressOnlyInternetGateway
 ec2:DeleteFleets
 ec2:DeleteFlowLogs
 ec2:DeleteFpgaImage
+ec2:DeleteImageUsageReport
 ec2:DeleteInstanceConnectEndpoint
 ec2:DeleteInstanceEventWindow
 ec2:DeleteInternetGateway
@@ -6090,6 +6096,9 @@ ec2:DescribeIamInstanceProfileAssociations
 ec2:DescribeIdFormat
 ec2:DescribeIdentityIdFormat
 ec2:DescribeImageAttribute
+ec2:DescribeImageReferences
+ec2:DescribeImageUsageReportEntries
+ec2:DescribeImageUsageReports
 ec2:DescribeImages
 ec2:DescribeImportImageTasks
 ec2:DescribeImportSnapshotTasks
@@ -6365,6 +6374,7 @@ ec2:ModifyIdentityIdFormat
 ec2:ModifyImageAttribute
 ec2:ModifyInstanceAttribute
 ec2:ModifyInstanceCapacityReservationAttributes
+ec2:ModifyInstanceConnectEndpoint
 ec2:ModifyInstanceCpuOptions
 ec2:ModifyInstanceCreditSpecification
 ec2:ModifyInstanceEventStartTime
@@ -6672,6 +6682,7 @@ eks:DescribeEksAnywhereSubscription
 eks:DescribeFargateProfile
 eks:DescribeIdentityProviderConfig
 eks:DescribeInsight
+eks:DescribeInsightsRefresh
 eks:DescribeNodegroup
 eks:DescribePodIdentityAssociation
 eks:DescribeUpdate
@@ -6693,6 +6704,7 @@ eks:ListPodIdentityAssociations
 eks:ListTagsForResource
 eks:ListUpdates
 eks:RegisterCluster
+eks:StartInsightsRefresh
 eks:TagResource
 eks:UntagResource
 eks:UpdateAccessEntry
@@ -12357,7 +12369,9 @@ neptune-graph:ReadDataViaQuery
 neptune-graph:ResetGraph
 neptune-graph:RestoreGraphFromSnapshot
 neptune-graph:StartExportTask
+neptune-graph:StartGraph
 neptune-graph:StartImportTask
+neptune-graph:StopGraph
 neptune-graph:TagResource
 neptune-graph:UntagResource
 neptune-graph:UpdateGraph
@@ -17117,20 +17131,26 @@ ssm-sap:DeleteResourcePermission
 ssm-sap:DeregisterApplication
 ssm-sap:GetApplication
 ssm-sap:GetComponent
+ssm-sap:GetConfigurationCheckOperation
 ssm-sap:GetDatabase
 ssm-sap:GetOperation
 ssm-sap:GetResourcePermission
 ssm-sap:ListApplications
 ssm-sap:ListComponents
+ssm-sap:ListConfigurationCheckDefinitions
+ssm-sap:ListConfigurationCheckOperations
 ssm-sap:ListDatabases
 ssm-sap:ListOperationEvents
 ssm-sap:ListOperations
+ssm-sap:ListSubCheckResults
+ssm-sap:ListSubCheckRuleResults
 ssm-sap:ListTagsForResource
 ssm-sap:PutResourcePermission
 ssm-sap:RegisterApplication
 ssm-sap:RestoreDatabase
 ssm-sap:StartApplication
 ssm-sap:StartApplicationRefresh
+ssm-sap:StartConfigurationChecks
 ssm-sap:StopApplication
 ssm-sap:TagResource
 ssm-sap:UntagResource
