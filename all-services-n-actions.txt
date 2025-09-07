@@ -2565,6 +2565,7 @@ cleanrooms:BatchGetSchema
 cleanrooms:BatchGetSchemaAnalysisRule
 cleanrooms:CreateAnalysisTemplate
 cleanrooms:CreateCollaboration
+cleanrooms:CreateCollaborationChangeRequest
 cleanrooms:CreateConfiguredAudienceModelAssociation
 cleanrooms:CreateConfiguredTable
 cleanrooms:CreateConfiguredTableAnalysisRule
@@ -2589,6 +2590,7 @@ cleanrooms:DeletePrivacyBudgetTemplate
 cleanrooms:GetAnalysisTemplate
 cleanrooms:GetCollaboration
 cleanrooms:GetCollaborationAnalysisTemplate
+cleanrooms:GetCollaborationChangeRequest
 cleanrooms:GetCollaborationConfiguredAudienceModelAssociation
 cleanrooms:GetCollaborationIdNamespaceAssociation
 cleanrooms:GetCollaborationPrivacyBudgetTemplate
@@ -2607,6 +2609,7 @@ cleanrooms:GetSchema
 cleanrooms:GetSchemaAnalysisRule
 cleanrooms:ListAnalysisTemplates
 cleanrooms:ListCollaborationAnalysisTemplates
+cleanrooms:ListCollaborationChangeRequests
 cleanrooms:ListCollaborationConfiguredAudienceModelAssociations
 cleanrooms:ListCollaborationIdNamespaceAssociations
 cleanrooms:ListCollaborationPrivacyBudgetTemplates
@@ -11510,6 +11513,7 @@ mediaconvert:CreateJob
 mediaconvert:CreateJobTemplate
 mediaconvert:CreatePreset
 mediaconvert:CreateQueue
+mediaconvert:CreateResourceShare
 mediaconvert:DeleteJobTemplate
 mediaconvert:DeletePolicy
 mediaconvert:DeletePreset
@@ -12303,6 +12307,7 @@ mq:ListUsers
 mq:Promote
 mq:RebootBroker
 mq:UpdateBroker
+mq:UpdateBrokerAccessConfiguration
 mq:UpdateConfiguration
 mq:UpdateUser
 neptune-db:CancelLoaderJob
@@ -12638,6 +12643,7 @@ notifications-contacts:UntagResource
 notifications:AssociateChannel
 notifications:AssociateManagedNotificationAccountContact
 notifications:AssociateManagedNotificationAdditionalChannel
+notifications:AssociateOrganizationalUnit
 notifications:CreateEventRule
 notifications:CreateNotificationConfiguration
 notifications:DeleteEventRule
@@ -12647,6 +12653,7 @@ notifications:DisableNotificationsAccessForOrganization
 notifications:DisassociateChannel
 notifications:DisassociateManagedNotificationAccountContact
 notifications:DisassociateManagedNotificationAdditionalChannel
+notifications:DisassociateOrganizationalUnit
 notifications:EnableNotificationsAccessForOrganization
 notifications:GetEventRule
 notifications:GetFeatureOptInStatus
@@ -12662,9 +12669,11 @@ notifications:ListManagedNotificationChannelAssociations
 notifications:ListManagedNotificationChildEvents
 notifications:ListManagedNotificationConfigurations
 notifications:ListManagedNotificationEvents
+notifications:ListMemberAccounts
 notifications:ListNotificationConfigurations
 notifications:ListNotificationEvents
 notifications:ListNotificationHubs
+notifications:ListOrganizationalUnits
 notifications:ListTagsForResource
 notifications:PutFeatureOptInStatus
 notifications:RegisterNotificationHub
@@ -13009,10 +13018,12 @@ organizations:LeaveOrganization
 organizations:ListAWSServiceAccessForOrganization
 organizations:ListAccounts
 organizations:ListAccountsForParent
+organizations:ListAccountsWithInvalidEffectivePolicy
 organizations:ListChildren
 organizations:ListCreateAccountStatus
 organizations:ListDelegatedAdministrators
 organizations:ListDelegatedServicesForAccount
+organizations:ListEffectivePolicyValidationErrors
 organizations:ListHandshakesForAccount
 organizations:ListHandshakesForOrganization
 organizations:ListOrganizationalUnitsForParent
