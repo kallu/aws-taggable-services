@@ -298,6 +298,7 @@ timestream-influxdb
 tnb
 transcribe
 transfer
+transform
 translate
 ts
 vendor-insights
