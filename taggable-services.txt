@@ -34,6 +34,7 @@ bcm-dashboards
 bcm-data-exports
 bcm-pricing-calculator
 bedrock
+bedrock-agentcore
 billing
 billingconductor
 braket
