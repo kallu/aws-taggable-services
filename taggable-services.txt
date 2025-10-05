@@ -140,7 +140,6 @@ inspector2
 internetmonitor
 invoicing
 iot
-iot1click
 iotanalytics
 iotdeviceadvisor
 iotevents

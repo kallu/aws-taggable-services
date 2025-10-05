@@ -17,7 +17,6 @@ appconfig
 appfabric
 appflow
 application-autoscaling
-application-cost-profiler
 application-signals
 application-transformation
 applicationinsights
@@ -198,7 +197,6 @@ internetmonitor
 invoicing
 iot
 iot-device-tester
-iot1click
 iotanalytics
 iotdeviceadvisor
 iotevents

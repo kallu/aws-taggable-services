@@ -3,7 +3,6 @@ account
 activate
 amplifybackend
 apigateway
-application-cost-profiler
 application-transformation
 appmesh-preview
 appstudio
