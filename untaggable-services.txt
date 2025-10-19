@@ -1,5 +1,6 @@
 a2c
 account
+action-recommendations
 activate
 amplifybackend
 apigateway
