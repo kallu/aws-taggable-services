@@ -945,6 +945,7 @@ apptest:UpdateTestConfiguration
 apptest:UpdateTestSuite
 aps:CreateAlertManagerAlerts
 aps:CreateAlertManagerDefinition
+aps:CreateAnomalyDetector
 aps:CreateLoggingConfiguration
 aps:CreateQueryLoggingConfiguration
 aps:CreateRuleGroupsNamespace
@@ -952,18 +953,22 @@ aps:CreateScraper
 aps:CreateWorkspace
 aps:DeleteAlertManagerDefinition
 aps:DeleteAlertManagerSilence
+aps:DeleteAnomalyDetector
 aps:DeleteLoggingConfiguration
 aps:DeleteQueryLoggingConfiguration
 aps:DeleteResourcePolicy
 aps:DeleteRuleGroupsNamespace
 aps:DeleteScraper
+aps:DeleteScraperLoggingConfiguration
 aps:DeleteWorkspace
 aps:DescribeAlertManagerDefinition
+aps:DescribeAnomalyDetector
 aps:DescribeLoggingConfiguration
 aps:DescribeQueryLoggingConfiguration
 aps:DescribeResourcePolicy
 aps:DescribeRuleGroupsNamespace
 aps:DescribeScraper
+aps:DescribeScraperLoggingConfiguration
 aps:DescribeWorkspace
 aps:DescribeWorkspaceConfiguration
 aps:GetAlertManagerSilence
@@ -977,13 +982,16 @@ aps:ListAlertManagerAlerts
 aps:ListAlertManagerReceivers
 aps:ListAlertManagerSilences
 aps:ListAlerts
+aps:ListAnomalyDetectors
 aps:ListRuleGroupsNamespaces
 aps:ListRules
 aps:ListScrapers
 aps:ListTagsForResource
 aps:ListWorkspaces
+aps:PreviewAnomalyDetector
 aps:PutAlertManagerDefinition
 aps:PutAlertManagerSilences
+aps:PutAnomalyDetector
 aps:PutResourcePolicy
 aps:PutRuleGroupsNamespace
 aps:QueryMetrics
@@ -993,6 +1001,7 @@ aps:UntagResource
 aps:UpdateLoggingConfiguration
 aps:UpdateQueryLoggingConfiguration
 aps:UpdateScraper
+aps:UpdateScraperLoggingConfiguration
 aps:UpdateWorkspaceAlias
 aps:UpdateWorkspaceConfiguration
 arc-region-switch:ApprovePlanExecutionStep
@@ -1245,6 +1254,7 @@ autoscaling:EnterStandby
 autoscaling:ExecutePolicy
 autoscaling:ExitStandby
 autoscaling:GetPredictiveScalingForecast
+autoscaling:LaunchInstances
 autoscaling:PutLifecycleHook
 autoscaling:PutNotificationConfiguration
 autoscaling:PutScalingPolicy
@@ -1857,6 +1867,7 @@ bedrock:InvokeFlow
 bedrock:InvokeInlineAgent
 bedrock:InvokeModel
 bedrock:InvokeModelWithResponseStream
+bedrock:InvokeTool
 bedrock:ListAgentActionGroups
 bedrock:ListAgentAliases
 bedrock:ListAgentCollaborators
@@ -3794,6 +3805,7 @@ cognito-idp:CreateGroup
 cognito-idp:CreateIdentityProvider
 cognito-idp:CreateManagedLoginBranding
 cognito-idp:CreateResourceServer
+cognito-idp:CreateTerms
 cognito-idp:CreateUserImportJob
 cognito-idp:CreateUserPool
 cognito-idp:CreateUserPoolClient
@@ -3802,6 +3814,7 @@ cognito-idp:DeleteGroup
 cognito-idp:DeleteIdentityProvider
 cognito-idp:DeleteManagedLoginBranding
 cognito-idp:DeleteResourceServer
+cognito-idp:DeleteTerms
 cognito-idp:DeleteUser
 cognito-idp:DeleteUserAttributes
 cognito-idp:DeleteUserPool
@@ -3812,6 +3825,7 @@ cognito-idp:DescribeManagedLoginBranding
 cognito-idp:DescribeManagedLoginBrandingByClient
 cognito-idp:DescribeResourceServer
 cognito-idp:DescribeRiskConfiguration
+cognito-idp:DescribeTerms
 cognito-idp:DescribeUserImportJob
 cognito-idp:DescribeUserPool
 cognito-idp:DescribeUserPoolClient
@@ -3839,6 +3853,7 @@ cognito-idp:ListIdentityProviders
 cognito-idp:ListResourceServers
 cognito-idp:ListResourcesForWebACL
 cognito-idp:ListTagsForResource
+cognito-idp:ListTerms
 cognito-idp:ListUserImportJobs
 cognito-idp:ListUserPoolClients
 cognito-idp:ListUserPools
@@ -3864,6 +3879,7 @@ cognito-idp:UpdateGroup
 cognito-idp:UpdateIdentityProvider
 cognito-idp:UpdateManagedLoginBranding
 cognito-idp:UpdateResourceServer
+cognito-idp:UpdateTerms
 cognito-idp:UpdateUserAttributes
 cognito-idp:UpdateUserPool
 cognito-idp:UpdateUserPoolClient
@@ -7140,6 +7156,7 @@ emr-containers:CreateSecurityConfiguration
 emr-containers:CreateVirtualCluster
 emr-containers:DeleteJobTemplate
 emr-containers:DeleteManagedEndpoint
+emr-containers:DeleteSecurityConfiguration
 emr-containers:DeleteVirtualCluster
 emr-containers:DescribeJobRun
 emr-containers:DescribeJobTemplate
@@ -9687,6 +9704,7 @@ iotmanagedintegrations:GetEventLogConfiguration
 iotmanagedintegrations:GetHubConfiguration
 iotmanagedintegrations:GetManagedThing
 iotmanagedintegrations:GetManagedThingCapabilities
+iotmanagedintegrations:GetManagedThingCertificate
 iotmanagedintegrations:GetManagedThingConnectivityData
 iotmanagedintegrations:GetManagedThingMetaData
 iotmanagedintegrations:GetManagedThingState
@@ -10351,6 +10369,7 @@ kinesis:StopStreamEncryption
 kinesis:SubscribeToShard
 kinesis:TagResource
 kinesis:UntagResource
+kinesis:UpdateMaxRecordSize
 kinesis:UpdateShardCount
 kinesis:UpdateStreamMode
 kinesisanalytics:AddApplicationCloudWatchLoggingOption
@@ -17812,6 +17831,7 @@ support:DescribeTrustedAdvisorChecks
 support:GetInteraction
 support:InitiateCallForCase
 support:InitiateChatForCase
+support:InitiateLiveContactForCase
 support:PutCaseAttributes
 support:RateCaseCommunication
 support:RefreshTrustedAdvisorCheck
