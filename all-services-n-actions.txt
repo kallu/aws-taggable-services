@@ -2933,6 +2933,7 @@ cloudfront:DeleteOriginAccessControl
 cloudfront:DeleteOriginRequestPolicy
 cloudfront:DeletePublicKey
 cloudfront:DeleteRealtimeLogConfig
+cloudfront:DeleteResourcePolicy
 cloudfront:DeleteResponseHeadersPolicy
 cloudfront:DeleteStreamingDistribution
 cloudfront:DeleteVpcOrigin
@@ -2971,6 +2972,7 @@ cloudfront:GetOriginRequestPolicyConfig
 cloudfront:GetPublicKey
 cloudfront:GetPublicKeyConfig
 cloudfront:GetRealtimeLogConfig
+cloudfront:GetResourcePolicy
 cloudfront:GetResponseHeadersPolicy
 cloudfront:GetResponseHeadersPolicyConfig
 cloudfront:GetSavingsPlan
@@ -3016,9 +3018,11 @@ cloudfront:ListTagsForResource
 cloudfront:ListUsages
 cloudfront:ListVpcOrigins
 cloudfront:PublishFunction
+cloudfront:PutResourcePolicy
 cloudfront:TagResource
 cloudfront:TestFunction
 cloudfront:UntagResource
+cloudfront:UpdateAnycastIpList
 cloudfront:UpdateCachePolicy
 cloudfront:UpdateCloudFrontOriginAccessIdentity
 cloudfront:UpdateConnectionGroup
@@ -4186,6 +4190,7 @@ connect:AssociateBot
 connect:AssociateContactWithUser
 connect:AssociateCustomerProfilesDomain
 connect:AssociateDefaultVocabulary
+connect:AssociateEmailAddressAlias
 connect:AssociateFlow
 connect:AssociateInstanceStorageConfig
 connect:AssociateLambdaFunction
@@ -4293,6 +4298,7 @@ connect:DisassociateAnalyticsDataSet
 connect:DisassociateApprovedOrigin
 connect:DisassociateBot
 connect:DisassociateCustomerProfilesDomain
+connect:DisassociateEmailAddressAlias
 connect:DisassociateFlow
 connect:DisassociateInstanceStorageConfig
 connect:DisassociateLambdaFunction
@@ -5909,6 +5915,8 @@ ec2:ConfirmProductInstance
 ec2:CopyFpgaImage
 ec2:CopyImage
 ec2:CopySnapshot
+ec2:CopyVolumes
+ec2:CreateCapacityManagerDataExport
 ec2:CreateCapacityReservation
 ec2:CreateCapacityReservationBySplitting
 ec2:CreateCapacityReservationFleet
@@ -6004,6 +6012,7 @@ ec2:CreateVpcPeeringConnection
 ec2:CreateVpnConnection
 ec2:CreateVpnConnectionRoute
 ec2:CreateVpnGateway
+ec2:DeleteCapacityManagerDataExport
 ec2:DeleteCarrierGateway
 ec2:DeleteClientVpnEndpoint
 ec2:DeleteClientVpnRoute
@@ -6111,6 +6120,7 @@ ec2:DescribeCapacityBlockExtensionOfferings
 ec2:DescribeCapacityBlockOfferings
 ec2:DescribeCapacityBlockStatus
 ec2:DescribeCapacityBlocks
+ec2:DescribeCapacityManagerDataExports
 ec2:DescribeCapacityReservationBillingRequests
 ec2:DescribeCapacityReservationFleets
 ec2:DescribeCapacityReservations
@@ -6280,6 +6290,7 @@ ec2:DetachVpnGateway
 ec2:DisableAddressTransfer
 ec2:DisableAllowedImagesSettings
 ec2:DisableAwsNetworkPerformanceMetricSubscription
+ec2:DisableCapacityManager
 ec2:DisableEbsEncryptionByDefault
 ec2:DisableFastLaunch
 ec2:DisableFastSnapshotRestores
@@ -6317,6 +6328,7 @@ ec2:DisassociateVpcCidrBlock
 ec2:EnableAddressTransfer
 ec2:EnableAllowedImagesSettings
 ec2:EnableAwsNetworkPerformanceMetricSubscription
+ec2:EnableCapacityManager
 ec2:EnableEbsEncryptionByDefault
 ec2:EnableFastLaunch
 ec2:EnableFastSnapshotRestores
@@ -6344,6 +6356,9 @@ ec2:GetAllowedImagesSettings
 ec2:GetAssociatedEnclaveCertificateIamRoles
 ec2:GetAssociatedIpv6PoolCidrs
 ec2:GetAwsNetworkPerformanceData
+ec2:GetCapacityManagerAttributes
+ec2:GetCapacityManagerMetricData
+ec2:GetCapacityManagerMetricDimensions
 ec2:GetCapacityReservationUsage
 ec2:GetCoipPoolUsage
 ec2:GetConsoleOutput
@@ -6555,6 +6570,7 @@ ec2:UnassignPrivateIpAddresses
 ec2:UnassignPrivateNatGatewayAddress
 ec2:UnlockSnapshot
 ec2:UnmonitorInstances
+ec2:UpdateCapacityManagerOrganizationsAccess
 ec2:UpdateSecurityGroupRuleDescriptionsEgress
 ec2:UpdateSecurityGroupRuleDescriptionsIngress
 ec2:WithdrawByoipCidr
@@ -6934,6 +6950,7 @@ elasticfilesystem:UpdateFileSystemProtection
 elasticloadbalancing:AddListenerCertificates
 elasticloadbalancing:AddTags
 elasticloadbalancing:AddTrustStoreRevocations
+elasticloadbalancing:AllowVendedLogDeliveryForResource
 elasticloadbalancing:ApplySecurityGroupsToLoadBalancer
 elasticloadbalancing:AttachLoadBalancerToSubnets
 elasticloadbalancing:ConfigureHealthCheck
@@ -10341,6 +10358,7 @@ kinesis:DecreaseStreamRetentionPeriod
 kinesis:DeleteResourcePolicy
 kinesis:DeleteStream
 kinesis:DeregisterStreamConsumer
+kinesis:DescribeAccountSettings
 kinesis:DescribeLimits
 kinesis:DescribeStream
 kinesis:DescribeStreamConsumer
@@ -10369,9 +10387,11 @@ kinesis:StopStreamEncryption
 kinesis:SubscribeToShard
 kinesis:TagResource
 kinesis:UntagResource
+kinesis:UpdateAccountSettings
 kinesis:UpdateMaxRecordSize
 kinesis:UpdateShardCount
 kinesis:UpdateStreamMode
+kinesis:UpdateStreamWarmThroughput
 kinesisanalytics:AddApplicationCloudWatchLoggingOption
 kinesisanalytics:AddApplicationInput
 kinesisanalytics:AddApplicationInputProcessingConfiguration
@@ -13501,6 +13521,7 @@ profile:CreateEventStream
 profile:CreateEventTrigger
 profile:CreateIntegrationWorkflow
 profile:CreateProfile
+profile:CreateRecommender
 profile:CreateSegmentDefinition
 profile:CreateSegmentEstimate
 profile:CreateSegmentSnapshot
@@ -13509,6 +13530,7 @@ profile:CreateUploadJob
 profile:DeleteCalculatedAttributeDefinition
 profile:DeleteDomain
 profile:DeleteDomainLayout
+profile:DeleteDomainObjectType
 profile:DeleteEventStream
 profile:DeleteEventTrigger
 profile:DeleteIntegration
@@ -13516,6 +13538,7 @@ profile:DeleteProfile
 profile:DeleteProfileKey
 profile:DeleteProfileObject
 profile:DeleteProfileObjectType
+profile:DeleteRecommender
 profile:DeleteSegmentDefinition
 profile:DeleteWorkflow
 profile:DetectProfileObjectType
@@ -13524,14 +13547,19 @@ profile:GetCalculatedAttributeDefinition
 profile:GetCalculatedAttributeForProfile
 profile:GetDomain
 profile:GetDomainLayout
+profile:GetDomainObjectType
 profile:GetEventStream
 profile:GetEventTrigger
 profile:GetIdentityResolutionJob
 profile:GetIntegration
 profile:GetMatches
+profile:GetObjectTypeAttributeStatistics
 profile:GetProfileHistoryRecord
+profile:GetProfileInsights
 profile:GetProfileObjectType
 profile:GetProfileObjectTypeTemplate
+profile:GetProfileRecommendations
+profile:GetRecommender
 profile:GetSegmentDefinition
 profile:GetSegmentEstimate
 profile:GetSegmentMembership
@@ -13546,28 +13574,36 @@ profile:ListAccountIntegrations
 profile:ListCalculatedAttributeDefinitions
 profile:ListCalculatedAttributesForProfile
 profile:ListDomainLayouts
+profile:ListDomainObjectTypes
+profile:ListDomainObjects
 profile:ListDomains
 profile:ListEventStreams
 profile:ListEventTriggers
 profile:ListIdentityResolutionJobs
 profile:ListIntegrations
+profile:ListObjectTypeAttributeValues
 profile:ListObjectTypeAttributes
 profile:ListProfileAttributeValues
 profile:ListProfileHistoryRecords
 profile:ListProfileObjectTypeTemplates
 profile:ListProfileObjectTypes
 profile:ListProfileObjects
+profile:ListRecommenderRecipes
+profile:ListRecommenders
 profile:ListRuleBasedMatches
 profile:ListSegmentDefinitions
 profile:ListTagsForResource
 profile:ListUploadJobs
 profile:ListWorkflows
 profile:MergeProfiles
+profile:PutDomainObjectType
 profile:PutIntegration
 profile:PutProfileObject
 profile:PutProfileObjectType
 profile:SearchProfiles
+profile:StartRecommender
 profile:StartUploadJob
+profile:StopRecommender
 profile:StopUploadJob
 profile:TagResource
 profile:UntagResource
@@ -13576,6 +13612,7 @@ profile:UpdateDomain
 profile:UpdateDomainLayout
 profile:UpdateEventTrigger
 profile:UpdateProfile
+profile:UpdateRecommender
 proton:AcceptEnvironmentAccountConnection
 proton:CancelComponentDeployment
 proton:CancelEnvironmentDeployment
@@ -15563,6 +15600,7 @@ s3tables:GetTablePolicy
 s3tables:ListNamespaces
 s3tables:ListTableBuckets
 s3tables:ListTables
+s3tables:ListTagsForResource
 s3tables:PutTableBucketEncryption
 s3tables:PutTableBucketMaintenanceConfiguration
 s3tables:PutTableBucketPolicy
@@ -15571,6 +15609,8 @@ s3tables:PutTableEncryption
 s3tables:PutTableMaintenanceConfiguration
 s3tables:PutTablePolicy
 s3tables:RenameTable
+s3tables:TagResource
+s3tables:UntagResource
 s3tables:UpdateTableMetadataLocation
 s3vectors:CreateIndex
 s3vectors:CreateVectorBucket
@@ -17792,11 +17832,14 @@ sts:AssumeRoot
 sts:DecodeAuthorizationMessage
 sts:GetAccessKeyInfo
 sts:GetCallerIdentity
+sts:GetDelegatedAccessToken
 sts:GetFederationToken
 sts:GetServiceBearerToken
 sts:GetSessionToken
+sts:GetWebIdentityToken
 sts:SetContext
 sts:SetSourceIdentity
+sts:TagGetWebIdentityToken
 sts:TagSession
 support-console:CheckSubscription
 support-console:CreateCaseDraft
@@ -17807,6 +17850,8 @@ support-console:GetAccountGovCloudEnabled
 support-console:GetAccountState
 support-console:GetBanner
 support-console:GetCaseDraft
+support-console:GetIssueClassificationPredictions
+support-console:GetIssueTextSummary
 support-console:GetQuestionnaire
 support-console:SaveFeedback
 support:AddAttachmentsToSet
@@ -18317,6 +18362,7 @@ user-subscriptions:DeleteClaim
 user-subscriptions:ListApplicationClaims
 user-subscriptions:ListClaims
 user-subscriptions:ListUserSubscriptions
+user-subscriptions:SetOverageConfig
 user-subscriptions:UpdateClaim
 uxc:DeleteAccountColor
 uxc:GetAccountColor
@@ -18422,6 +18468,7 @@ vpc-lattice:CreateServiceNetworkVpcEndpointAssociation
 vpc-lattice:CreateTargetGroup
 vpc-lattice:DeleteAccessLogSubscription
 vpc-lattice:DeleteAuthPolicy
+vpc-lattice:DeleteDomainVerification
 vpc-lattice:DeleteListener
 vpc-lattice:DeleteResourceConfiguration
 vpc-lattice:DeleteResourceEndpointAssociation
@@ -18437,6 +18484,7 @@ vpc-lattice:DeleteTargetGroup
 vpc-lattice:DeregisterTargets
 vpc-lattice:GetAccessLogSubscription
 vpc-lattice:GetAuthPolicy
+vpc-lattice:GetDomainVerification
 vpc-lattice:GetListener
 vpc-lattice:GetResourceConfiguration
 vpc-lattice:GetResourceGateway
@@ -18449,6 +18497,7 @@ vpc-lattice:GetServiceNetworkServiceAssociation
 vpc-lattice:GetServiceNetworkVpcAssociation
 vpc-lattice:GetTargetGroup
 vpc-lattice:ListAccessLogSubscriptions
+vpc-lattice:ListDomainVerifications
 vpc-lattice:ListListeners
 vpc-lattice:ListResourceConfigurations
 vpc-lattice:ListResourceEndpointAssociations
@@ -18466,6 +18515,7 @@ vpc-lattice:ListTargets
 vpc-lattice:PutAuthPolicy
 vpc-lattice:PutResourcePolicy
 vpc-lattice:RegisterTargets
+vpc-lattice:StartDomainVerification
 vpc-lattice:TagResource
 vpc-lattice:UntagResource
 vpc-lattice:UpdateAccessLogSubscription

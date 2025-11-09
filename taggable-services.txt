@@ -256,6 +256,7 @@ s3
 s3-object-lambda
 s3-outposts
 s3express
+s3tables
 sagemaker
 sagemaker-geospatial
 sagemaker-mlflow
