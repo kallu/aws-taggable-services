@@ -81,6 +81,7 @@ rhelkb
 route53-recovery-cluster
 s3vectors
 sagemaker-data-science-assistant
+sagemaker-unified-studio-mcp
 sdb
 serverlessrepo
 serviceextract

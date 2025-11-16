@@ -4,6 +4,7 @@ acm
 acm-pca
 aiops
 airflow
+airflow-serverless
 amplify
 amplifyuibuilder
 aoss
