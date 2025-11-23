@@ -141,6 +141,7 @@ ecr-public
 ecs
 eks
 eks-auth
+eks-mcp
 elasticache
 elasticbeanstalk
 elasticfilesystem
@@ -297,6 +298,7 @@ pi
 pipes
 polly
 pricing
+pricingplanmanager
 private-networks
 profile
 proton

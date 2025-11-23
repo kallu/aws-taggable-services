@@ -37,6 +37,7 @@ ebs
 ec2-instance-connect
 ec2messages
 eks-auth
+eks-mcp
 elastictranscoder
 elemental-activations
 elemental-appliances-software
@@ -74,6 +75,7 @@ opensearch
 partnercentral-account-management
 polly
 pricing
+pricingplanmanager
 rds-data
 rds-db
 redshift-data
