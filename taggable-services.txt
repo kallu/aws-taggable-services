@@ -84,7 +84,6 @@ datasync
 datazone
 dax
 deadline
-deepcomposer
 deepracer
 detective
 devicefarm
@@ -249,6 +248,7 @@ route53
 route53-recovery-control-config
 route53-recovery-readiness
 route53domains
+route53globalresolver
 route53profiles
 route53resolver
 rtbfabric
@@ -258,6 +258,7 @@ s3-object-lambda
 s3-outposts
 s3express
 s3tables
+s3vectors
 sagemaker
 sagemaker-geospatial
 sagemaker-mlflow
@@ -302,6 +303,7 @@ tnb
 transcribe
 transfer
 transform
+transform-custom
 translate
 ts
 vendor-insights

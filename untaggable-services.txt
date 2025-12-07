@@ -2,6 +2,7 @@ a2c
 account
 action-recommendations
 activate
+aidevops
 amplifybackend
 apigateway
 application-transformation
@@ -12,10 +13,12 @@ arsenal
 artifact
 autoscaling-plans
 aws-marketplace-management
+aws-mcp
 aws-portal
 awsconnector
 backup-storage
 bcm-recommended-actions
+bedrock-mantle
 cloudfront-keyvaluestore
 cloudshell
 cloudtrail-data
@@ -81,10 +84,10 @@ rds-db
 redshift-data
 rhelkb
 route53-recovery-cluster
-s3vectors
 sagemaker-data-science-assistant
 sagemaker-unified-studio-mcp
 sdb
+securityagent
 serverlessrepo
 serviceextract
 signin
