@@ -2,6 +2,7 @@ a4b
 access-analyzer
 acm
 acm-pca
+aco-automation
 aiops
 airflow
 airflow-serverless

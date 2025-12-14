@@ -74,6 +74,7 @@ mobileanalytics
 neptune-db
 network-security-director
 networkmanager-chat
+nova-act
 opensearch
 partnercentral-account-management
 polly

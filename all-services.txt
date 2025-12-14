@@ -4,6 +4,7 @@ access-analyzer
 account
 acm
 acm-pca
+aco-automation
 action-recommendations
 activate
 aidevops
@@ -276,6 +277,7 @@ networkmonitor
 nimble
 notifications
 notifications-contacts
+nova-act
 oam
 observabilityadmin
 odb
