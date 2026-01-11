@@ -39,6 +39,7 @@ ds-data
 ebs
 ec2-instance-connect
 ec2messages
+ecs-mcp
 eks-auth
 eks-mcp
 elastictranscoder

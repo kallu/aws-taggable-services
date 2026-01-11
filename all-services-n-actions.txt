@@ -7009,6 +7009,8 @@ ecr:UpdatePullThroughCacheRule
 ecr:UpdateRepositoryCreationTemplate
 ecr:UploadLayerPart
 ecr:ValidatePullThroughCacheRule
+ecs-mcp:InvokeReadOnlyTools
+ecs-mcp:UseMcp
 ecs:CreateCapacityProvider
 ecs:CreateCluster
 ecs:CreateExpressGatewayService
@@ -7329,6 +7331,7 @@ elasticloadbalancing:CreateLoadBalancerPolicy
 elasticloadbalancing:CreateRule
 elasticloadbalancing:CreateTargetGroup
 elasticloadbalancing:CreateTrustStore
+elasticloadbalancing:CreateWebACLAssociation
 elasticloadbalancing:DeleteListener
 elasticloadbalancing:DeleteLoadBalancer
 elasticloadbalancing:DeleteLoadBalancerListeners
@@ -7337,6 +7340,7 @@ elasticloadbalancing:DeleteRule
 elasticloadbalancing:DeleteSharedTrustStoreAssociation
 elasticloadbalancing:DeleteTargetGroup
 elasticloadbalancing:DeleteTrustStore
+elasticloadbalancing:DeleteWebACLAssociation
 elasticloadbalancing:DeregisterInstancesFromLoadBalancer
 elasticloadbalancing:DeregisterTargets
 elasticloadbalancing:DescribeAccountLimits
@@ -7358,9 +7362,11 @@ elasticloadbalancing:DescribeTargetHealth
 elasticloadbalancing:DescribeTrustStoreAssociations
 elasticloadbalancing:DescribeTrustStoreRevocations
 elasticloadbalancing:DescribeTrustStores
+elasticloadbalancing:DescribeWebACLAssociation
 elasticloadbalancing:DetachLoadBalancerFromSubnets
 elasticloadbalancing:DisableAvailabilityZonesForLoadBalancer
 elasticloadbalancing:EnableAvailabilityZonesForLoadBalancer
+elasticloadbalancing:GetLoadBalancerWebACL
 elasticloadbalancing:GetResourcePolicy
 elasticloadbalancing:GetTrustStoreCaCertificatesBundle
 elasticloadbalancing:GetTrustStoreRevocationContent
@@ -13066,6 +13072,7 @@ networkmanager:CreateConnectAttachment
 networkmanager:CreateConnectPeer
 networkmanager:CreateConnection
 networkmanager:CreateCoreNetwork
+networkmanager:CreateCoreNetworkPrefixListAssociation
 networkmanager:CreateDevice
 networkmanager:CreateDirectConnectGatewayAttachment
 networkmanager:CreateGlobalNetwork
@@ -13080,6 +13087,7 @@ networkmanager:DeleteConnectPeer
 networkmanager:DeleteConnection
 networkmanager:DeleteCoreNetwork
 networkmanager:DeleteCoreNetworkPolicyVersion
+networkmanager:DeleteCoreNetworkPrefixListAssociation
 networkmanager:DeleteDevice
 networkmanager:DeleteGlobalNetwork
 networkmanager:DeleteLink
@@ -13123,14 +13131,18 @@ networkmanager:GetVpcAttachment
 networkmanager:ListAttachments
 networkmanager:ListConnectPeers
 networkmanager:ListCoreNetworkPolicyVersions
+networkmanager:ListCoreNetworkPrefixListAssociations
+networkmanager:ListCoreNetworkRoutingInformation
 networkmanager:ListCoreNetworks
 networkmanager:ListOrganizationServiceAccessStatus
 networkmanager:ListPeerings
 networkmanager:ListTagsForResource
+networkmanager:PutAttachmentRoutingPolicyLabel
 networkmanager:PutCoreNetworkPolicy
 networkmanager:PutResourcePolicy
 networkmanager:RegisterTransitGateway
 networkmanager:RejectAttachment
+networkmanager:RemoveAttachmentRoutingPolicyLabel
 networkmanager:RestoreCoreNetworkPolicyVersion
 networkmanager:StartOrganizationServiceAccessUpdate
 networkmanager:StartRouteAnalysis
@@ -13334,6 +13346,7 @@ odb:CreateCloudAutonomousVmCluster
 odb:CreateCloudExadataInfrastructure
 odb:CreateCloudVmCluster
 odb:CreateDbNode
+odb:CreateGrantShare
 odb:CreateOdbNetwork
 odb:CreateOdbPeeringConnection
 odb:CreateOutboundIntegration
@@ -13341,6 +13354,7 @@ odb:DeleteCloudAutonomousVmCluster
 odb:DeleteCloudExadataInfrastructure
 odb:DeleteCloudVmCluster
 odb:DeleteDbNode
+odb:DeleteGrantShare
 odb:DeleteOdbNetwork
 odb:DeleteOdbPeeringConnection
 odb:DeleteResourcePolicy
@@ -13374,6 +13388,7 @@ odb:StopDbNode
 odb:TagResource
 odb:UntagResource
 odb:UpdateCloudExadataInfrastructure
+odb:UpdateGrantShare
 odb:UpdateOdbNetwork
 odb:UpdateOdbPeeringConnection
 odb:UpdateOutboundIntegration
