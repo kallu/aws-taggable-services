@@ -85,7 +85,6 @@ datasync
 datazone
 dax
 deadline
-deepracer
 detective
 devicefarm
 directconnect
