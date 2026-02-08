@@ -1805,6 +1805,7 @@ bedrock-agentcore:CreateAgentRuntime
 bedrock-agentcore:CreateAgentRuntimeEndpoint
 bedrock-agentcore:CreateApiKeyCredentialProvider
 bedrock-agentcore:CreateBrowser
+bedrock-agentcore:CreateBrowserProfile
 bedrock-agentcore:CreateCodeInterpreter
 bedrock-agentcore:CreateEvaluator
 bedrock-agentcore:CreateEvent
@@ -1820,6 +1821,7 @@ bedrock-agentcore:DeleteAgentRuntime
 bedrock-agentcore:DeleteAgentRuntimeEndpoint
 bedrock-agentcore:DeleteApiKeyCredentialProvider
 bedrock-agentcore:DeleteBrowser
+bedrock-agentcore:DeleteBrowserProfile
 bedrock-agentcore:DeleteCodeInterpreter
 bedrock-agentcore:DeleteEvaluator
 bedrock-agentcore:DeleteEvent
@@ -1839,6 +1841,7 @@ bedrock-agentcore:GetAgentRuntime
 bedrock-agentcore:GetAgentRuntimeEndpoint
 bedrock-agentcore:GetApiKeyCredentialProvider
 bedrock-agentcore:GetBrowser
+bedrock-agentcore:GetBrowserProfile
 bedrock-agentcore:GetBrowserSession
 bedrock-agentcore:GetCodeInterpreter
 bedrock-agentcore:GetCodeInterpreterSession
@@ -1872,6 +1875,7 @@ bedrock-agentcore:ListAgentRuntimeEndpoints
 bedrock-agentcore:ListAgentRuntimeVersions
 bedrock-agentcore:ListAgentRuntimes
 bedrock-agentcore:ListApiKeyCredentialProviders
+bedrock-agentcore:ListBrowserProfiles
 bedrock-agentcore:ListBrowserSessions
 bedrock-agentcore:ListBrowsers
 bedrock-agentcore:ListCodeInterpreterSessions
@@ -1897,6 +1901,7 @@ bedrock-agentcore:ManageResourceScopedPolicy
 bedrock-agentcore:PartiallyAuthorizeActions
 bedrock-agentcore:PutResourcePolicy
 bedrock-agentcore:RetrieveMemoryRecords
+bedrock-agentcore:SaveBrowserSessionProfile
 bedrock-agentcore:SetTokenVaultCMK
 bedrock-agentcore:StartBrowserSession
 bedrock-agentcore:StartCodeInterpreterSession
@@ -6027,6 +6032,7 @@ dsql:StopRestoreJob
 dsql:TagResource
 dsql:UntagResource
 dsql:UpdateCluster
+dynamodb:AssociateTableReplica
 dynamodb:BatchGetItem
 dynamodb:BatchWriteItem
 dynamodb:ConditionCheckItem
@@ -6083,6 +6089,8 @@ dynamodb:PurchaseReservedCapacityOfferings
 dynamodb:PutItem
 dynamodb:PutResourcePolicy
 dynamodb:Query
+dynamodb:ReadDataForReplication
+dynamodb:ReplicateSettings
 dynamodb:RestoreTableFromAwsBackup
 dynamodb:RestoreTableFromBackup
 dynamodb:RestoreTableToPointInTime
@@ -6101,6 +6109,7 @@ dynamodb:UpdateKinesisStreamingDestination
 dynamodb:UpdateTable
 dynamodb:UpdateTableReplicaAutoScaling
 dynamodb:UpdateTimeToLive
+dynamodb:WriteDataForReplication
 ebs:CompleteSnapshot
 ebs:GetSnapshotBlock
 ebs:ListChangedBlocks
@@ -6717,6 +6726,7 @@ ec2:ImportKeyPair
 ec2:ImportSnapshot
 ec2:ImportVolume
 ec2:InjectApiError
+ec2:InjectVolumeIOLatency
 ec2:ListImagesInRecycleBin
 ec2:ListSnapshotsInRecycleBin
 ec2:ListVolumesInRecycleBin
@@ -8545,6 +8555,7 @@ glue:DeleteColumnStatisticsForPartition
 glue:DeleteColumnStatisticsForTable
 glue:DeleteColumnStatisticsTaskSettings
 glue:DeleteConnection
+glue:DeleteConnectionType
 glue:DeleteCrawler
 glue:DeleteCustomEntityType
 glue:DeleteDataQualityRuleset
@@ -8711,6 +8722,7 @@ glue:PutSchemaVersionMetadata
 glue:PutWorkflowRunProperties
 glue:QuerySchemaVersionMetadata
 glue:RefreshOAuth2Tokens
+glue:RegisterConnectionType
 glue:RegisterSchemaVersion
 glue:RemoveSchemaVersionMetadata
 glue:RenameTable
@@ -9349,6 +9361,7 @@ identity-sync:UpdateSyncTarget
 identitystore-auth:BatchDeleteSession
 identitystore-auth:BatchGetSession
 identitystore-auth:ListSessions
+identitystore:AddRegion
 identitystore:CreateGroup
 identitystore:CreateGroupMembership
 identitystore:CreateIdentityStore
@@ -9359,6 +9372,7 @@ identitystore:DeleteIdentityStore
 identitystore:DeleteUser
 identitystore:DescribeGroup
 identitystore:DescribeGroupMembership
+identitystore:DescribeRegion
 identitystore:DescribeUser
 identitystore:GetGroupId
 identitystore:GetGroupMembershipId
@@ -9367,7 +9381,9 @@ identitystore:IsMemberInGroups
 identitystore:ListGroupMemberships
 identitystore:ListGroupMembershipsForMember
 identitystore:ListGroups
+identitystore:ListRegions
 identitystore:ListUsers
+identitystore:RemoveRegion
 identitystore:ReserveUser
 identitystore:UpdateGroup
 identitystore:UpdateIdentityStore
@@ -16985,6 +17001,7 @@ securityagent:BatchGetAgentInstances
 securityagent:BatchGetAgentSpaces
 securityagent:BatchGetArtifactMetadata
 securityagent:BatchGetFindings
+securityagent:BatchGetPentestJobContentMetadata
 securityagent:BatchGetPentestJobTasks
 securityagent:BatchGetPentestJobs
 securityagent:BatchGetPentests
@@ -18378,6 +18395,7 @@ sso-directory:VerifyEmail
 sso-oauth:CreateTokenWithIAM
 sso-oauth:IntrospectTokenWithIAM
 sso-oauth:RevokeTokenWithIAM
+sso:AddRegion
 sso:AssociateDirectory
 sso:AssociateProfile
 sso:AttachCustomerManagedPolicyReferenceToPermissionSet
@@ -18419,6 +18437,7 @@ sso:DescribeInstance
 sso:DescribeInstanceAccessControlAttributeConfiguration
 sso:DescribePermissionSet
 sso:DescribePermissionSetProvisioningStatus
+sso:DescribeRegion
 sso:DescribeRegisteredRegions
 sso:DescribeTrustedTokenIssuer
 sso:DetachCustomerManagedPolicyReferenceFromPermissionSet
@@ -18467,6 +18486,7 @@ sso:ListPermissionSets
 sso:ListPermissionSetsProvisionedToAccount
 sso:ListProfileAssociations
 sso:ListProfiles
+sso:ListRegions
 sso:ListTagsForResource
 sso:ListTrustedTokenIssuers
 sso:ProvisionPermissionSet
@@ -18479,6 +18499,7 @@ sso:PutInlinePolicyToPermissionSet
 sso:PutMfaDeviceManagementForDirectory
 sso:PutPermissionsBoundaryToPermissionSet
 sso:PutPermissionsPolicy
+sso:RemoveRegion
 sso:SearchGroups
 sso:SearchUsers
 sso:StartSSO
