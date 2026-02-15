@@ -60,6 +60,7 @@ identitystore
 identitystore-auth
 importexport
 inspector-scan
+inspector2-telemetry
 iot-device-tester
 iotjobsdata
 iq
