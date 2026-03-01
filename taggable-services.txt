@@ -37,6 +37,7 @@ bcm-data-exports
 bcm-pricing-calculator
 bedrock
 bedrock-agentcore
+bedrock-mantle
 billing
 billingconductor
 braket
@@ -106,6 +107,7 @@ elasticbeanstalk
 elasticfilesystem
 elasticloadbalancing
 elasticmapreduce
+elemental-inference
 elemental-support-cases
 emr-containers
 emr-serverless

@@ -18,7 +18,6 @@ aws-portal
 awsconnector
 backup-storage
 bcm-recommended-actions
-bedrock-mantle
 cloudfront-keyvaluestore
 cloudshell
 cloudtrail-data
