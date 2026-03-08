@@ -133,6 +133,7 @@ grafana
 greengrass
 groundstation
 guardduty
+health-agent
 healthlake
 honeycode
 iam
