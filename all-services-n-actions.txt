@@ -4035,6 +4035,7 @@ cognito-identity:UnlinkIdentity
 cognito-identity:UntagResource
 cognito-identity:UpdateIdentityPool
 cognito-idp:AddCustomAttributes
+cognito-idp:AddUserPoolClientSecret
 cognito-idp:AdminAddUserToGroup
 cognito-idp:AdminConfirmSignUp
 cognito-idp:AdminCreateUser
@@ -4085,6 +4086,7 @@ cognito-idp:DeleteUser
 cognito-idp:DeleteUserAttributes
 cognito-idp:DeleteUserPool
 cognito-idp:DeleteUserPoolClient
+cognito-idp:DeleteUserPoolClientSecret
 cognito-idp:DeleteUserPoolDomain
 cognito-idp:DescribeIdentityProvider
 cognito-idp:DescribeManagedLoginBranding
@@ -4121,6 +4123,7 @@ cognito-idp:ListResourcesForWebACL
 cognito-idp:ListTagsForResource
 cognito-idp:ListTerms
 cognito-idp:ListUserImportJobs
+cognito-idp:ListUserPoolClientSecrets
 cognito-idp:ListUserPoolClients
 cognito-idp:ListUserPools
 cognito-idp:ListUsers
@@ -5192,6 +5195,7 @@ datazone:GetListing
 datazone:GetMetadataGenerationRun
 datazone:GetNotebook
 datazone:GetNotebookCompute
+datazone:GetNotebookExport
 datazone:GetProject
 datazone:GetProjectProfile
 datazone:GetRule
@@ -5272,6 +5276,8 @@ datazone:StartConversation
 datazone:StartDataSourceRun
 datazone:StartMetadataGenerationRun
 datazone:StartNotebookCompute
+datazone:StartNotebookExport
+datazone:StartNotebookImport
 datazone:StopMetadataGenerationRun
 datazone:StopNotebookCompute
 datazone:TagResource
@@ -7750,6 +7756,8 @@ es:RejectInboundConnection
 es:RejectInboundCrossClusterSearchConnection
 es:RemoveTags
 es:RevokeVpcEndpointAccess
+es:RollbackElasticsearchServiceSoftwareUpdate
+es:RollbackServiceSoftwareUpdate
 es:StartDomainMaintenance
 es:StartElasticsearchServiceSoftwareUpdate
 es:StartServiceSoftwareUpdate
@@ -13997,6 +14005,7 @@ partnercentral:UpdateEngagementContext
 partnercentral:UpdateOpportunity
 partnercentral:UpdateProgramManagementAccount
 partnercentral:UpdateRelationship
+partnercentral:UseSession
 payment-cryptography:AddKeyReplicationRegions
 payment-cryptography:CreateAlias
 payment-cryptography:CreateKey
@@ -15007,6 +15016,7 @@ ram:ListReplacePermissionAssociationsWork
 ram:ListResourceSharePermissions
 ram:ListResourceTypes
 ram:ListResources
+ram:ListSourceAssociations
 ram:PromotePermissionCreatedFromPolicy
 ram:PromoteResourceShareCreatedFromPolicy
 ram:RejectResourceShareInvitation
@@ -15803,7 +15813,6 @@ route53-recovery-control-config:DeleteSafetyRule
 route53-recovery-control-config:DescribeCluster
 route53-recovery-control-config:DescribeControlPanel
 route53-recovery-control-config:DescribeRoutingControl
-route53-recovery-control-config:DescribeRoutingControlByName
 route53-recovery-control-config:DescribeSafetyRule
 route53-recovery-control-config:GetResourcePolicy
 route53-recovery-control-config:ListAssociatedRoute53HealthChecks
@@ -17067,9 +17076,12 @@ sdb:DeleteAttributes
 sdb:DeleteDomain
 sdb:DomainMetadata
 sdb:GetAttributes
+sdb:GetExport
 sdb:ListDomains
+sdb:ListExports
 sdb:PutAttributes
 sdb:Select
+sdb:StartDomainExport
 secretsmanager:BatchGetSecretValue
 secretsmanager:CancelRotateSecret
 secretsmanager:CreateSecret
