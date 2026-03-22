@@ -2,7 +2,6 @@ a2c
 account
 action-recommendations
 activate
-aidevops
 amplifybackend
 apigateway
 application-transformation

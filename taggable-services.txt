@@ -3,6 +3,7 @@ access-analyzer
 acm
 acm-pca
 aco-automation
+aidevops
 aiops
 airflow
 airflow-serverless
@@ -140,6 +141,7 @@ iam
 imagebuilder
 inspector
 inspector2
+interconnect
 internetmonitor
 invoicing
 iot
