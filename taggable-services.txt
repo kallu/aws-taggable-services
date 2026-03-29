@@ -273,6 +273,7 @@ schemas
 scn
 secretsmanager
 security-ir
+securityagent
 securityhub
 securitylake
 servicecatalog

@@ -88,7 +88,6 @@ route53-recovery-cluster
 sagemaker-data-science-assistant
 sagemaker-unified-studio-mcp
 sdb
-securityagent
 serverlessrepo
 serviceextract
 signin
