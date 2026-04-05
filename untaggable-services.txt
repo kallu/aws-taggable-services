@@ -11,6 +11,7 @@ arc-zonal-shift
 arsenal
 artifact
 autoscaling-plans
+aws-external-anthropic
 aws-marketplace-management
 aws-mcp
 aws-portal
