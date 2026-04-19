@@ -2432,6 +2432,7 @@ cases:ListLayouts
 cases:ListTagsForResource
 cases:ListTemplates
 cases:PutCaseEventConfiguration
+cases:SearchAllRelatedItems
 cases:SearchCases
 cases:SearchRelatedItems
 cases:TagResource
@@ -3560,6 +3561,7 @@ cloudwatch:GetMetricData
 cloudwatch:GetMetricStatistics
 cloudwatch:GetMetricStream
 cloudwatch:GetMetricWidgetImage
+cloudwatch:GetOTelEnrichment
 cloudwatch:GetService
 cloudwatch:GetServiceData
 cloudwatch:GetServiceLevelObjective
@@ -3586,7 +3588,9 @@ cloudwatch:PutMetricData
 cloudwatch:PutMetricStream
 cloudwatch:SetAlarmState
 cloudwatch:StartMetricStreams
+cloudwatch:StartOTelEnrichment
 cloudwatch:StopMetricStreams
+cloudwatch:StopOTelEnrichment
 cloudwatch:TagResource
 cloudwatch:UntagResource
 cloudwatch:UpdateServiceLevelObjective
@@ -4515,6 +4519,7 @@ connect-campaigns:DeleteCampaign
 connect-campaigns:DeleteCampaignChannelSubtypeConfig
 connect-campaigns:DeleteCampaignCommunicationLimits
 connect-campaigns:DeleteCampaignCommunicationTime
+connect-campaigns:DeleteCampaignEntryLimits
 connect-campaigns:DeleteConnectInstanceConfig
 connect-campaigns:DeleteConnectInstanceIntegration
 connect-campaigns:DeleteInstanceOnboardingJob
@@ -4543,6 +4548,7 @@ connect-campaigns:UpdateCampaignChannelSubtypeConfig
 connect-campaigns:UpdateCampaignCommunicationLimits
 connect-campaigns:UpdateCampaignCommunicationTime
 connect-campaigns:UpdateCampaignDialerConfig
+connect-campaigns:UpdateCampaignEntryLimits
 connect-campaigns:UpdateCampaignFlowAssociation
 connect-campaigns:UpdateCampaignName
 connect-campaigns:UpdateCampaignOutboundCallConfig
@@ -9136,6 +9142,7 @@ groundstation:DeleteDataflowEndpointGroup
 groundstation:DeleteEphemeris
 groundstation:DeleteMissionProfile
 groundstation:DescribeContact
+groundstation:DescribeContactVersion
 groundstation:DescribeEphemeris
 groundstation:GetAgentConfiguration
 groundstation:GetAgentTaskResponseUrl
@@ -9144,10 +9151,13 @@ groundstation:GetDataflowEndpointGroup
 groundstation:GetMinuteUsage
 groundstation:GetMissionProfile
 groundstation:GetSatellite
+groundstation:ListAntennas
 groundstation:ListConfigs
+groundstation:ListContactVersions
 groundstation:ListContacts
 groundstation:ListDataflowEndpointGroups
 groundstation:ListEphemerides
+groundstation:ListGroundStationReservations
 groundstation:ListGroundStations
 groundstation:ListMissionProfiles
 groundstation:ListSatellites
@@ -9158,6 +9168,7 @@ groundstation:TagResource
 groundstation:UntagResource
 groundstation:UpdateAgentStatus
 groundstation:UpdateConfig
+groundstation:UpdateContact
 groundstation:UpdateEphemeris
 groundstation:UpdateMissionProfile
 groundtruthlabeling:AssociatePatchToManifestJob
