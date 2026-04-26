@@ -1489,6 +1489,7 @@ aws-marketplace:GetAgreementTerms
 aws-marketplace:GetBillingAdjustmentRequest
 aws-marketplace:GetBuyerDashboard
 aws-marketplace:GetEntitlements
+aws-marketplace:GetInvoiceSubmissionTask
 aws-marketplace:GetListing
 aws-marketplace:GetOffer
 aws-marketplace:GetOfferSet
@@ -1509,6 +1510,8 @@ aws-marketplace:ListChangeSets
 aws-marketplace:ListEntities
 aws-marketplace:ListEntitlementDetails
 aws-marketplace:ListFulfillmentOptions
+aws-marketplace:ListInvoiceSubmissionTasks
+aws-marketplace:ListPayables
 aws-marketplace:ListPrivateListings
 aws-marketplace:ListPrivateMarketplaceRequests
 aws-marketplace:ListPurchaseOptions
@@ -1529,6 +1532,7 @@ aws-marketplace:SendAgreementCancellationRequest
 aws-marketplace:SendAgreementPaymentRequest
 aws-marketplace:StartBuild
 aws-marketplace:StartChangeSet
+aws-marketplace:StartInvoiceSubmissionTask
 aws-marketplace:Subscribe
 aws-marketplace:TagResource
 aws-marketplace:Unsubscribe
@@ -1880,6 +1884,7 @@ bedrock-agentcore:CreateEvaluator
 bedrock-agentcore:CreateEvent
 bedrock-agentcore:CreateGateway
 bedrock-agentcore:CreateGatewayTarget
+bedrock-agentcore:CreateHarness
 bedrock-agentcore:CreateMemory
 bedrock-agentcore:CreateOauth2CredentialProvider
 bedrock-agentcore:CreateOnlineEvaluationConfig
@@ -1898,6 +1903,7 @@ bedrock-agentcore:DeleteEvaluator
 bedrock-agentcore:DeleteEvent
 bedrock-agentcore:DeleteGateway
 bedrock-agentcore:DeleteGatewayTarget
+bedrock-agentcore:DeleteHarness
 bedrock-agentcore:DeleteMemory
 bedrock-agentcore:DeleteMemoryRecord
 bedrock-agentcore:DeleteOauth2CredentialProvider
@@ -1922,6 +1928,7 @@ bedrock-agentcore:GetEvaluator
 bedrock-agentcore:GetEvent
 bedrock-agentcore:GetGateway
 bedrock-agentcore:GetGatewayTarget
+bedrock-agentcore:GetHarness
 bedrock-agentcore:GetMemory
 bedrock-agentcore:GetMemoryRecord
 bedrock-agentcore:GetOauth2CredentialProvider
@@ -1946,6 +1953,7 @@ bedrock-agentcore:InvokeAgentRuntimeWithWebSocketStream
 bedrock-agentcore:InvokeAgentRuntimeWithWebSocketStreamForUser
 bedrock-agentcore:InvokeCodeInterpreter
 bedrock-agentcore:InvokeGateway
+bedrock-agentcore:InvokeHarness
 bedrock-agentcore:InvokeRegistryMcp
 bedrock-agentcore:ListActors
 bedrock-agentcore:ListAgentRuntimeEndpoints
@@ -1961,6 +1969,7 @@ bedrock-agentcore:ListEvaluators
 bedrock-agentcore:ListEvents
 bedrock-agentcore:ListGatewayTargets
 bedrock-agentcore:ListGateways
+bedrock-agentcore:ListHarnesses
 bedrock-agentcore:ListMemories
 bedrock-agentcore:ListMemoryExtractionJobs
 bedrock-agentcore:ListMemoryRecords
@@ -2001,6 +2010,7 @@ bedrock-agentcore:UpdateBrowserStream
 bedrock-agentcore:UpdateEvaluator
 bedrock-agentcore:UpdateGateway
 bedrock-agentcore:UpdateGatewayTarget
+bedrock-agentcore:UpdateHarness
 bedrock-agentcore:UpdateMemory
 bedrock-agentcore:UpdateOauth2CredentialProvider
 bedrock-agentcore:UpdateOnlineEvaluationConfig
@@ -2441,6 +2451,7 @@ cases:UpdateCase
 cases:UpdateCaseRule
 cases:UpdateField
 cases:UpdateLayout
+cases:UpdateRelatedItem
 cases:UpdateTemplate
 cassandra:Alter
 cassandra:AlterMultiRegionResource
@@ -5199,6 +5210,7 @@ datazone:BatchGetCell
 datazone:BatchGetCellRun
 datazone:BatchPutAttributesMetadata
 datazone:BatchPutLinkedTypes
+datazone:CancelMessage
 datazone:CancelMetadataGenerationRun
 datazone:CancelSubscription
 datazone:CreateAccountPool
@@ -7728,14 +7740,20 @@ emr-serverless:DeleteApplication
 emr-serverless:GetApplication
 emr-serverless:GetDashboardForJobRun
 emr-serverless:GetJobRun
+emr-serverless:GetResourceDashboard
+emr-serverless:GetSession
+emr-serverless:GetSessionEndpoint
 emr-serverless:ListApplications
 emr-serverless:ListJobRunAttempts
 emr-serverless:ListJobRuns
+emr-serverless:ListSessions
 emr-serverless:ListTagsForResource
 emr-serverless:StartApplication
 emr-serverless:StartJobRun
+emr-serverless:StartSession
 emr-serverless:StopApplication
 emr-serverless:TagResource
+emr-serverless:TerminateSession
 emr-serverless:UntagResource
 emr-serverless:UpdateApplication
 entityresolution:AddPolicyStatement
@@ -8000,19 +8018,26 @@ evidently:UpdateLaunch
 evidently:UpdateProject
 evidently:UpdateProjectDataDelivery
 evs:AssociateEipToVlan
+evs:CreateEntitlement
 evs:CreateEnvironment
+evs:CreateEnvironmentConnector
 evs:CreateEnvironmentHost
+evs:DeleteEntitlement
 evs:DeleteEnvironment
+evs:DeleteEnvironmentConnector
 evs:DeleteEnvironmentHost
 evs:DisassociateEipFromVlan
 evs:GetEnvironment
 evs:GetVersions
+evs:ListEnvironmentConnectors
 evs:ListEnvironmentHosts
 evs:ListEnvironmentVlans
 evs:ListEnvironments
 evs:ListTagsForResource
+evs:ListVmEntitlements
 evs:TagResource
 evs:UntagResource
+evs:UpdateEnvironmentConnector
 execute-api:InvalidateCache
 execute-api:Invoke
 execute-api:ManageConnections
@@ -8552,6 +8577,7 @@ geo:BatchPutGeofence
 geo:BatchUpdateDevicePosition
 geo:CalculateRoute
 geo:CalculateRouteMatrix
+geo:CancelJob
 geo:CreateGeofenceCollection
 geo:CreateKey
 geo:CreateMap
@@ -8575,6 +8601,7 @@ geo:ForecastGeofenceEvents
 geo:GetDevicePosition
 geo:GetDevicePositionHistory
 geo:GetGeofence
+geo:GetJob
 geo:GetMapGlyphs
 geo:GetMapSprites
 geo:GetMapStyleDescriptor
@@ -8583,6 +8610,7 @@ geo:GetPlace
 geo:ListDevicePositions
 geo:ListGeofenceCollections
 geo:ListGeofences
+geo:ListJobs
 geo:ListKeys
 geo:ListMaps
 geo:ListPlaceIndexes
@@ -8594,6 +8622,7 @@ geo:PutGeofence
 geo:SearchPlaceIndexForPosition
 geo:SearchPlaceIndexForSuggestions
 geo:SearchPlaceIndexForText
+geo:StartJob
 geo:TagResource
 geo:UntagResource
 geo:UpdateGeofenceCollection
@@ -10759,6 +10788,7 @@ iq:WriteReview
 ivs:BatchGetChannel
 ivs:BatchGetStreamKey
 ivs:BatchStartViewerSessionRevocation
+ivs:CreateAdConfiguration
 ivs:CreateChannel
 ivs:CreateEncoderConfiguration
 ivs:CreateIngestConfiguration
@@ -10768,6 +10798,7 @@ ivs:CreateRecordingConfiguration
 ivs:CreateStage
 ivs:CreateStorageConfiguration
 ivs:CreateStreamKey
+ivs:DeleteAdConfiguration
 ivs:DeleteChannel
 ivs:DeleteEncoderConfiguration
 ivs:DeleteIngestConfiguration
@@ -10779,6 +10810,7 @@ ivs:DeleteStage
 ivs:DeleteStorageConfiguration
 ivs:DeleteStreamKey
 ivs:DisconnectParticipant
+ivs:GetAdConfiguration
 ivs:GetChannel
 ivs:GetComposition
 ivs:GetEncoderConfiguration
@@ -10796,6 +10828,8 @@ ivs:GetStreamKey
 ivs:GetStreamSession
 ivs:ImportPlaybackKeyPair
 ivs:ImportPublicKey
+ivs:InsertAdBreak
+ivs:ListAdConfigurations
 ivs:ListChannels
 ivs:ListCompositions
 ivs:ListEncoderConfigurations
@@ -14460,6 +14494,8 @@ profile:CreateEventTrigger
 profile:CreateIntegrationWorkflow
 profile:CreateProfile
 profile:CreateRecommender
+profile:CreateRecommenderFilter
+profile:CreateRecommenderSchema
 profile:CreateSegmentDefinition
 profile:CreateSegmentEstimate
 profile:CreateSegmentSnapshot
@@ -14477,6 +14513,8 @@ profile:DeleteProfileKey
 profile:DeleteProfileObject
 profile:DeleteProfileObjectType
 profile:DeleteRecommender
+profile:DeleteRecommenderFilter
+profile:DeleteRecommenderSchema
 profile:DeleteSegmentDefinition
 profile:DeleteWorkflow
 profile:DetectProfileObjectType
@@ -14498,6 +14536,8 @@ profile:GetProfileObjectType
 profile:GetProfileObjectTypeTemplate
 profile:GetProfileRecommendations
 profile:GetRecommender
+profile:GetRecommenderFilter
+profile:GetRecommenderSchema
 profile:GetSegmentDefinition
 profile:GetSegmentEstimate
 profile:GetSegmentMembership
@@ -14526,7 +14566,9 @@ profile:ListProfileHistoryRecords
 profile:ListProfileObjectTypeTemplates
 profile:ListProfileObjectTypes
 profile:ListProfileObjects
+profile:ListRecommenderFilters
 profile:ListRecommenderRecipes
+profile:ListRecommenderSchemas
 profile:ListRecommenders
 profile:ListRuleBasedMatches
 profile:ListSegmentDefinitions
@@ -16571,6 +16613,7 @@ s3express:GetAccessPointPolicy
 s3express:GetAccessPointScope
 s3express:GetBucketPolicy
 s3express:GetEncryptionConfiguration
+s3express:GetInventoryConfiguration
 s3express:GetLifecycleConfiguration
 s3express:GetMetricsConfiguration
 s3express:ListAccessPointsForDirectoryBuckets
@@ -16580,6 +16623,7 @@ s3express:PutAccessPointPolicy
 s3express:PutAccessPointScope
 s3express:PutBucketPolicy
 s3express:PutEncryptionConfiguration
+s3express:PutInventoryConfiguration
 s3express:PutLifecycleConfiguration
 s3express:PutMetricsConfiguration
 s3express:TagResource
@@ -16776,6 +16820,9 @@ sagemaker:BatchGetRecord
 sagemaker:BatchPutMetrics
 sagemaker:CallMlflowAppApi
 sagemaker:CallPartnerAppApi
+sagemaker:CreateAIBenchmarkJob
+sagemaker:CreateAIRecommendationJob
+sagemaker:CreateAIWorkloadConfig
 sagemaker:CreateAction
 sagemaker:CreateAlgorithm
 sagemaker:CreateApp
@@ -16847,6 +16894,9 @@ sagemaker:CreateTrialComponent
 sagemaker:CreateUserProfile
 sagemaker:CreateWorkforce
 sagemaker:CreateWorkteam
+sagemaker:DeleteAIBenchmarkJob
+sagemaker:DeleteAIRecommendationJob
+sagemaker:DeleteAIWorkloadConfig
 sagemaker:DeleteAction
 sagemaker:DeleteAlgorithm
 sagemaker:DeleteApp
@@ -16911,6 +16961,9 @@ sagemaker:DeleteWorkforce
 sagemaker:DeleteWorkteam
 sagemaker:DeployHubModel
 sagemaker:DeregisterDevices
+sagemaker:DescribeAIBenchmarkJob
+sagemaker:DescribeAIRecommendationJob
+sagemaker:DescribeAIWorkloadConfig
 sagemaker:DescribeAction
 sagemaker:DescribeAlgorithm
 sagemaker:DescribeApp
@@ -17002,6 +17055,9 @@ sagemaker:ImportHubContent
 sagemaker:InvokeEndpoint
 sagemaker:InvokeEndpointAsync
 sagemaker:InvokeEndpointWithResponseStream
+sagemaker:ListAIBenchmarkJobs
+sagemaker:ListAIRecommendationJobs
+sagemaker:ListAIWorkloadConfigs
 sagemaker:ListActions
 sagemaker:ListAlgorithms
 sagemaker:ListAliases
@@ -17114,6 +17170,8 @@ sagemaker:StartMonitoringSchedule
 sagemaker:StartNotebookInstance
 sagemaker:StartPipelineExecution
 sagemaker:StartSession
+sagemaker:StopAIBenchmarkJob
+sagemaker:StopAIRecommendationJob
 sagemaker:StopAutoMLJob
 sagemaker:StopCompilationJob
 sagemaker:StopEdgeDeploymentStage
@@ -17329,9 +17387,13 @@ security-ir:UpdateCaseStatus
 security-ir:UpdateMembership
 security-ir:UpdateResolverType
 securityagent:AddArtifact
+securityagent:BatchDeleteCodeReviews
 securityagent:BatchDeletePentests
 securityagent:BatchGetAgentSpaces
 securityagent:BatchGetArtifactMetadata
+securityagent:BatchGetCodeReviewJobTasks
+securityagent:BatchGetCodeReviewJobs
+securityagent:BatchGetCodeReviews
 securityagent:BatchGetFindings
 securityagent:BatchGetPentestJobContentMetadata
 securityagent:BatchGetPentestJobTasks
@@ -17340,6 +17402,7 @@ securityagent:BatchGetPentests
 securityagent:BatchGetTargetDomains
 securityagent:CreateAgentSpace
 securityagent:CreateApplication
+securityagent:CreateCodeReview
 securityagent:CreateDesignReview
 securityagent:CreateIntegration
 securityagent:CreateMembership
@@ -17366,6 +17429,9 @@ securityagent:InitiateProviderRegistration
 securityagent:ListAgentSpaces
 securityagent:ListApplications
 securityagent:ListArtifacts
+securityagent:ListCodeReviewJobTasks
+securityagent:ListCodeReviewJobsForCodeReview
+securityagent:ListCodeReviews
 securityagent:ListDesignReviewComments
 securityagent:ListDesignReviews
 securityagent:ListDiscoveredEndpoints
@@ -17382,13 +17448,16 @@ securityagent:ListTagsForResource
 securityagent:ListTargetDomains
 securityagent:PutDesignReviewFeedback
 securityagent:StartCodeRemediation
+securityagent:StartCodeReviewJob
 securityagent:StartPentestJob
+securityagent:StopCodeReviewJob
 securityagent:StopPentestJob
 securityagent:TagResource
 securityagent:ToggleManagedSecurityRequirement
 securityagent:UntagResource
 securityagent:UpdateAgentSpace
 securityagent:UpdateApplication
+securityagent:UpdateCodeReview
 securityagent:UpdateFinding
 securityagent:UpdateIntegratedResources
 securityagent:UpdatePentest
