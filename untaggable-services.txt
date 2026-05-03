@@ -2,8 +2,10 @@ a2c
 account
 action-recommendations
 activate
+agentaccess-mcp
 amplifybackend
 apigateway
+application-signals-mcp
 application-transformation
 appmesh-preview
 appstudio

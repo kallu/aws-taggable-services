@@ -7,6 +7,7 @@ acm-pca
 aco-automation
 action-recommendations
 activate
+agentaccess-mcp
 aidevops
 aiops
 airflow
@@ -22,6 +23,7 @@ appfabric
 appflow
 application-autoscaling
 application-signals
+application-signals-mcp
 application-transformation
 applicationinsights
 appmesh
