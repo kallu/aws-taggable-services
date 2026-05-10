@@ -27,6 +27,7 @@ arc-region-switch
 athena
 auditmanager
 autoscaling
+aws-external-anthropic
 aws-marketplace
 b2bi
 backup

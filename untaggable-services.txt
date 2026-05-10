@@ -13,9 +13,7 @@ arc-zonal-shift
 arsenal
 artifact
 autoscaling-plans
-aws-external-anthropic
 aws-marketplace-management
-aws-mcp
 aws-portal
 awsconnector
 backup-storage
@@ -86,6 +84,7 @@ pricingplanmanager
 rds-data
 rds-db
 redshift-data
+researchstudio
 rhelkb
 route53-recovery-cluster
 sagemaker-data-science-assistant
