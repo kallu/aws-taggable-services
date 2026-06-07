@@ -46,6 +46,7 @@ elemental-activations
 elemental-appliances-software
 elemental-support-content
 execute-api
+finops-agent
 finspace-api
 freertos
 freetier
