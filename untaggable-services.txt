@@ -45,6 +45,7 @@ elastictranscoder
 elemental-activations
 elemental-appliances-software
 elemental-support-content
+eventsbilltoaws
 execute-api
 finops-agent
 finspace-api

@@ -240,6 +240,7 @@ agentaccess-mcp:TripleClick
 agentaccess-mcp:TypeText
 aidevops:AllowVendedLogDeliveryForResource
 aidevops:AssociateService
+aidevops:CreateAccessToken
 aidevops:CreateAgentSpace
 aidevops:CreateAsset
 aidevops:CreateAssetFile
@@ -248,11 +249,13 @@ aidevops:CreateChat
 aidevops:CreateKnowledgeItem
 aidevops:CreateOneTimeLoginSession
 aidevops:CreatePrivateConnection
+aidevops:CreateTrigger
 aidevops:DeleteAgentSpace
 aidevops:DeleteAsset
 aidevops:DeleteAssetFile
 aidevops:DeleteKnowledgeItem
 aidevops:DeletePrivateConnection
+aidevops:DeleteTrigger
 aidevops:DeregisterService
 aidevops:DescribePrivateConnection
 aidevops:DescribeServices
@@ -262,6 +265,7 @@ aidevops:DisassociateService
 aidevops:DiscoverTopology
 aidevops:EnableOperatorApp
 aidevops:EndChatForCase
+aidevops:GetAccessToken
 aidevops:GetAccountUsage
 aidevops:GetAgentSpace
 aidevops:GetAsset
@@ -273,7 +277,9 @@ aidevops:GetKnowledgeItem
 aidevops:GetOperatorApp
 aidevops:GetRecommendation
 aidevops:GetService
+aidevops:GetTrigger
 aidevops:InitiateChatForCase
+aidevops:ListAccessTokens
 aidevops:ListAgentSpaces
 aidevops:ListAssetFiles
 aidevops:ListAssetTypes
@@ -292,8 +298,11 @@ aidevops:ListPrivateConnections
 aidevops:ListRecommendations
 aidevops:ListServices
 aidevops:ListTagsForResource
+aidevops:ListTriggers
 aidevops:ListWebhooks
 aidevops:RegisterService
+aidevops:RevokeAccessToken
+aidevops:RotateAccessToken
 aidevops:SearchServiceAccessibleResource
 aidevops:SendMessage
 aidevops:TagResource
@@ -308,6 +317,7 @@ aidevops:UpdateKnowledgeItem
 aidevops:UpdateOperatorAppIdpConfig
 aidevops:UpdatePrivateConnectionCertificate
 aidevops:UpdateRecommendation
+aidevops:UpdateTrigger
 aidevops:ValidateAwsAssociations
 aiops:CreateInvestigation
 aiops:CreateInvestigationEvent
@@ -1473,6 +1483,7 @@ aws-external-anthropic:CreateSkill
 aws-external-anthropic:CreateUserProfile
 aws-external-anthropic:CreateUserProfileEnrollmentUrl
 aws-external-anthropic:CreateVault
+aws-external-anthropic:CreateWebhook
 aws-external-anthropic:CreateWorkspace
 aws-external-anthropic:DeleteBatchInference
 aws-external-anthropic:DeleteEnvironment
@@ -1481,6 +1492,7 @@ aws-external-anthropic:DeleteMemoryStore
 aws-external-anthropic:DeleteSession
 aws-external-anthropic:DeleteSkill
 aws-external-anthropic:DeleteVault
+aws-external-anthropic:DeleteWebhook
 aws-external-anthropic:GetAccountStatus
 aws-external-anthropic:GetAgent
 aws-external-anthropic:GetBatchInference
@@ -1492,6 +1504,7 @@ aws-external-anthropic:GetSession
 aws-external-anthropic:GetSkill
 aws-external-anthropic:GetUserProfile
 aws-external-anthropic:GetVault
+aws-external-anthropic:GetWebhook
 aws-external-anthropic:GetWorkspace
 aws-external-anthropic:ListAgents
 aws-external-anthropic:ListBatchInferences
@@ -1504,7 +1517,10 @@ aws-external-anthropic:ListSkills
 aws-external-anthropic:ListTagsForResource
 aws-external-anthropic:ListUserProfiles
 aws-external-anthropic:ListVaults
+aws-external-anthropic:ListWebhooks
 aws-external-anthropic:ListWorkspaces
+aws-external-anthropic:ProcessEnvironmentWork
+aws-external-anthropic:RotateWebhookSecret
 aws-external-anthropic:TagResource
 aws-external-anthropic:UntagResource
 aws-external-anthropic:UpdateAgent
@@ -1514,6 +1530,7 @@ aws-external-anthropic:UpdateSession
 aws-external-anthropic:UpdateSkill
 aws-external-anthropic:UpdateUserProfile
 aws-external-anthropic:UpdateVault
+aws-external-anthropic:UpdateWebhook
 aws-external-anthropic:UpdateWorkspace
 aws-marketplace-management:GetAdditionalSellerNotificationRecipients
 aws-marketplace-management:GetBankAccountVerificationDetails
@@ -2173,6 +2190,7 @@ bedrock-mantle:DeleteFile
 bedrock-mantle:DeleteInference
 bedrock-mantle:DeleteReservation
 bedrock-mantle:DisassociateCustomizedModel
+bedrock-mantle:GetAccountDataRetention
 bedrock-mantle:GetCustomizedModel
 bedrock-mantle:GetFile
 bedrock-mantle:GetFineTuningJob
@@ -2188,6 +2206,7 @@ bedrock-mantle:ListModels
 bedrock-mantle:ListProjects
 bedrock-mantle:ListReservations
 bedrock-mantle:ListTagsForResource
+bedrock-mantle:PutAccountDataRetention
 bedrock-mantle:TagResource
 bedrock-mantle:UntagResource
 bedrock-mantle:UpdateProject
@@ -2275,6 +2294,7 @@ bedrock:DisassociateAgentKnowledgeBase
 bedrock:EndSession
 bedrock:ExportAutomatedReasoningPolicyVersion
 bedrock:GenerateQuery
+bedrock:GetAccountDataRetention
 bedrock:GetAgent
 bedrock:GetAgentActionGroup
 bedrock:GetAgentAlias
@@ -2393,6 +2413,7 @@ bedrock:ListTagsForResource
 bedrock:OptimizePrompt
 bedrock:PrepareAgent
 bedrock:PrepareFlow
+bedrock:PutAccountDataRetention
 bedrock:PutEnforcedGuardrailConfiguration
 bedrock:PutFoundationModelEntitlement
 bedrock:PutInvocationStep
@@ -6440,6 +6461,7 @@ ec2-instance-connect:SendSerialConsoleSSHPublicKey
 ec2:AcceptAddressTransfer
 ec2:AcceptCapacityReservationBillingOwnership
 ec2:AcceptReservedInstancesExchangeQuote
+ec2:AcceptTransitGatewayClientVpnAttachment
 ec2:AcceptTransitGatewayMulticastDomainAssociations
 ec2:AcceptTransitGatewayPeeringAttachment
 ec2:AcceptTransitGatewayVpcAttachment
@@ -6504,6 +6526,7 @@ ec2:CopyVolumes
 ec2:CreateCapacityManagerDataExport
 ec2:CreateCapacityReservation
 ec2:CreateCapacityReservationBySplitting
+ec2:CreateCapacityReservationCancellationQuote
 ec2:CreateCapacityReservationFleet
 ec2:CreateCarrierGateway
 ec2:CreateClientVpnEndpoint
@@ -6676,6 +6699,7 @@ ec2:DeleteTrafficMirrorFilterRule
 ec2:DeleteTrafficMirrorSession
 ec2:DeleteTrafficMirrorTarget
 ec2:DeleteTransitGateway
+ec2:DeleteTransitGatewayClientVpnAttachment
 ec2:DeleteTransitGatewayConnect
 ec2:DeleteTransitGatewayConnectPeer
 ec2:DeleteTransitGatewayMeteringPolicy
@@ -6728,6 +6752,7 @@ ec2:DescribeCapacityBlockStatus
 ec2:DescribeCapacityBlocks
 ec2:DescribeCapacityManagerDataExports
 ec2:DescribeCapacityReservationBillingRequests
+ec2:DescribeCapacityReservationCancellationQuotes
 ec2:DescribeCapacityReservationFleets
 ec2:DescribeCapacityReservationTopology
 ec2:DescribeCapacityReservations
@@ -6785,6 +6810,7 @@ ec2:DescribeInternetGateways
 ec2:DescribeIpamByoasn
 ec2:DescribeIpamExternalResourceVerificationTokens
 ec2:DescribeIpamPolicies
+ec2:DescribeIpamPoolAllocations
 ec2:DescribeIpamPools
 ec2:DescribeIpamPrefixListResolverTargets
 ec2:DescribeIpamPrefixListResolvers
@@ -6983,6 +7009,7 @@ ec2:GetAwsNetworkPerformanceData
 ec2:GetCapacityManagerAttributes
 ec2:GetCapacityManagerMetricData
 ec2:GetCapacityManagerMetricDimensions
+ec2:GetCapacityManagerMonitoredTagKeys
 ec2:GetCapacityReservationUsage
 ec2:GetCoipPoolUsage
 ec2:GetConsoleOutput
@@ -7016,6 +7043,7 @@ ec2:GetIpamResourceCidrs
 ec2:GetLaunchTemplateData
 ec2:GetManagedPrefixListAssociations
 ec2:GetManagedPrefixListEntries
+ec2:GetManagedResourceVisibility
 ec2:GetNetworkInsightsAccessScopeAnalysisFindings
 ec2:GetNetworkInsightsAccessScopeContent
 ec2:GetPasswordData
@@ -7086,6 +7114,7 @@ ec2:ModifyInstancePlacement
 ec2:ModifyIpam
 ec2:ModifyIpamPolicyAllocationRules
 ec2:ModifyIpamPool
+ec2:ModifyIpamPoolAllocation
 ec2:ModifyIpamPrefixListResolver
 ec2:ModifyIpamPrefixListResolverTarget
 ec2:ModifyIpamResourceCidr
@@ -7094,6 +7123,7 @@ ec2:ModifyIpamScope
 ec2:ModifyLaunchTemplate
 ec2:ModifyLocalGatewayRoute
 ec2:ModifyManagedPrefixList
+ec2:ModifyManagedResourceVisibility
 ec2:ModifyNetworkInterfaceAttribute
 ec2:ModifyOdbNetworkPeering
 ec2:ModifyPrivateDnsNameOptions
@@ -7157,6 +7187,7 @@ ec2:RegisterInstanceEventNotificationAttributes
 ec2:RegisterTransitGatewayMulticastGroupMembers
 ec2:RegisterTransitGatewayMulticastGroupSources
 ec2:RejectCapacityReservationBillingOwnership
+ec2:RejectTransitGatewayClientVpnAttachment
 ec2:RejectTransitGatewayMulticastDomainAssociations
 ec2:RejectTransitGatewayPeeringAttachment
 ec2:RejectTransitGatewayVpcAttachment
@@ -7212,6 +7243,7 @@ ec2:UnassignPrivateIpAddresses
 ec2:UnassignPrivateNatGatewayAddress
 ec2:UnlockSnapshot
 ec2:UnmonitorInstances
+ec2:UpdateCapacityManagerMonitoredTagKeys
 ec2:UpdateCapacityManagerOrganizationsAccess
 ec2:UpdateInterruptibleCapacityReservationAllocation
 ec2:UpdateSecurityGroupRuleDescriptionsEgress
@@ -8138,6 +8170,8 @@ events:UpdateArchive
 events:UpdateConnection
 events:UpdateEndpoint
 events:UpdateEventBus
+eventsbilltoaws:approve
+eventsbilltoaws:info
 evidently:BatchEvaluateFeature
 evidently:CreateExperiment
 evidently:CreateFeature
@@ -9616,6 +9650,7 @@ healthlake:StartFHIRImportJob
 healthlake:SubmitPreAuthClaim
 healthlake:TagResource
 healthlake:UntagResource
+healthlake:UpdateFHIRDatastore
 healthlake:UpdateResource
 healthlake:ValidateResource
 healthlake:VersionReadResource
@@ -13862,6 +13897,9 @@ observabilityadmin:UpdateTelemetryRuleForOrganization
 observabilityadmin:ValidateTelemetryPipelineConfiguration
 odb:AcceptMarketplaceRegistration
 odb:AssociateIamRoleToResource
+odb:CreateAutonomousDatabase
+odb:CreateAutonomousDatabaseBackup
+odb:CreateAutonomousDatabaseWallet
 odb:CreateCloudAutonomousVmCluster
 odb:CreateCloudExadataInfrastructure
 odb:CreateCloudVmCluster
@@ -13870,6 +13908,8 @@ odb:CreateGrantShare
 odb:CreateOdbNetwork
 odb:CreateOdbPeeringConnection
 odb:CreateOutboundIntegration
+odb:DeleteAutonomousDatabase
+odb:DeleteAutonomousDatabaseBackup
 odb:DeleteCloudAutonomousVmCluster
 odb:DeleteCloudExadataInfrastructure
 odb:DeleteCloudVmCluster
@@ -13879,6 +13919,10 @@ odb:DeleteOdbNetwork
 odb:DeleteOdbPeeringConnection
 odb:DeleteResourcePolicy
 odb:DisassociateIamRoleFromResource
+odb:FailoverAutonomousDatabase
+odb:GetAutonomousDatabase
+odb:GetAutonomousDatabaseBackup
+odb:GetAutonomousDatabaseWalletDetails
 odb:GetCloudAutonomousVmCluster
 odb:GetCloudExadataInfrastructure
 odb:GetCloudExadataInfrastructureUnallocatedResources
@@ -13890,6 +13934,12 @@ odb:GetOdbNetwork
 odb:GetOdbPeeringConnection
 odb:GetResourcePolicy
 odb:InitializeService
+odb:ListAutonomousDatabaseBackups
+odb:ListAutonomousDatabaseCharacterSets
+odb:ListAutonomousDatabaseClones
+odb:ListAutonomousDatabasePeers
+odb:ListAutonomousDatabaseVersions
+odb:ListAutonomousDatabases
 odb:ListAutonomousVirtualMachines
 odb:ListCloudAutonomousVmClusters
 odb:ListCloudExadataInfrastructures
@@ -13903,11 +13953,19 @@ odb:ListOdbPeeringConnections
 odb:ListSystemVersions
 odb:ListTagsForResource
 odb:PutResourcePolicy
+odb:RebootAutonomousDatabase
 odb:RebootDbNode
+odb:RestoreAutonomousDatabase
+odb:ShrinkAutonomousDatabase
+odb:StartAutonomousDatabase
 odb:StartDbNode
+odb:StopAutonomousDatabase
 odb:StopDbNode
+odb:SwitchoverAutonomousDatabase
 odb:TagResource
 odb:UntagResource
+odb:UpdateAutonomousDatabase
+odb:UpdateAutonomousDatabaseBackup
 odb:UpdateCloudExadataInfrastructure
 odb:UpdateGrantShare
 odb:UpdateOdbNetwork
@@ -14242,8 +14300,11 @@ outposts:CancelOrder
 outposts:CreateOrder
 outposts:CreateOutpost
 outposts:CreatePrivateConnectivityConfig
+outposts:CreateQuote
+outposts:CreateRenewal
 outposts:CreateSite
 outposts:DeleteOutpost
+outposts:DeleteQuote
 outposts:DeleteSite
 outposts:GetCapacityTask
 outposts:GetCatalogItem
@@ -14254,6 +14315,8 @@ outposts:GetOutpostBillingInformation
 outposts:GetOutpostInstanceTypes
 outposts:GetOutpostSupportedInstanceTypes
 outposts:GetPrivateConnectivityConfig
+outposts:GetQuote
+outposts:GetRenewalPricing
 outposts:GetSite
 outposts:GetSiteAddress
 outposts:ListAssetInstances
@@ -14261,8 +14324,10 @@ outposts:ListAssets
 outposts:ListBlockingInstancesForCapacityTask
 outposts:ListCapacityTasks
 outposts:ListCatalogItems
+outposts:ListOrderableInstanceTypes
 outposts:ListOrders
 outposts:ListOutposts
+outposts:ListQuotes
 outposts:ListSites
 outposts:ListTagsForResource
 outposts:StartCapacityTask
@@ -14270,6 +14335,7 @@ outposts:StartConnection
 outposts:TagResource
 outposts:UntagResource
 outposts:UpdateOutpost
+outposts:UpdateQuote
 outposts:UpdateSite
 outposts:UpdateSiteAddress
 outposts:UpdateSiteRackPhysicalProperties
@@ -16770,6 +16836,7 @@ s3-outposts:ReplicateDelete
 s3-outposts:ReplicateObject
 s3-outposts:ReplicateTags
 s3:AbortMultipartUpload
+s3:AllowVendedLogDeliveryForResource
 s3:AssociateAccessGrantsIdentityCenter
 s3:BypassGovernanceRetention
 s3:CreateAccessGrant
@@ -17738,8 +17805,10 @@ security-ir:UpdateCaseStatus
 security-ir:UpdateMembership
 security-ir:UpdateResolverType
 securityagent:AddArtifact
+securityagent:BatchCreateSecurityRequirements
 securityagent:BatchDeleteCodeReviews
 securityagent:BatchDeletePentests
+securityagent:BatchDeleteSecurityRequirements
 securityagent:BatchDeleteThreatModels
 securityagent:BatchDeleteThreats
 securityagent:BatchGetAgentSpaces
@@ -17752,11 +17821,13 @@ securityagent:BatchGetPentestJobContentMetadata
 securityagent:BatchGetPentestJobTasks
 securityagent:BatchGetPentestJobs
 securityagent:BatchGetPentests
+securityagent:BatchGetSecurityRequirements
 securityagent:BatchGetTargetDomains
 securityagent:BatchGetThreatModelJobTasks
 securityagent:BatchGetThreatModelJobs
 securityagent:BatchGetThreatModels
 securityagent:BatchGetThreats
+securityagent:BatchUpdateSecurityRequirements
 securityagent:CreateAgentSpace
 securityagent:CreateApplication
 securityagent:CreateCodeReview
@@ -17765,7 +17836,9 @@ securityagent:CreateIntegration
 securityagent:CreateMembership
 securityagent:CreateOneTimeLoginSession
 securityagent:CreatePentest
+securityagent:CreatePrivateConnection
 securityagent:CreateSecurityRequirement
+securityagent:CreateSecurityRequirementPack
 securityagent:CreateTargetDomain
 securityagent:CreateThreat
 securityagent:CreateThreatModel
@@ -17775,15 +17848,22 @@ securityagent:DeleteArtifact
 securityagent:DeleteDesignReview
 securityagent:DeleteIntegration
 securityagent:DeleteMembership
+securityagent:DeletePrivateConnection
 securityagent:DeleteSecurityRequirement
+securityagent:DeleteSecurityRequirementPack
 securityagent:DeleteTargetDomain
+securityagent:DescribePrivateConnection
 securityagent:GetApplication
 securityagent:GetArtifact
 securityagent:GetDesignReview
 securityagent:GetDesignReviewArtifact
 securityagent:GetDesignReviewFeedback
 securityagent:GetIntegration
+securityagent:GetProviderRegistrationManifest
 securityagent:GetSecurityRequirement
+securityagent:GetSecurityRequirementPack
+securityagent:HandleProviderRegistrationCallback
+securityagent:ImportSecurityRequirements
 securityagent:InitiateProviderRegistration
 securityagent:ListAgentSpaces
 securityagent:ListApplications
@@ -17801,7 +17881,9 @@ securityagent:ListMemberships
 securityagent:ListPentestJobTasks
 securityagent:ListPentestJobsForPentest
 securityagent:ListPentests
+securityagent:ListPrivateConnections
 securityagent:ListResourcesFromIntegration
+securityagent:ListSecurityRequirementPacks
 securityagent:ListSecurityRequirements
 securityagent:ListTagsForResource
 securityagent:ListTargetDomains
@@ -17826,7 +17908,9 @@ securityagent:UpdateCodeReview
 securityagent:UpdateFinding
 securityagent:UpdateIntegratedResources
 securityagent:UpdatePentest
+securityagent:UpdatePrivateConnectionCertificate
 securityagent:UpdateSecurityRequirement
+securityagent:UpdateSecurityRequirementPack
 securityagent:UpdateTargetDomain
 securityagent:UpdateThreat
 securityagent:UpdateThreatModel
@@ -18458,10 +18542,19 @@ signer:SignPayload
 signer:StartSigningJob
 signer:TagResource
 signer:UntagResource
+signin:Authenticate
 signin:AuthorizeOAuth2Access
+signin:CreateAccount
 signin:CreateOAuth2Token
 signin:CreateTrustedIdentityPropagationApplicationForConsole
+signin:DeleteConsoleAuthorizationConfiguration
+signin:DeleteResourcePermissionStatement
+signin:GetConsoleAuthorizationConfiguration
+signin:GetResourcePolicy
+signin:ListResourcePermissionStatements
 signin:ListTrustedIdentityPropagationApplicationsForConsole
+signin:PutConsoleAuthorizationConfiguration
+signin:PutResourcePermissionStatement
 simspaceweaver:CreateSnapshot
 simspaceweaver:DeleteApp
 simspaceweaver:DeleteSimulation
