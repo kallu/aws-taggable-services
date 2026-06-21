@@ -223,6 +223,8 @@ activate:GetCredits
 activate:GetMemberInfo
 activate:GetProgram
 activate:PutMemberInfo
+agentaccess-mcp:CallForwardedTool
+agentaccess-mcp:CheckConnectionStatus
 agentaccess-mcp:DoubleClick
 agentaccess-mcp:GetScreenshot
 agentaccess-mcp:HoldKey
@@ -1983,6 +1985,7 @@ bedrock-agentcore:CreateGateway
 bedrock-agentcore:CreateGatewayRule
 bedrock-agentcore:CreateGatewayTarget
 bedrock-agentcore:CreateHarness
+bedrock-agentcore:CreateHarnessEndpoint
 bedrock-agentcore:CreateMemory
 bedrock-agentcore:CreateOauth2CredentialProvider
 bedrock-agentcore:CreateOnlineEvaluationConfig
@@ -2011,6 +2014,7 @@ bedrock-agentcore:DeleteGateway
 bedrock-agentcore:DeleteGatewayRule
 bedrock-agentcore:DeleteGatewayTarget
 bedrock-agentcore:DeleteHarness
+bedrock-agentcore:DeleteHarnessEndpoint
 bedrock-agentcore:DeleteMemory
 bedrock-agentcore:DeleteMemoryRecord
 bedrock-agentcore:DeleteOauth2CredentialProvider
@@ -2028,6 +2032,10 @@ bedrock-agentcore:DeleteRegistryRecord
 bedrock-agentcore:DeleteResourcePolicy
 bedrock-agentcore:DeleteWorkloadIdentity
 bedrock-agentcore:Evaluate
+bedrock-agentcore:GatewayAssociateWebACL
+bedrock-agentcore:GatewayDisassociateWebACL
+bedrock-agentcore:GatewayGetWebACLForResource
+bedrock-agentcore:GatewayListResourcesForWebACL
 bedrock-agentcore:GetABTest
 bedrock-agentcore:GetAgentCard
 bedrock-agentcore:GetAgentRuntime
@@ -2047,6 +2055,7 @@ bedrock-agentcore:GetGateway
 bedrock-agentcore:GetGatewayRule
 bedrock-agentcore:GetGatewayTarget
 bedrock-agentcore:GetHarness
+bedrock-agentcore:GetHarnessEndpoint
 bedrock-agentcore:GetMemory
 bedrock-agentcore:GetMemoryRecord
 bedrock-agentcore:GetOauth2CredentialProvider
@@ -2085,6 +2094,7 @@ bedrock-agentcore:InvokeCodeInterpreter
 bedrock-agentcore:InvokeGateway
 bedrock-agentcore:InvokeHarness
 bedrock-agentcore:InvokeRegistryMcp
+bedrock-agentcore:InvokeWebSearch
 bedrock-agentcore:ListABTests
 bedrock-agentcore:ListActors
 bedrock-agentcore:ListAgentRuntimeEndpoints
@@ -2104,6 +2114,7 @@ bedrock-agentcore:ListEvents
 bedrock-agentcore:ListGatewayRules
 bedrock-agentcore:ListGatewayTargets
 bedrock-agentcore:ListGateways
+bedrock-agentcore:ListHarnessEndpoints
 bedrock-agentcore:ListHarnesses
 bedrock-agentcore:ListMemories
 bedrock-agentcore:ListMemoryExtractionJobs
@@ -2162,6 +2173,7 @@ bedrock-agentcore:UpdateGateway
 bedrock-agentcore:UpdateGatewayRule
 bedrock-agentcore:UpdateGatewayTarget
 bedrock-agentcore:UpdateHarness
+bedrock-agentcore:UpdateHarnessEndpoint
 bedrock-agentcore:UpdateMemory
 bedrock-agentcore:UpdateOauth2CredentialProvider
 bedrock-agentcore:UpdateOnlineEvaluationConfig
@@ -2211,16 +2223,19 @@ bedrock-mantle:TagResource
 bedrock-mantle:UntagResource
 bedrock-mantle:UpdateProject
 bedrock-mantle:UpdateReservation
+bedrock:AgenticRetrieveStream
 bedrock:AllowVendedLogDeliveryForResource
 bedrock:ApplyGuardrail
 bedrock:AssociateAgentCollaborator
 bedrock:AssociateAgentKnowledgeBase
 bedrock:AssociateThirdPartyKnowledgeBase
+bedrock:BatchDeleteAdvancedPromptOptimizationJob
 bedrock:BatchDeleteEvaluationJob
 bedrock:CallWithBearerToken
 bedrock:CancelAutomatedReasoningPolicyBuildWorkflow
 bedrock:CopyBlueprintStage
 bedrock:CountTokens
+bedrock:CreateAdvancedPromptOptimizationJob
 bedrock:CreateAgent
 bedrock:CreateAgentActionGroup
 bedrock:CreateAgentAlias
@@ -2295,6 +2310,7 @@ bedrock:EndSession
 bedrock:ExportAutomatedReasoningPolicyVersion
 bedrock:GenerateQuery
 bedrock:GetAccountDataRetention
+bedrock:GetAdvancedPromptOptimizationJob
 bedrock:GetAgent
 bedrock:GetAgentActionGroup
 bedrock:GetAgentAlias
@@ -2321,6 +2337,7 @@ bedrock:GetDataAutomationLibraryIngestionJob
 bedrock:GetDataAutomationProject
 bedrock:GetDataAutomationStatus
 bedrock:GetDataSource
+bedrock:GetDocumentContent
 bedrock:GetEvaluationJob
 bedrock:GetExecutionFlowSnapshot
 bedrock:GetFlow
@@ -2359,10 +2376,12 @@ bedrock:InvokeDataAutomation
 bedrock:InvokeDataAutomationAsync
 bedrock:InvokeDataAutomationLibraryIngestionJob
 bedrock:InvokeFlow
+bedrock:InvokeGuardrailChecks
 bedrock:InvokeInlineAgent
 bedrock:InvokeModel
 bedrock:InvokeModelWithResponseStream
 bedrock:InvokeTool
+bedrock:ListAdvancedPromptOptimizationJobs
 bedrock:ListAgentActionGroups
 bedrock:ListAgentAliases
 bedrock:ListAgentCollaborators
@@ -2429,6 +2448,7 @@ bedrock:StartAutomatedReasoningPolicyBuildWorkflow
 bedrock:StartAutomatedReasoningPolicyTestWorkflow
 bedrock:StartFlowExecution
 bedrock:StartIngestionJob
+bedrock:StopAdvancedPromptOptimizationJob
 bedrock:StopEvaluationJob
 bedrock:StopFlowExecution
 bedrock:StopIngestionJob
@@ -3727,6 +3747,7 @@ cloudwatch:GenerateQuery
 cloudwatch:GenerateQueryResultsSummary
 cloudwatch:GetAlarmMuteRule
 cloudwatch:GetDashboard
+cloudwatch:GetDataset
 cloudwatch:GetInsightRuleReport
 cloudwatch:GetMetricData
 cloudwatch:GetMetricStatistics
@@ -3753,6 +3774,7 @@ cloudwatch:PutAnomalyDetector
 cloudwatch:PutCompositeAlarm
 cloudwatch:PutDashboard
 cloudwatch:PutInsightRule
+cloudwatch:PutLogAlarm
 cloudwatch:PutManagedInsightRules
 cloudwatch:PutMetricAlarm
 cloudwatch:PutMetricData
@@ -5430,6 +5452,7 @@ datazone:DeleteEnvironmentProfile
 datazone:DeleteFormType
 datazone:DeleteGlossary
 datazone:DeleteGlossaryTerm
+datazone:DeleteLineageEvent
 datazone:DeleteListing
 datazone:DeleteNotebook
 datazone:DeleteProject
@@ -5450,6 +5473,7 @@ datazone:GetAssetType
 datazone:GetCell
 datazone:GetCellRun
 datazone:GetCellRunResult
+datazone:GetCompute
 datazone:GetConnection
 datazone:GetConversation
 datazone:GetDataExportConfiguration
@@ -5556,12 +5580,15 @@ datazone:SendMessage
 datazone:SsoLogin
 datazone:SsoLogout
 datazone:StartAccountBootstrapAction
+datazone:StartCompute
 datazone:StartConversation
 datazone:StartDataSourceRun
 datazone:StartMetadataGenerationRun
 datazone:StartNotebookCompute
 datazone:StartNotebookExport
 datazone:StartNotebookImport
+datazone:StartNotebookSync
+datazone:StopCompute
 datazone:StopMetadataGenerationRun
 datazone:StopNotebookCompute
 datazone:TagResource
@@ -7994,6 +8021,7 @@ es:AddDirectQueryDataSource
 es:AddTags
 es:AssociatePackage
 es:AssociatePackages
+es:AttachDataSource
 es:AuthorizeVpcEndpointAccess
 es:CancelDomainConfigChange
 es:CancelElasticsearchServiceSoftwareUpdate
@@ -8022,6 +8050,7 @@ es:DeleteOutboundCrossClusterSearchConnection
 es:DeletePackage
 es:DeleteVpcEndpoint
 es:DeregisterCapability
+es:DescribeDataSourceAttachment
 es:DescribeDomain
 es:DescribeDomainAutoTunes
 es:DescribeDomainChangeProgress
@@ -8046,6 +8075,7 @@ es:DescribeReservedElasticsearchInstances
 es:DescribeReservedInstanceOfferings
 es:DescribeReservedInstances
 es:DescribeVpcEndpoints
+es:DetachDataSource
 es:DissociatePackage
 es:DissociatePackages
 es:ESCrossClusterGet
@@ -8068,6 +8098,7 @@ es:GetPackageVersionHistory
 es:GetUpgradeHistory
 es:GetUpgradeStatus
 es:ListApplications
+es:ListDataSourceAttachments
 es:ListDataSources
 es:ListDirectQueryDataSources
 es:ListDomainMaintenances
@@ -13413,6 +13444,7 @@ mq:DescribeBrokerEngineTypes
 mq:DescribeBrokerInstanceOptions
 mq:DescribeConfiguration
 mq:DescribeConfigurationRevision
+mq:DescribeSharedResources
 mq:DescribeUser
 mq:ListBrokers
 mq:ListConfigurationRevisions
@@ -14435,6 +14467,7 @@ partnercentral:GetPartnerProfile
 partnercentral:GetProfileUpdateTask
 partnercentral:GetProfileVisibility
 partnercentral:GetProgramManagementAccount
+partnercentral:GetProspectingFromEngagementTask
 partnercentral:GetRelationship
 partnercentral:GetResourceSnapshot
 partnercentral:GetResourceSnapshotJob
@@ -14459,6 +14492,7 @@ partnercentral:ListOpportunityFromEngagementTasks
 partnercentral:ListPartnerPaths
 partnercentral:ListPartners
 partnercentral:ListProgramManagementAccounts
+partnercentral:ListProspectingFromEngagementTasks
 partnercentral:ListRelationships
 partnercentral:ListResourceSnapshotJobs
 partnercentral:ListResourceSnapshots
@@ -14478,6 +14512,7 @@ partnercentral:StartEngagementByAcceptingInvitationTask
 partnercentral:StartEngagementFromOpportunityTask
 partnercentral:StartOpportunityFromEngagementTask
 partnercentral:StartProfileUpdateTask
+partnercentral:StartProspectingFromEngagementTask
 partnercentral:StartResourceSnapshotJob
 partnercentral:StartVerification
 partnercentral:StopResourceSnapshotJob
@@ -15240,10 +15275,12 @@ qldb:UpdateLedger
 qldb:UpdateLedgerPermissionsMode
 quicksight:AccountConfigurations
 quicksight:AllowVendedLogDeliveryForResource
+quicksight:BatchAssignLimitsProfile
 quicksight:BatchCreateTopicReviewedAnswer
 quicksight:BatchDeleteKnowledgeBase
 quicksight:BatchDeleteTopicReviewedAnswer
 quicksight:BatchGetPreferences
+quicksight:BatchUnassignLimitsProfile
 quicksight:BatchUpdatePreferences
 quicksight:CancelIngestion
 quicksight:CreateAccountCustomization
@@ -15266,6 +15303,7 @@ quicksight:CreateGroup
 quicksight:CreateGroupMembership
 quicksight:CreateIAMPolicyAssignment
 quicksight:CreateIngestion
+quicksight:CreateLimitsProfile
 quicksight:CreateNamespace
 quicksight:CreateOAuthClientApplication
 quicksight:CreateReader
@@ -15304,6 +15342,7 @@ quicksight:DeleteGroupMembership
 quicksight:DeleteIAMPolicyAssignment
 quicksight:DeleteIdentityPropagationConfig
 quicksight:DeleteKnowledgeBase
+quicksight:DeleteLimitsProfile
 quicksight:DeleteNamespace
 quicksight:DeleteOAuthClientApplication
 quicksight:DeleteRefreshSchedule
@@ -15332,6 +15371,8 @@ quicksight:DescribeAnalysis
 quicksight:DescribeAnalysisPermissions
 quicksight:DescribeAssetBundleExportJob
 quicksight:DescribeAssetBundleImportJob
+quicksight:DescribeAutomationGroup
+quicksight:DescribeAutomationGroupPermissions
 quicksight:DescribeAutomationJob
 quicksight:DescribeBrand
 quicksight:DescribeBrandAssignment
@@ -15363,6 +15404,7 @@ quicksight:DescribeIpRestriction
 quicksight:DescribeKeyRegistration
 quicksight:DescribeKnowledgeBase
 quicksight:DescribeKnowledgeBasePermissions
+quicksight:DescribeLimitsProfile
 quicksight:DescribeNamespace
 quicksight:DescribeOAuthClientApplication
 quicksight:DescribeQPersonalizationConfiguration
@@ -15402,6 +15444,8 @@ quicksight:ListAgents
 quicksight:ListAnalyses
 quicksight:ListAssetBundleExportJobs
 quicksight:ListAssetBundleImportJobs
+quicksight:ListAssignmentsForPrincipal
+quicksight:ListAutomationGroups
 quicksight:ListBrands
 quicksight:ListCustomPermissions
 quicksight:ListCustomerManagedKeys
@@ -15422,8 +15466,10 @@ quicksight:ListIdentityPropagationConfigs
 quicksight:ListIngestions
 quicksight:ListKMSKeysForUser
 quicksight:ListKnowledgeBases
+quicksight:ListLimitsProfiles
 quicksight:ListNamespaces
 quicksight:ListOAuthClientApplications
+quicksight:ListProfileAssignments
 quicksight:ListRefreshSchedules
 quicksight:ListRoleMemberships
 quicksight:ListSelfUpgrades
@@ -15456,6 +15502,7 @@ quicksight:ScopeDownPolicy
 quicksight:SearchActionConnectors
 quicksight:SearchAgents
 quicksight:SearchAnalyses
+quicksight:SearchAutomationGroups
 quicksight:SearchDashboards
 quicksight:SearchDataSets
 quicksight:SearchDataSources
@@ -15488,6 +15535,7 @@ quicksight:UpdateAgentPermissions
 quicksight:UpdateAnalysis
 quicksight:UpdateAnalysisPermissions
 quicksight:UpdateApplicationWithTokenExchangeGrant
+quicksight:UpdateAutomationGroupPermissions
 quicksight:UpdateBrand
 quicksight:UpdateBrandAssignment
 quicksight:UpdateBrandPublishedVersion
@@ -15515,6 +15563,7 @@ quicksight:UpdateIdentityPropagationConfig
 quicksight:UpdateIpRestriction
 quicksight:UpdateKeyRegistration
 quicksight:UpdateKnowledgeBasePermissions
+quicksight:UpdateLimitsProfile
 quicksight:UpdateOAuthClientApplication
 quicksight:UpdatePublicSharingSettings
 quicksight:UpdateQPersonalizationConfiguration
@@ -16864,8 +16913,10 @@ s3:DeleteBucketWebsite
 s3:DeleteJobTagging
 s3:DeleteMultiRegionAccessPoint
 s3:DeleteObject
+s3:DeleteObjectAnnotation
 s3:DeleteObjectTagging
 s3:DeleteObjectVersion
+s3:DeleteObjectVersionAnnotation
 s3:DeleteObjectVersionTagging
 s3:DeleteStorageLensConfiguration
 s3:DeleteStorageLensConfigurationTagging
@@ -16917,6 +16968,7 @@ s3:GetMultiRegionAccessPointPolicyStatus
 s3:GetMultiRegionAccessPointRoutes
 s3:GetObject
 s3:GetObjectAcl
+s3:GetObjectAnnotation
 s3:GetObjectAttributes
 s3:GetObjectLegalHold
 s3:GetObjectRetention
@@ -16924,6 +16976,8 @@ s3:GetObjectTagging
 s3:GetObjectTorrent
 s3:GetObjectVersion
 s3:GetObjectVersionAcl
+s3:GetObjectVersionAnnotation
+s3:GetObjectVersionAnnotationForReplication
 s3:GetObjectVersionAttributes
 s3:GetObjectVersionForReplication
 s3:GetObjectVersionTagging
@@ -16947,6 +17001,8 @@ s3:ListCallerAccessGrants
 s3:ListJobs
 s3:ListMultiRegionAccessPoints
 s3:ListMultipartUploadParts
+s3:ListObjectAnnotations
+s3:ListObjectVersionAnnotations
 s3:ListStorageLensConfigurations
 s3:ListStorageLensGroups
 s3:ListTagsForResource
@@ -16982,22 +17038,26 @@ s3:PutMetricsConfiguration
 s3:PutMultiRegionAccessPointPolicy
 s3:PutObject
 s3:PutObjectAcl
+s3:PutObjectAnnotation
 s3:PutObjectLegalHold
 s3:PutObjectRetention
 s3:PutObjectTagging
 s3:PutObjectVersionAcl
+s3:PutObjectVersionAnnotation
 s3:PutObjectVersionTagging
 s3:PutReplicationConfiguration
 s3:PutStorageLensConfiguration
 s3:PutStorageLensConfigurationTagging
 s3:ReplicateDelete
 s3:ReplicateObject
+s3:ReplicateObjectAnnotation
 s3:ReplicateTags
 s3:RestoreObject
 s3:SubmitMultiRegionAccessPointRoutes
 s3:TagResource
 s3:UntagResource
 s3:UpdateAccessGrantsLocation
+s3:UpdateBucketMetadataAnnotationTableConfiguration
 s3:UpdateBucketMetadataInventoryTableConfiguration
 s3:UpdateBucketMetadataJournalTableConfiguration
 s3:UpdateJobPriority
@@ -20463,6 +20523,9 @@ wafv2:GetMobileSdkRelease
 wafv2:GetPermissionPolicy
 wafv2:GetRateBasedStatementManagedKeys
 wafv2:GetRegexPatternSet
+wafv2:GetRevenueStatistics
+wafv2:GetRevenueStatisticsSummary
+wafv2:GetRevenueStatisticsTimeSeries
 wafv2:GetRuleGroup
 wafv2:GetSampledRequests
 wafv2:GetTopPathStatisticsByTraffic
@@ -20478,6 +20541,7 @@ wafv2:ListMobileSdkReleases
 wafv2:ListRegexPatternSets
 wafv2:ListResourcesForWebACL
 wafv2:ListRuleGroups
+wafv2:ListSettlementRecords
 wafv2:ListTagsForResource
 wafv2:ListWebACLs
 wafv2:PutFirewallManagerRuleGroups
