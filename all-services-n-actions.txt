@@ -310,6 +310,7 @@ aidevops:SendMessage
 aidevops:TagResource
 aidevops:UntagResource
 aidevops:UpdateAgentSpace
+aidevops:UpdateApprovalAction
 aidevops:UpdateAsset
 aidevops:UpdateAssetFile
 aidevops:UpdateAssociation
@@ -730,17 +731,23 @@ application-autoscaling:TagResource
 application-autoscaling:UntagResource
 application-signals-mcp:CallReadOnlyTool
 application-signals-mcp:InvokeMcp
+application-signals:BatchDeleteInstrumentationConfigurations
 application-signals:BatchGetServiceLevelObjectiveBudgetReport
 application-signals:BatchUpdateExclusionWindows
+application-signals:CreateInstrumentationConfiguration
 application-signals:CreateServiceLevelObjective
 application-signals:DeleteGroupingConfiguration
+application-signals:DeleteInstrumentationConfiguration
 application-signals:DeleteServiceLevelObjective
+application-signals:GetInstrumentationConfiguration
+application-signals:GetInstrumentationConfigurationStatus
 application-signals:GetService
 application-signals:GetServiceLevelObjective
 application-signals:Link
 application-signals:ListAuditFindings
 application-signals:ListEntityEvents
 application-signals:ListGroupingAttributeDefinitions
+application-signals:ListInstrumentationConfigurations
 application-signals:ListObservedEntities
 application-signals:ListServiceDependencies
 application-signals:ListServiceDependents
@@ -751,6 +758,7 @@ application-signals:ListServiceStates
 application-signals:ListServices
 application-signals:ListTagsForResource
 application-signals:PutGroupingConfiguration
+application-signals:ReportInstrumentationConfigurationStatus
 application-signals:StartDiscovery
 application-signals:TagResource
 application-signals:UntagResource
@@ -2492,7 +2500,9 @@ billing:GetBillingViewData
 billing:GetContractInformation
 billing:GetCreditAllocationHistory
 billing:GetCredits
+billing:GetCumulativeTracking
 billing:GetIAMAccessPreference
+billing:GetMonthlyTracking
 billing:GetResourcePolicy
 billing:GetSellerOfRecord
 billing:ListBillingViews
@@ -4622,6 +4632,7 @@ config:DeleteConfigRule
 config:DeleteConfigurationAggregator
 config:DeleteConfigurationRecorder
 config:DeleteConformancePack
+config:DeleteConnector
 config:DeleteDeliveryChannel
 config:DeleteEvaluationResults
 config:DeleteOrganizationConfigRule
@@ -4671,6 +4682,7 @@ config:GetComplianceSummaryByConfigRule
 config:GetComplianceSummaryByResourceType
 config:GetConformancePackComplianceDetails
 config:GetConformancePackComplianceSummary
+config:GetConnector
 config:GetCustomRulePolicy
 config:GetDiscoveredResourceCounts
 config:GetOrganizationConfigRuleDetailedStatus
@@ -4682,6 +4694,7 @@ config:GetStoredQuery
 config:ListAggregateDiscoveredResources
 config:ListConfigurationRecorders
 config:ListConformancePackComplianceScores
+config:ListConnectors
 config:ListDiscoveredResources
 config:ListResourceEvaluations
 config:ListStoredQueries
@@ -4691,6 +4704,7 @@ config:PutConfigRule
 config:PutConfigurationAggregator
 config:PutConfigurationRecorder
 config:PutConformancePack
+config:PutConnector
 config:PutDeliveryChannel
 config:PutEvaluations
 config:PutExternalEvaluation
@@ -4702,6 +4716,7 @@ config:PutResourceConfig
 config:PutRetentionConfiguration
 config:PutServiceLinkedConfigurationRecorder
 config:PutStoredQuery
+config:PutThirdPartyServiceLinkedConfigurationRecorder
 config:SelectAggregateResourceConfig
 config:SelectResourceConfig
 config:StartConfigRulesEvaluation
@@ -9495,6 +9510,7 @@ guardduty:ArchiveFindings
 guardduty:CreateDetector
 guardduty:CreateFilter
 guardduty:CreateIPSet
+guardduty:CreateInvestigation
 guardduty:CreateMalwareProtectionPlan
 guardduty:CreateMembers
 guardduty:CreatePublishingDestination
@@ -9528,6 +9544,7 @@ guardduty:GetFilter
 guardduty:GetFindings
 guardduty:GetFindingsStatistics
 guardduty:GetIPSet
+guardduty:GetInvestigation
 guardduty:GetInvitationsCount
 guardduty:GetMalwareProtectionPlan
 guardduty:GetMalwareScan
@@ -9547,6 +9564,7 @@ guardduty:ListDetectors
 guardduty:ListFilters
 guardduty:ListFindings
 guardduty:ListIPSets
+guardduty:ListInvestigations
 guardduty:ListInvitations
 guardduty:ListMalwareProtectionPlans
 guardduty:ListMalwareScans
@@ -10048,12 +10066,14 @@ inspector2:CancelSbomExport
 inspector2:CreateCisScanConfiguration
 inspector2:CreateCodeSecurityIntegration
 inspector2:CreateCodeSecurityScanConfiguration
+inspector2:CreateConnector
 inspector2:CreateFilter
 inspector2:CreateFindingsReport
 inspector2:CreateSbomExport
 inspector2:DeleteCisScanConfiguration
 inspector2:DeleteCodeSecurityIntegration
 inspector2:DeleteCodeSecurityScanConfiguration
+inspector2:DeleteConnector
 inspector2:DeleteFilter
 inspector2:DescribeOrganizationConfiguration
 inspector2:Disable
@@ -10082,6 +10102,8 @@ inspector2:ListCisScans
 inspector2:ListCodeSecurityIntegrations
 inspector2:ListCodeSecurityScanConfigurationAssociations
 inspector2:ListCodeSecurityScanConfigurations
+inspector2:ListConnectorScanConfigurations
+inspector2:ListConnectors
 inspector2:ListCoverage
 inspector2:ListCoverageStatistics
 inspector2:ListDelegatedAdminAccounts
@@ -10104,6 +10126,8 @@ inspector2:UpdateCisScanConfiguration
 inspector2:UpdateCodeSecurityIntegration
 inspector2:UpdateCodeSecurityScanConfiguration
 inspector2:UpdateConfiguration
+inspector2:UpdateConnector
+inspector2:UpdateConnectorScanConfiguration
 inspector2:UpdateEc2DeepInspectionConfiguration
 inspector2:UpdateEncryptionKey
 inspector2:UpdateFilter
@@ -11570,12 +11594,17 @@ lakeformation:UpdateTableStorageOptimizer
 lambda:AddLayerVersionPermission
 lambda:AddPermission
 lambda:CheckpointDurableExecution
+lambda:ConnectMicrovm
 lambda:CreateAlias
 lambda:CreateCapacityProvider
 lambda:CreateCodeSigningConfig
 lambda:CreateEventSourceMapping
 lambda:CreateFunction
 lambda:CreateFunctionUrlConfig
+lambda:CreateMicrovmAuthToken
+lambda:CreateMicrovmImage
+lambda:CreateMicrovmShellAuthToken
+lambda:CreateNetworkConnector
 lambda:DeleteAlias
 lambda:DeleteCapacityProvider
 lambda:DeleteCodeSigningConfig
@@ -11586,6 +11615,9 @@ lambda:DeleteFunctionConcurrency
 lambda:DeleteFunctionEventInvokeConfig
 lambda:DeleteFunctionUrlConfig
 lambda:DeleteLayerVersion
+lambda:DeleteMicrovmImage
+lambda:DeleteMicrovmImageVersion
+lambda:DeleteNetworkConnector
 lambda:DeleteProvisionedConcurrencyConfig
 lambda:DisableReplication
 lambda:EnableReplication
@@ -11607,6 +11639,11 @@ lambda:GetFunctionScalingConfig
 lambda:GetFunctionUrlConfig
 lambda:GetLayerVersion
 lambda:GetLayerVersionPolicy
+lambda:GetMicrovm
+lambda:GetMicrovmImage
+lambda:GetMicrovmImageBuild
+lambda:GetMicrovmImageVersion
+lambda:GetNetworkConnector
 lambda:GetPolicy
 lambda:GetProvisionedConcurrencyConfig
 lambda:GetRuntimeManagementConfig
@@ -11625,10 +11662,18 @@ lambda:ListFunctions
 lambda:ListFunctionsByCodeSigningConfig
 lambda:ListLayerVersions
 lambda:ListLayers
+lambda:ListManagedMicrovmImageVersions
+lambda:ListManagedMicrovmImages
+lambda:ListMicrovmImageBuilds
+lambda:ListMicrovmImageVersions
+lambda:ListMicrovmImages
+lambda:ListMicrovms
+lambda:ListNetworkConnectors
 lambda:ListProvisionedConcurrencyConfigs
 lambda:ListTags
 lambda:ListVersionsByFunction
 lambda:PassCapacityProvider
+lambda:PassNetworkConnector
 lambda:PublishLayerVersion
 lambda:PublishVersion
 lambda:PutFunctionCodeSigningConfig
@@ -11640,11 +11685,15 @@ lambda:PutProvisionedConcurrencyConfig
 lambda:PutRuntimeManagementConfig
 lambda:RemoveLayerVersionPermission
 lambda:RemovePermission
+lambda:ResumeMicrovm
+lambda:RunMicrovm
 lambda:SendDurableExecutionCallbackFailure
 lambda:SendDurableExecutionCallbackHeartbeat
 lambda:SendDurableExecutionCallbackSuccess
 lambda:StopDurableExecution
+lambda:SuspendMicrovm
 lambda:TagResource
+lambda:TerminateMicrovm
 lambda:UntagResource
 lambda:UpdateAlias
 lambda:UpdateCapacityProvider
@@ -11655,6 +11704,9 @@ lambda:UpdateFunctionCodeSigningConfig
 lambda:UpdateFunctionConfiguration
 lambda:UpdateFunctionEventInvokeConfig
 lambda:UpdateFunctionUrlConfig
+lambda:UpdateMicrovmImage
+lambda:UpdateMicrovmImageVersion
+lambda:UpdateNetworkConnector
 launchwizard:CreateAdditionalNode
 launchwizard:CreateDeployment
 launchwizard:CreateSettingsSet
@@ -12133,6 +12185,7 @@ logs:DeleteResourcePolicy
 logs:DeleteRetentionPolicy
 logs:DeleteScheduledQuery
 logs:DeleteSubscriptionFilter
+logs:DeleteSyslogConfiguration
 logs:DeleteTransformer
 logs:DescribeAccountPolicies
 logs:DescribeConfigurationTemplates
@@ -12186,6 +12239,7 @@ logs:ListLogGroupsForEntity
 logs:ListLogGroupsForQuery
 logs:ListScheduledQueries
 logs:ListSourcesForS3TableIntegration
+logs:ListSyslogConfigurations
 logs:ListTagsForResource
 logs:ListTagsLogGroup
 logs:ProcessWithPipeline
@@ -12207,6 +12261,7 @@ logs:PutQueryDefinition
 logs:PutResourcePolicy
 logs:PutRetentionPolicy
 logs:PutSubscriptionFilter
+logs:PutSyslogConfiguration
 logs:PutTransformer
 logs:StartLiveTail
 logs:StartQuery
@@ -17996,6 +18051,7 @@ securityhub:CreateAggregatorV2
 securityhub:CreateAutomationRule
 securityhub:CreateAutomationRuleV2
 securityhub:CreateConfigurationPolicy
+securityhub:CreateConnector
 securityhub:CreateConnectorV2
 securityhub:CreateFindingAggregator
 securityhub:CreateInsight
@@ -18006,6 +18062,7 @@ securityhub:DeleteActionTarget
 securityhub:DeleteAggregatorV2
 securityhub:DeleteAutomationRuleV2
 securityhub:DeleteConfigurationPolicy
+securityhub:DeleteConnector
 securityhub:DeleteConnectorV2
 securityhub:DeleteFindingAggregator
 securityhub:DeleteInsight
@@ -18022,6 +18079,7 @@ securityhub:DescribeStandardsControls
 securityhub:DisableImportFindingsForProduct
 securityhub:DisableOrganizationAdminAccount
 securityhub:DisableSecurityHub
+securityhub:DisableSecurityHubFeatureV2
 securityhub:DisableSecurityHubV2
 securityhub:DisassociateFromAdministratorAccount
 securityhub:DisassociateFromMasterAccount
@@ -18029,6 +18087,7 @@ securityhub:DisassociateMembers
 securityhub:EnableImportFindingsForProduct
 securityhub:EnableOrganizationAdminAccount
 securityhub:EnableSecurityHub
+securityhub:EnableSecurityHubFeatureV2
 securityhub:EnableSecurityHubV2
 securityhub:GenerateRecommendedPolicyV2
 securityhub:GetAdhocInsightResults
@@ -18037,6 +18096,7 @@ securityhub:GetAggregatorV2
 securityhub:GetAutomationRuleV2
 securityhub:GetConfigurationPolicy
 securityhub:GetConfigurationPolicyAssociation
+securityhub:GetConnector
 securityhub:GetConnectorV2
 securityhub:GetControlFindingSummary
 securityhub:GetEnabledStandards
@@ -18066,6 +18126,7 @@ securityhub:ListAutomationRules
 securityhub:ListAutomationRulesV2
 securityhub:ListConfigurationPolicies
 securityhub:ListConfigurationPolicyAssociations
+securityhub:ListConnectors
 securityhub:ListConnectorsV2
 securityhub:ListControlEvaluationSummaries
 securityhub:ListEnabledProductsForImport
@@ -18086,6 +18147,7 @@ securityhub:UpdateActionTarget
 securityhub:UpdateAggregatorV2
 securityhub:UpdateAutomationRuleV2
 securityhub:UpdateConfigurationPolicy
+securityhub:UpdateConnector
 securityhub:UpdateConnectorV2
 securityhub:UpdateFindingAggregator
 securityhub:UpdateFindings
@@ -19093,6 +19155,7 @@ ssm:CancelMaintenanceWindowExecution
 ssm:CreateActivation
 ssm:CreateAssociation
 ssm:CreateAssociationBatch
+ssm:CreateCloudConnector
 ssm:CreateDocument
 ssm:CreateMaintenanceWindow
 ssm:CreateOpsItem
@@ -19101,6 +19164,7 @@ ssm:CreatePatchBaseline
 ssm:CreateResourceDataSync
 ssm:DeleteActivation
 ssm:DeleteAssociation
+ssm:DeleteCloudConnector
 ssm:DeleteDocument
 ssm:DeleteInventory
 ssm:DeleteMaintenanceWindow
@@ -19155,6 +19219,7 @@ ssm:GetAccessToken
 ssm:GetAutomationExecution
 ssm:GetCalendar
 ssm:GetCalendarState
+ssm:GetCloudConnector
 ssm:GetCommandInvocation
 ssm:GetConnectionStatus
 ssm:GetDefaultPatchBaseline
@@ -19183,6 +19248,7 @@ ssm:GetServiceSetting
 ssm:LabelParameterVersion
 ssm:ListAssociationVersions
 ssm:ListAssociations
+ssm:ListCloudConnectors
 ssm:ListCommandInvocations
 ssm:ListCommands
 ssm:ListComplianceItems
@@ -19228,6 +19294,7 @@ ssm:TerminateSession
 ssm:UnlabelParameterVersion
 ssm:UpdateAssociation
 ssm:UpdateAssociationStatus
+ssm:UpdateCloudConnector
 ssm:UpdateDocument
 ssm:UpdateDocumentDefaultVersion
 ssm:UpdateDocumentMetadata
@@ -19242,6 +19309,7 @@ ssm:UpdateOpsMetadata
 ssm:UpdatePatchBaseline
 ssm:UpdateResourceDataSync
 ssm:UpdateServiceSetting
+ssm:ValidateCloudConnector
 ssmmessages:CreateControlChannel
 ssmmessages:CreateDataChannel
 ssmmessages:OpenControlChannel
@@ -20159,11 +20227,21 @@ ts:StartExecution
 ts:TagResource
 ts:UntagResource
 user-subscriptions:CreateClaim
+user-subscriptions:CreateClaimAddOn
+user-subscriptions:DeleteAutoTopUpRule
 user-subscriptions:DeleteClaim
+user-subscriptions:GetAutoTopUpRule
+user-subscriptions:GetEffectiveUsageLimit
+user-subscriptions:GetUsageLimitHistory
 user-subscriptions:ListApplicationClaims
+user-subscriptions:ListClaimAddOns
 user-subscriptions:ListClaims
+user-subscriptions:ListEntitlements
+user-subscriptions:ListUsageLimits
 user-subscriptions:ListUserSubscriptions
+user-subscriptions:SetAutoTopUpRule
 user-subscriptions:SetOverageConfig
+user-subscriptions:SetUsageLimit
 user-subscriptions:UpdateClaim
 uxc:DeleteAccountColor
 uxc:GetAccountColor
