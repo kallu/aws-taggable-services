@@ -24,6 +24,7 @@ appsync
 apptest
 aps
 arc-region-switch
+artifact
 athena
 auditmanager
 autoscaling

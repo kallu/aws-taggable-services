@@ -11,7 +11,6 @@ appmesh-preview
 appstudio
 arc-zonal-shift
 arsenal
-artifact
 autoscaling-plans
 aws-marketplace-management
 aws-portal
