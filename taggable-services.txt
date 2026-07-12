@@ -301,6 +301,7 @@ sso
 states
 storagegateway
 sts
+supportauthz
 swf
 synthetics
 tag
