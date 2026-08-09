@@ -7,6 +7,7 @@ acm-pca
 aco-automation
 action-recommendations
 activate
+agent-registry
 agentaccess-mcp
 aidevops
 aiops
@@ -60,6 +61,7 @@ bcm-recommended-actions
 bedrock
 bedrock-agentcore
 bedrock-mantle
+bedrock-websearch
 billing
 billingconductor
 braket

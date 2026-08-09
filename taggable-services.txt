@@ -3,6 +3,7 @@ access-analyzer
 acm
 acm-pca
 aco-automation
+agent-registry
 aidevops
 aiops
 airflow
