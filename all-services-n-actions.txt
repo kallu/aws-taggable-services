@@ -135,6 +135,17 @@ access-analyzer:UpdateAnalyzer
 access-analyzer:UpdateArchiveRule
 access-analyzer:UpdateFindings
 access-analyzer:ValidatePolicy
+account-access:CreateApplication
+account-access:CreateEntitlement
+account-access:DeleteApplication
+account-access:DeleteEntitlement
+account-access:GetApplication
+account-access:GetEntitlement
+account-access:ListApplications
+account-access:ListEntitlements
+account-access:ListTagsForResource
+account-access:TagResource
+account-access:UntagResource
 account:AcceptPrimaryEmailUpdate
 account:CloseAccount
 account:DeleteAlternateContact
@@ -197,6 +208,7 @@ acm:ListAcmeAccounts
 acm:ListAcmeDomainValidations
 acm:ListAcmeEndpoints
 acm:ListAcmeExternalAccountBindings
+acm:ListCertificateDomainValidations
 acm:ListCertificates
 acm:ListTagsForCertificate
 acm:ListTagsForResource
@@ -658,6 +670,7 @@ appconfig:CreateApplication
 appconfig:CreateConfigurationProfile
 appconfig:CreateDeploymentStrategy
 appconfig:CreateEnvironment
+appconfig:CreateExperimentDefinition
 appconfig:CreateExtension
 appconfig:CreateExtensionAssociation
 appconfig:CreateHostedConfigurationVersion
@@ -665,6 +678,7 @@ appconfig:DeleteApplication
 appconfig:DeleteConfigurationProfile
 appconfig:DeleteDeploymentStrategy
 appconfig:DeleteEnvironment
+appconfig:DeleteExperimentDefinition
 appconfig:DeleteExtension
 appconfig:DeleteExtensionAssociation
 appconfig:DeleteHostedConfigurationVersion
@@ -675,6 +689,8 @@ appconfig:GetConfigurationProfile
 appconfig:GetDeployment
 appconfig:GetDeploymentStrategy
 appconfig:GetEnvironment
+appconfig:GetExperimentDefinition
+appconfig:GetExperimentRun
 appconfig:GetExtension
 appconfig:GetExtensionAssociation
 appconfig:GetHostedConfigurationVersion
@@ -684,13 +700,18 @@ appconfig:ListConfigurationProfiles
 appconfig:ListDeploymentStrategies
 appconfig:ListDeployments
 appconfig:ListEnvironments
+appconfig:ListExperimentDefinitions
+appconfig:ListExperimentRunEvents
+appconfig:ListExperimentRuns
 appconfig:ListExtensionAssociations
 appconfig:ListExtensions
 appconfig:ListHostedConfigurationVersions
 appconfig:ListTagsForResource
 appconfig:StartConfigurationSession
 appconfig:StartDeployment
+appconfig:StartExperimentRun
 appconfig:StopDeployment
+appconfig:StopExperimentRun
 appconfig:TagResource
 appconfig:UntagResource
 appconfig:UpdateAccountSettings
@@ -698,6 +719,8 @@ appconfig:UpdateApplication
 appconfig:UpdateConfigurationProfile
 appconfig:UpdateDeploymentStrategy
 appconfig:UpdateEnvironment
+appconfig:UpdateExperimentDefinition
+appconfig:UpdateExperimentRun
 appconfig:UpdateExtension
 appconfig:UpdateExtensionAssociation
 appconfig:ValidateConfiguration
@@ -2330,6 +2353,8 @@ bedrock:BatchDeleteAdvancedPromptOptimizationJob
 bedrock:BatchDeleteEvaluationJob
 bedrock:CallWithBearerToken
 bedrock:CancelAutomatedReasoningPolicyBuildWorkflow
+bedrock:CancelInvoke
+bedrock:CheckIngestedDocumentAcl
 bedrock:CopyBlueprintStage
 bedrock:CountTokens
 bedrock:CreateAdvancedPromptOptimizationJob
@@ -2389,6 +2414,7 @@ bedrock:DeleteFoundationModelAgreement
 bedrock:DeleteGuardrail
 bedrock:DeleteImportedModel
 bedrock:DeleteInferenceProfile
+bedrock:DeleteInvoke
 bedrock:DeleteKnowledgeBase
 bedrock:DeleteKnowledgeBaseDocuments
 bedrock:DeleteMarketplaceModelAgreement
@@ -2446,8 +2472,10 @@ bedrock:GetFoundationModelAvailability
 bedrock:GetGuardrail
 bedrock:GetImportedModel
 bedrock:GetInferenceProfile
+bedrock:GetIngestedDocumentAcl
 bedrock:GetIngestionJob
 bedrock:GetInvocationStep
+bedrock:GetInvoke
 bedrock:GetKnowledgeBase
 bedrock:GetKnowledgeBaseDocuments
 bedrock:GetMarketplaceModelEndpoint
@@ -3258,6 +3286,7 @@ cleanrooms:DeleteMember
 cleanrooms:DeleteMembership
 cleanrooms:DeletePrivacyBudgetTemplate
 cleanrooms:DisallowIntermediateTable
+cleanrooms:GetAnalysisLogExport
 cleanrooms:GetAnalysisTemplate
 cleanrooms:GetCollaboration
 cleanrooms:GetCollaborationAnalysisTemplate
@@ -3280,6 +3309,7 @@ cleanrooms:GetProtectedJob
 cleanrooms:GetProtectedQuery
 cleanrooms:GetSchema
 cleanrooms:GetSchemaAnalysisRule
+cleanrooms:ListAnalysisLogExports
 cleanrooms:ListAnalysisTemplates
 cleanrooms:ListCollaborationAnalysisTemplates
 cleanrooms:ListCollaborationChangeRequests
@@ -3308,6 +3338,7 @@ cleanrooms:PassMembership
 cleanrooms:PopulateIdMappingTable
 cleanrooms:PopulateIntermediateTable
 cleanrooms:PreviewPrivacyImpact
+cleanrooms:StartAnalysisLogExport
 cleanrooms:StartProtectedJob
 cleanrooms:StartProtectedQuery
 cleanrooms:TagResource
@@ -4923,6 +4954,7 @@ connect:CreateHoursOfOperation
 connect:CreateHoursOfOperationOverride
 connect:CreateInstance
 connect:CreateIntegrationAssociation
+connect:CreateMetric
 connect:CreateNotification
 connect:CreateParticipant
 connect:CreatePersistentContactAssociation
@@ -4960,6 +4992,7 @@ connect:DeleteHoursOfOperation
 connect:DeleteHoursOfOperationOverride
 connect:DeleteInstance
 connect:DeleteIntegrationAssociation
+connect:DeleteMetric
 connect:DeleteNotification
 connect:DeletePredefinedAttribute
 connect:DeletePrompt
@@ -4998,6 +5031,7 @@ connect:DescribeHoursOfOperationOverride
 connect:DescribeInstance
 connect:DescribeInstanceAttribute
 connect:DescribeInstanceStorageConfig
+connect:DescribeMetric
 connect:DescribeNotification
 connect:DescribePhoneNumber
 connect:DescribePredefinedAttribute
@@ -5082,6 +5116,7 @@ connect:ListInstances
 connect:ListIntegrationAssociations
 connect:ListLambdaFunctions
 connect:ListLexBots
+connect:ListMetrics
 connect:ListNotifications
 connect:ListPhoneNumbers
 connect:ListPhoneNumbersV2
@@ -5134,6 +5169,7 @@ connect:SearchEmailAddresses
 connect:SearchEvaluationForms
 connect:SearchHoursOfOperationOverrides
 connect:SearchHoursOfOperations
+connect:SearchMetrics
 connect:SearchNotifications
 connect:SearchPredefinedAttributes
 connect:SearchPrompts
@@ -5205,6 +5241,8 @@ connect:UpdateHoursOfOperation
 connect:UpdateHoursOfOperationOverride
 connect:UpdateInstanceAttribute
 connect:UpdateInstanceStorageConfig
+connect:UpdateMetricContent
+connect:UpdateMetricMetadata
 connect:UpdateNotificationContent
 connect:UpdateParticipantAuthentication
 connect:UpdateParticipantRoleConfig
@@ -9966,6 +10004,7 @@ iam:GetAccountAuthorizationDetails
 iam:GetAccountEmailAddress
 iam:GetAccountName
 iam:GetAccountPasswordPolicy
+iam:GetAccountProperties
 iam:GetAccountSummary
 iam:GetCloudFrontPublicKey
 iam:GetContextKeysForCustomPolicy
@@ -9985,6 +10024,7 @@ iam:GetPolicy
 iam:GetPolicyVersion
 iam:GetRole
 iam:GetRolePolicy
+iam:GetRoleTemplateVersion
 iam:GetSAMLProvider
 iam:GetSSHPublicKey
 iam:GetServerCertificate
@@ -10032,6 +10072,7 @@ iam:ListUserTags
 iam:ListUsers
 iam:ListVirtualMFADevices
 iam:PassRole
+iam:PutAccountProperties
 iam:PutGroupPolicy
 iam:PutRolePermissionsBoundary
 iam:PutRolePolicy
@@ -14211,6 +14252,7 @@ observabilityadmin:UpdateTelemetryRuleForOrganization
 observabilityadmin:ValidateTelemetryPipelineConfiguration
 odb:AcceptMarketplaceRegistration
 odb:AssociateIamRoleToResource
+odb:AssociateVirtualMachinesToExadbVmCluster
 odb:CreateAutonomousDatabase
 odb:CreateAutonomousDatabaseBackup
 odb:CreateAutonomousDatabaseWallet
@@ -14218,6 +14260,8 @@ odb:CreateCloudAutonomousVmCluster
 odb:CreateCloudExadataInfrastructure
 odb:CreateCloudVmCluster
 odb:CreateDbNode
+odb:CreateExadbVmCluster
+odb:CreateExascaleDbStorageVault
 odb:CreateGrantShare
 odb:CreateOdbNetwork
 odb:CreateOdbPeeringConnection
@@ -14228,11 +14272,14 @@ odb:DeleteCloudAutonomousVmCluster
 odb:DeleteCloudExadataInfrastructure
 odb:DeleteCloudVmCluster
 odb:DeleteDbNode
+odb:DeleteExadbVmCluster
+odb:DeleteExascaleDbStorageVault
 odb:DeleteGrantShare
 odb:DeleteOdbNetwork
 odb:DeleteOdbPeeringConnection
 odb:DeleteResourcePolicy
 odb:DisassociateIamRoleFromResource
+odb:DisassociateVirtualMachinesFromExadbVmCluster
 odb:FailoverAutonomousDatabase
 odb:GetAutonomousDatabase
 odb:GetAutonomousDatabaseBackup
@@ -14243,6 +14290,8 @@ odb:GetCloudExadataInfrastructureUnallocatedResources
 odb:GetCloudVmCluster
 odb:GetDbNode
 odb:GetDbServer
+odb:GetExadbVmCluster
+odb:GetExascaleDbStorageVault
 odb:GetOciOnboardingStatus
 odb:GetOdbNetwork
 odb:GetOdbPeeringConnection
@@ -14261,7 +14310,10 @@ odb:ListCloudVmClusters
 odb:ListDbNodes
 odb:ListDbServers
 odb:ListDbSystemShapes
+odb:ListExadbVmClusters
+odb:ListExascaleDbStorageVaults
 odb:ListFlexComponents
+odb:ListGiMinorVersions
 odb:ListGiVersions
 odb:ListOdbNetworks
 odb:ListOdbPeeringConnections
@@ -14282,6 +14334,8 @@ odb:UntagResource
 odb:UpdateAutonomousDatabase
 odb:UpdateAutonomousDatabaseBackup
 odb:UpdateCloudExadataInfrastructure
+odb:UpdateExadbVmCluster
+odb:UpdateExascaleDbStorageVault
 odb:UpdateGrantShare
 odb:UpdateOdbNetwork
 odb:UpdateOdbPeeringConnection
@@ -15593,6 +15647,7 @@ quicksight:CreateActionConnector
 quicksight:CreateAdmin
 quicksight:CreateAgent
 quicksight:CreateAnalysis
+quicksight:CreateApprovalPolicy
 quicksight:CreateBrand
 quicksight:CreateCustomPermissions
 quicksight:CreateDashboard
@@ -15631,6 +15686,7 @@ quicksight:DeleteActionConnector
 quicksight:DeleteAgent
 quicksight:DeleteAnalysis
 quicksight:DeleteApp
+quicksight:DeleteApprovalPolicy
 quicksight:DeleteBrand
 quicksight:DeleteBrandAssignment
 quicksight:DeleteCustomPermissions
@@ -15679,6 +15735,7 @@ quicksight:DescribeAnalysis
 quicksight:DescribeAnalysisPermissions
 quicksight:DescribeApp
 quicksight:DescribeAppPermissions
+quicksight:DescribeApprovalPolicy
 quicksight:DescribeAssetBundleExportJob
 quicksight:DescribeAssetBundleImportJob
 quicksight:DescribeAutomationGroup
@@ -15754,10 +15811,10 @@ quicksight:GetSessionEmbedUrl
 quicksight:ListActionConnectors
 quicksight:ListAgents
 quicksight:ListAnalyses
+quicksight:ListApprovalPolicies
 quicksight:ListApps
 quicksight:ListAssetBundleExportJobs
 quicksight:ListAssetBundleImportJobs
-quicksight:ListAssignmentsForPrincipal
 quicksight:ListAutomationGroups
 quicksight:ListBrands
 quicksight:ListCustomPermissions
@@ -15784,7 +15841,6 @@ quicksight:ListKnowledgeBases
 quicksight:ListLimitsProfiles
 quicksight:ListNamespaces
 quicksight:ListOAuthClientApplications
-quicksight:ListProfileAssignments
 quicksight:ListRefreshSchedules
 quicksight:ListRoleMemberships
 quicksight:ListSelfUpgrades
@@ -15854,6 +15910,7 @@ quicksight:UpdateAnalysis
 quicksight:UpdateAnalysisPermissions
 quicksight:UpdateAppPermissions
 quicksight:UpdateApplicationWithTokenExchangeGrant
+quicksight:UpdateApprovalPolicy
 quicksight:UpdateAutomationGroupPermissions
 quicksight:UpdateBrand
 quicksight:UpdateBrandAssignment
