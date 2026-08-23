@@ -2371,6 +2371,7 @@ bedrock:CreateCustomModelDeployment
 bedrock:CreateDataAutomationLibrary
 bedrock:CreateDataAutomationProject
 bedrock:CreateDataSource
+bedrock:CreateDataSourceToken
 bedrock:CreateEvaluationJob
 bedrock:CreateFlow
 bedrock:CreateFlowAlias
@@ -2460,6 +2461,7 @@ bedrock:GetDataAutomationLibraryIngestionJob
 bedrock:GetDataAutomationProject
 bedrock:GetDataAutomationStatus
 bedrock:GetDataSource
+bedrock:GetDataSourceAuthorizationUrl
 bedrock:GetDocumentContent
 bedrock:GetEvaluationJob
 bedrock:GetExecutionFlowSnapshot
@@ -6356,10 +6358,13 @@ drs:AssociateFailbackClientToRecoveryInstanceForDrs
 drs:AssociateSourceNetworkStack
 drs:BatchCreateVolumeSnapshotGroupForDrs
 drs:BatchDeleteSnapshotRequestForDrs
+drs:CancelRecoveryPlanExecution
 drs:CreateConvertedSnapshotForDrs
 drs:CreateExtendedSourceServer
 drs:CreateLaunchConfigurationTemplate
 drs:CreateRecoveryInstanceForDrs
+drs:CreateRecoveryPlan
+drs:CreateRecoveryPlanStep
 drs:CreateReplicationConfigurationTemplate
 drs:CreateSourceNetwork
 drs:CreateSourceServerForDrs
@@ -6367,6 +6372,9 @@ drs:DeleteJob
 drs:DeleteLaunchAction
 drs:DeleteLaunchConfigurationTemplate
 drs:DeleteRecoveryInstance
+drs:DeleteRecoveryPlan
+drs:DeleteRecoveryPlanExecution
+drs:DeleteRecoveryPlanStep
 drs:DeleteReplicationConfigurationTemplate
 drs:DeleteSourceNetwork
 drs:DeleteSourceServer
@@ -6394,12 +6402,20 @@ drs:GetFailbackCommandForDrs
 drs:GetFailbackLaunchRequestedForDrs
 drs:GetFailbackReplicationConfiguration
 drs:GetLaunchConfiguration
+drs:GetRecoveryPlan
+drs:GetRecoveryPlanExecution
+drs:GetRecoveryPlanExecutionStep
+drs:GetRecoveryPlanStep
 drs:GetReplicationConfiguration
 drs:GetSuggestedFailbackClientDeviceMappingForDrs
 drs:InitializeService
 drs:IssueAgentCertificateForDrs
 drs:ListExtensibleSourceServers
 drs:ListLaunchActions
+drs:ListRecoveryPlanExecutionSteps
+drs:ListRecoveryPlanExecutions
+drs:ListRecoveryPlanSteps
+drs:ListRecoveryPlans
 drs:ListStagingAccounts
 drs:ListTagsForResource
 drs:NotifyAgentAuthenticationForDrs
@@ -6410,7 +6426,9 @@ drs:NotifyConsistencyAttainedForDrs
 drs:NotifyReplicationServerAuthenticationForDrs
 drs:NotifyVolumeEventForDrs
 drs:PutLaunchAction
+drs:ReorderRecoveryPlanSteps
 drs:RetryDataReplication
+drs:RetryRecoveryPlanExecutionStep
 drs:ReverseReplication
 drs:SendAgentLogsForDrs
 drs:SendAgentMetricsForDrs
@@ -6420,6 +6438,7 @@ drs:SendClientMetricsForDrs
 drs:SendVolumeStatsForDrs
 drs:StartFailbackLaunch
 drs:StartRecovery
+drs:StartRecoveryPlanExecution
 drs:StartReplication
 drs:StartSourceNetworkRecovery
 drs:StartSourceNetworkReplication
@@ -6439,6 +6458,9 @@ drs:UpdateFailbackClientLastSeenForDrs
 drs:UpdateFailbackReplicationConfiguration
 drs:UpdateLaunchConfiguration
 drs:UpdateLaunchConfigurationTemplate
+drs:UpdateRecoveryPlan
+drs:UpdateRecoveryPlanExecutionStep
+drs:UpdateRecoveryPlanStep
 drs:UpdateReplicationCertificateForDrs
 drs:UpdateReplicationConfiguration
 drs:UpdateReplicationConfigurationTemplate
@@ -6686,6 +6708,7 @@ ec2:AssignIpv6Addresses
 ec2:AssignPrivateIpAddresses
 ec2:AssignPrivateNatGatewayAddress
 ec2:AssociateAddress
+ec2:AssociateApplicationStatusCheck
 ec2:AssociateCapacityReservationBillingOwner
 ec2:AssociateClientVpnTargetNetwork
 ec2:AssociateDhcpOptions
@@ -6734,6 +6757,7 @@ ec2:CopyFpgaImage
 ec2:CopyImage
 ec2:CopySnapshot
 ec2:CopyVolumes
+ec2:CreateApplicationStatusCheck
 ec2:CreateCapacityManagerDataExport
 ec2:CreateCapacityReservation
 ec2:CreateCapacityReservationBySplitting
@@ -6821,6 +6845,7 @@ ec2:CreateTransitGatewayMeteringPolicyEntry
 ec2:CreateTransitGatewayMulticastDomain
 ec2:CreateTransitGatewayPeeringAttachment
 ec2:CreateTransitGatewayPolicyTable
+ec2:CreateTransitGatewayPolicyTableEntry
 ec2:CreateTransitGatewayPrefixListReference
 ec2:CreateTransitGatewayRoute
 ec2:CreateTransitGatewayRouteTable
@@ -6842,6 +6867,7 @@ ec2:CreateVpnConcentrator
 ec2:CreateVpnConnection
 ec2:CreateVpnConnectionRoute
 ec2:CreateVpnGateway
+ec2:DeleteApplicationStatusCheck
 ec2:DeleteCapacityManagerDataExport
 ec2:DeleteCarrierGateway
 ec2:DeleteClientVpnEndpoint
@@ -6918,6 +6944,7 @@ ec2:DeleteTransitGatewayMeteringPolicyEntry
 ec2:DeleteTransitGatewayMulticastDomain
 ec2:DeleteTransitGatewayPeeringAttachment
 ec2:DeleteTransitGatewayPolicyTable
+ec2:DeleteTransitGatewayPolicyTableEntry
 ec2:DeleteTransitGatewayPrefixListReference
 ec2:DeleteTransitGatewayRoute
 ec2:DeleteTransitGatewayRouteTable
@@ -6952,6 +6979,9 @@ ec2:DescribeAddressTransfers
 ec2:DescribeAddresses
 ec2:DescribeAddressesAttribute
 ec2:DescribeAggregateIdFormat
+ec2:DescribeApplicationStatus
+ec2:DescribeApplicationStatusCheckAssociations
+ec2:DescribeApplicationStatusChecks
 ec2:DescribeAvailabilityZones
 ec2:DescribeAwsNetworkPerformanceMetricSubscriptions
 ec2:DescribeBundleTasks
@@ -7147,6 +7177,7 @@ ec2:DetachVolume
 ec2:DetachVpnGateway
 ec2:DisableAddressTransfer
 ec2:DisableAllowedImagesSettings
+ec2:DisableApplicationStatusCheckSuppression
 ec2:DisableAwsNetworkPerformanceMetricSubscription
 ec2:DisableCapacityManager
 ec2:DisableEbsEncryptionByDefault
@@ -7167,6 +7198,7 @@ ec2:DisableVgwRoutePropagation
 ec2:DisableVpcClassicLink
 ec2:DisableVpcClassicLinkDnsSupport
 ec2:DisassociateAddress
+ec2:DisassociateApplicationStatusCheck
 ec2:DisassociateCapacityReservationBillingOwner
 ec2:DisassociateClientVpnTargetNetwork
 ec2:DisassociateEnclaveCertificateIamRole
@@ -7187,6 +7219,7 @@ ec2:DisassociateVerifiedAccessInstanceWebAcl
 ec2:DisassociateVpcCidrBlock
 ec2:EnableAddressTransfer
 ec2:EnableAllowedImagesSettings
+ec2:EnableApplicationStatusCheckSuppression
 ec2:EnableAwsNetworkPerformanceMetricSubscription
 ec2:EnableCapacityManager
 ec2:EnableEbsEncryptionByDefault
@@ -7299,6 +7332,7 @@ ec2:ListSnapshotsInRecycleBin
 ec2:ListVolumesInRecycleBin
 ec2:LockSnapshot
 ec2:ModifyAddressAttribute
+ec2:ModifyApplicationStatusCheck
 ec2:ModifyAvailabilityZoneGroup
 ec2:ModifyCapacityReservation
 ec2:ModifyCapacityReservationFleet
@@ -7352,6 +7386,7 @@ ec2:ModifyTrafficMirrorFilterRule
 ec2:ModifyTrafficMirrorSession
 ec2:ModifyTransitGateway
 ec2:ModifyTransitGatewayMeteringPolicy
+ec2:ModifyTransitGatewayPolicyTableEntry
 ec2:ModifyTransitGatewayPrefixListReference
 ec2:ModifyTransitGatewayVpcAttachment
 ec2:ModifyVerifiedAccessEndpoint
@@ -7369,6 +7404,7 @@ ec2:ModifyVpcBlockPublicAccessOptions
 ec2:ModifyVpcEncryptionControl
 ec2:ModifyVpcEndpoint
 ec2:ModifyVpcEndpointConnectionNotification
+ec2:ModifyVpcEndpointPayerResponsibility
 ec2:ModifyVpcEndpointServiceConfiguration
 ec2:ModifyVpcEndpointServicePayerResponsibility
 ec2:ModifyVpcEndpointServicePermissions
@@ -7638,6 +7674,7 @@ eks-mcp:CallPrivilegedTool
 eks-mcp:CallReadOnlyTool
 eks-mcp:InvokeMcp
 eks:AccessKubernetesApi
+eks:ActivateCertificateAuthority
 eks:AssociateAccessPolicy
 eks:AssociateEncryptionConfig
 eks:AssociateIdentityProviderConfig
@@ -7645,6 +7682,7 @@ eks:CancelUpdate
 eks:CreateAccessEntry
 eks:CreateAddon
 eks:CreateCapability
+eks:CreateCertificateAuthority
 eks:CreateCluster
 eks:CreateEksAnywhereSubscription
 eks:CreateFargateProfile
@@ -7653,6 +7691,7 @@ eks:CreatePodIdentityAssociation
 eks:DeleteAccessEntry
 eks:DeleteAddon
 eks:DeleteCapability
+eks:DeleteCertificateAuthority
 eks:DeleteCluster
 eks:DeleteEksAnywhereSubscription
 eks:DeleteFargateProfile
@@ -7664,6 +7703,7 @@ eks:DescribeAddon
 eks:DescribeAddonConfiguration
 eks:DescribeAddonVersions
 eks:DescribeCapability
+eks:DescribeCertificateAuthority
 eks:DescribeCluster
 eks:DescribeClusterVersions
 eks:DescribeEksAnywhereSubscription
@@ -7681,6 +7721,7 @@ eks:ListAccessPolicies
 eks:ListAddons
 eks:ListAssociatedAccessPolicies
 eks:ListCapabilities
+eks:ListCertificateAuthorities
 eks:ListClusters
 eks:ListDashboardData
 eks:ListDashboardResources
@@ -9899,6 +9940,8 @@ healthlake:StartFHIRImportJob
 healthlake:SubmitPreAuthClaim
 healthlake:TagResource
 healthlake:TransformData
+healthlake:TranslateConceptMapWithGet
+healthlake:TranslateConceptMapWithPost
 healthlake:UntagResource
 healthlake:UpdateDataTransformationProfile
 healthlake:UpdateFHIRDatastore
@@ -11880,6 +11923,7 @@ lambda:DeleteMicrovmImage
 lambda:DeleteMicrovmImageVersion
 lambda:DeleteNetworkConnector
 lambda:DeleteProvisionedConcurrencyConfig
+lambda:DeleteResourcePolicy
 lambda:DisableReplication
 lambda:EnableReplication
 lambda:GetAccountSettings
@@ -11907,6 +11951,7 @@ lambda:GetMicrovmImageVersion
 lambda:GetNetworkConnector
 lambda:GetPolicy
 lambda:GetProvisionedConcurrencyConfig
+lambda:GetResourcePolicy
 lambda:GetRuntimeManagementConfig
 lambda:InvokeAsync
 lambda:InvokeFunction
@@ -11943,6 +11988,7 @@ lambda:PutFunctionEventInvokeConfig
 lambda:PutFunctionRecursionConfig
 lambda:PutFunctionScalingConfig
 lambda:PutProvisionedConcurrencyConfig
+lambda:PutResourcePolicy
 lambda:PutRuntimeManagementConfig
 lambda:RemoveLayerVersionPermission
 lambda:RemovePermission
@@ -19656,6 +19702,7 @@ ssm:RegisterPatchBaselineForPatchGroup
 ssm:RegisterTargetWithMaintenanceWindow
 ssm:RegisterTaskWithMaintenanceWindow
 ssm:RemoveTagsFromResource
+ssm:RequestManagedInstanceRoleToken
 ssm:ResetServiceSetting
 ssm:ResumeSession
 ssm:SendAutomationSignal
@@ -19680,6 +19727,7 @@ ssm:UpdateInstanceInformation
 ssm:UpdateMaintenanceWindow
 ssm:UpdateMaintenanceWindowTarget
 ssm:UpdateMaintenanceWindowTask
+ssm:UpdateManagedInstancePublicKey
 ssm:UpdateManagedInstanceRole
 ssm:UpdateOpsItem
 ssm:UpdateOpsMetadata
@@ -21655,6 +21703,7 @@ workspaces:GetTroubleshootingRecommendation
 workspaces:ImportClientBranding
 workspaces:ImportCustomWorkspaceImage
 workspaces:ImportWorkspaceImage
+workspaces:InvokeOnboardingAgent
 workspaces:InvokeTroubleshootingInvestigation
 workspaces:ListAccountLinks
 workspaces:ListAvailableManagementCidrRanges
@@ -21671,6 +21720,7 @@ workspaces:ModifyWorkspaceAccessProperties
 workspaces:ModifyWorkspaceCreationProperties
 workspaces:ModifyWorkspaceProperties
 workspaces:ModifyWorkspaceState
+workspaces:Personalization
 workspaces:RebootWorkspaces
 workspaces:RebuildWorkspaces
 workspaces:RegisterWorkspaceDirectory
