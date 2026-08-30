@@ -263,14 +263,17 @@ agent-registry:CreateRegistry
 agent-registry:CreateRegistryRecord
 agent-registry:DeleteRegistry
 agent-registry:DeleteRegistryRecord
+agent-registry:DeleteResourcePolicy
 agent-registry:GetDiscoverableRegistryRecord
 agent-registry:GetRegistry
 agent-registry:GetRegistryRecord
+agent-registry:GetResourcePolicy
 agent-registry:InvokeRegistryMcp
 agent-registry:ListDiscoverableRegistryRecords
 agent-registry:ListRegistries
 agent-registry:ListRegistryRecords
 agent-registry:ListTagsForResource
+agent-registry:PutResourcePolicy
 agent-registry:SearchDiscoverableRegistryRecords
 agent-registry:SubmitRegistryRecordForApproval
 agent-registry:TagResource
@@ -1976,6 +1979,7 @@ batch:ListSchedulingPolicies
 batch:ListServiceJobs
 batch:ListTagsForResource
 batch:RegisterJobDefinition
+batch:SetCapacityTags
 batch:SubmitJob
 batch:SubmitServiceJob
 batch:TagResource
@@ -2308,6 +2312,7 @@ bedrock-mantle:AssociateCustomizedModel
 bedrock-mantle:CallWithBearerToken
 bedrock-mantle:CancelFineTuningJob
 bedrock-mantle:CancelInference
+bedrock-mantle:CountTokens
 bedrock-mantle:CreateCustomizedModel
 bedrock-mantle:CreateFile
 bedrock-mantle:CreateFineTuningJob
@@ -4109,6 +4114,7 @@ codecommit:DisassociateApprovalRuleTemplateFromRepository
 codecommit:EvaluatePullRequestApprovalRules
 codecommit:GetApprovalRuleTemplate
 codecommit:GetBlob
+codecommit:GetBlobDifferences
 codecommit:GetBranch
 codecommit:GetComment
 codecommit:GetCommentReactions
@@ -5383,6 +5389,8 @@ customer-verification:CreateCustomerVerificationDetails
 customer-verification:CreateUploadUrls
 customer-verification:GetCustomerVerificationDetails
 customer-verification:GetCustomerVerificationEligibility
+customer-verification:GetInheritanceConfig
+customer-verification:PutInheritanceConfig
 customer-verification:UpdateCustomerVerificationDetails
 databrew:BatchDeleteRecipeVersion
 databrew:CreateDataset
@@ -9926,6 +9934,7 @@ healthlake:ProcessBundle
 healthlake:PublishDataTransformationProfile
 healthlake:QuestionnairePackage
 healthlake:ReadResource
+healthlake:RestoreFHIRDatastore
 healthlake:RetrieveAttributionStatus
 healthlake:SearchEverything
 healthlake:SearchWithGet
@@ -13491,6 +13500,7 @@ mgn:ListNetworkMigrationDefinitions
 mgn:ListNetworkMigrationDeployedStacks
 mgn:ListNetworkMigrationDeployedStacksDeletions
 mgn:ListNetworkMigrationDeployments
+mgn:ListNetworkMigrationExecutionArtifacts
 mgn:ListNetworkMigrationExecutions
 mgn:ListNetworkMigrationMapperSegmentConstructs
 mgn:ListNetworkMigrationMapperSegments
@@ -15216,6 +15226,7 @@ private-networks:UntagResource
 private-networks:UpdateNetworkSite
 private-networks:UpdateNetworkSitePlan
 profile:AddProfileKey
+profile:AssociateStreamForSegments
 profile:BatchGetCalculatedAttributeForProfile
 profile:BatchGetProfile
 profile:CreateCalculatedAttributeDefinition
@@ -15248,8 +15259,10 @@ profile:DeleteRecommender
 profile:DeleteRecommenderFilter
 profile:DeleteRecommenderSchema
 profile:DeleteSegmentDefinition
+profile:DeleteSegmentSubscription
 profile:DeleteWorkflow
 profile:DetectProfileObjectType
+profile:DisassociateStreamForSegments
 profile:GetAutoMergingPreview
 profile:GetCalculatedAttributeDefinition
 profile:GetCalculatedAttributeForProfile
@@ -15274,8 +15287,10 @@ profile:GetSegmentDefinition
 profile:GetSegmentEstimate
 profile:GetSegmentMembership
 profile:GetSegmentSnapshot
+profile:GetSegmentSubscription
 profile:GetSimilarProfiles
 profile:GetSnapshot
+profile:GetStreamForSegments
 profile:GetUploadJob
 profile:GetUploadJobPath
 profile:GetWorkflow
@@ -15304,6 +15319,7 @@ profile:ListRecommenderSchemas
 profile:ListRecommenders
 profile:ListRuleBasedMatches
 profile:ListSegmentDefinitions
+profile:ListSegmentSubscriptionEvents
 profile:ListTagsForResource
 profile:ListUploadJobs
 profile:ListWorkflows
@@ -15312,6 +15328,7 @@ profile:PutDomainObjectType
 profile:PutIntegration
 profile:PutProfileObject
 profile:PutProfileObjectType
+profile:PutSegmentSubscription
 profile:SearchProfiles
 profile:StartRecommender
 profile:StartUploadJob
@@ -15784,8 +15801,6 @@ quicksight:DescribeAppPermissions
 quicksight:DescribeApprovalPolicy
 quicksight:DescribeAssetBundleExportJob
 quicksight:DescribeAssetBundleImportJob
-quicksight:DescribeAutomationGroup
-quicksight:DescribeAutomationGroupPermissions
 quicksight:DescribeAutomationJob
 quicksight:DescribeBrand
 quicksight:DescribeBrandAssignment
@@ -15861,8 +15876,8 @@ quicksight:ListApprovalPolicies
 quicksight:ListApps
 quicksight:ListAssetBundleExportJobs
 quicksight:ListAssetBundleImportJobs
-quicksight:ListAutomationGroups
 quicksight:ListBrands
+quicksight:ListCustomPermissionAssignments
 quicksight:ListCustomPermissions
 quicksight:ListCustomerManagedKeys
 quicksight:ListDashboardVersions
@@ -15921,7 +15936,6 @@ quicksight:SearchActionConnectors
 quicksight:SearchAgents
 quicksight:SearchAnalyses
 quicksight:SearchApps
-quicksight:SearchAutomationGroups
 quicksight:SearchDashboards
 quicksight:SearchDataSets
 quicksight:SearchDataSources
@@ -15957,7 +15971,6 @@ quicksight:UpdateAnalysisPermissions
 quicksight:UpdateAppPermissions
 quicksight:UpdateApplicationWithTokenExchangeGrant
 quicksight:UpdateApprovalPolicy
-quicksight:UpdateAutomationGroupPermissions
 quicksight:UpdateBrand
 quicksight:UpdateBrandAssignment
 quicksight:UpdateBrandPublishedVersion
@@ -17723,6 +17736,8 @@ sagemaker:BatchDescribeModelPackage
 sagemaker:BatchGetMetrics
 sagemaker:BatchGetRecord
 sagemaker:BatchPutMetrics
+sagemaker:BatchRebootClusterNodes
+sagemaker:BatchReplaceClusterNodes
 sagemaker:BatchWriteRecord
 sagemaker:CallMlflowAppApi
 sagemaker:CallPartnerAppApi
@@ -17943,6 +17958,7 @@ sagemaker:DescribeStudioLifecycleConfig
 sagemaker:DescribeSubscribedWorkteam
 sagemaker:DescribeTrainingJob
 sagemaker:DescribeTrainingPlan
+sagemaker:DescribeTrainingPlanExtensionHistory
 sagemaker:DescribeTransformJob
 sagemaker:DescribeTrial
 sagemaker:DescribeTrialComponent
@@ -17953,6 +17969,7 @@ sagemaker:DetachClusterNodeVolume
 sagemaker:DisableSagemakerServicecatalogPortfolio
 sagemaker:DisassociateTrialComponent
 sagemaker:EnableSagemakerServicecatalogPortfolio
+sagemaker:ExtendTrainingPlan
 sagemaker:GetDeployments
 sagemaker:GetDeviceFleetReport
 sagemaker:GetDeviceRegistration
@@ -20092,6 +20109,7 @@ support-console:GetQuestionnaire
 support-console:SaveFeedback
 support:AddAttachmentsToSet
 support:AddCommunicationToCase
+support:AddRelatedItemToCase
 support:CreateCase
 support:DescribeAttachment
 support:DescribeCaseAttributes
@@ -20101,6 +20119,7 @@ support:DescribeCommunication
 support:DescribeCommunications
 support:DescribeCreateCaseOptions
 support:DescribeIssueTypes
+support:DescribeRelatedItems
 support:DescribeServices
 support:DescribeSeverityLevels
 support:DescribeSupportLevel
@@ -20109,6 +20128,8 @@ support:DescribeTrustedAdvisorCheckRefreshStatuses
 support:DescribeTrustedAdvisorCheckResult
 support:DescribeTrustedAdvisorCheckSummaries
 support:DescribeTrustedAdvisorChecks
+support:DisconnectLiveContactForCase
+support:DownloadAttachment
 support:GetInteraction
 support:InitiateCallForCase
 support:InitiateChatForCase
@@ -20124,6 +20145,7 @@ support:SearchForCases
 support:StartInteraction
 support:UpdateCaseSeverity
 support:UpdateInteraction
+support:UploadAttachment
 supportapp:CreateSlackChannelConfiguration
 supportapp:DeleteAccountAlias
 supportapp:DeleteSlackChannelConfiguration
