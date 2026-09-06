@@ -4490,6 +4490,7 @@ cognito-idp:AddUserPoolClientSecret
 cognito-idp:AdminAddUserToGroup
 cognito-idp:AdminConfirmSignUp
 cognito-idp:AdminCreateUser
+cognito-idp:AdminDeleteSoftwareToken
 cognito-idp:AdminDeleteUser
 cognito-idp:AdminDeleteUserAttributes
 cognito-idp:AdminDisableProviderForUser
@@ -4958,6 +4959,7 @@ connect:CreateDataTable
 connect:CreateDataTableAttribute
 connect:CreateEmailAddress
 connect:CreateEvaluationForm
+connect:CreateExtractionDefinition
 connect:CreateHoursOfOperation
 connect:CreateHoursOfOperationOverride
 connect:CreateInstance
@@ -4996,6 +4998,7 @@ connect:DeleteDataTable
 connect:DeleteDataTableAttribute
 connect:DeleteEmailAddress
 connect:DeleteEvaluationForm
+connect:DeleteExtractionDefinition
 connect:DeleteHoursOfOperation
 connect:DeleteHoursOfOperationOverride
 connect:DeleteInstance
@@ -5033,6 +5036,7 @@ connect:DescribeDataTable
 connect:DescribeDataTableAttribute
 connect:DescribeEmailAddress
 connect:DescribeEvaluationForm
+connect:DescribeExtractionDefinition
 connect:DescribeForecastingPlanningSchedulingIntegration
 connect:DescribeHoursOfOperation
 connect:DescribeHoursOfOperationOverride
@@ -5079,6 +5083,7 @@ connect:EvaluateDataTableValues
 connect:GetAttachedFile
 connect:GetContactAttributes
 connect:GetContactMetrics
+connect:GetCrossRegionRouting
 connect:GetCurrentMetricData
 connect:GetCurrentUserData
 connect:GetEffectiveHoursOfOperations
@@ -5115,6 +5120,7 @@ connect:ListDefaultVocabularies
 connect:ListEntitySecurityProfiles
 connect:ListEvaluationFormVersions
 connect:ListEvaluationForms
+connect:ListExtractionDefinitions
 connect:ListFlowAssociations
 connect:ListHoursOfOperationOverrides
 connect:ListHoursOfOperations
@@ -5240,11 +5246,13 @@ connect:UpdateContactFlowModuleMetadata
 connect:UpdateContactFlowName
 connect:UpdateContactRoutingData
 connect:UpdateContactSchedule
+connect:UpdateCrossRegionRouting
 connect:UpdateDataTableAttribute
 connect:UpdateDataTableMetadata
 connect:UpdateDataTablePrimaryValues
 connect:UpdateEmailAddressMetadata
 connect:UpdateEvaluationForm
+connect:UpdateExtractionDefinition
 connect:UpdateHoursOfOperation
 connect:UpdateHoursOfOperationOverride
 connect:UpdateInstanceAttribute
@@ -6748,6 +6756,7 @@ ec2:AttachVpnGateway
 ec2:AuthorizeClientVpnIngress
 ec2:AuthorizeSecurityGroupEgress
 ec2:AuthorizeSecurityGroupIngress
+ec2:BatchModifyIpamRoutingPolicyRegistrations
 ec2:BundleInstance
 ec2:CancelBundleTask
 ec2:CancelCapacityReservation
@@ -6795,11 +6804,13 @@ ec2:CreateInternetGateway
 ec2:CreateInterruptibleCapacityReservationAllocation
 ec2:CreateIpam
 ec2:CreateIpamExternalResourceVerificationToken
+ec2:CreateIpamInternetRegistryAssociation
 ec2:CreateIpamPolicy
 ec2:CreateIpamPool
 ec2:CreateIpamPrefixListResolver
 ec2:CreateIpamPrefixListResolverTarget
 ec2:CreateIpamResourceDiscovery
+ec2:CreateIpamRoutingPolicyRegistration
 ec2:CreateIpamScope
 ec2:CreateKeyPair
 ec2:CreateLaunchTemplate
@@ -6895,11 +6906,13 @@ ec2:DeleteInstanceEventWindow
 ec2:DeleteInternetGateway
 ec2:DeleteIpam
 ec2:DeleteIpamExternalResourceVerificationToken
+ec2:DeleteIpamInternetRegistryAssociation
 ec2:DeleteIpamPolicy
 ec2:DeleteIpamPool
 ec2:DeleteIpamPrefixListResolver
 ec2:DeleteIpamPrefixListResolverTarget
 ec2:DeleteIpamResourceDiscovery
+ec2:DeleteIpamRoutingPolicyRegistration
 ec2:DeleteIpamScope
 ec2:DeleteKeyPair
 ec2:DeleteLaunchTemplate
@@ -6983,6 +6996,7 @@ ec2:DeregisterInstanceEventNotificationAttributes
 ec2:DeregisterTransitGatewayMulticastGroupMembers
 ec2:DeregisterTransitGatewayMulticastGroupSources
 ec2:DescribeAccountAttributes
+ec2:DescribeAccountVpcEncryptionControl
 ec2:DescribeAddressTransfers
 ec2:DescribeAddresses
 ec2:DescribeAddressesAttribute
@@ -7058,6 +7072,7 @@ ec2:DescribeInstances
 ec2:DescribeInternetGateways
 ec2:DescribeIpamByoasn
 ec2:DescribeIpamExternalResourceVerificationTokens
+ec2:DescribeIpamInternetRegistryAssociations
 ec2:DescribeIpamPolicies
 ec2:DescribeIpamPoolAllocations
 ec2:DescribeIpamPools
@@ -7238,6 +7253,7 @@ ec2:EnableImageBlockPublicAccess
 ec2:EnableImageDeprecation
 ec2:EnableImageDeregistrationProtection
 ec2:EnableInstanceSqlHaStandbyDetections
+ec2:EnableIpamInternetRegistryAssociation
 ec2:EnableIpamOrganizationAdminAccount
 ec2:EnableIpamPolicy
 ec2:EnableReachabilityAnalyzerOrganizationSharing
@@ -7285,6 +7301,9 @@ ec2:GetIpamAddressHistory
 ec2:GetIpamDiscoveredAccounts
 ec2:GetIpamDiscoveredPublicAddresses
 ec2:GetIpamDiscoveredResourceCidrs
+ec2:GetIpamDiscoveredRoutes
+ec2:GetIpamInternetRegistryAssociationAsns
+ec2:GetIpamInternetRegistryAssociationCidrs
 ec2:GetIpamPolicyAllocationRules
 ec2:GetIpamPolicyOrganizationTargets
 ec2:GetIpamPoolAllocations
@@ -7293,6 +7312,10 @@ ec2:GetIpamPrefixListResolverRules
 ec2:GetIpamPrefixListResolverVersionEntries
 ec2:GetIpamPrefixListResolverVersions
 ec2:GetIpamResourceCidrs
+ec2:GetIpamRouteOriginAuthorizations
+ec2:GetIpamRouteProtectionFindings
+ec2:GetIpamRoutingPolicyRegistrationDeltas
+ec2:GetIpamRoutingPolicyRegistrations
 ec2:GetLaunchTemplateData
 ec2:GetManagedPrefixListAssociations
 ec2:GetManagedPrefixListEntries
@@ -7339,6 +7362,7 @@ ec2:ListImagesInRecycleBin
 ec2:ListSnapshotsInRecycleBin
 ec2:ListVolumesInRecycleBin
 ec2:LockSnapshot
+ec2:ModifyAccountVpcEncryptionControl
 ec2:ModifyAddressAttribute
 ec2:ModifyApplicationStatusCheck
 ec2:ModifyAvailabilityZoneGroup
@@ -7373,6 +7397,7 @@ ec2:ModifyIpamPrefixListResolver
 ec2:ModifyIpamPrefixListResolverTarget
 ec2:ModifyIpamResourceCidr
 ec2:ModifyIpamResourceDiscovery
+ec2:ModifyIpamRoutingPolicyRegistration
 ec2:ModifyIpamScope
 ec2:ModifyLaunchTemplate
 ec2:ModifyLocalGatewayRoute
@@ -8496,6 +8521,7 @@ evs:DeleteEnvironment
 evs:DeleteEnvironmentConnector
 evs:DeleteEnvironmentHost
 evs:DisassociateEipFromVlan
+evs:GetAccountSettings
 evs:GetDepotUrl
 evs:GetEnvironment
 evs:GetVersions
@@ -8505,6 +8531,7 @@ evs:ListEnvironmentVlans
 evs:ListEnvironments
 evs:ListTagsForResource
 evs:ListVmEntitlements
+evs:PutAccountSettings
 evs:TagResource
 evs:UntagResource
 evs:UpdateEnvironmentConnector
@@ -9744,6 +9771,8 @@ groundtruthlabeling:UpdateBatch
 guardduty:AcceptAdministratorInvitation
 guardduty:AcceptInvitation
 guardduty:ArchiveFindings
+guardduty:CreateCustomDetectionRuleAssociation
+guardduty:CreateCustomDetectionRuleOrgConfiguration
 guardduty:CreateDetector
 guardduty:CreateFilter
 guardduty:CreateIPSet
@@ -9756,6 +9785,8 @@ guardduty:CreateThreatEntitySet
 guardduty:CreateThreatIntelSet
 guardduty:CreateTrustedEntitySet
 guardduty:DeclineInvitations
+guardduty:DeleteCustomDetectionRuleAssociation
+guardduty:DeleteCustomDetectionRuleOrgConfiguration
 guardduty:DeleteDetector
 guardduty:DeleteFilter
 guardduty:DeleteIPSet
@@ -9776,6 +9807,9 @@ guardduty:DisassociateMembers
 guardduty:EnableOrganizationAdminAccount
 guardduty:GetAdministratorAccount
 guardduty:GetCoverageStatistics
+guardduty:GetCustomDetectionRule
+guardduty:GetCustomDetectionRuleAssociation
+guardduty:GetCustomDetectionRuleOrgConfiguration
 guardduty:GetDetector
 guardduty:GetFilter
 guardduty:GetFindings
@@ -9797,6 +9831,9 @@ guardduty:GetTrustedEntitySet
 guardduty:GetUsageStatistics
 guardduty:InviteMembers
 guardduty:ListCoverage
+guardduty:ListCustomDetectionRuleAssociations
+guardduty:ListCustomDetectionRuleOrgConfigurations
+guardduty:ListCustomDetectionRules
 guardduty:ListDetectors
 guardduty:ListFilters
 guardduty:ListFindings
@@ -9820,6 +9857,8 @@ guardduty:StopMonitoringMembers
 guardduty:TagResource
 guardduty:UnarchiveFindings
 guardduty:UntagResource
+guardduty:UpdateCustomDetectionRuleAssociation
+guardduty:UpdateCustomDetectionRuleOrgConfiguration
 guardduty:UpdateDetector
 guardduty:UpdateFilter
 guardduty:UpdateFindingsFeedback
@@ -11668,12 +11707,16 @@ kendra:UpdateQuerySuggestionsBlockList
 kendra:UpdateQuerySuggestionsConfig
 kendra:UpdateThesaurus
 kinesis:AddTagsToStream
+kinesis:AssociateStreamsWithChannel
+kinesis:CreateChannel
 kinesis:CreateStream
 kinesis:DecreaseStreamRetentionPeriod
+kinesis:DeleteChannel
 kinesis:DeleteResourcePolicy
 kinesis:DeleteStream
 kinesis:DeregisterStreamConsumer
 kinesis:DescribeAccountSettings
+kinesis:DescribeChannel
 kinesis:DescribeLimits
 kinesis:DescribeStream
 kinesis:DescribeStreamConsumer
@@ -11685,6 +11728,7 @@ kinesis:GetResourcePolicy
 kinesis:GetShardIterator
 kinesis:IncreaseStreamRetentionPeriod
 kinesis:InjectApiError
+kinesis:ListChannels
 kinesis:ListShards
 kinesis:ListStreamConsumers
 kinesis:ListStreams
@@ -11703,6 +11747,7 @@ kinesis:SubscribeToShard
 kinesis:TagResource
 kinesis:UntagResource
 kinesis:UpdateAccountSettings
+kinesis:UpdateChannel
 kinesis:UpdateMaxRecordSize
 kinesis:UpdateShardCount
 kinesis:UpdateStreamMode
@@ -14955,6 +15000,7 @@ payment-cryptography:EnableDefaultKeyReplicationRegions
 payment-cryptography:EncryptData
 payment-cryptography:ExportKey
 payment-cryptography:GenerateAs2805KekValidation
+payment-cryptography:GenerateAuthRequestCryptogram
 payment-cryptography:GenerateCardValidationData
 payment-cryptography:GenerateMac
 payment-cryptography:GenerateMacEmvPinChange
@@ -15718,6 +15764,7 @@ quicksight:CreateDataSet
 quicksight:CreateDataSource
 quicksight:CreateDlpSetting
 quicksight:CreateEmailCustomizationTemplate
+quicksight:CreateExtension
 quicksight:CreateExtensionAccess
 quicksight:CreateFlow
 quicksight:CreateFolder
@@ -15760,6 +15807,7 @@ quicksight:DeleteDataSource
 quicksight:DeleteDefaultQBusinessApplication
 quicksight:DeleteDlpSetting
 quicksight:DeleteEmailCustomizationTemplate
+quicksight:DeleteExtension
 quicksight:DeleteExtensionAccess
 quicksight:DeleteFlow
 quicksight:DeleteFolder
@@ -15821,7 +15869,9 @@ quicksight:DescribeDefaultQBusinessApplication
 quicksight:DescribeDlpJob
 quicksight:DescribeDlpSetting
 quicksight:DescribeEmailCustomizationTemplate
+quicksight:DescribeExtension
 quicksight:DescribeExtensionAccess
+quicksight:DescribeExtensionPermissions
 quicksight:DescribeFlow
 quicksight:DescribeFolder
 quicksight:DescribeFolderPermissions
@@ -15887,6 +15937,7 @@ quicksight:ListDataSources
 quicksight:ListDlpLabels
 quicksight:ListDlpSettings
 quicksight:ListExtensionAccesses
+quicksight:ListExtensions
 quicksight:ListFlows
 quicksight:ListFolderMembers
 quicksight:ListFolders
@@ -15954,6 +16005,7 @@ quicksight:StartAutomationJob
 quicksight:StartDashboardSnapshotJob
 quicksight:StartDashboardSnapshotJobSchedule
 quicksight:StartDlpJob
+quicksight:StartExtensionInstallation
 quicksight:Subscribe
 quicksight:TagResource
 quicksight:UnpublishFlow
@@ -15988,7 +16040,9 @@ quicksight:UpdateDataSourcePermissions
 quicksight:UpdateDefaultQBusinessApplication
 quicksight:UpdateDlpSetting
 quicksight:UpdateEmailCustomizationTemplate
+quicksight:UpdateExtension
 quicksight:UpdateExtensionAccess
+quicksight:UpdateExtensionPermissions
 quicksight:UpdateFlow
 quicksight:UpdateFlowPermissions
 quicksight:UpdateFolder
