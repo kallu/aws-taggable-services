@@ -203,6 +203,7 @@ mpa
 mq
 neptune-graph
 network-firewall
+network-security-manager
 networkflowmonitor
 networkmanager
 networkmonitor
