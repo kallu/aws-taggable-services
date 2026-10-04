@@ -101,6 +101,7 @@ ssm-guiconnect
 ssmmessages
 sso-directory
 sso-oauth
+startups
 support
 support-console
 supportapp
