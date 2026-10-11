@@ -116,6 +116,7 @@ elemental-inference
 elemental-support-cases
 emr-containers
 emr-serverless
+end-user-messaging
 entityresolution
 es
 events
