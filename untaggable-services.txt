@@ -29,6 +29,7 @@ comprehendmedical
 compute-optimizer
 consoleapp
 consolidatedbilling
+continuum
 controlcatalog
 cost-optimization-hub
 customer-verification

@@ -27,6 +27,7 @@ apptest
 aps
 arc-region-switch
 artifact
+assurance
 athena
 auditmanager
 autoscaling
