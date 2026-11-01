@@ -340,6 +340,7 @@ aidevops:GetAssetContent
 aidevops:GetAssetFile
 aidevops:GetAssociation
 aidevops:GetBacklogTask
+aidevops:GetCatalogCapability
 aidevops:GetKnowledgeItem
 aidevops:GetOperatorApp
 aidevops:GetRecommendation
@@ -354,6 +355,9 @@ aidevops:ListAssetVersions
 aidevops:ListAssets
 aidevops:ListAssociations
 aidevops:ListBacklogTasks
+aidevops:ListCatalogCapabilities
+aidevops:ListCatalogCapabilityFiles
+aidevops:ListCatalogCapabilityTypes
 aidevops:ListChats
 aidevops:ListExecutions
 aidevops:ListGoals
@@ -370,6 +374,7 @@ aidevops:ListWebhooks
 aidevops:RegisterService
 aidevops:RevokeAccessToken
 aidevops:RotateAccessToken
+aidevops:SearchAssets
 aidevops:SearchServiceAccessibleResource
 aidevops:SendMessage
 aidevops:TagResource
@@ -435,6 +440,7 @@ airflow-serverless:StopWorkflowRun
 airflow-serverless:TagResource
 airflow-serverless:UntagResource
 airflow-serverless:UpdateWorkflow
+airflow:AccessAirflowResource
 airflow:CreateCliToken
 airflow:CreateEnvironment
 airflow:CreateWebLoginToken
@@ -4107,6 +4113,7 @@ cloudwatch:GetOTelEnrichment
 cloudwatch:GetOmniDashboard
 cloudwatch:GetOmniThread
 cloudwatch:GetPreferences
+cloudwatch:GetProfileRecords
 cloudwatch:GetRecords
 cloudwatch:GetResourceMetricsConfiguration
 cloudwatch:GetService
@@ -4158,6 +4165,7 @@ cloudwatch:PutMetricAlarm
 cloudwatch:PutMetricData
 cloudwatch:PutMetricStream
 cloudwatch:PutPipelineRule
+cloudwatch:PutProfileRecords
 cloudwatch:PutRecords
 cloudwatch:QueryTraces
 cloudwatch:SearchPrincipals
@@ -4669,28 +4677,6 @@ codestar-notifications:TagResource
 codestar-notifications:Unsubscribe
 codestar-notifications:UntagResource
 codestar-notifications:UpdateNotificationRule
-codestar:AssociateTeamMember
-codestar:CreateProject
-codestar:CreateUserProfile
-codestar:DeleteExtendedAccess
-codestar:DeleteProject
-codestar:DeleteUserProfile
-codestar:DescribeProject
-codestar:DescribeUserProfile
-codestar:DisassociateTeamMember
-codestar:GetExtendedAccess
-codestar:ListProjects
-codestar:ListResources
-codestar:ListTagsForProject
-codestar:ListTeamMembers
-codestar:ListUserProfiles
-codestar:PutExtendedAccess
-codestar:TagProject
-codestar:UntagProject
-codestar:UpdateProject
-codestar:UpdateTeamMember
-codestar:UpdateUserProfile
-codestar:VerifyServiceRole
 codewhisperer:AllowVendedLogDeliveryForResource
 codewhisperer:AssociateCustomizationPermission
 codewhisperer:CreateCustomization
@@ -4706,6 +4692,7 @@ codewhisperer:ListCustomizations
 codewhisperer:ListProfiles
 codewhisperer:ListTagsForResource
 codewhisperer:TagResource
+codewhisperer:TestOtelConnection
 codewhisperer:UntagResource
 codewhisperer:UpdateCustomization
 codewhisperer:UpdateProfile
@@ -4799,6 +4786,7 @@ cognito-idp:DescribeManagedLoginBrandingByClient
 cognito-idp:DescribeResourceServer
 cognito-idp:DescribeRiskConfiguration
 cognito-idp:DescribeTerms
+cognito-idp:DescribeTermsByClient
 cognito-idp:DescribeUserImportJob
 cognito-idp:DescribeUserPool
 cognito-idp:DescribeUserPoolClient
@@ -4807,6 +4795,7 @@ cognito-idp:DisassociateWebACL
 cognito-idp:ForgetDevice
 cognito-idp:ForgotPassword
 cognito-idp:GetCSVHeader
+cognito-idp:GetClientToken
 cognito-idp:GetDevice
 cognito-idp:GetGroup
 cognito-idp:GetIdentityProviderByIdentifier
@@ -7897,6 +7886,7 @@ ecr:DescribeImageSigningStatus
 ecr:DescribeImages
 ecr:DescribePullThroughCacheRules
 ecr:DescribeRegistry
+ecr:DescribeReplicationBackfillResults
 ecr:DescribeRepositories
 ecr:DescribeRepositoryCreationTemplates
 ecr:GetAccountSetting
@@ -7912,6 +7902,7 @@ ecr:GetSigningConfiguration
 ecr:InitiateLayerUpload
 ecr:ListImages
 ecr:ListPullTimeUpdateExclusions
+ecr:ListReplicationBackfills
 ecr:ListTagsForResource
 ecr:PutAccountSetting
 ecr:PutImage
@@ -7924,9 +7915,12 @@ ecr:PutReplicationConfiguration
 ecr:PutSigningConfiguration
 ecr:RegisterPullTimeUpdateExclusion
 ecr:ReplicateImage
+ecr:ReplicateImageDelete
 ecr:SetRepositoryPolicy
 ecr:StartImageScan
 ecr:StartLifecyclePolicyPreview
+ecr:StartReplicationBackfill
+ecr:StopReplicationBackfill
 ecr:TagResource
 ecr:UntagResource
 ecr:UpdateImageStorageClass
@@ -8483,9 +8477,11 @@ elemental-appliances-software:UpdateQuote
 elemental-inference:AssociateFeed
 elemental-inference:CreateDictionary
 elemental-inference:CreateFeed
+elemental-inference:CreateScheduleAction
 elemental-inference:DeleteDictionary
 elemental-inference:DeleteFeed
 elemental-inference:DeleteFeedPolicy
+elemental-inference:DeleteScheduleAction
 elemental-inference:DisassociateFeed
 elemental-inference:ExportDictionaryEntries
 elemental-inference:GetDictionary
@@ -8494,6 +8490,7 @@ elemental-inference:GetFeedPolicy
 elemental-inference:GetMetadata
 elemental-inference:ListDictionaries
 elemental-inference:ListFeeds
+elemental-inference:ListScheduleActions
 elemental-inference:ListTagsForResource
 elemental-inference:PutFeedPolicy
 elemental-inference:PutMedia
@@ -8640,6 +8637,7 @@ es:AcceptInboundConnection
 es:AcceptInboundCrossClusterSearchConnection
 es:AddDataSource
 es:AddDirectQueryDataSource
+es:AddReplicationPeer
 es:AddTags
 es:AssociatePackage
 es:AssociatePackages
@@ -8648,6 +8646,7 @@ es:AuthorizeVpcEndpointAccess
 es:CancelDomainConfigChange
 es:CancelElasticsearchServiceSoftwareUpdate
 es:CancelServiceSoftwareUpdate
+es:CompareDomainConfiguration
 es:CreateApplication
 es:CreateDomain
 es:CreateElasticsearchDomain
@@ -8679,6 +8678,7 @@ es:DescribeDomainChangeProgress
 es:DescribeDomainConfig
 es:DescribeDomainHealth
 es:DescribeDomainNodes
+es:DescribeDomainReplication
 es:DescribeDomains
 es:DescribeDryRunProgress
 es:DescribeElasticsearchDomain
@@ -8707,6 +8707,7 @@ es:ESHttpHead
 es:ESHttpPatch
 es:ESHttpPost
 es:ESHttpPut
+es:FailoverReplication
 es:GetApplication
 es:GetCapability
 es:GetCompatibleElasticsearchVersions
@@ -8747,6 +8748,7 @@ es:PutDefaultApplicationSetting
 es:RegisterCapability
 es:RejectInboundConnection
 es:RejectInboundCrossClusterSearchConnection
+es:RemoveReplicationPeer
 es:RemoveTags
 es:RevokeVpcEndpointAccess
 es:RollbackElasticsearchServiceSoftwareUpdate
@@ -8755,6 +8757,7 @@ es:StartDomainMaintenance
 es:StartElasticsearchServiceSoftwareUpdate
 es:StartMigration
 es:StartServiceSoftwareUpdate
+es:SwitchoverReplication
 es:UpdateApplication
 es:UpdateDataSource
 es:UpdateDirectQueryDataSource
@@ -10729,6 +10732,7 @@ inspector2:GetEc2DeepInspectionConfiguration
 inspector2:GetEncryptionKey
 inspector2:GetFindingsReportStatus
 inspector2:GetMember
+inspector2:GetOnDemandScanStatus
 inspector2:GetSbomExport
 inspector2:ListAccountPermissions
 inspector2:ListCisScanConfigurations
@@ -10747,6 +10751,7 @@ inspector2:ListFilters
 inspector2:ListFindingAggregations
 inspector2:ListFindings
 inspector2:ListMembers
+inspector2:ListOnDemandScans
 inspector2:ListTagsForResource
 inspector2:ListUsageTotals
 inspector2:ResetEncryptionKey
@@ -10755,6 +10760,7 @@ inspector2:SendCisSessionHealth
 inspector2:SendCisSessionTelemetry
 inspector2:StartCisSession
 inspector2:StartCodeSecurityScan
+inspector2:StartOnDemandScan
 inspector2:StopCisSession
 inspector2:TagResource
 inspector2:UntagResource
@@ -11741,6 +11747,7 @@ ivs:BatchStartViewerSessionRevocation
 ivs:CreateAdConfiguration
 ivs:CreateChannel
 ivs:CreateEncoderConfiguration
+ivs:CreateFailoverSlateConfiguration
 ivs:CreateIngestConfiguration
 ivs:CreateParticipantToken
 ivs:CreatePlaybackRestrictionPolicy
@@ -11751,6 +11758,7 @@ ivs:CreateStreamKey
 ivs:DeleteAdConfiguration
 ivs:DeleteChannel
 ivs:DeleteEncoderConfiguration
+ivs:DeleteFailoverSlateConfiguration
 ivs:DeleteIngestConfiguration
 ivs:DeletePlaybackKeyPair
 ivs:DeletePlaybackRestrictionPolicy
@@ -11764,6 +11772,7 @@ ivs:GetAdConfiguration
 ivs:GetChannel
 ivs:GetComposition
 ivs:GetEncoderConfiguration
+ivs:GetFailoverSlateConfiguration
 ivs:GetIngestConfiguration
 ivs:GetParticipant
 ivs:GetPlaybackKeyPair
@@ -11783,6 +11792,7 @@ ivs:ListAdConfigurations
 ivs:ListChannels
 ivs:ListCompositions
 ivs:ListEncoderConfigurations
+ivs:ListFailoverSlateConfigurations
 ivs:ListIngestConfigurations
 ivs:ListParticipantEvents
 ivs:ListParticipantReplicas
@@ -11810,6 +11820,7 @@ ivs:TagResource
 ivs:UntagResource
 ivs:UpdateAdConfiguration
 ivs:UpdateChannel
+ivs:UpdateFailoverSlateConfiguration
 ivs:UpdateIngestConfiguration
 ivs:UpdatePlaybackRestrictionPolicy
 ivs:UpdateStage
@@ -11928,6 +11939,9 @@ kafkaconnect:ListConnectors
 kafkaconnect:ListCustomPlugins
 kafkaconnect:ListTagsForResource
 kafkaconnect:ListWorkerConfigurations
+kafkaconnect:PauseConnector
+kafkaconnect:RestartConnector
+kafkaconnect:ResumeConnector
 kafkaconnect:TagResource
 kafkaconnect:UntagResource
 kafkaconnect:UpdateConnector
@@ -13315,6 +13329,7 @@ mediaconnect:AddFlowOutputs
 mediaconnect:AddFlowSources
 mediaconnect:AddFlowVpcInterfaces
 mediaconnect:AssociateRouterNetworkInterface
+mediaconnect:ConnectEndpoints
 mediaconnect:CreateBridge
 mediaconnect:CreateFlow
 mediaconnect:CreateGateway
@@ -13324,10 +13339,13 @@ mediaconnect:CreateRouterOutput
 mediaconnect:DeleteBridge
 mediaconnect:DeleteFlow
 mediaconnect:DeleteGateway
+mediaconnect:DeleteResourcePolicy
 mediaconnect:DeleteRouterInput
 mediaconnect:DeleteRouterNetworkInterface
 mediaconnect:DeleteRouterOutput
+mediaconnect:DeregisterDestinationEndpoint
 mediaconnect:DeregisterGatewayInstance
+mediaconnect:DeregisterSourceEndpoint
 mediaconnect:DescribeBridge
 mediaconnect:DescribeFlow
 mediaconnect:DescribeFlowSourceMetadata
@@ -13336,14 +13354,19 @@ mediaconnect:DescribeGateway
 mediaconnect:DescribeGatewayInstance
 mediaconnect:DescribeOffering
 mediaconnect:DescribeReservation
+mediaconnect:DisconnectEndpoints
 mediaconnect:DiscoverGatewayPollEndpoint
+mediaconnect:GetDestinationEndpoint
+mediaconnect:GetResourcePolicy
 mediaconnect:GetRouterInput
 mediaconnect:GetRouterInputSourceMetadata
 mediaconnect:GetRouterInputThumbnail
 mediaconnect:GetRouterNetworkInterface
 mediaconnect:GetRouterOutput
+mediaconnect:GetSourceEndpoint
 mediaconnect:GrantFlowEntitlements
 mediaconnect:ListBridges
+mediaconnect:ListDestinationEndpoints
 mediaconnect:ListEntitlements
 mediaconnect:ListFlows
 mediaconnect:ListGatewayInstances
@@ -13353,9 +13376,13 @@ mediaconnect:ListReservations
 mediaconnect:ListRouterInputs
 mediaconnect:ListRouterNetworkInterfaces
 mediaconnect:ListRouterOutputs
+mediaconnect:ListSourceEndpoints
 mediaconnect:ListTagsForResource
 mediaconnect:PollGateway
 mediaconnect:PurchaseOffering
+mediaconnect:PutResourcePolicy
+mediaconnect:RegisterDestinationEndpoint
+mediaconnect:RegisterSourceEndpoint
 mediaconnect:RemoveBridgeOutput
 mediaconnect:RemoveBridgeSource
 mediaconnect:RemoveFlowMediaStream
@@ -13379,6 +13406,7 @@ mediaconnect:UpdateBridge
 mediaconnect:UpdateBridgeOutput
 mediaconnect:UpdateBridgeSource
 mediaconnect:UpdateBridgeState
+mediaconnect:UpdateDestinationEndpoint
 mediaconnect:UpdateFlow
 mediaconnect:UpdateFlowEntitlement
 mediaconnect:UpdateFlowMediaStream
@@ -13388,6 +13416,7 @@ mediaconnect:UpdateGatewayInstance
 mediaconnect:UpdateRouterInput
 mediaconnect:UpdateRouterNetworkInterface
 mediaconnect:UpdateRouterOutput
+mediaconnect:UpdateSourceEndpoint
 mediaconvert:AssociateCertificate
 mediaconvert:CancelJob
 mediaconvert:CreateJob
@@ -14825,6 +14854,7 @@ odb:UpdateAutonomousDatabase
 odb:UpdateAutonomousDatabaseBackup
 odb:UpdateCloudExadataInfrastructure
 odb:UpdateExadbVmCluster
+odb:UpdateExascaleCloudExadataInfrastructure
 odb:UpdateExascaleDbStorageVault
 odb:UpdateGrantShare
 odb:UpdateOdbNetwork
@@ -15352,6 +15382,7 @@ partnercentral:RecallBenefitApplication
 partnercentral:RejectChannelHandshake
 partnercentral:RejectConnectionInvitation
 partnercentral:RejectEngagementInvitation
+partnercentral:SearchOpportunities
 partnercentral:SearchPartnerCentralContent
 partnercentral:SearchPartnerProfiles
 partnercentral:SendEmailVerificationCode
@@ -22284,6 +22315,7 @@ workspaces:UpdateWorkspaceImagePermission
 workspaces:UpdateWorkspacesPool
 xray:BatchGetTraceSummaryById
 xray:BatchGetTraces
+xray:CallWithBearerToken
 xray:CancelTraceRetrieval
 xray:CreateGroup
 xray:CreateSamplingRule
