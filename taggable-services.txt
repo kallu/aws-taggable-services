@@ -229,6 +229,7 @@ pcs
 personalize
 pi
 pipes
+polly
 private-networks
 profile
 proton

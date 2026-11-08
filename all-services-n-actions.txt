@@ -287,6 +287,7 @@ agent-registry:UpdateRegistryRecord
 agent-registry:UpdateRegistryRecordStatus
 agentaccess-mcp:CallForwardedTool
 agentaccess-mcp:CheckConnectionStatus
+agentaccess-mcp:CloseSession
 agentaccess-mcp:DoubleClick
 agentaccess-mcp:GetScreenshot
 agentaccess-mcp:GetSessionInfo
@@ -341,6 +342,7 @@ aidevops:GetAssetFile
 aidevops:GetAssociation
 aidevops:GetBacklogTask
 aidevops:GetCatalogCapability
+aidevops:GetChat
 aidevops:GetKnowledgeItem
 aidevops:GetOperatorApp
 aidevops:GetRecommendation
@@ -385,6 +387,7 @@ aidevops:UpdateAsset
 aidevops:UpdateAssetFile
 aidevops:UpdateAssociation
 aidevops:UpdateBacklogTask
+aidevops:UpdateChat
 aidevops:UpdateGoal
 aidevops:UpdateKnowledgeItem
 aidevops:UpdateOperatorAppIdpConfig
@@ -1385,7 +1388,6 @@ assurance:DeletePermissionSet
 assurance:DeleteProject
 assurance:DeregisterOrganizationDelegatedAdmin
 assurance:DisableFramework
-assurance:DownloadEvidence
 assurance:EnableFramework
 assurance:GetAnnotation
 assurance:GetAssessment
@@ -1403,6 +1405,7 @@ assurance:GetFramework
 assurance:GetInvitation
 assurance:GetPermissionSet
 assurance:GetProject
+assurance:GetResourceActivitiesQueryResults
 assurance:GetTask
 assurance:ListAssessmentAnnotations
 assurance:ListAssessmentJournalRecords
@@ -1426,7 +1429,6 @@ assurance:ListOutboundInvitations
 assurance:ListPermissionSetAssignments
 assurance:ListPermissionSets
 assurance:ListProjects
-assurance:ListResourcesForControl
 assurance:ListTagsForResource
 assurance:ListTaskHistory
 assurance:ListTasks
@@ -1438,7 +1440,7 @@ assurance:RejectInvitation
 assurance:RevokePermissionSet
 assurance:StartAssessment
 assurance:StartAssessmentReportExport
-assurance:StartResourceDiscovery
+assurance:StartResourceActivitiesQuery
 assurance:TagResource
 assurance:UntagResource
 assurance:UpdateAnnotation
@@ -1452,8 +1454,6 @@ assurance:UpdateFramework
 assurance:UpdatePermissionSet
 assurance:UpdateProject
 assurance:UpdateTask
-assurance:UploadEvidence
-assurance:VendConnectionAccessToken
 athena:BatchGetNamedQuery
 athena:BatchGetPreparedStatement
 athena:BatchGetQueryExecution
@@ -1465,12 +1465,14 @@ athena:CreateNamedQuery
 athena:CreateNotebook
 athena:CreatePreparedStatement
 athena:CreatePresignedNotebookUrl
+athena:CreateSystemTableConfiguration
 athena:CreateWorkGroup
 athena:DeleteCapacityReservation
 athena:DeleteDataCatalog
 athena:DeleteNamedQuery
 athena:DeleteNotebook
 athena:DeletePreparedStatement
+athena:DeleteSystemTableConfiguration
 athena:DeleteWorkGroup
 athena:ExportNotebook
 athena:GetCalculationExecution
@@ -1497,6 +1499,7 @@ athena:GetResourceDashboard
 athena:GetSession
 athena:GetSessionEndpoint
 athena:GetSessionStatus
+athena:GetSystemTableConfiguration
 athena:GetTable
 athena:GetTableMetadata
 athena:GetTables
@@ -1515,6 +1518,7 @@ athena:ListNotebookSessions
 athena:ListPreparedStatements
 athena:ListQueryExecutions
 athena:ListSessions
+athena:ListSystemTableStatuses
 athena:ListTableMetadata
 athena:ListTagsForResource
 athena:ListWorkGroups
@@ -1534,6 +1538,7 @@ athena:UpdateNamedQuery
 athena:UpdateNotebook
 athena:UpdateNotebookMetadata
 athena:UpdatePreparedStatement
+athena:UpdateSystemTableConfiguration
 athena:UpdateWorkGroup
 auditmanager:AssociateAssessmentReportEvidenceFolder
 auditmanager:BatchAssociateAssessmentReportEvidence
@@ -2340,6 +2345,7 @@ bedrock-agentcore:InvokeCodeInterpreter
 bedrock-agentcore:InvokeGateway
 bedrock-agentcore:InvokeHarness
 bedrock-agentcore:InvokeRegistryMcp
+bedrock-agentcore:InvokeWebAnswer
 bedrock-agentcore:InvokeWebSearch
 bedrock-agentcore:ListABTests
 bedrock-agentcore:ListActors
@@ -4083,6 +4089,7 @@ cloudwatch:DescribeAlarms
 cloudwatch:DescribeAlarmsForMetric
 cloudwatch:DescribeAnomalyDetectors
 cloudwatch:DescribeInsightRules
+cloudwatch:DetectGroupOutliers
 cloudwatch:DisableAlarmActions
 cloudwatch:DisableInsightRules
 cloudwatch:EnableAlarmActions
@@ -5501,6 +5508,7 @@ connect:UpdateInstanceStorageConfig
 connect:UpdateMetricContent
 connect:UpdateMetricMetadata
 connect:UpdateNotificationContent
+connect:UpdateOutboundEmailContactMessage
 connect:UpdateParticipantAuthentication
 connect:UpdateParticipantRoleConfig
 connect:UpdatePhoneNumber
@@ -5886,6 +5894,7 @@ datazone:CreateGlossaryTerm
 datazone:CreateGroupProfile
 datazone:CreateListingChangeSet
 datazone:CreateNotebook
+datazone:CreateNotificationPreference
 datazone:CreateProject
 datazone:CreateProjectMembership
 datazone:CreateProjectProfile
@@ -5893,6 +5902,7 @@ datazone:CreateRule
 datazone:CreateSubscriptionGrant
 datazone:CreateSubscriptionRequest
 datazone:CreateSubscriptionTarget
+datazone:CreateUIConfiguration
 datazone:CreateUserProfile
 datazone:DeleteAccountPool
 datazone:DeleteAgentApprovalPolicy
@@ -5922,6 +5932,7 @@ datazone:DeleteGlossaryTerm
 datazone:DeleteLineageEvent
 datazone:DeleteListing
 datazone:DeleteNotebook
+datazone:DeleteNotificationPreference
 datazone:DeleteProject
 datazone:DeleteProjectMembership
 datazone:DeleteProjectProfile
@@ -5930,6 +5941,7 @@ datazone:DeleteSubscriptionGrant
 datazone:DeleteSubscriptionRequest
 datazone:DeleteSubscriptionTarget
 datazone:DeleteTimeSeriesDataPoints
+datazone:DeleteUIConfiguration
 datazone:DeregisterAgentArtifact
 datazone:DisassociateEnvironmentRole
 datazone:DisassociateGovernedTerms
@@ -5956,6 +5968,7 @@ datazone:GetDomain
 datazone:GetDomainExecutionRoleCredentials
 datazone:GetDomainSharingPolicy
 datazone:GetDomainUnit
+datazone:GetEffectiveUICustomization
 datazone:GetEnvironment
 datazone:GetEnvironmentAction
 datazone:GetEnvironmentActionLink
@@ -5977,6 +5990,7 @@ datazone:GetNotebook
 datazone:GetNotebookCompute
 datazone:GetNotebookExport
 datazone:GetNotebookRun
+datazone:GetNotificationPreference
 datazone:GetProject
 datazone:GetProjectProfile
 datazone:GetRule
@@ -5985,7 +5999,9 @@ datazone:GetSubscriptionEligibility
 datazone:GetSubscriptionGrant
 datazone:GetSubscriptionRequestDetails
 datazone:GetSubscriptionTarget
+datazone:GetSystemTableExportConfiguration
 datazone:GetTimeSeriesDataPoint
+datazone:GetUIConfiguration
 datazone:GetUpdateEligibility
 datazone:GetUserProfile
 datazone:InvokeAgent
@@ -6004,6 +6020,7 @@ datazone:ListDataProductRevisions
 datazone:ListDataSourceRunActivities
 datazone:ListDataSourceRuns
 datazone:ListDataSources
+datazone:ListDeployableEnvironmentBlueprints
 datazone:ListDesignations
 datazone:ListDomainUnitsForParent
 datazone:ListDomains
@@ -6035,6 +6052,7 @@ datazone:ListSubscriptionTargets
 datazone:ListSubscriptions
 datazone:ListTagsForResource
 datazone:ListTimeSeriesDataPoints
+datazone:ListUIConfigurations
 datazone:ListWarehouseMetadata
 datazone:PostLineageEvent
 datazone:PostTimeSeriesDataPoints
@@ -6044,6 +6062,7 @@ datazone:PutCellRunResult
 datazone:PutDataExportConfiguration
 datazone:PutDomainSharingPolicy
 datazone:PutEnvironmentBlueprintConfiguration
+datazone:PutSystemTableExportConfiguration
 datazone:QueryGraph
 datazone:RefreshToken
 datazone:RegisterAgentArtifact
@@ -6080,6 +6099,7 @@ datazone:TagResource
 datazone:UntagResource
 datazone:UpdateAccountPool
 datazone:UpdateAssetFilter
+datazone:UpdateAssetOwner
 datazone:UpdateCell
 datazone:UpdateCellRun
 datazone:UpdateConnection
@@ -6100,12 +6120,14 @@ datazone:UpdateGlossary
 datazone:UpdateGlossaryTerm
 datazone:UpdateGroupProfile
 datazone:UpdateNotebook
+datazone:UpdateNotificationPreference
 datazone:UpdateProject
 datazone:UpdateProjectProfile
 datazone:UpdateRule
 datazone:UpdateSubscriptionGrantStatus
 datazone:UpdateSubscriptionRequest
 datazone:UpdateSubscriptionTarget
+datazone:UpdateUIConfiguration
 datazone:UpdateUserProfile
 datazone:ValidatePassRole
 datazone:ValidatePolicy
@@ -6922,6 +6944,8 @@ dsql:UpdateStream
 dynamodb:AssociateTableReplica
 dynamodb:BatchGetItem
 dynamodb:BatchWriteItem
+dynamodb:BulkPutItems
+dynamodb:CancelBulkOperation
 dynamodb:ConditionCheckItem
 dynamodb:CreateBackup
 dynamodb:CreateGlobalTable
@@ -6935,6 +6959,7 @@ dynamodb:DeleteResourcePolicy
 dynamodb:DeleteTable
 dynamodb:DeleteTableReplica
 dynamodb:DescribeBackup
+dynamodb:DescribeBulkOperation
 dynamodb:DescribeContinuousBackups
 dynamodb:DescribeContributorInsights
 dynamodb:DescribeEndpoints
@@ -6962,6 +6987,7 @@ dynamodb:GetShardIterator
 dynamodb:ImportTable
 dynamodb:InjectError
 dynamodb:ListBackups
+dynamodb:ListBulkOperations
 dynamodb:ListContributorInsights
 dynamodb:ListExports
 dynamodb:ListGlobalTables
@@ -6985,6 +7011,7 @@ dynamodb:RestoreTableToPointInTime
 dynamodb:Scan
 dynamodb:SearchVectors
 dynamodb:StartAwsBackupJob
+dynamodb:StartBulkOperation
 dynamodb:TagResource
 dynamodb:UntagResource
 dynamodb:UpdateAbacStatus
@@ -10209,6 +10236,7 @@ guardduty:UpdateThreatEntitySet
 guardduty:UpdateThreatIntelSet
 guardduty:UpdateTrustedEntitySet
 health-agent:ActivateSubscription
+health-agent:BatchRefillPatientPharmacyPrescriptions
 health-agent:CancelAppointment
 health-agent:CreateAgent
 health-agent:CreateDomain
@@ -10238,6 +10266,7 @@ health-agent:ListIntegrations
 health-agent:ListPatientAppointments
 health-agent:ListPatientInsuranceCoverages
 health-agent:ListPatientMedications
+health-agent:ListPatientPharmacyPrescriptions
 health-agent:ListProviders
 health-agent:ListSessionRecords
 health-agent:ListSubscriptions
@@ -13847,6 +13876,7 @@ mgn:CreateApplication
 mgn:CreateConnector
 mgn:CreateLaunchConfigurationTemplate
 mgn:CreateNetworkMigrationDefinition
+mgn:CreateRemoteSourceAction
 mgn:CreateReplicationConfigurationTemplate
 mgn:CreateVcenterClientForMgn
 mgn:CreateWave
@@ -13855,6 +13885,7 @@ mgn:DeleteConnector
 mgn:DeleteJob
 mgn:DeleteLaunchConfigurationTemplate
 mgn:DeleteNetworkMigrationDefinition
+mgn:DeleteRemoteSourceAction
 mgn:DeleteReplicationConfigurationTemplate
 mgn:DeleteSourceServer
 mgn:DeleteVcenterClient
@@ -13880,6 +13911,7 @@ mgn:GetAgentRuntimeConfigurationForMgn
 mgn:GetAgentSnapshotCreditsForMgn
 mgn:GetChannelCommandsForMgn
 mgn:GetLaunchConfiguration
+mgn:GetLaunchConfigurationDefaults
 mgn:GetNetworkMigrationDefinition
 mgn:GetNetworkMigrationMapperSegmentConstruct
 mgn:GetReplicationConfiguration
@@ -13904,10 +13936,15 @@ mgn:ListNetworkMigrationDeployedStacksDeletions
 mgn:ListNetworkMigrationDeployments
 mgn:ListNetworkMigrationExecutionArtifacts
 mgn:ListNetworkMigrationExecutions
+mgn:ListNetworkMigrationInsights
 mgn:ListNetworkMigrationMapperSegmentConstructs
 mgn:ListNetworkMigrationMapperSegments
 mgn:ListNetworkMigrationMappingUpdates
 mgn:ListNetworkMigrationMappings
+mgn:ListRemoteSourceActionInvocationResults
+mgn:ListRemoteSourceActionInvocations
+mgn:ListRemoteSourceActionJobs
+mgn:ListRemoteSourceActions
 mgn:ListSourceServerActions
 mgn:ListTagsForResource
 mgn:ListTemplateActions
@@ -13944,6 +13981,7 @@ mgn:StartNetworkMigrationDeployedStacksDeletion
 mgn:StartNetworkMigrationDeployment
 mgn:StartNetworkMigrationMapping
 mgn:StartNetworkMigrationMappingUpdate
+mgn:StartRemoteSourceActionJob
 mgn:StartReplication
 mgn:StartSnapshotGroupForMgn
 mgn:StartTest
@@ -13962,10 +14000,12 @@ mgn:UpdateAgentSourcePropertiesForMgn
 mgn:UpdateApplication
 mgn:UpdateConnector
 mgn:UpdateLaunchConfiguration
+mgn:UpdateLaunchConfigurationDefaults
 mgn:UpdateLaunchConfigurationTemplate
 mgn:UpdateNetworkMigrationDefinition
 mgn:UpdateNetworkMigrationMapperSegment
 mgn:UpdateNetworkMigrationMapperSegmentConstruct
+mgn:UpdateRemoteSourceAction
 mgn:UpdateReplicationConfiguration
 mgn:UpdateReplicationConfigurationTemplate
 mgn:UpdateSourceServer
@@ -15278,14 +15318,18 @@ partnercentral:AmendBenefitApplication
 partnercentral:AssignOpportunity
 partnercentral:AssociateAwsTrainingCertificationEmailDomain
 partnercentral:AssociateBenefitApplicationResource
+partnercentral:AssociateBusinessPlan
 partnercentral:AssociateOpportunity
 partnercentral:CancelBenefitApplication
+partnercentral:CancelBusinessPlan
+partnercentral:CancelBusinessPlanSubmissionTask
 partnercentral:CancelChannelHandshake
 partnercentral:CancelConnection
 partnercentral:CancelConnectionInvitation
 partnercentral:CancelProfileUpdateTask
 partnercentral:CreateBenefitApplication
 partnercentral:CreateBusinessPlan
+partnercentral:CreateBusinessPlanItem
 partnercentral:CreateChannelHandshake
 partnercentral:CreateCollaborationChannelMembers
 partnercentral:CreateCollaborationChannelRequest
@@ -15302,11 +15346,14 @@ partnercentral:CreateRelationship
 partnercentral:CreateResourceSnapshot
 partnercentral:CreateResourceSnapshotJob
 partnercentral:CreateRevenueAttribution
+partnercentral:DeleteBusinessPlanAttachment
+partnercentral:DeleteBusinessPlanItem
 partnercentral:DeleteProgramManagementAccount
 partnercentral:DeleteRelationship
 partnercentral:DeleteResourceSnapshotJob
 partnercentral:DisassociateAwsTrainingCertificationEmailDomain
 partnercentral:DisassociateBenefitApplicationResource
+partnercentral:DisassociateBusinessPlan
 partnercentral:DisassociateOpportunity
 partnercentral:EnrollInPartnerPath
 partnercentral:GetAllianceLeadContact
@@ -15315,6 +15362,12 @@ partnercentral:GetBenefit
 partnercentral:GetBenefitAllocation
 partnercentral:GetBenefitApplication
 partnercentral:GetBusinessPlan
+partnercentral:GetBusinessPlanAttachment
+partnercentral:GetBusinessPlanAttachmentImportTask
+partnercentral:GetBusinessPlanItem
+partnercentral:GetBusinessPlanItemSchema
+partnercentral:GetBusinessPlanSettings
+partnercentral:GetBusinessPlanSubmissionTask
 partnercentral:GetCollaborationChannel
 partnercentral:GetConnection
 partnercentral:GetConnectionInvitation
@@ -15329,6 +15382,7 @@ partnercentral:GetPartnerCentralContentDocument
 partnercentral:GetPartnerCentralContentMetadata
 partnercentral:GetPartnerDashboard
 partnercentral:GetPartnerProfile
+partnercentral:GetPartnerReportingData
 partnercentral:GetProfileUpdateTask
 partnercentral:GetProfileVisibility
 partnercentral:GetProgramManagementAccount
@@ -15347,6 +15401,12 @@ partnercentral:GetVerification
 partnercentral:ListBenefitAllocations
 partnercentral:ListBenefitApplications
 partnercentral:ListBenefits
+partnercentral:ListBusinessPlanAssociations
+partnercentral:ListBusinessPlanAttachmentImportTasks
+partnercentral:ListBusinessPlanAttachments
+partnercentral:ListBusinessPlanHistory
+partnercentral:ListBusinessPlanItems
+partnercentral:ListBusinessPlanSubmissionTasks
 partnercentral:ListBusinessPlans
 partnercentral:ListChannelHandshakes
 partnercentral:ListCollaborationChannels
@@ -15376,6 +15436,7 @@ partnercentral:ListSolutions
 partnercentral:ListTagsForResource
 partnercentral:PutAllianceLeadContact
 partnercentral:PutBusinessPlan
+partnercentral:PutBusinessPlanSettings
 partnercentral:PutProfileVisibility
 partnercentral:PutSellingSystemSettings
 partnercentral:RecallBenefitApplication
@@ -15386,6 +15447,8 @@ partnercentral:SearchOpportunities
 partnercentral:SearchPartnerCentralContent
 partnercentral:SearchPartnerProfiles
 partnercentral:SendEmailVerificationCode
+partnercentral:StartBusinessPlanAttachmentImportTask
+partnercentral:StartBusinessPlanSubmissionTask
 partnercentral:StartEngagementByAcceptingInvitationTask
 partnercentral:StartEngagementFromOpportunityTask
 partnercentral:StartOpportunityFromEngagementTask
@@ -15402,6 +15465,8 @@ partnercentral:SubmitOpportunity
 partnercentral:TagResource
 partnercentral:UntagResource
 partnercentral:UpdateBenefitApplication
+partnercentral:UpdateBusinessPlan
+partnercentral:UpdateBusinessPlanItem
 partnercentral:UpdateConnectionPreferences
 partnercentral:UpdateEngagementContext
 partnercentral:UpdateMarketplaceRevenueShareAllocation
@@ -15458,15 +15523,19 @@ payment-cryptography:VerifyCardValidationData
 payment-cryptography:VerifyMac
 payment-cryptography:VerifyPinData
 payments:AcceptFinancingApplicationTerms
+payments:CreateConnectedAccount
 payments:CreateFinancingApplication
 payments:CreatePaymentInstrument
+payments:DeleteConnectedAccount
 payments:DeletePaymentInstrument
+payments:GetConnectedAccount
 payments:GetFinancingApplication
 payments:GetFinancingLine
 payments:GetFinancingLineWithdrawal
 payments:GetFinancingOption
 payments:GetPaymentInstrument
 payments:GetPaymentStatus
+payments:ListConnectedAccounts
 payments:ListFinancingApplications
 payments:ListFinancingLineWithdrawals
 payments:ListFinancingLines
@@ -15651,10 +15720,13 @@ polly:GetLexicon
 polly:GetSpeechSynthesisTask
 polly:ListLexicons
 polly:ListSpeechSynthesisTasks
+polly:ListTagsForResource
 polly:PutLexicon
 polly:StartSpeechSynthesisStream
 polly:StartSpeechSynthesisTask
 polly:SynthesizeSpeech
+polly:TagResource
+polly:UntagResource
 pricing:DescribeServices
 pricing:GetAttributeValues
 pricing:GetPriceListFileUrl
@@ -16167,6 +16239,7 @@ qldb:UpdateLedger
 qldb:UpdateLedgerPermissionsMode
 quicksight:AccountConfigurations
 quicksight:AllowVendedLogDeliveryForResource
+quicksight:AuthorizeOAuthAccess
 quicksight:BatchCreateTopicReviewedAnswer
 quicksight:BatchDeleteKnowledgeBase
 quicksight:BatchDeleteTopicReviewedAnswer
@@ -16174,6 +16247,8 @@ quicksight:BatchDescribeUserLimits
 quicksight:BatchGetPreferences
 quicksight:BatchUpdatePreferences
 quicksight:CancelIngestion
+quicksight:CreateAccessControlApplication
+quicksight:CreateAccessControlApplicationSecret
 quicksight:CreateAccountCustomization
 quicksight:CreateAccountSubscription
 quicksight:CreateActionConnector
@@ -16196,11 +16271,13 @@ quicksight:CreateFolderMembership
 quicksight:CreateGroup
 quicksight:CreateGroupMembership
 quicksight:CreateIAMPolicyAssignment
+quicksight:CreateInboundConnector
 quicksight:CreateIngestion
 quicksight:CreateKnowledgeBase
 quicksight:CreateLimitsProfile
 quicksight:CreateNamespace
 quicksight:CreateOAuthClientApplication
+quicksight:CreateOAuthToken
 quicksight:CreateReader
 quicksight:CreateRefreshSchedule
 quicksight:CreateRoleMembership
@@ -16213,6 +16290,8 @@ quicksight:CreateTopic
 quicksight:CreateTopicRefreshSchedule
 quicksight:CreateUser
 quicksight:CreateVPCConnection
+quicksight:DeleteAccessControlApplication
+quicksight:DeleteAccessControlApplicationSecret
 quicksight:DeleteAccountCustomPermission
 quicksight:DeleteAccountCustomization
 quicksight:DeleteAccountSubscription
@@ -16240,6 +16319,7 @@ quicksight:DeleteGroup
 quicksight:DeleteGroupMembership
 quicksight:DeleteIAMPolicyAssignment
 quicksight:DeleteIdentityPropagationConfig
+quicksight:DeleteInboundConnector
 quicksight:DeleteKnowledgeBase
 quicksight:DeleteLimitsProfile
 quicksight:DeleteNamespace
@@ -16258,6 +16338,7 @@ quicksight:DeleteUser
 quicksight:DeleteUserByPrincipalId
 quicksight:DeleteUserCustomPermission
 quicksight:DeleteVPCConnection
+quicksight:DescribeAccessControlApplication
 quicksight:DescribeAccountCustomPermission
 quicksight:DescribeAccountCustomization
 quicksight:DescribeAccountSettings
@@ -16303,6 +16384,7 @@ quicksight:DescribeFolderResolvedPermissions
 quicksight:DescribeGroup
 quicksight:DescribeGroupMembership
 quicksight:DescribeIAMPolicyAssignment
+quicksight:DescribeInboundConnector
 quicksight:DescribeIngestion
 quicksight:DescribeIpRestriction
 quicksight:DescribeKeyRegistration
@@ -16315,6 +16397,7 @@ quicksight:DescribeQPersonalizationConfiguration
 quicksight:DescribeQuickIndexCapacity
 quicksight:DescribeQuickSightQSearchConfiguration
 quicksight:DescribeRefreshSchedule
+quicksight:DescribeResourcePermissions
 quicksight:DescribeRoleCustomPermission
 quicksight:DescribeSelfUpgradeConfiguration
 quicksight:DescribeSpace
@@ -16343,6 +16426,7 @@ quicksight:GetFlowPermissions
 quicksight:GetGroupMapping
 quicksight:GetIdentityContext
 quicksight:GetSessionEmbedUrl
+quicksight:ListAccessControlApplications
 quicksight:ListActionConnectors
 quicksight:ListAgents
 quicksight:ListAnalyses
@@ -16371,6 +16455,8 @@ quicksight:ListGroups
 quicksight:ListIAMPolicyAssignments
 quicksight:ListIAMPolicyAssignmentsForUser
 quicksight:ListIdentityPropagationConfigs
+quicksight:ListInboundConnectorApplicationAssociations
+quicksight:ListInboundConnectors
 quicksight:ListIngestions
 quicksight:ListKMSKeysForUser
 quicksight:ListKnowledgeBases
@@ -16406,6 +16492,7 @@ quicksight:RegisterCustomerManagedKey
 quicksight:RegisterUser
 quicksight:RemoveCustomerManagedKey
 quicksight:RestoreAnalysis
+quicksight:RevokeOAuthToken
 quicksight:ScopeDownPolicy
 quicksight:SearchActionConnectors
 quicksight:SearchAgents
@@ -16435,6 +16522,8 @@ quicksight:TagResource
 quicksight:UnpublishFlow
 quicksight:Unsubscribe
 quicksight:UntagResource
+quicksight:UpdateAccessControlApplication
+quicksight:UpdateAccessControlApplicationSecret
 quicksight:UpdateAccountCustomPermission
 quicksight:UpdateAccountCustomization
 quicksight:UpdateAccountSettings
@@ -16474,6 +16563,8 @@ quicksight:UpdateFolderPermissions
 quicksight:UpdateGroup
 quicksight:UpdateIAMPolicyAssignment
 quicksight:UpdateIdentityPropagationConfig
+quicksight:UpdateInboundConnector
+quicksight:UpdateInboundConnectorApplicationAssociations
 quicksight:UpdateIpRestriction
 quicksight:UpdateKeyRegistration
 quicksight:UpdateKnowledgeBase
@@ -16511,12 +16602,14 @@ ram:AssociateResourceSharePermission
 ram:CreatePermission
 ram:CreatePermissionVersion
 ram:CreateResourceShare
+ram:DeleteCustomerManagedPermissionPolicy
 ram:DeletePermission
 ram:DeletePermissionVersion
 ram:DeleteResourceShare
 ram:DisassociateResourceShare
 ram:DisassociateResourceSharePermission
 ram:EnableSharingWithAwsOrganization
+ram:GetCustomerManagedPermissionPolicy
 ram:GetPermission
 ram:GetResourcePolicies
 ram:GetResourceShareAssociations
@@ -16534,11 +16627,13 @@ ram:ListResources
 ram:ListSourceAssociations
 ram:PromotePermissionCreatedFromPolicy
 ram:PromoteResourceShareCreatedFromPolicy
+ram:PutCustomerManagedPermissionPolicy
 ram:RejectResourceShareInvitation
 ram:ReplacePermissionAssociations
 ram:SetDefaultPermissionVersion
 ram:TagResource
 ram:UntagResource
+ram:UpdatePermission
 ram:UpdateResourceShare
 rbin:CreateRule
 rbin:DeleteRule
@@ -17556,6 +17651,7 @@ route53domains:RejectDomainTransferFromAnotherAwsAccount
 route53domains:RenewDomain
 route53domains:ResendContactReachabilityEmail
 route53domains:ResendOperationAuthorization
+route53domains:RestoreDomain
 route53domains:RetrieveDomainAuthCode
 route53domains:TransferDomain
 route53domains:TransferDomainToAnotherAwsAccount
@@ -18062,6 +18158,7 @@ s3files:PutSynchronizationConfiguration
 s3files:TagResource
 s3files:UntagResource
 s3files:UpdateMountTarget
+s3tables:CompleteTableMigration
 s3tables:CreateNamespace
 s3tables:CreateTable
 s3tables:CreateTableBucket
@@ -18088,6 +18185,7 @@ s3tables:GetTableEncryption
 s3tables:GetTableMaintenanceConfiguration
 s3tables:GetTableMaintenanceJobStatus
 s3tables:GetTableMetadataLocation
+s3tables:GetTableMigration
 s3tables:GetTablePolicy
 s3tables:GetTableRecordExpirationConfiguration
 s3tables:GetTableRecordExpirationJobStatus
@@ -18096,6 +18194,7 @@ s3tables:GetTableReplicationStatus
 s3tables:GetTableStorageClass
 s3tables:ListNamespaces
 s3tables:ListTableBuckets
+s3tables:ListTableMigrations
 s3tables:ListTables
 s3tables:ListTagsForResource
 s3tables:PutTableBucketEncryption
@@ -18112,9 +18211,12 @@ s3tables:PutTableRecordExpirationConfiguration
 s3tables:PutTableReplication
 s3tables:PutTableStorageClass
 s3tables:RenameTable
+s3tables:StartTableMigration
+s3tables:SyncTableMigration
 s3tables:TagResource
 s3tables:UntagResource
 s3tables:UpdateTableMetadataLocation
+s3tables:UpdateTableMigration
 s3vectors:CreateIndex
 s3vectors:CreateVectorBucket
 s3vectors:DeleteIndex
@@ -19040,6 +19142,9 @@ securityhub:GetResourcesStatisticsV2
 securityhub:GetResourcesTrendsV2
 securityhub:GetResourcesV2
 securityhub:GetSecurityControlDefinition
+securityhub:GetSoftwareResourcesV2
+securityhub:GetSoftwareStatisticsV2
+securityhub:GetSoftwareV2
 securityhub:GetUsage
 securityhub:GetUsageV2
 securityhub:InviteMembers
@@ -19539,6 +19644,7 @@ ses:VerifyDomainDkim
 ses:VerifyDomainIdentity
 ses:VerifyEmailAddress
 ses:VerifyEmailIdentity
+shield:AllowVendedLogDeliveryForResource
 shield:AssociateDRTLogBucket
 shield:AssociateDRTRole
 shield:AssociateHealthCheck
@@ -20148,6 +20254,7 @@ ssm:DeleteParameters
 ssm:DeletePatchBaseline
 ssm:DeleteResourceDataSync
 ssm:DeleteResourcePolicy
+ssm:DeregisterDefaultHostManagementConfiguration
 ssm:DeregisterManagedInstance
 ssm:DeregisterPatchBaselineForPatchGroup
 ssm:DeregisterTargetFromMaintenanceWindow
@@ -20246,6 +20353,7 @@ ssm:PutConfigurePackageResult
 ssm:PutInventory
 ssm:PutParameter
 ssm:PutResourcePolicy
+ssm:RegisterDefaultHostManagementConfiguration
 ssm:RegisterDefaultPatchBaseline
 ssm:RegisterManagedInstance
 ssm:RegisterPatchBaselineForPatchGroup

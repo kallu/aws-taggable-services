@@ -81,7 +81,6 @@ networkmanager-chat
 nova-act
 opensearch
 partnercentral-account-management
-polly
 pricing
 pricingplanmanager
 rds-data
